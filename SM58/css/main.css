@@ -1,0 +1,164 @@
+
+*{
+    box-sizing: border-box;
+    font-family: 'Lilita One', cursive; 
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    /* outline: 1px solid red; */
+    /* padding-bottom: 35px; */
+    height: 315px;
+    border-bottom: 10px solid #eee; /* нижняя линия*/
+    margin-bottom:6px ;
+    
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    /* outline: 1px solid yellowgreen; */
+    align-items: center;
+    height: 80px;
+    
+}
+.regBasc{
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    align-items: center;
+    height: 100%;
+}
+.bascet{
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/bascet.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bascet:hover{
+    width: 60px;
+    height: 60px;
+    translate: 1.9s;
+}
+.registration:hover{
+    width: 60px;
+    height: 60px;
+    translate: 1.9s;
+}
+.registration{
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/door-in.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.adapt{
+    width: 800px;
+    /* outline: 1px solid red; */
+    margin: auto;
+}
+.adapt ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+   
+}
+.adapt ul li {
+    list-style:none;
+}
+.adapt ul li a{
+    text-decoration: none;
+    font-family: 'Lilita One', cursive;  
+    color: #000;
+    font-size: 26px;  
+}
+.adapt ul li a:hover{
+    border-bottom: 3px solid #eee;
+    font-size: 30px; 
+}
+h1{
+    font-size: 50px;
+    width: 400px;
+    display: block;
+    margin:30px auto 50px auto;
+    font-family: 'Lilita One', cursive;  
+}
+
+/* ********************** gallery ********************************* */
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+
+}
+.item{
+    width: calc(25% - 6px);
+    outline: 1px solid green;
+    text-align: center;
+    margin: 4px 0;
+
+
+    /* flex: 1 1 200px;
+	height: 200px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin: 10px;
+	
+	transition: 0.4s;
+	box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.2); */
+}
+.img{
+    width: 100%;
+    height: 500px;
+    /* background-image: url(../img/2.png); */
+    background-color: #ebebeb;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+.item:hover {
+	transform: scale(1.01);
+}
+.btn{
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+/* *****************************************************galery-full******************************************* */
+
+.gallery-full {
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	background-color: rgba(255,255,255,0.9);
+}
+.gallery-close {
+	width: 50px;
+	height: 50px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+    background-image: url(../img/close.png);
+	cursor: pointer;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+.test{
+    
+	background-color: #f7f;
+	width: 100%;
+	height: 100%;
+}
