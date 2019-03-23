@@ -1,0 +1,513 @@
+@import url(reset.css);
+#wrapper{
+  
+    height: 1892px;
+    
+}
+#heder{
+   
+    height: 81px;
+    background-color:#FFFFFF ;
+    
+}
+#form1 input{
+    width: 436px;
+    height: 31px;
+    position: absolute;
+    top: 26px;
+    left: 305px;
+    background-image: url(../images/lupa.png );
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+#hederC{
+    height: 81px;
+    width: 1024px;
+    margin: auto;
+    
+    position: relative;
+   
+  
+
+}
+#basket{
+    width:41px ;
+    height:37px ;
+     background-image: url(..//images/basket.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 15px;
+    right: 86px;
+}
+#basket a{
+   
+    height:37px ;
+    display: block;
+    cursor: pointer;
+}
+#hederC p{
+    font: 50px Arial, sans-serif;
+    color:#00FFA9 ;
+    position: absolute;
+    top: 12px;
+    left: 80px;
+}
+/*конец блока heder*/
+/*начало блока nav*/
+#nav{
+    height: 36px;
+    background-color:#4CCFC1 ;
+}
+#navC{
+     height: 36px;
+    width: 1024px;
+    margin: auto;
+    
+}
+#navC ul li{
+    float: left;
+    
+    
+    background-image: url(..//images/lineV.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+#navC ul li a{
+    text-decoration: none;
+    font: 20px Arial, sans-serif ;
+    text-transform: capitalize;
+    display: block;
+    cursor: pointer;
+    margin: 0 10px 0 10px;
+    padding-top: 6px;
+    color: white;
+    
+}
+#li1{
+    background-image: none;
+}
+/*конец блока nav*/
+/*начало блока content*/
+
+#content{
+    height: 445px;
+    background-color: #3FBEBA;
+    
+    
+}
+#contentC{
+   position: relative; 
+   width: 1024px;
+  
+   margin: auto;
+
+}
+#Jersey{
+    width: 278px;
+    height: 325px;
+    background-image: url(..//images/jr.png);
+    position: absolute;
+    top: 66px;
+    left: 77px;
+}
+#conTx{
+    height: 445px;
+    position: absolute;
+    left: 457px;
+    
+
+}
+#conTx h2{
+    font: 61px "Myriad pro" , sans-serif;
+    color: white;
+}
+#conTx p{
+    font: 17px "Myriad pro" , sans-serif;
+    color: white;
+}
+#button{
+    width:141px ;
+    height: 48px;
+    position: absolute;
+    top: 307px;
+    
+   background-image: url(..//images/buttom.png);
+   background-repeat: no-repeat;
+    
+}
+#button a{
+    font: 25px "Myriad pro" , sans-serif;
+    text-decoration: none;
+    display: block;
+    color: white;
+    margin: 6px 15px 6px 15px ;
+    
+}
+/*конец блока content*/
+/*начало блока scrol*/
+#scrol{
+    height: 190px;
+    background-color: white;
+} 
+
+
+    #scrolC{
+   position: relative;
+     height: 190px;
+    width: 1024px;
+   
+    margin: auto;
+    
+}
+
+#arrowL{
+    width: 29px;
+    height: 88px;
+    background-image: url(..//images/arrowL.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  float: left;
+    
+    margin: 51px 0px 0 70px;
+   
+
+}
+#arrowR{
+     width: 29px;
+    height: 88px;
+    background-image: url(..//images/arrowR.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    
+     margin: 51px 70px 0 0px;
+
+}
+#SblockLimg{
+    height:190px ;
+    background-image: url(..//images/shoes.png);
+     
+     background-repeat: no-repeat;
+     width: 171px;
+     float: left;
+ 
+}
+#SblockL{
+    width: 341px;
+    height: 191px;
+   
+    background-image: url(..//images/separator.png);
+    background-repeat: repeat-y;
+    background-position: right;
+    float: left;
+
+}
+
+#SblockLcon{
+    height:190px ;
+     float: right;
+     width: 170px;
+}
+#SblockLcon a{
+     background-image: url(..//images/buttomGr.png);
+     background-repeat: no-repeat;
+     display: block;
+     cursor: pointer;
+     height: 30px;
+     margin: 20px 0 0 60px;
+     text-decoration: none;
+     padding: 7px 0 0 8px;
+     color: white;
+     
+     
+}
+#SblockLcon h3{
+    margin: 50px 0 0 60px;
+    font: 20px "Myriad pro",sans-serif;
+    line-height: 24px;
+    color: #AFAFAF;
+}
+/*конец блока L*/
+/*начало блока C*/
+#SblockCimg{
+    height:190px ;
+    background-image: url(..//images/jr2.png);
+    
+     background-repeat: no-repeat;
+     width: 171px;
+     float: left;
+     background-position: center;
+ 
+}
+#SblockC{
+    width: 341px;
+    height: 191px;
+  
+    background-image: url(..//images/separator.png);
+    background-repeat: repeat-y;
+    background-position: right;
+    float: left;
+    
+}
+
+#SblockCcon{
+    height:190px ;
+     float: right;
+     width: 170px;
+    
+}
+#SblockCcon a{
+     background-image: url(..//images/buttomGr.png);
+     background-repeat: no-repeat;
+     display: block;
+     cursor: pointer;
+     height: 30px;
+     margin: 20px 0 0 60px;
+     text-decoration: none;
+     padding: 7px 0 0 8px;
+     color: white;
+     
+     
+}
+#SblockCcon h3{
+    margin: 50px 0 0 60px;
+    font: 20px "Myriad pro",sans-serif;
+    line-height: 24px;
+    color: #AFAFAF;
+}
+/*конец блока C*/
+/*начало блока R*/
+#SblockRimg{
+    height:190px ;
+    background-image: url(..//images/shoe.png);
+    
+     background-repeat: no-repeat;
+     width: 171px;
+     float: left;
+     background-position: center;
+ 
+}
+#SblockR{
+    width: 341px;
+    height: 191px;
+   
+    background-image: url(..//images/separator.png);
+    background-repeat: repeat-y;
+    background-position: right;
+    float: right;
+}
+
+#SblockRcon{
+    height:190px ;
+     float: right;
+     width: 170px;
+}
+#SblockRcon a{
+     background-image: url(..//images/buttomGr.png);
+     background-repeat: no-repeat;
+     display: block;
+     cursor: pointer;
+     height: 30px;
+     margin: 20px 0 0 60px;
+     text-decoration: none;
+     padding: 7px 0 0 8px;
+     color: white;
+     
+     
+}
+#SblockRcon h3{
+    margin: 50px 0 0 60px;
+    font: 20px "Myriad pro",sans-serif;
+    line-height: 24px;
+    color: #AFAFAF;
+}
+/*конец блока content*/
+/*начало блока scrol*/
+#line{
+     background-color:#3AC1BB ;
+     height: 66px; 
+}
+#line1{
+    width: 1024px;
+    height: 66px;
+   
+    margin: auto; 
+    position: relative;
+}
+#line1 p{
+    font: 31px "myriad pro", sans-serif;
+    color: white;
+    position: absolute;
+    top:22px ;
+    left: 62px;
+   /* конец блока line
+    начало блока asorty */
+}#asorty{
+    width: 1024px;
+    height: 690px ;
+     
+     margin: auto;
+ 
+}
+#e1, #e2, #e3, #e4, #e5, #e6{
+    width: 269px;
+    height: 265px;
+    background-image: url(..//images//bag.png);
+    background-repeat: no-repeat;
+    float: left;
+     margin: 42px 50px 43px 59px; 
+    position: relative; 
+}
+
+
+#e2{
+    margin: 42px 50px 43px 0px;  
+}
+#e3{
+     margin: 42px 0px 43px 0px; 
+}
+#e4{
+     margin: 2px 50px 0px 59px; 
+}
+#e5{
+     margin: 2px 50px 0px 0px; 
+}
+#e6{
+     margin: 2px 50px 0px 0px; 
+}
+#shoesGr{
+    width: 170px;
+    height: 101px;
+    background-image: url(..//images/shoesGr.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 40px;
+    left: 49px; 
+}
+.e1cont{
+    width: 200px;
+    height: 85px;
+    
+     position: absolute;
+     top: 150px;
+     left: 30px;
+}
+.e1cont p{
+    font: 20px "myrid pro",sans-sirif;
+    color: #afafaf;
+    margin-top: 10px;
+   
+}
+.e1cont a{
+    float: right;
+    color: white ;
+    display: block;
+    background-image:url(..//images/bottom2.png);
+    width: 74px;
+    height: 32px;
+    background-repeat: no-repeat;
+     font: 14px "myrid pro",sans-sirif;
+     padding: 9px 0 0 3px;
+    
+     position: absolute;
+     top: 38px;
+     left: 59px;
+     cursor: pointer;
+     text-decoration: none;
+}
+#e2Gr{
+    width: 99px;
+    height: 116px;
+    background-image: url(..//images/e2.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 20px;
+    left: 83px; 
+}
+#e3Gr{
+    width: 105px;
+    height: 118px;
+    background-image: url(..//images/e3.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 20px;
+    left: 68px; 
+}
+#e4Gr{
+    width: 170px;
+    height: 126px;
+    background-image: url(..//images/e4.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 23px;
+    left: 39px; 
+}
+#e5Gr{
+    width: 134px;
+    height: 120px;
+    background-image: url(..//images/e5.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 16px;
+    left: 61px; 
+}
+#e6Gr{
+    width: 66px;
+    height: 119px;
+    background-image: url(..//images/e6.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 18px;
+    left: 94px; 
+}
+ /* конец блока asorty
+    начало блока bottom */
+#bottom{
+        height: 383px;
+        background-image: url(..//images/bgBottom.png);
+        background-repeat: repeat-x;
+}
+#bottom1{
+        width:1024px ;
+         
+         margin: auto;
+         height: 383px;
+         position: relative;
+ 
+ }
+#el1{
+    margin:0px 0 0 60px;
+    float: left;
+}
+#el2{
+    margin:0px 0 0 106px;
+    float: left;
+}
+#el3{
+    margin:0px 0 0 106px;
+    float: left;
+}
+#el4{
+    margin:0px 0 0 106px;
+    float: left;
+}
+#bottom1 h3{
+    padding-top: 35px;
+    margin:0px 0  24px 0;
+    font: 20px "Myriad pro",sans-serif;
+    color: white;
+ }   
+  #bottom1 li{
+    margin-bottom: 12px;
+    font: 15px "Myriad pro",sans-serif;
+    color: white;
+ }   
+ #bottom1 p{
+    margin: auto;
+    font: 15px "Myriad pro",sans-serif;
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 14px;
+    left: 397px;
+ }
