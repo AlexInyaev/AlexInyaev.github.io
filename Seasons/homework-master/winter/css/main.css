@@ -1,0 +1,156 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to right,#24468A,#497CCE, #A3D7FF,#497CCE, #24468A);
+}
+
+
+.snowContainer {
+	 width: 100%;
+	 height: 100%;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 z-index: 0;
+  }
+#snow {
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/15825154.png"),url("../img/89961317.png"),url("../img/21791255.png");
+	-webkit-animation: snow 20s linear infinite;
+	-moz-animation: snow 20s linear infinite;
+    -ms-animation: snow 20s linear infinite;
+    animation: snow 20s linear infinite;
+	 }
+@keyframes snow {
+	0% {
+		background-position: 0px 0px, 0px 0px, 0px 0px;
+		} 
+	100% {
+		background-position: 500px 1000px, 400px 400px, 300px 300px;
+	}
+}
+@-moz-keyframes snow {
+	0% {
+		background-position: 0px 0px, 0px 0px, 0px 0px;
+		} 
+	100% {
+		background-position: 500px 1000px, 400px 400px, 300px 300px;
+	}
+}
+@-webkit-keyframes snow {
+	0% {
+		background-position: 0px 0px, 0px 0px, 0px 0px;
+		} 
+	100% {
+		background-position: 500px 1000px, 400px 400px, 300px 300px;
+		}
+	}
+@-ms-keyframes snow {
+	0% {
+		background-position: 0px 0px, 0px 0px, 0px 0px;
+		}
+	100% {
+		background-position: 500px 1000px, 400px 400px, 300px 300px;
+		 }
+}
+.top{
+	position:relative;
+	width: 100%;
+	height: 630px;
+	background-image: url(../img/bg1.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	padding-top: 1px;
+}
+.top h2{
+	color: #fff;
+	font-size: 54px;
+	margin-left: 30px;
+}
+.text{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+.text p{
+	
+	color: white;
+}
+.text h3{
+	
+	color: white;
+}
+/* начало блока контент */
+ .content{
+	margin: auto;
+	max-width: 1920px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	height: auto;
+}
+.wrepper{
+	background-color: #6F92B8;
+	width: calc(100% / 4 - 40px);
+	margin:50px 20px;
+	border: 10px solid #40c4c8;
+	border-image: url(../img/bdima.jpg) 30 round round;
+}
+.wrepper p{
+text-align: center;
+color: #fff;
+margin-bottom: 2px;
+}
+.wrepper img{
+	object-fit: cover;
+	display: block;
+	width: 100%;
+}
+.social{
+	height: 30px;	
+} 
+.social img{
+	height: 24px;
+	width: 24px;
+}
+.social ul{
+	display: flex;
+	justify-content: space-around;
+	width: 200px;
+	margin-left: auto;
+}
+.social li{
+	list-style: none;
+}
+/* адаптация----------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 1050px) {
+	.wrepper{
+		width: calc(100% / 3 - 40px);
+		
+	}
+}
+@media screen and (max-width: 800px){
+	.wrepper{
+		width: calc(100% / 2 - 40px);
+		
+	}
+}
+@media screen and (max-width: 530px){
+	.wrepper{
+		width: calc(100% / 1 - 100px);
+		margin:50px 50px;
+		
+	}
+}
+@media screen and (max-width: 350px){
+	.wrepper{
+		width: calc(100% / 1 - 20px);
+		margin:20px 10px;
+		
+	}
+}
