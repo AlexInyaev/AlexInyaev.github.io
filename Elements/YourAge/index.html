@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .header{
+    width: 500px;
+    height: 120px;
+    background-color: #999;
+    border: 1px solid #000 ;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+}
+.rezult{
+    width: 500px;
+    height: 60px;
+    background-color: #999;
+    border: 1px solid #000 ;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.block{
+    display: flex;
+    width: 500px;
+    height: 120px;
+    background-color: #999;
+    border: 1px solid #000 ;
+    border-radius: 10px;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+.button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Я могу угадать товой возраст</h2>
+        <p>Нажми соответствующию кнопку снизу</p>
+    </div>
+    <div class="wrepper">
+       
+    </div>
+    <div class="block">
+        <button class="button" id="less1">меньше</button>
+        <button class="button" id="true1">true</button>
+        <button class="button" id="more1">больше</button>
+    </div>
+    <script>
+        function getRandomArbitrary(min, max) {
+     rezult =(Math.floor(Math.random() *  (max - min) + min));
+     console.log(rezult);
+    }
+ function inner(){
+     html = ` <div class="rezult"> ${rezult}</div>`
+    wrepper.innerHTML = html;
+    }
+
+var wrepper = document.querySelector('.wrepper'),
+    html,
+    less1 = document.querySelector('#less1'),
+    true1 = document.querySelector('#true1'),
+    more1 = document.querySelector('#more1'),
+    min = 0,
+    max = 100;
+
+getRandomArbitrary(min, max);
+inner();
+ 
+
+less1.addEventListener('click', function(){
+    
+     max = rezult;
+     getRandomArbitrary(min, max);
+           
+     inner();
+}); 
+  
+
+more1.addEventListener('click', function(){
+     min = rezult;
+     getRandomArbitrary(min, max);
+
+     inner();
+  
+ });
+
+ true1.addEventListener('click', function(){
+     html = ` <div class="rezult"> ${'&#127878 &#127878 &#127878 Super &#127879 &#127879  &#127879 '}</div>`
+     wrepper.innerHTML = html;
+});
+    </script>
+</body>
+</html>
