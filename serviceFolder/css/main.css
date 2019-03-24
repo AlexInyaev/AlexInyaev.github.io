@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+  
+}
+.wrapper{
+    width: 815px;
+    height: 1165px;
+    margin:25px auto;
+    background: #F7F4EF;
+    padding-top: 25px;
+   
+}
+img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: 18px 15px 0 21px;
+    border: 1px solid #FF6600;
+    
+    
+}
+.header{
+    display: flex;
+    justify-content: flex-start;
+    width: 749px;
+    height: 145px;
+    background: #fff;
+    margin:  auto;
+    border: 1px solid #C0C0C0;
+}
+h1{
+    margin: 0;
+
+}
+.surname{
+    padding-top: 50px;
+}
+
+/* ************************************************** About Me*********************************** */
+
+.AboutMe{
+    border: 1px solid #C0C0C0;
+    width: 749px;
+    height: 65px;
+    background: #fff;
+    margin: 65px auto;
+}
+
+
+/* ************************************************** skillChart*********************************** */
+
+.skillChart{
+    display: flex;
+    justify-content: space-between;
+    width: 749px;
+    margin: 65px auto;
+    
+}
+.diagram {
+    width: 116px;
+    height: 107px;
+    background: #fff;
+    border: 1px solid #C0C0C0;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.diagramHtml{
+    background-image: url(../img/skil.png);
+}
+.diagramCss{
+    background-image: url(../img/skil.png);
+}
+.diagramJs{
+    background-image: url(../img/skilJs.png);
+}
+.item p{
+    margin: 5px;
+    text-align: center;
+}
+
+/* ************************************************** myWorks*********************************** */
+
+.myWorks{
+    display: flex;
+    justify-content: space-between;
+    width: 749px;
+    margin: auto;
+}
+.onePage, .siteShop, .elements{
+    width: 240px;
+    height: 245px;
+    
+    background: #fff;
+    border: 1px solid #C0C0C0;
+}
+.onePage p, .siteShop p, .elements p{
+    margin-bottom: 5px;
+    text-align: center;
+}
+hr{
+    width: 80px;
+    border: none; /* Убираем границу для браузера Firefox */
+    color: #FF6600; /* Цвет линии для остальных браузеров */
+    background-color: #FF6600; /* Цвет линии для браузера Firefox и Opera */
+    height: 2px; /* Толщина линии */
+}
+li{
+    list-style: none;
+    margin: 5px;
+}
