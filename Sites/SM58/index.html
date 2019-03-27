@@ -12,18 +12,36 @@
     <link href="https://fonts.googleapis.com/css?family=Lilita+One|Srisakdi" rel="stylesheet">
 </head>
 <body>
+        <div class="containerCart"></div>
+        
+        <div class="containerForm">
+                <!-- <div class="result">
+                    </div>  -->
+            <div class="wrepperForm">
+                        <h2>Анкета</h2>
+                <form action="" method="post" name="test" id="form" class="form" >
+                        Ваше имя :<br>
+                        <input type="text" name="name"  placeholder="имя" id="name" ><br><br>
+                        Email:<br>
+                        <input type="email" name="email"  placeholder="Email" id="email"><br><br>
+                        Ваш пол :<br>
+                        М<input type="radio" name="sex"  id="sex" value="Мужской" ><br>
+                        Ж<input type="radio" name="sex" id="sex" value="Женский" ><br><br>
+                        <input type="submit" name="submit" class="submit" value="готово"> 
+            </div> 
+    </div>    
     <div class="header">
         <div class="wrapper">
             <img src="img/lable.png" alt="лэйбл">
             <div class="regBasc">
                 <div class="burger"></div>
-                <div class="bascet"></div>
+                <div class="basket">0</div>
                 <div class="registration"></div>
             </div>
         </div>
         <h1>Shop moda.58</h1>
         <div class="adapt">
-            <ul>
+            <Ul>
                 <li><a href="#">О нас</a></li>
                 <li><a href="#">Еще</a></li>
                 <li><a href="#">Что-то</a></li>
@@ -31,15 +49,27 @@
                 <li><a href="#">Контакты</a></li>
             </ul>
         </div>
+        <div class="social">
+                <ul class="sicialBtn">
+                    <li><a href="https://www.instagram.com/shopmoda.58/"><img src="img/instagram.svg" alt="инстограм"></a></li>
+                    <li><a href="https://www.facebook.com/shopmoda.penza"><img src="img/facebook.svg" alt="фэйсбук"></a></li>
+                    <li><a href="https://ok.ru/profile/578582077927"><img src="img/ok.png" alt="одноклассники"></a></li>
+                    <li><a href="https://vk.com/id536546863"><img src="img/vk2.png" alt="в контакте"></a></li>
+                </ul>
+        </div>
     </div>
     <div class="gallery">  
     </div>
-    <div class="gallery-full">
-        <div class="gallery-close" onclick="galClose()"></div>
+    <div class="galleryFull">
+        <div class="galleryClose" onclick="galClose()"></div>
     </div>
     
     <script src="js/catalog.js"></script>
+    <script src="js/serviceCreaetElement.js"></script>
+    <script src="js/basketStore.js"></script>
     <script src="js/products.js"></script>
     <script src="js/gallery-full.js"></script>
+    <script src="js/serviceCart.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>
