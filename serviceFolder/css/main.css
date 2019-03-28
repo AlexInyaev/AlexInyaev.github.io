@@ -46,9 +46,10 @@ h1{
 
 .AboutMe{
     border: 3px outset #C0C0C0;
+    border-radius: 5px;
     width: 749px;
     height: 65px;
-    background: #fff;
+    background: #eee;
     margin: 65px auto;
     cursor: pointer;
 }
