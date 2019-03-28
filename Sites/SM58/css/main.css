@@ -46,6 +46,7 @@ body{
 }
 /* *************************  container cart  ******************************** */
 .containerCart {
+    overflow: auto;
 	display: none;
 	align-items: flex-start;
 	position: fixed;
