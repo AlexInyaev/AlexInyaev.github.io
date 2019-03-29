@@ -120,3 +120,160 @@ li{
     list-style: none;
     margin: 5px;
 }
+@media screen and (max-width: 830px) {
+    .wrapper{
+        width: 715px;
+        
+    }
+    .header,.AboutMe,.skillChart,.myWorks{
+        
+        width: 649px;
+    }
+    .onePage, .siteShop,.elements{
+        width: 210px;
+    }
+}
+    
+@media screen and (max-width: 730px) {
+    .wrapper{
+        width: 615px;
+        
+    }
+    .header,.AboutMe,.skillChart,.myWorks{
+        
+        width: 549px;
+    }
+    .onePage, .siteShop,.elements{
+        width: 180px;
+    }
+    .diagram{
+        width: 106px;
+    }
+}
+@media screen and (max-width: 630px) {
+    .wrapper{
+        width: 515px;
+        
+    }
+    .header,.AboutMe,.skillChart,.myWorks{
+        
+        width: 449px;
+    }
+    .AboutMe{
+        margin: 30px auto 0 auto;
+    }
+    .myWorks{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .skillChart{
+        margin: 15px auto 15px auto;
+        flex-wrap: wrap;
+    }
+    .onePage, .siteShop,.elements{
+        width: 240px;
+        margin-bottom: 5px;
+        align-items: center;
+    }
+    .siteShop,.elements{
+        height: 150px;
+    }
+    .diagram{
+        width: 107px;
+    }
+}
+@media screen and (max-width: 530px) {
+    .wrapper{
+        width: 415px;
+        
+    }
+    .header{
+        width: 349px;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 230px;
+    }
+    .surname {
+        padding-top: 0px;
+        text-align: center;
+    }
+    .AboutMe,.skillChart,.myWorks{
+        
+        width: 349px;
+    }
+    .AboutMe{
+        margin: 30px auto 0 auto;
+    }
+    .myWorks{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .skillChart{
+        margin: 15px auto 15px auto;
+        flex-wrap: wrap;
+    }
+    .onePage, .siteShop,.elements{
+        width: 240px;
+        margin-bottom: 5px;
+        align-items: center;
+    }
+    .siteShop,.elements{
+        height: 120px;
+    }
+    .onePage{
+        height: 210px;
+    }
+    .diagram{
+        width: 107px;
+    }
+}
+@media screen and (max-width: 430px) {
+    .wrapper{
+        width: 315px;
+        height: 1220px;
+    }
+    .header{
+        width: 249px;
+        height: 235px;
+    }
+    .surname p {
+        margin: 5px;
+        
+    }
+    .AboutMe,.skillChart,.myWorks{
+        
+        width: 249px;
+    }
+    .siteShop,.elements{
+        height: 110px;
+    }
+    .onePage{
+        height: 200px;
+    }
+}
+@media screen and (max-width: 330px) {
+    .wrapper{
+        width: 190px;
+        height: 850px;
+    }
+    .header{
+        width: 170px;
+        height: 235px;
+    }
+    .AboutMe,.myWorks{
+        
+        width: 170px;
+    }
+    .AboutMe{
+        margin-bottom: 20px;
+    }
+    .siteShop,.elements{
+        height: 110px;
+    }
+    .onePage{
+        height: 200px;
+    }
+    .skillChart{
+        display: none;
+    }
+}
