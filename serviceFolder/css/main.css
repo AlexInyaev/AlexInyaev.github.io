@@ -7,7 +7,7 @@ body{
 }
 .wrapper{
     width: 815px;
-    height: 1165px;
+    /* height: 1165px; */
     margin:25px auto;
     background: #F7F4EF;
     padding-top: 25px;
