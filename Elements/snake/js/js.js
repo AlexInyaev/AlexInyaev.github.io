@@ -285,7 +285,7 @@ function startGame() {
 
                         if (food.x == stone[i].x && food.y == stone[i].y) {
                             ts = food.x + '=' + stone[i].x + '/' + food.y + '=' + stone[i].y;
-                            alert(ts);
+                            // alert(ts);
 
                             repeatCont = true;
                         }
