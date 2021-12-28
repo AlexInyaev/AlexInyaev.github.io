@@ -10,8 +10,9 @@ body{
     margin: 0;
     padding: 0;
     background: linear-gradient(to left, #00dbde 0%, #fc00ff 100%);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+
+    /* background-size: 400% 400%;
+    animation: gradient 10s ease infinite;  Анимация фона Энергозатратно */      
 
 }
 .wrapperS{
