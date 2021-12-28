@@ -1,0 +1,21 @@
+html,body{
+    height: 100%;
+}
+body{
+    background: linear-gradient(to left, #00dbde 0%, #fc00ff 100%);
+    text-align: center;
+}
+p{
+    font-size: 50px;
+}
+.wrapper{
+    max-width: 1440px;
+    margin: auto;
+}
+
+@media screen and (max-width: 479px) {
+    p{
+        font-size: 30px;
+        
+    }
+}
