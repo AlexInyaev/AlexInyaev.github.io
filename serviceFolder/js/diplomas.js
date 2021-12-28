@@ -1,17 +1,17 @@
 var arr = [];
-arr[0] = 'serviceFolder/img/img004.jpg';
-arr[1] = 'serviceFolder/img/img005.jpg';
-arr[2] = 'serviceFolder/img/sololearnHTML.jpg';
-arr[3] = 'serviceFolder/img/sololearnCSS.jpg';
-arr[4] = 'serviceFolder/img/001204.jpg';
-arr[5] = 'serviceFolder/img/img006.jpg';
-arr[5] = 'serviceFolder/img/img007.png';
+arr[0] = { src: 'serviceFolder/img/img001.jpg', cssClass: "position-h" };
+arr[1] = { src: 'serviceFolder/img/img002.jpg', cssClass: "position-h" };
+arr[2] = { src: 'serviceFolder/img/sololearnHTML.jpg', cssClass: "position-w" };
+arr[3] = { src: 'serviceFolder/img/sololearnCSS.jpg', cssClass: "position-w" };
+arr[4] = { src: 'serviceFolder/img/img005.jpg', cssClass: "position-h" };
+arr[5] = { src: 'serviceFolder/img/img006.jpg', cssClass: "position-h" };
+arr[6] = { src: 'serviceFolder/img/img007.png', cssClass: "position-w" };
 
 var galleryContainer = document.querySelector('.gallery-container');
 var html = '';
 var i;
 for (i = 0; i < arr.length; i++) {
-	html += `<div class="gallery-item" id="${i}" style="background-image: url(${arr[i]});"onclick="testclick(${i})"></div>`;
+	html += `<img class="gallery-item ${arr[i].cssClass}" id="${i}"  src="${arr[i].src}" alt="Диплом или сертификат" onclick="testclick(${i})"></img>`
 }
 galleryContainer.innerHTML = html;
 
@@ -19,7 +19,7 @@ var itemFull = document.querySelector('.gallery-full');
 
 function testclick(id) {
 	itemFull.style.display = "block";
-	itemFull.style.backgroundImage = document.getElementById(id).style.backgroundImage;
+	itemFull.style.backgroundImage = `url(${document.getElementById(id).getAttribute('src')})`;
 }
 function galClose() {
 	itemFull.style.display = "none";
