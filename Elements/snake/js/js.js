@@ -160,7 +160,7 @@ function startGame() {
     // =========================================================================== direction
 
     function direction(event) {
-        console.log(event)
+
         if (event.keyCode == 65 && dir != 'right') {
 
             dir = 'left';
