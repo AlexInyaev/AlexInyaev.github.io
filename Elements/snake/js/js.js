@@ -147,7 +147,16 @@ function startGame() {
 
     document.addEventListener("keydown", direction); //обработчик события при нажатии кнопки вызывает футкцию direction
 
+    // ========================
+    // document.querySelector('.toTop').onclick = () => dir = 'up';
+
+    // ==========================
+
     let dir;
+    document.querySelector('.toTop').onclick = () => dir = 'up';
+    document.querySelector('.toBottom').onclick = () => dir = 'down';
+    document.querySelector('.toLeft').onclick = () => dir = 'left';
+    document.querySelector('.toRight').onclick = () => dir = 'right';
     // =========================================================================== direction
 
     function direction(event) {
