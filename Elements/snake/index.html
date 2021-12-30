@@ -10,37 +10,51 @@
 </head>
 
 <body>
-    <div class="count">Счет : </div>
-    <div class="form">
-        <input type="color" name="" id="color1">
-        <input type="color" name="" id="color2">
-        <input type="color" name="" id="color3">
-        <input type="color" name="" id="color4">
-        <button class="b1">colors</button>
+    <div class="wrapper">
+        <div class="gameManagement">
+            <p class="gameManagementP">Для старта или продолжения игры нажмите кнопку <span class="green">start</span>
+                <br> для начала
+                движения змейки
+                нажмите кнопку
+                на
+                блоке управления в низу<br> или на клавиатуре любую из кнопок w,d,s,a .
+            </p>
+            <div class="form">
+                <div class="wrapperInput">
+                    <input type="color" name="" id="color1">
+                    <input type="color" name="" id="color2">
+                    <input type="color" name="" id="color3">
+                    <input type="color" name="" id="color4">
+                </div>
+                <button class="b1">colors</button>
 
-        <label for="widthCanva">widthCanva</label>
-        <input type="number" name="" id="widthCanva" value="5">
-        <label for="heightCanva">heightCanva</label>
-        <input type="number" name="" id="heightCanva" value="5">
-        <input type="checkbox" name="" id="checkbox" value="checkbox">
-        <button class="changSizeFild">changSizeFild</button>
+                <label for="widthCanva">widthCanva</label>
+                <input type="number" name="" id="widthCanva" value="15">
+                <label for="heightCanva">heightCanva</label>
+                <input type="number" name="" id="heightCanva" value="15">
+                <input type="checkbox" name="" id="checkbox" value="checkbox">
+                <button class="changSizeFild">changSizeFild</button>
 
 
-        <button class="s1">Start</button>
-        <button class="p1">Pause</button>
+                <button class="s1 green">Start</button>
+                <div class="count">Счет : </div>
 
+            </div>
+            <!-- <img src="img/arrows.png" alt="стрелки клавиатуры"> -->
+        </div>
+        <div class="canva">
+
+            <canvas id="canvas" width="610px" height="610px"></canvas>
+        </div>
+        <div class="control">
+            <div class="controlButtons">
+                <button class="toTop"></button>
+                <button class="toBottom"></button>
+                <button class="toLeft"></button>
+                <button class="toRight"></button>
+            </div>
+        </div>
     </div>
-
-
-
-    <canvas id="canvas" width="610px" height="610px">Push Start</canvas>
-    <div class="controlButtons">
-        <button class="toTop"></button>
-        <button class="toBottom"></button>
-        <button class="toLeft"></button>
-        <button class="toRight"></button>
-    </div>
-
 </body>
 <script src="js/js.js"></script>
 

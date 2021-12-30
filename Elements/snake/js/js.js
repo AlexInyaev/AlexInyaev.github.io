@@ -160,23 +160,23 @@ function startGame() {
     // =========================================================================== direction
 
     function direction(event) {
-
-        if (event.keyCode == 37 && dir != 'right') {
+        console.log(event)
+        if (event.keyCode == 65 && dir != 'right') {
 
             dir = 'left';
             // console.log('left');
 
-        } else if (event.keyCode == 38 && dir != 'down') {
+        } else if (event.keyCode == 87 && dir != 'down') {
 
             dir = 'up';
             // console.log('up');
 
-        } else if (event.keyCode == 39 && dir != 'left') {
+        } else if (event.keyCode == 68 && dir != 'left') {
 
             dir = 'right';
             // console.log('right');
 
-        } else if (event.keyCode == 40 && dir != 'up') {
+        } else if (event.keyCode == 83 && dir != 'up') {
 
             dir = 'down';
             // console.log('down');
