@@ -31,6 +31,13 @@ function sizeChange(e) {
 
 }
 canvas.onmousedown = sizeChange;
+// ================================================ add buttons
+function addBut() {
+    let but = document.querySelector('.controlButtons');
+    console.log(but.style.display = 'block')
+}
+
+document.querySelector('.but').onclick = addBut;
 
 // ======================================================================================================================= changColor
 
