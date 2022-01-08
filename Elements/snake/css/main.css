@@ -13,7 +13,7 @@ body{
    
 }
 .canva{
-    display: flex;
+    /* display: flex; */
 }
 .form{
     float: left;
