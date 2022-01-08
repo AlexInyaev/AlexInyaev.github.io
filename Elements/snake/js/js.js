@@ -12,6 +12,10 @@ let widthCnv = 30,
     color3 = '#FFFF80',
     color4 = '#ff0000',
     cheet = false;
+// ================================= геро  тест ======================
+
+document.querySelector('.count1').innerHTML = instanceOfDeviceOrientationEvent.alpha;
+
 // ==============================================================================================
 
 let p1i = 1;
