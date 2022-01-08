@@ -27,14 +27,18 @@ function pause() {
 // =====================================================================================================
 
 function sizeChange(e) {
-    console.log(e.clientX)
+    // console.log(e.clientX)
 
 }
 canvas.onmousedown = sizeChange;
 // ================================================ add buttons
 function addBut() {
     let but = document.querySelector('.controlButtons');
-    console.log(but.style.display = 'block')
+    if (but.style.display == 'block') {
+        but.style.display = 'none';
+    } else {
+        but.style.display = 'block';
+    }
 }
 
 document.querySelector('.but').onclick = addBut;
@@ -59,7 +63,7 @@ function changSizeFild() {
     heightCnv = document.querySelector('#heightCanva').value;
     canvas.setAttribute('width', (widthCnv * 20));
     canvas.setAttribute('height', (heightCnv * 20));
-    ctx.clearRect(0, 0, '610', '610');
+    ctx.clearRect(0, 0, '600', '600');
 
     // 
     cheet = document.querySelector('#checkbox').checked;
@@ -82,7 +86,7 @@ let itrSt = 0;
 // =======================================================================================================================startGame
 // ======================================================================================================================= drawFild
 function startGame() {
-    ctx.clearRect(0, 0, '610', '610');
+    ctx.clearRect(0, 0, '600', '600');
     function drawFild(ctx, color1, color2, color3, color4,
         widthCnv, heightCnv, box1 = 20, box2 = 18, box3 = 12, box4 = 10, box5 = 7) {
 
