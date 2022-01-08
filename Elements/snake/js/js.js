@@ -14,7 +14,7 @@ let widthCnv = 30,
     cheet = false;
 // ================================= геро  тест ======================
 
-document.querySelector('.count1').innerHTML = 'instanceOfDeviceOrientationEvent.alpha';
+// document.querySelector('.count1').innerHTML = instanceOfDeviceOrientationEvent.alpha;
 
 // ==============================================================================================
 
