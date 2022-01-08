@@ -34,7 +34,7 @@ canvas.onmousedown = sizeChange;
 // ================================================ add buttons
 function addBut() {
     let but = document.querySelector('.controlButtons');
-    if (but.style.display == 'block') {
+    if (but.style.display == 'block') { //добовляет и убирает кнопки
         but.style.display = 'none';
     } else {
         but.style.display = 'block';
