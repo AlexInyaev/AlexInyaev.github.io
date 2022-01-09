@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Clock</title>
-    <style>.clock{
-            font-size:250px;
-             color:#1219E2;
+    <style>
+        .clock {
+            font-size: 250px;
+            color: #1219E2;
+            width: 800px;
+            margin: auto;
         }
+
+        @media screen and (max-width: 1000px) {
+            .clock {
+                font-size: 150px;
+                width: 480px;
+            }
+
+            @media screen and (max-width: 620px) {
+                .clock {
+                    font-size: 75px;
+                    width: 244px;
+                }
+
+                @media screen and (max-width: 300px) {
+                    .clock {
+                        font-size: 40px;
+                        width: 135px;
+                    }
+
+
+                }
     </style>
 </head>
+
 <body>
-        <div class="clock">00:00:00</div> 
-        <script>
-                function time(){
-                var clock = document.querySelector('.clock');
-                 var d = new Date();
-                 var hours = d.getHours();
-                 var minutes = d.getMinutes();
-                 var seconds = d.getSeconds();
-                if(seconds<10){
-                    seconds='0'+seconds
-                }
-                clock.innerHTML = hours+":"+minutes+":"+ seconds;
-                    }
-                setInterval(time,1000);
-        </script>
+    <div class="clock">00:00:00</div>
+    <script>
+        function time() {
+            var clock = document.querySelector('.clock');
+            var d = new Date();
+            var hours = d.getHours();
+            var minutes = d.getMinutes();
+            var seconds = d.getSeconds();
+            if (seconds < 10) {
+                seconds = '0' + seconds
+            }
+            clock.innerHTML = hours + ":" + minutes + ":" + seconds;
+        }
+        setInterval(time, 1000);
+    </script>
 </body>
+
 </html>
