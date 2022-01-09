@@ -67,26 +67,37 @@ h1{
 .skillChart{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 749px;
     margin: 65px auto;
     
 }
 .diagram {
-    width: 116px;
-    height: 107px;
+    width: 120px;
+    height: 120px;
     background: #fff;
     border: 1px solid #C0C0C0;
     background-repeat: no-repeat;
     background-position: center center;
+    margin: 5px;
 }
 .diagramHtml{
-    background-image: url(../img/skil.png);
+    background-image: url(../img/progress90.png);
 }
 .diagramCss{
-    background-image: url(../img/skil.png);
+    background-image: url(../img/progress90.png);
 }
 .diagramJs{
-    background-image: url(../img/skilJs.png);
+    background-image: url(../img/progress90.png);
+}
+.diagramReact{
+    background-image: url(../img/progress50.png);
+}
+.diagramPHP{
+    background-image: url(../img/progress50.png);
+}
+.diagramMySQL{
+    background-image: url(../img/progress50.png);
 }
 .item p{
     margin: 5px;
@@ -151,6 +162,7 @@ li{
     }
     .diagram{
         width: 106px;
+        height: 106px;
     }
 }
 @media screen and (max-width: 630px) {
@@ -183,6 +195,7 @@ li{
     }
     .diagram{
         width: 107px;
+        height: 107px;
     }
 }
 @media screen and (max-width: 530px) {
@@ -228,6 +241,7 @@ li{
     } */
     .diagram{
         width: 107px;
+        height: 107px;
     }
 }
 @media screen and (max-width: 430px) {
