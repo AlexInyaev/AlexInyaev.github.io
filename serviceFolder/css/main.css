@@ -79,25 +79,26 @@ h1{
     border: 1px solid #C0C0C0;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: 90%;
     margin: 5px;
 }
 .diagramHtml{
-    background-image: url(../img/progress90.png);
+    background-image: url(../img/HTML.svg);
 }
 .diagramCss{
-    background-image: url(../img/progress90.png);
+    background-image: url(../img/CSS.svg);
 }
 .diagramJs{
     background-image: url(../img/progress90.png);
 }
 .diagramReact{
-    background-image: url(../img/progress50.png);
+    background-image: url(../img/REACT.svg);
 }
 .diagramPHP{
-    background-image: url(../img/progress50.png);
+    background-image: url(../img/PHP.svg);
 }
 .diagramMySQL{
-    background-image: url(../img/progress50.png);
+    background-image: url(../img/SQL.svg);
 }
 .item p{
     margin: 5px;
