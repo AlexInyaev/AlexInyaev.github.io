@@ -5,6 +5,7 @@ arr[2] = { src: 'serviceFolder/img/sololearnHTML.jpg', cssClass: "position-w" };
 arr[3] = { src: 'serviceFolder/img/sololearnCSS.jpg', cssClass: "position-w" };
 arr[4] = { src: 'serviceFolder/img/sololearnJS.jpg', cssClass: "position-w" };
 arr[5] = { src: 'serviceFolder/img/sololearnPHP.jpg', cssClass: "position-w" };
+arr[5] = { src: 'serviceFolder/img/sololearnReact-redux.jpg', cssClass: "position-w" };
 arr[6] = { src: 'serviceFolder/img/img005.jpg', cssClass: "position-h" };
 arr[7] = { src: 'serviceFolder/img/img006.jpg', cssClass: "position-h" };
 arr[8] = { src: 'serviceFolder/img/img007.png', cssClass: "position-w" };
