@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <p class="aboutTime">Реальное время</p>
+        <div class="elements">
+            <div class="buttonsWrep">
+                <button class="reallyTime buttons">Really Time</button><br>
+                <button class="fictionalTime buttons">Fictional Time</button>
+            </div>
+            <!--Здесь отрисовываются часы  -->
+            <canvas id="canvas" width="400" height="400"></canvas>
+
+            <!--Здесь отрисовывается календарь остольные теги ресует JS  -->
+            <div class="calendWrap">
+                <div class="buttonss">
+                    <button id="buttonLeft"></button>
+                    <select id="choiceYear">
+                    </select>
+                    <button id="buttonRight"></button>
+                </div>
+                <div class="monthName"></div>
+                <table id="t"></table>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="clock.js"></script>
+
+</body>
+
+</html>
