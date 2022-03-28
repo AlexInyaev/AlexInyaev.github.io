@@ -1,0 +1,56 @@
+*{
+    font-size: 20px;
+}
+html,body{
+  width:100%;
+}
+.wrapper{
+  width: 100%;
+}
+.flexImg{
+    display: block;
+    margin: auto;
+    width: 90%;
+    border-radius: .25rem;
+
+
+}
+.colorFont{
+    color: #35C1D0;
+
+}
+.list li{
+    margin-left: 20%;
+}
+.header3{
+  text-decoration: underline;
+margin-left: calc(50% - 60px);
+    color: #35C1D0;
+    font-size: 30px;
+
+}
+h4{
+    margin-left: 5%;
+    font-size: 28px;
+    color:#35C1D0;
+}
+h5{
+    margin-left:10%;
+}
+.discriptionOut{
+    margin-left: 8%;
+    margin-bottom: 10px;
+}
+.discriptionIn{
+    margin-left:12%;
+    margin-bottom: 10px;
+}
+.position{
+  width:98%;
+    display: block;
+    margin:20px auto;
+}
+pre{
+  width:98%;
+  margin: auto;
+}

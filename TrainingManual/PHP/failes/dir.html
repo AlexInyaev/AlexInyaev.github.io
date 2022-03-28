@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>DIR</h2>
+    <pre>
+        <code class="php">
+            &lt;?php
+
+            $dir = 'img';    // получение папки
+            
+            if (is_dir($dir)){  // проверка на наличие папки
+                $openDir = opendir($dir); // открываем директорию
+            while($file = (readdir($openDir))){  // в $file присваеваем последующие значение из диектории и сравниваем с фолс
+                                                         // если файлов нет то будет фолс
+                if($file != "." &amp;&amp; $file != ".."){     // "." проверка на ссылку на папку и на ссылку на ".." родителя
+                    echo '&lt;img src="'.$dir.'/'.$file.'" alt="imge"&gt;';  // $dir - название папки  $file - название файла
+                }
+               
+            }
+            
+                closedir($openDir); // закрываем директорию
+            }
+            
+            
+            ?&gt;
+        </code>
+    </pre>
+</div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

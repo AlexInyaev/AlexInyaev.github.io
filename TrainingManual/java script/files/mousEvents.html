@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>События мыши</h2>
+        <pre>
+        <code class="">
+            document.querySelector('.className').onclick = function (event) { 
+                console.log(event); // Выводит объект события в консоль
+            }
+            
+             onclick - клик
+             ondblclick - двойной клик
+             oncontextmenu - при нажатие на правую кнопку мыши вызывается контекст меню
+                            если из футкции вернуть false то контекстное меню вызываться не будут
+             onmausemove - навидение на элемент
+             onmouseenter - при в заходе курсора на блок
+             onmouseleave - при выходе курсора из блока
+             onmousedown - когда навел курсор нажал и держиш
+             onmouseup - когда отпуситил мыш
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

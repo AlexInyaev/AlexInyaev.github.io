@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>функция проверки чисел</h2>
+        <pre>
+        <code class="php">
+    function checkVar($v){
+        if(trim($v)!=''AND isset($v)AND is_numeric($v)){
+            return trim($v);
+        }
+        else{
+            exit ('problem!!!');
+        }
+    }
+
+            
+trim();     обрезает пробелы
+isset() ;  проверка существования переменной
+is_int(); проверка на целое число
+is_numeric(); проверка строки на содержание в ней целого числа
+exit();    выводит сообщение из скобок и останавливает скрипт
+
+
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

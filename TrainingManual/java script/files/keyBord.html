@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>События клавиатуры</h2>
+        <pre>
+        <code class="">
+            document.querySelector('.in').onkeypress = function (event) { // работает только для букв и некоторых вспомогательных клавиш
+                console.log('keypress')
+                console.log('charCode :' + event.charCode); устарело
+                console.log('code :' + event.code);
+                console.log('keyCode :' + event.keyCode); устарело
+                console.log('key :' + event.key);
+                console.log(event);
+
+            }
+
+            document.querySelector('.in').onkeydown = function (event) { // клавиша нажата но не отпущена работают буквы и другие кнопки
+                console.log('keydown')
+                console.log('charCode :' + event.charCode); устарело
+                console.log('code :' + event.code);
+                console.log('keyCode :' + event.keyCode); устарело
+                console.log('key :' + event.key);
+                console.log(event);
+
+            }
+
+             onkeypress  - устарело
+             onkeyup  //событие отпускания клавиши
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

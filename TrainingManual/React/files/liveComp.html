@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Подход на основе класса</h2>
+        <pre>
+        <code class="">
+            import React from 'react';
+
+            class Test1 extends React.Component {                  //создаем экземпляр класса (в нем пишется весь код)
+                constructor(props) {                              // конструктор запускается один раз при старте
+                    console.clear();
+                    console.log('constructor');
+                    console.log(props);
+                    super();                                    //* вызван для соблюдния коректрости надо повторить ооп чтобы вспомнить *
+                    this.state = {                              //создаем стэйт
+                        s1: 0
+                    }
+                }                                                  //заканчивается конструктор
+            
+            
+                buttonHandler = () =&gt; {                             //функция обработчик клика кнопки она увеличивает стэйт на 1
+                    let val = this.state.s1;
+                    val++;
+                    this.setState({ s1: val });                          //Функция для записи в стэйт 
+                }
+            
+                static getDerivedStateFromProps(props, state) {     //запускается  при каждой отрисовки 
+                    console.log('get derived state');
+                    return null;
+                    // return ({ "s1": props.arg });                 //присваевает пропсы стэйту
+                }
+            
+                componentDidMount() {                                 // запускается один раз при старте и отрисовке компонента НЕ ЗАПУСКАЕТСЯ ПРИ ПЕРЕРИСОВКИ КОМПОНЕНТА
+                    console.log('component did mount');
+                }
+            
+                componentDidUpdate() {                               //запускается при каждой перерисовке компонента НЕ ЗАПУСКАЕТСЯ ПРИ ОТРИСОВКЕ В ПЕРВЫЙ РАЗ
+                    console.log('component did update');
+                }
+            
+                render() {                                                //при обновление стэйта запускается  рендер
+                    console.log('render 1');
+                    return (
+                        &lt;&gt;
+                            {console.log('render 2')}
+                            &lt;div&gt;
+                                &lt;button onClick={this.buttonHandler}&gt;Push&lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                {this.state.s1}
+                            &lt;/div&gt;
+                        &lt;/&gt;
+                    )
+                }
+            }
+            
+            export default Test1;
+        </code>
+    </pre>
+        <h2>Функциональный подход</h2>
+        <pre>
+        <code class="">
+            import React, { useState, useEffect } from 'react';
+
+            function Test2(props) {                                 //при изменение стэйт перезапускается полнустью вся функция
+                console.log('set state');
+                const [s1, setS1] = useState(props.arg);
+            
+                const buttonHandler = () =&gt; {
+                    console.log('handler');
+                    let val = s1;
+                    val++;
+                    setS1(val);
+                }
+            
+                useEffect(() =&gt; {
+                    console.log('effect');               //срабатывает после отрисовки и перерисовки
+                });
+            
+                console.log('render 1');
+                return (
+                    &lt;&gt;
+                        {console.log('render 2')}
+                        &lt;div&gt;
+                            &lt;button onClick={buttonHandler}&gt;Push&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            {s1}
+                        &lt;/div&gt;
+                    &lt;/&gt;
+                )
+            }
+            
+            export default Test2;
+        </code>
+    </pre>
+        <h2>Внимание!</h2>
+        <pre>
+        <code>
+                        Внимание!
+            Если вы знакомы с методами ЖЦ компонента-класса,
+            вы можете представлять себе хук useEffect
+            как комбинацию componentDidMount, componentDidUpdate и componentWillUnmount.
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Раздел</h2>
+        <pre>
+        <code class="">
+            // auth=zhrgB3DxC8LoG7Gcilzg                         здесь можно почитать 
+            let xhttp = new XMLHttpRequest(); //создаем объект
+            let a = 0;
+            xhttp.onreadystatechange = function () {              //onreadystatechange  это функция вызывается когда поле readyState меняет свое значение
+                if (this.readyState == 4 && this.status == 200) { //когда полностью весь запрос завершон readyState становится равным 4
+                    myFunction(this.responseText)                   // responseText -ответ на запрос
+                }
+            }
+            //CORS
+            xhttp.open("GET", "http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcilzg&action=1", true); //отправка запроса Параметры: 1-метод запроса 2- адрес 3-НЕ обязателен синхронно /асинхронно
+            xhttp.send();  //отправляет запрос
+            
+            function myFunction(data) {
+                a = data;
+                console.log(data);
+            
+            }
+            
+            let xhttp2 = new XMLHttpRequest();
+            xhttp2.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction2(this.responseText)
+                }
+            }
+            xhttp2.open("POST", "http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcilzg&action=1", true);
+            
+            xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  // указывает как отправлять запрос
+            xhttp2.send('auth=zhrgB3DxC8LoG7Gcilzg&action=1')                              //указываем передаваемые пораметры
+            
+            function myFunction2(data) {
+                console.log('POSt');
+                a = data;
+                console.log(data);
+            }
+            
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Errors</h2>
+        <pre>
+        <code class="">
+            try {
+                let p = document.querySelectorAll('p');                              try - код который в этом блоке выполнится до первой ошибки и перйдет на  catch
+                p.push(3);
+                }
+                catch (err) {
+                document.querySelector('.out-5').textContent = 0;                    catch - код в этом блоке выполнится если в блоке try есть ошибки
+                }
+                finally {
+                document.querySelector('.out-5-1').textContent = 'finnaly';          finally -код в этом блоке выполнится в любом влучае
+                }
+                
+                }
+                
+                document.querySelector('.b-5').onclick = t5;
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Раздел</h2>
+        <pre>
+        <code class="">
+import './App.css';
+
+import React from 'react';
+
+function App() {
+    const cE = React.createElement;
+    const title = React.createElement('h1', {}, 'Text Header 1'); //создание элемента и запись его в переменную h1-название элемента,{}-здесь передаются пропсы ,текст в нутри элемета необязательно
+    const title2 = React.createElement('h2', {
+    'color': 'red',  //передается как атребут но не работает
+    'style': {        // стили сработывают можно использовать
+        'color': 'red',
+        'background': 'orange'
+    },
+    'id': 'hide', //можно задать id
+    'className': 'italic bold' //можно задать классы
+    }, 'Text Header 2');
+    const s = cE('span', {}, "this is a span") //создаем элемент span и затем вставляем его в параграф
+    const example = cE('p', {}, s);
+
+    return (
+    &lt;&gt;
+        &lt;React.Fragment&gt;
+        Hello
+        &lt;/React.Fragment&gt;
+        {title}   {/*так вставляется  созданный элемент */}
+        &lt;div&gt;
+        {title2}   {/*так вставляется  созданный элемент */}
+        &lt;/div&gt;
+        &lt;div&gt;{cE('input', {})}&lt;/div&gt;   {/*создаем элемент сразу в диве */}
+        &lt;div&gt;{example}&lt;/div&gt;
+    &lt;/&gt;
+    );
+}
+
+export default App;
+
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Установка необходимых пакетов</h2>
+        <a href="https://react-redux.js.org/" target="_blank">React-redux</a>
+        <pre>
+        <code class="">
+Для начала стоит подчеркнуть, что Redux не имеет отношения к React. Вы можете создавать
+    Redux-приложения c помощью React, Angular, Ember, jQuery или обычного JavaScript.
+
+И все-таки, Redux работает особенно хорошо с такими фреймворками, как React и Deku,
+    потому что они позволяют вам описать UI как функцию состояния, и, кроме того, 
+    Redux умеет менять состояние (state) приложения в ответ на произошедшие экшены (actions).
+
+            npm i react-redux       -установка redux
+            npm i @reduxjs/toolkit    -установка toolkit -набор инструментов по работе с redux
+        </code>
+    </pre>
+        <h2>Вид index.JS</h2>
+        <pre>
+        <code class="">
+    import store from './app/store';                         -подоключаем хранилище
+    import { Provider } from 'react-redux';                  -подоключаем Provider - Для того чтобы указать каким компонентам давать доступ к хранилищю
+    import * as serviceWorker from './serviceWorker';
+    
+    ReactDOM.render(
+        &lt;React.StrictMode&gt;
+        &lt;Provider store={store}&gt;                       - Для того чтобы дать доступ всему приложению к хранилищю его оборачиваем провайдарем
+            &lt;App /&gt;                                        и в качестве пропс передаем хранилище
+        &lt;/Provider&gt;
+        &lt;/React.StrictMode&gt;,
+        document.getElementById('root')
+    );
+        </code>
+        <h2>Арр</h2>
+        <pre>
+        <code class="">
+    import React from 'react';
+    import Counter from './Counter/Counter';
+    import DataDesk from './DataDesk/DataDesk';
+    import './App.css';
+    
+    function App() {
+        return (
+        &lt;div className="App"&gt;
+            &lt;Counter /&gt;
+            &lt;DataDesk /&gt;
+        &lt;/div&gt;
+        );
+    }
+    
+    export default App;
+        </code>
+    </pre>
+        <h2>Counter</h2>
+        <pre>
+        <code class="">
+    import React, { useState } from 'react';
+    import { useSelector, useDispatch } from 'react-redux';
+    import {
+        increment,   //название метода из хронилища counterSlice
+        selectCount, //геттер для получения данных из хранилища
+        selectText   //геттер для получения данных из хранилища
+    } from './counterSlice';
+    
+    export default function Counter() {
+        const count = useSelector(selectCount); // получаем данные из store
+        const text = useSelector(selectText); // получаем данные из store
+        const dispatch = useDispatch();       //для удобства сокращаем метод useDispatch ! в dispatch лежит вызов useDispatch() поэтому useDispatch(increment()) вызовит ошибку
+    
+        const buttonHandler = () =&gt; { //мы напрямую не можем изменить данные в сторе поэтому мы вызываем useDispatch и отпровляем параметр который хотим вызвать
+        dispatch(increment());
+        }
+    
+        return (
+        &lt;div&gt;
+            &lt;button onClick={buttonHandler}&gt;+&lt;/button&gt;
+            &lt;h2&gt;{count}&lt;/h2&gt;
+            &lt;h2&gt;{text}&lt;/h2&gt;
+        &lt;/div&gt;
+        );
+    }
+    
+        </code>
+    </pre>
+        <h2>DataDesk</h2>
+        <pre>
+        <code class="">
+    iimport { useSelector, useDispatch } from 'react-redux';
+    import {
+        selectCount,
+        selectText
+    } from '../Counter/counterSlice';
+    import {
+        increment,
+        selectMytext
+    } from './mytextSlice';
+    
+    export default function DataDesk() {
+        const count = useSelector(selectCount); // получаем данные из store
+        const text = useSelector(selectText); // получаем данные из store
+        const t = useSelector(selectMytext); // получаем данные из store
+        const dispatch = useDispatch();
+    
+    
+        let changeText = () =&gt; {
+            console.log('work');
+            dispatch(increment());
+        }
+    
+        return (
+            &lt;div&gt;
+                &lt;hr /&gt;
+                &lt;h1&gt;Data Desk&lt;/h1&gt;
+                &lt;h2&gt;{count}&lt;/h2&gt;
+                &lt;h2&gt;{text}&lt;/h2&gt;
+                &lt;h2 onClick={changeText}&gt;{t}&lt;/h2&gt;
+            &lt;/div&gt;
+        );
+    }
+        </code>
+    </pre>
+        </pre>
+        <h2>Хранилище1</h2>
+        <h2>store</h2>
+        <pre>
+        <code class="">
+    import { configureStore } from '@reduxjs/toolkit';
+    import counterReducer from '../Counter/counterSlice'; //импорт хранилищ
+    import myTextReducer from '../DataDesk/mytextSlice';
+    
+    export default configureStore({ // здесь указывается какие хранилища используются в системе
+        reducer: {
+        counter: counterReducer,    // 1-е хранилище для работы с этим хранилищем указваем и используем редьюсер counterReducer название может быть и другое
+        mytext: myTextReducer      // 2-е хранилище  mytext - название хранилища, myTextReducer - название редьюса
+        },
+    });
+        </code>
+    </pre>
+        <h2>Хранилище2</h2>
+        <h2>counterSlice</h2>
+        <pre>
+        <code class="">
+    import { createSlice } from '@reduxjs/toolkit';
+
+    export const counterSlice = createSlice({ /*createSlice - одна из функций  toolkit которая позволяет быстро сконфигурировать и запустить хранилище
+                                                этот метод принемает объект параметров name - имя хранилища,initialState-начальное состояние ,reducers - функции доступные для данного хрн */
+        name: 'counter',
+        initialState: {
+        value: 55,
+        text: 'privet3333'
+        },
+        reducers: {        // работают со снэйтами из initialState
+        increment: state => { // increment - имя функции (цифры в название вызывают ошибку), state =>state.value += 15 - тело функции
+            state.value += 15;
+        },
+        showConsole: state => {
+            state.text = 'hello';
+        }
+        },
+    });
+
+    export const { increment, showConsole } = counterSlice.actions; //экспортируем методы которые нам доступны
+
+    export const selectCount = state => state.counter.value;         //экспортируем геттер для получения данных из initialState можно сделать одним блоком initialState
+    export const selectText = state => state.counter.text;
+
+    export default counterSlice.reducer;   //экспортируем сам сзданый блок 
+        </code>
+    </pre>
+        <h2>Хранилище3</h2>
+        <h2>mytextSlice</h2>
+        <pre>
+        <code class="">
+    import { createSlice } from '@reduxjs/toolkit';
+
+    export const mytextSlice = createSlice({
+        name: 'mytext',
+        initialState: {
+        text : 'mytext data'
+        },
+        reducers: {
+        increment: state => {
+            state.text += '!';
+        },
+        showConsole : state => {
+            state.text = 'hello its a mytextslice';
+        }
+        },
+    });
+    
+    export const { increment, showConsole } = mytextSlice.actions;
+    
+    export const selectMytext = state => state.mytext.text;
+    
+    export default mytextSlice.reducer;
+            
+        </code>
+    </pre>
+
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

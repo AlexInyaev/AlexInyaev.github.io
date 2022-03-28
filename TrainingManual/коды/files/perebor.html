@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Перебор</h2>
+    <pre>
+        <code>
+
+            &lt;body&gt;
+            &lt;style&gt;
+            .act{
+            border: 2px dotted greenyellow;
+                
+            }
+            .but{
+                background-color: indigo;
+            }
+            &lt;/style&gt;
+
+            &lt;img src="img/1.png" alt="image" class="act"&gt;
+            &lt;img src="img/2.png" alt="image"&gt;
+            &lt;img src="img/3.png" alt="image"&gt;
+            &lt;img src="img/1.png" alt="image"&gt;
+            &lt;img src="img/5.png" alt="image"&gt;
+            &lt;img src="img/6.png" alt="image"&gt;
+            &lt;button class="but"&gt;button&lt;/button&gt;
+
+            &lt;script&gt; 
+            let active = 0;
+            const  image = document.querySelectorAll('img'); // получаем коллекцию картин
+        
+            document.querySelector('.but').onclick = () =&gt; {
+            image[active].classList.remove('act');    //удоляем класс
+
+            if(active + 1 == image.length){                  // чтобы н уходило за границы
+                active = 0;
+            }else{
+            active++;
+            }
+
+            image[active].classList.add('act'); //добовляем класс
+            }
+            &lt;/script&gt;
+
+        &lt;/body&gt;
+        </code>
+    </pre>
+</div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+        

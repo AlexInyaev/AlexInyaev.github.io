@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+</head>
+<body>
+   <pre>
+       <code class="c#">
+        double num = 1.55;
+        Console.WriteLine("How old are you?");
+        num = Convert.ToDouble(Console.ReadLine());
+        if (num > 18.23d)
+        {
+            Console.WriteLine("You are older than 18.23");
+        }
+        else if (num == 2)
+        {
+            Console.WriteLine("else if");
+        }
+        else
+        {
+            Console.WriteLine("else");
+        }
+       
+
+        //===========================================
+
+        string tern = num == 15 ? "true" : "false"; // как тернарный в js
+        Console.WriteLine(tern);
+        Console.ReadKey();
+
+       </code>
+   </pre> 
+   <script src="../libs/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Подключение к базе</h2>
+        <pre>
+        <code class="php">
+            Создание переменных в файле конфиг (константы являются глобальными)
+
+            define('SERVERNAME','localhost');
+            define('USERNAME','mysql');
+            define('PASSWORD','mysql');
+            define('DBNAME','c2');
+
+
+            файл индекс
+            &lt;?php
+            require_once 'config.php';  //подключение файла с переменными
+            
+            // Create connection
+            $conn = mysqli_connect(SERVERNAME , USERNAME , PASSWORD , DBNAME);
+            
+            // Check connection
+            if (!$conn) {                              
+              die("Connection failed: " . mysqli_connect_error());
+            }
+            
+            $sql = "SELECT * FROM goods";            //sql запрос
+            $result = mysqli_query($conn, $sql);    //Выполняет запрос query к базе данных. 
+                                                   //$conn - Идентификатор соединения, полученный с помощью mysqli_connect() или mysqli_init(),
+                                                    // $sql - Текст запроса.
+            
+            var_dump(mysqli_num_rows($result));    // кол-во выбранных записей из бд
+            
+            $a = array();
+            
+            if (mysqli_num_rows($result) &gt; 0) {  //проверка данные выбраны или нет
+                // output data of each row
+              
+                while($row = mysqli_fetch_assoc($result)) { //преобразуем данные в обычный массив
+                 $a[] = $row;                                  // $row - одна строка из БД
+                }
+              } else {
+                echo "0 results";
+              }
+              echo '&lt;pre&gt;';
+              print_r($a);
+             echo '&lt;/pre&gt;';
+            mysqli_close($conn);
+        </code>
+        </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+</head>
+<body>
+   <pre>
+       <h3>Переменные</h3>
+       <code class="c#">
+var myVar = 5; //сразу присвоить значение если присвоить на другой строке то будет ошибка
+int num = -10; //принемает значения с "+" и с "-"
+uint num_u = 10;// не может принемать значения с "-"
+float f = 1.23f; // в конце добавляем "f" указываем флоат
+double fl = 1.55;// в 2 раза больше float
+bool boolian = true;
+string name = "Alex";
+char simb = 'G'; //для одного символа
+
+const int varibel = 5; //Для констант перед типом подписоваем слово "const"
+
+       </code>
+       <h3>Калькулятор</h3>
+       <code class="c#">
+int num1, num2;
+Console.WriteLine("\nвведите первое число");//выводим в консоль
+num1 = Convert.ToInt32( Console.ReadLine());//получаем строку и конвентируем ее вчисло
+Console.WriteLine("\nвведите 2 число");
+num2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("ответ" + (num1 + num2));
+Console.ReadKey();  //фиксируем консоль
+       </code>
+   </pre>
+   <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

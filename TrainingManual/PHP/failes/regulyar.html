@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    <style>
+        .linkRegulyr{
+            width: 300px;
+            margin:0 auto 20px auto;
+            
+        }
+        .linkRegulyr a{
+            font-size: 1.5rem;
+        }
+        .videoRolick{
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Регулярные выражения</h2>
+        <p class="linkRegulyr"><a  href="https://regex101.com/" target="_blank">Сайт для проверки регулярных выражений</a></p>
+        <p class="linkRegulyr"><a  href="https://www.youtube.com/watch?v=_pLpx6btq6U" target="_blank">Видео</a></p>
+        
+    <pre>
+        <code class="txt">
+            Регулярные выражения !
+
+            . - любой одиночный символ
+            [] - любой изних , диапазоны
+            $ - конец строки
+            ^ - начало строки  если [^]- то отрицание пример [^b] - не b
+            \ - экранироввание
+            \d - любая единичная цифра можно заменить [1-9]
+            \D - Все что угодно кроме цифр
+            edit -> replaice - в vs можно вводить рег выр
+            \s - пробелы
+            \S - все кроме пробелов
+            \w - буква
+            \W - все кроме букв
+            \b - границы слова
+            \B - все кроме границ
+            
+            квантификация
+            
+            n{4} - искать n подряд 4 раза
+            n{4,6}- искать n от 4 до 6 
+            * - от нуля и выше
+            + - от 1 и выше
+            ? - либо 0 либо 1 раз
+            
+            | - или
+        </code>
+    </pre>
+</div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

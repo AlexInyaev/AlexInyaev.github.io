@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Router</h2>
+        <pre>
+        <code class="reactjs">
+            import Header from './Header';
+            import About from './About';
+            import Users from './Users';
+            import Main from './Main';
+            import Test from './Test';
+            import ActivNavLink from './ActivNavLink'
+            import SPA from './SPA';
+            import AboutSPA from './AboutSPA';
+            import UsersSPA from './UsersSPA';
+            import MainSPA from './MainSPA';
+            import Userid from './Userid';
+            import Error from './Error';
+
+
+            import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+
+            function App() {
+              return (
+                &lt;&gt;
+
+
+                  &lt;Header&gt;&lt;/Header&gt;                                      {/*Здесь подключен компонент с сылками*/}
+                  &lt;hr /&gt;
+                  &lt;Router&gt;
+                  &lt;SPA&gt;&lt;/SPA&gt;                                           {/*Здесь подключен компонент SPA он обязательно подключается в нутри тега &lt;Router&gt;
+                                                                                    позволяет менять страници без перезагрузки синтаксис ссылки &lt;Link to="/SPA"&gt;MainSPA&lt;/Link&gt; код компонента ниже */}
+                    &lt;hr /&gt;
+                    &lt;ActivNavLink&gt;&lt;/ActivNavLink&gt;                        {/*Здесь подключен компонент с сылками в виде &lt;NavLink to="/Test"&gt;Test&lt;/NavLink&gt; этот синтаксис добовляет кликнутой ссылке класс эктив */}
+                    &lt;Routes&gt;                                                   {/*Возвращает в место себя компонент где путь совпал с путём из нажатой ссылки            */}
+                      &lt;Route exact path="/" element={&lt;Main /&gt;}&gt;&lt;/Route&gt;                     exact - если присутствует то адрес проверяется полностью если нет то до первого совподения
+                      &lt;Route path="/about" element={&lt;About /&gt;}&gt;&lt;/Route&gt;                     path - путь  если он совподает с путем из ссылке то загружается компонент который прописат значением у element
+                      &lt;Route exact path="/users" element={&lt;Users /&gt;}&gt;&lt;/Route&gt;
+                      &lt;Route path="/users/:userName" element={&lt;Userid /&gt;}&gt;&lt;/Route&gt;          {/*:userName передаем параметры в  react-router-dom затем мы параметры получаем в Usersid*/}
+
+
+                      &lt;Route exact path="/SPA" element={&lt;MainSPA /&gt;}&gt;&lt;/Route&gt;
+                      &lt;Route path="/aboutSPA" element={&lt;AboutSPA /&gt;}&gt;&lt;/Route&gt;
+                      &lt;Route path="/usersSPA" element={&lt;UsersSPA /&gt;}&gt;&lt;/Route&gt;
+
+
+
+                      &lt;Route path="/test" element={&lt;Test /&gt;}&gt;&lt;/Route&gt;
+                      &lt;Route path="/header" element={&lt;Header /&gt;}&gt;&lt;/Route&gt;
+                      &lt;Route path="*" element={&lt;Error /&gt;}&gt;&lt;/Route&gt;                           если нет совподений path="*" то срабатывает эта строка и загружается компонент Error
+                    &lt;/Routes&gt;
+                  &lt;/Router&gt;
+                  &lt;hr /&gt;
+                &lt;/&gt;
+              );
+            }
+
+            export default App;
+
+        </code>
+    </pre>
+
+        <h2>Router SPA</h2>
+        <pre>
+            <code class="reactjs">
+                import { Link } from "react-router-dom";
+
+function SPA() {
+    return (
+        &lt;&gt;
+            &lt;nav&gt;
+                &lt;li&gt;&lt;Link to="/SPA"&gt;MainSPA - Без перезагрузки страници&lt;/Link&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;Link to="/aboutSPA"&gt;AboutSPA - Без перезагрузки страници&lt;/Link&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;Link to="usersSPA"&gt;UsersSPA - Без перезагрузки страници&lt;/Link&gt;&lt;/li&gt;
+            &lt;/nav&gt;
+        &lt;/&gt;
+    );
+}
+
+export default SPA;
+            </code>
+        </pre>
+        <h2>Router ActivNavLink</h2>
+        <p>Добовляется класс эктив к кликнутой ссылке который можно стилизовать</p>
+        <pre>
+            <code class="reactjs">
+                import './ActivNavLink.css';
+
+import { NavLink } from "react-router-dom";
+
+function ActivNavLink() {
+    return (
+        &lt;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;NavLink to="/Test"&gt;ActivNavLink for bacground - Без перезагрузки страници&lt;/NavLink&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;NavLink to="/header"&gt;Подсветка активного элемента - Без перезагрузки страници&lt;/NavLink&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;h1&gt;Test for me&lt;/h1&gt;
+
+        &lt;/&gt;
+    );
+}
+
+export default ActivNavLink;
+            </code>
+        </pre>
+
+        <h2>Router Header</h2>
+        <pre>
+            <code class="reactjs">
+                function Header() {
+                    return (
+                        &lt;&gt;
+                            &lt;nav&gt;
+                                &lt;li&gt;&lt;a href="/"&gt;Main - С перезагрузкой страницы&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="/about"&gt;About - С перезагрузкой страницы&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="users"&gt;Users - С перезагрузкой страницы&lt;/a&gt;&lt;/li&gt;
+                            &lt;/nav&gt;
+                        &lt;/&gt;
+                    );
+                }
+
+                export default Header;;
+            </code>
+        </pre>
+
+        <h2>Router страничная навигация</h2>
+        <pre>
+            <code class="reactjs">
+                **************************************** Кусочек кода из App.js
+
+                &lt;Route exact path="/users" element={&lt;Users /&gt;}&gt;&lt;/Route&gt;
+                &lt;Route path="/users/:userName" element={&lt;Userid /&gt;}&gt;&lt;/Route&gt;
+
+                ****************************************************************************  Users
+                import { useLocation } from 'react-router-dom';
+
+                function Users() {
+                    let url = useLocation(); - получаем объект путь
+                    console.log(url)
+                    return (
+                        &lt;&gt;
+                            &lt;h1&gt;Users&lt;/h1&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href={`${url.pathname}/ivanov`}&gt;Ivanov&lt;/a&gt;&lt;/li&gt; здесь параметры попадают в адресную строку
+                                &lt;li&gt;&lt;a href={`${url.pathname}/petrov`}&gt;Petrov&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+
+                        &lt;/&gt;
+                    );
+                }
+
+                export default Users;
+
+********************************************************* Компонент обработки Userid
+                fimport { useParams } from "react-router";
+
+                function Userid() {
+                    let { userName } = useParams();       - получаем параметры из адресной строки и передаём их в роутер
+                                                          и в роуторе прописывает так  (&lt;Route path="/users/:userName" element={&lt;Userid /&gt;}&gt;&lt;/Route&gt; )
+                                                          userName - типа переменная с пораметром (но это на выяснение)
+                    return (
+                        &lt;div&gt;
+                            &lt;h1&gt;User: {userName}&lt;/h1&gt;
+                            &lt;a href="/users"&gt;Назад&lt;/a&gt;
+                        &lt;/div&gt;
+                    )
+                }
+
+                    export default Userid;
+            </code>
+        </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

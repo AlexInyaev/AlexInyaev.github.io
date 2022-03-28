@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+    <pre>
+       <code>
+// Строчный элемент - ширина и высота подстраевыется под контент, css высота и ширина не применяются, обтикают друг друга слева.
+// Блочный элемент - ширина занимает ширину окна, высота занимает высоту контента, не обтекают друг друга.
+       </code>
+   </pre>
+    <pre>
+       <code>
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.div1{
+    background: orange;
+    width: 100px;
+    height: 200px;
+    margin: 10px 10px 10px 10px; /*наружние отступы верх право низ лево или  margin-top: ;margin-left: ;margin-bottom: ;margin-right: ;*/
+    padding:10px 10px 10px 10px ;/*наружние отступы верх право низ лево или  padding-top: ;padding-left: ;padding-bottom: ;padding-right: ;*/
+    border: 2px solid green;
+    margin:  auto; /*центрирует блок*/
+    border-radius: 5px 10px 20px 2px; /*скругление углов*/
+    outline: 1px solid blue; /*Обводка не действует бордер радиус накладовается на элемент поверх может выходить за границы окна*/
+    box-shadow: 10px 10px 5px 5px grey;  /*тень по х по у размытие радиус цвет если в начале inset то тень внутренняя www.cssmatic.com/box-shadow*/
+    
+    box-shadow: 0px 0px 0px 5px black,
+                0px 0px 0px 10px green,
+                0px 0px 0px 15px red;  /*рисует много рамок*/
+}
+.div2{
+    background: orange;
+    width: 80%;   
+    height: 80%;     /*чтобы работало надо задать высоту радителя div2 > body > html */
+    border: 2px solid green;
+}
+        
+       </code>
+   </pre>
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

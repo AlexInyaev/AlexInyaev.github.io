@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Локальное хранилище</h2>
+        <pre>
+        <code class="">
+            let arr = [1, 2, 3, 4];
+            localStorage.setItem('data', 'val');                   // внесение в локальное хранилище
+            let b = localStorage.getItem('data');                  //  получение из локального хранилища
+
+            
+            localStorage.setItem('data', JSON.stringify(arr));     //по умолчанию при занесение в локосторэж массивы приобразовываются в строки JSON.stringify(arr) используем чтоб положить массив 
+            let c = localStorage.getItem('data');
+            c = JSON.parse(c);                                     // извлечуние массива из локостор
+            console.log(c);                                        //  [1, 2, 3, 4]         Также делать и для объекта
+
+            
+            localStorage.clear();                                  //очищает локостор
+            
+            
+            window.addEventListener('storage', function (e) {      // отслеживает изменение локостор на других страницах. При изменение вызывается функция
+                console.log('change');
+                document.querySelector('.out').textContent = localStorage.getItem('b1');
+            });
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

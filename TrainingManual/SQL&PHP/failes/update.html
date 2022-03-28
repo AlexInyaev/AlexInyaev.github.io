@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Обновление данных</h2>
+    <pre>
+        <code class="">
+&lt;?php
+require_once 'config.php';  //подключение файла с переменными
+require_once 'function.php'; //подключение файла с с функциями
+            
+$conn = connect(); // код подключения вынесеный в отдельную функцию
+
+//обновление   *******************************************************************************************************
+$b = 3;                       //переменная с новыми данными
+$newcost = 67;                 //переменная с новыми данными
+$newname = 'арбузы';             //переменная с новыми данными
+$sql = "UPDATE goods SET cost='$newcost', name='$newname' WHERE id=$b";   //sql запрос изменения данных
+if (mysqli_query($conn, $sql)) {     //Выполняет запрос query к базе данных. 
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . mysqli_error($conn);
+}
+//обновление end ********************************************************************************************************
+
+// добовление ************************************************************************************************************
+
+$sql = "INSERT INTO goods (name, description, cost, amount, image)               
+VALUES ('cherry', 'red', 23, 455, 'cherry.png')";                               //sql запрос
+
+if (mysqli_query($conn, $sql)) {              //Выполняет запрос query к базе данных. 
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+// добовление end ************************************************************************************************************
+$a = select($conn);// код выборки вынесеный в отдельную функцию
+
+echo '&lt;pre&gt;';
+print_r($a);
+echo '&lt;/pre&gt;';
+
+close($conn);
+
+?&gt;
+        </code>
+    </pre>
+    <h3>Вынесеные функции</h3>
+    <pre>
+        <code>
+            &lt;?php
+//СОЕДИНЕНИЕ
+function connect(){
+$conn = mysqli_connect(SERVERNAME , USERNAME , PASSWORD , DBNAME);
+
+// Check connection
+if (!$conn) {                              
+  die("Connection failed: " . mysqli_connect_error());
+}
+return $conn;
+}
+
+// ВЫБОР
+function select($conn) {
+    $sql = "SELECT * FROM goods";            //sql запрос
+$result = mysqli_query($conn, $sql);    //Выполняет запрос query к базе данных. 
+                                       //$conn - Идентификатор соединения, полученный с помощью mysqli_connect() или mysqli_init(),
+                                        // $sql - Текст запроса.
+
+$a = array();
+
+if (mysqli_num_rows($result) &gt; 0) {  //проверка данные выбраны или нет
+    // output data of each row
+  
+    while($row = mysqli_fetch_assoc($result)) { //преобразуем данные в обычный массив
+     $a[] = $row;                                 // $row - одна строка из БД
+    }
+  } 
+  return $a;
+
+}
+
+//ОБНОВЛЕНИЕ
+
+function update(){
+    
+}
+
+// ЗАКРЫТИЕ
+function close($conn) {
+    mysqli_close($conn);
+}
+        </code>
+    </pre>
+</div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+        

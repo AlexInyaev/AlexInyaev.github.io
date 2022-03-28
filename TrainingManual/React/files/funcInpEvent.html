@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Навешиваем События</h2>
+        <pre>
+        <code class="">
+            function App() {
+
+                function f1() {                   ****обработчик события
+            
+                    console.log('f1 work');
+                }
+            
+                return (
+                    &lt;h1&gt;События&lt;/h1&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Button&lt;/h2&gt;
+        &lt;button onClick={f1}&gt;push&lt;/button&gt;    ****Навесили событие на кнопку в фигурных скобках название функции обработчика события
+      &lt;/section&gt;  
+            
+                
+                );
+            }
+            
+            export default App;
+        </code>
+    </pre>
+
+        <h2>Передача аргументов в функцию</h2>
+        <pre>
+        <code class="">
+            function App() {
+
+                function f2(arg) {                *** Получили аргумене
+                    console.log('move' + arg);    *** Вывели в консоль аргумент
+                }
+            
+            
+                return (
+                    &lt;&gt;
+                        &lt;section&gt;
+                            &lt;h2&gt;Doulecleck + mouse move&lt;/h2&gt;
+                            &lt;div className="test" onDoubleClick={() =&gt; f2(' arg')} &gt;&lt;/div&gt; ***Передача аргумента в обработчик через стрелочную функцию ***
+                        &lt;/section&gt;
+            
+                    &lt;/&gt;
+                );
+            }
+            
+            export default App;
+        </code>
+    </pre>
+
+        <h2>Вывод через ивент и через реф</h2>
+        <pre>
+        <code class="">
+            import './App.css'
+            import React from 'react';             подключение реф
+            
+            
+            function App() {
+            
+                let textInput = React.createRef(); получаем реф в переменную
+                let textOut = React.createRef();   получаем реф в переменную для вывода
+            
+                function showInput(event) {
+                    console.log('input');
+                    // console.log(this.value);   не работает
+                    console.log(event.target.value);         вывод в консоль через  event
+                    
+                    console.log(textInput.current.value);    вывод в консоль через  реф
+                    textOut.current.innerHTML = textInput.current.value;   Вывод через реф  в параграф где ref = { textOut }
+                }
+            
+            
+                return (
+                    &lt;&gt;
+                        &lt;section&gt;
+                            &lt;h2&gt;Input get value by ref&lt;/h2&gt;
+                            &lt;input type="text" onInput={showInputRef} ref={textInput} /&gt;      ref={textInput}-прописываем для дальнейшего получения значения получаем инпут в переменную
+                            &lt;p ref={textOut}&gt;&lt;/p&gt;       Вывод в параграф через реф    ref={textOut} получаем параграф в textOut
+                           
+                        &lt;/section&gt;
+                    &lt;/&gt;
+                );
+            }
+            
+            export default App;
+            
+        </code>
+    </pre>
+        <h2>Вывод через стэйт</h2>
+        <pre>
+        <code class="">
+            import './App.css'
+            import { useState } from 'react';
+            import React from 'react'; 
+            
+            function App() {
+            
+                const [output, setOutput] = useState('hello');          output - константа, setOutput - метод который записывает в output значение,
+                                                                         useState('hello') - вскобках значение по умолчанию можно оставить пустые скобки
+            
+                function showInput() {
+                    setOutput(textInput.current.value);                 В setOutput() мы кладем то что хотим вывести =&gt; output =&gt; h3
+                }
+            
+            
+                return (
+                    &lt;&gt;
+                        &lt;section&gt;
+                            &lt;h2&gt;Input get value by ref&lt;/h2&gt;
+                            &lt;input type="text" onInput={showInput} ref={textInput} /&gt;
+            
+                            &lt;h3&gt;{output}&lt;/h3&gt;                          Вывод в заголовок через стэйт   output- значение стэйта
+                        &lt;/section&gt;
+                    &lt;/&gt;
+                );
+            }
+            
+            export default App;
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

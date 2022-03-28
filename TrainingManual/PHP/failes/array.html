@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Массивы</h2>
+        <pre>
+        <code class="">
+            $a = array(3,4,5); // создание массива
+            $a = [7,8,9];
+            print_r($a);       // вывод массива
+            count($a);         // кол-во элементов в массиве
+            unset($a[2]);      // удаление из массива
+            
+            Перебор массива
+
+            for ($i = 0; $i &lt; count($a); $i++){ // если индексы не попорядку то сработает не коректно
+                echo $a[$i]." ";
+            }
+
+            foreach( $a as $key => $value){ // $a - название массива $key - ключи  $value - значения
+                echo $value. "<br>";
+            }
+
+            in_array('Hi', $a) // true - если есть Hi в a1 false - если нет
+        </code>
+    </pre>
+        <h2>Именованные массивы</h2>
+        <pre>
+        <code>
+            $b = array ("name" => "Alex", "age"=> 99);  // создание
+            $b['sex'] = 'male';                         // добовление
+
+            echo $b['name'];                            // вывод
+            foreach($b as $key => $value){              // перебор
+                echo $value.' ';
+            }
+            
+            if (in_array('male1', $b)) echo 'yes';       // поиск переменной
+            if (array_key_exists ('sex1', $b)) echo 'yes - key'; // посиск ключа
+
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

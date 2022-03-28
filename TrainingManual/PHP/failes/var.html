@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+</head>
+<body>
+   <pre>
+       <code class="php">
+<br>
+$sumNumber = 6;
+$float = -3.4;
+$string = "hello world";
+$bool = true;
+
+echo "$sumNumber";
+echo "$float";
+echo "$string";
+echo "$bool";   // 1 особенность php  true - 1, false - ""
+echo 'переменная sumNumber = $sumNumber'; //переменная sumNumber = $sumNumber; *меньше ресурсов компа
+echo "переменная sumNumber = $sumNumber";//переменная sumNumber = 6;
+
+
+/*     Коментарии*/
+// ============================================================
+#=============================================================
+
+                //  константы
+
+define("PI",3.14);      // Сначало имя константы( принето писать заглавными буквами)
+                        //  затем значение 
+echo PI;                // пишутся без знака доллор
+
+defined(PI);            //проверяет естли такая переменная в коде
+
+
+       </code>
+   </pre>
+   <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+</head>
+
+<body>
+    <pre>
+    <code>
+    font-size: 20px;      /*размер текста  */
+    font-weight: bold;   /* плотность  */
+    font-style: italic;  /* стиль курсив */
+    text-align: center;  /* выравнивание */
+    text-decoration: underline; /* подчеркивание */
+    text-decoration-color: blue; /*цвет подчеркивания  */
+    text-decoration-style: wavy;   /* стиль линии курсив */
+    text-transform: lowercase;   /* трансформация в строчные буквы */
+    text-shadow: 1px 1px 2px red; /* тень (х у размытие цвет) */
+    color:orange;  /* цвет текста */
+    font-family: Arial, Helvetica, sans-serif; /* шрифт можно взять с  https://fonts.google.com   
+    чтобы узнать какой шрифт на стр нужно установить fontface ninja  как подключить шрифты читать на webref*/
+    line-height: 2.2;  /* межстрочный интервал */
+    letter-spacing:1px ;  /*  межбуквенный интервал */
+    </code>
+</pre>
+    <h3>Подключение шрифтов</h3>
+    <pre>
+    <code>
+        @font-face{
+            font-family: BalsamiqSans-Bold; /* Название */
+            src: url(fonts/BalsamiqSans-Bold.ttf);  /* адрес */
+        }
+        
+        @font-face{
+            font-family: DancingScript-VariableFont_wght;
+            src: url(fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+        }
+        
+        
+        p{
+            
+            font-family: BalsamiqSans-Bold; 
+        }
+        h3{
+            font-family: DancingScript-VariableFont_wght;
+        }
+        /* Можно тагже потключить  с помощью тега link который можно с копировать с гугл фонтс */
+    </code>
+</pre>
+
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Передача данных из формы в php</h2>
+        <pre>
+        <code class="html">
+        &lt;form action="main.php" method="get"&gt;   // action="main.php" - файл обработчик
+            &lt;input type="text" name="a1"&gt;       // name="a1" - имя инпут обязательно в GET будет ключом
+            &lt;input type="text" name="a2"&gt;
+            &lt;input type="submit" value="push"&gt;  // кнопка отправки формы
+        &lt;/form&gt;
+
+        после нажатия кнопки все данные передаются в супер глобальный массив  GET
+        </code>
+    </pre>
+        <h2> PHP</h2>
+        <pre>
+        <code class="php">
+            &lt;?php
+            var_dump($_GET);  // информация о переменной
+            print_r($_GET);   // вывод объктов и массивов
+            
+            $a1 = $_GET[a1];  // присвоение значения с ключем а1 из массива GET в переменную
+            $a2 = $_GET[a2];
+            
+            if($a1 == $a2) {  //  программа вывода наибольшего числа
+                echo "$a1 = $a2";
+            } else if ($a1 &gt; $a2) {
+                echo "$a1 &gt; $a2";
+            } else if($a1 &lt $a2) {
+                echo "$a1 &lt $a2";
+            }
+        </code>
+    </pre>
+        <h2>Проверка вводимых данных</h2>
+        <pre>
+        <code>
+            function checkVar($a){
+                if (isset($a) AND trim($a) !=''AND is_numeric($a)){
+                    return trim($a);
+                }
+                else {
+                    exit('Problem!!!');
+                }
+            }
+
+            /*
+            isset()  -  Возвращает TRUE, если var определена и ее значение отлично от NULL, и FALSE в противном случае.
+            trim()   -  Удаляет пробелы (или другие символы) из начала и конца строки
+            is_numeric — Проверяет, является ли переменная числом или строкой, содержащей число
+            */
+
+            $n1 = checkVar($_GET['n1']);
+            $n2 = checkVar($_GET['n2']);
+
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

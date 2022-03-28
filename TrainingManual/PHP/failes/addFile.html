@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка php</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>addfile</h2>
+    <pre>
+        <code class="">
+            &lt;body&gt;
+
+            &lt;form action="" method="post" enctype="multipart/form-data"&gt;
+                Выберите изображение для загрузки:
+                &lt;input type="file" name="fileToUpload" id="fileToUpload"&gt;
+                &lt;input type="submit" value="Upload Image" name="submit"&gt;
+            &lt;/form&gt;
+            
+            
+            &lt;?php
+            $target_dir = "uploads/";
+            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);  // адресс назначения
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION)); //получаем разрешение в ниж рег
+            // Проверьте, является ли файл изображения фактическим изображением или поддельным изображением
+            if(isset($_POST["submit"])) {
+                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                if($check !== false) {
+                    echo "Файл является изображением - " . $check["mime"] . ".";
+                    $uploadOk = 1;
+                } else {
+                    echo "Файл не является изображением.";
+                    $uploadOk = 0;
+                }
+            }
+            // Проверить, существует ли файл
+            if (file_exists($target_file)) {
+                echo "Извините, файл уже существует.";
+                $uploadOk = 0;
+            }
+            // Проверить размер файла
+            if ($_FILES["fileToUpload"]["size"] &gt; 500000) {
+                echo "Извините, ваш файл слишком большой.";
+                $uploadOk = 0;
+            }
+            // Разрешить определенные форматы файлов
+            if($imageFileType != "jpg" &amp;&amp; $imageFileType != "png" &amp;&amp; $imageFileType != "jpeg"
+            &amp;&amp; $imageFileType != "gif" ) {
+                echo "Извините, только JPG, JPEG, PNG &amp; GIF файлы разрешены.";
+                $uploadOk = 0;
+            }
+            // Проверить, не установлен ли $uploadOk в 0 по ошибке
+            if ($uploadOk == 0) {
+                echo "Извините, ваш файл не был загружен.";
+            // если все в порядке, попробуйте загрузить файл
+            } else {
+                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                    echo "Файл ". basename( $_FILES["fileToUpload"]["name"]). " был загружен.";
+                } else {
+                    echo "Извините, при загрузке файла произошла ошибка.";
+                }
+            }
+            ?&gt;
+            &lt;/body&gt;
+        </code>
+    </pre>
+</div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+        

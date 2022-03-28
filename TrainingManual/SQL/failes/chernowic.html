@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Раздел</h2>
+    <pre>
+        <code class="">
+    INSERT INTO `shop`.`category` (`id`, `name`, `discount`) VALUES ('5', 'чегото там', '5'); 
+    добовляет строку в таблицу 
+
+
+
+
+    use shop; использовать библиотеку шоп
+
+    -- == SELECT == --
+    -- вывести все категории товаров --
+    SELECT * FROM category; 
+    
+    -- == WHERE == --
+    -- вывести категорию товара use shop;
+    с id = 3 --
+    SELECT * FROM category WHERE id = 3;
+    -- вывести категорию товара у которых скидка неравна 0 --
+    SELECT * FROM category WHERE discount <> 0; 
+    -- вывести категорию товара у которых скидка больше 5 --
+    SELECT * FROM category WHERE discount > 5;
+    -- вывести категорию товара у которых скидка больше 5 и меньше 15 --
+    SELECT * FROM category WHERE (discount > 5) AND (discount < 15);
+    -- вывести категорию товара у которых скидка меньше 5 или больше или равна 10 --
+    SELECT * FROM category WHERE (discount < 5) OR (discount >= 10);
+    -- вывести категорию товара у которых скидка не меньше 5 --
+    SELECT * FROM category WHERE  NOT (discount > 5);
+    -- вывести категорию товара у которых есть псевдоним --
+    SELECT * FROM category WHERE alias_name IS NOT NULL;
+    -- вывести категорию товара у которых нет псивдонима --
+    SELECT * FROM category WHERE alias_name IS NULL;
+
+    
+    -- название всех категорий товаров --
+    SELECT name FROM category;
+    -- вывести название и скидки товаров --
+    SELECT name,discount FROM category;
+    -- DISTINCT --
+    -- вывести все унекальные значения скидок --
+    SELECT DISTINCT discount FROM category;
+    -- ORDER BY --
+    -- вывести все категории товаров и отсортировать их по размеру скидки --
+    SELECT * FROM category ORDER BY discount; -- ASC;
+    -- вывести все категории товаров и отсортировать их по размеру скидки в обратном порядке--
+    SELECT * FROM category ORDER BY discount DESC;
+    -- вывести все категории товаров не с нулевой скидкой,и отсортировать их по размеру скидки в обратном порядке --
+    SELECT * FROM category WHERE discount <> 0 ORDER BY discount DESC;
+    -- == LIMIT == --
+    -- вывести первые 2 категории товара -- 
+    SELECT * FROM category WHERE id < 3;
+    -- вывести первые 2 категории товара -- 
+    SELECT * FROM category LIMIT 2;
+    -- вывести первые 2 категории товара со скидкой не равной нулю -- 
+    SELECT * FROM category WHERE discount <> 0 LIMIT 2;
+
+    -- изменить имя в категории где id равен 5 --
+    UPDATE category SET name = 'Головные уборы' WHERE id = 5;
+    -- меняет скидку на 3 где id равен 2и5 --
+    UPDATE category SET discount = 3 WHERE id IN (2,5);
+    -- удальть товар где id равен 5 --
+    DELETE FROM category WHERE id = 5;
+
+
+
+            
+            
+        </code>
+    </pre>
+</div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

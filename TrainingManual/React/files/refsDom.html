@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Refs and Dom</h2>
+        <pre>
+        <code class="">
+            import { useRef } from "react";
+            import Test3 from "./Tast3";
+
+            function Test() {
+                let refTest = useRef();  - создаем реф
+
+                function tst3() {
+                    refTest.current.drive(); - вызываем метод у компонента через реф ВОЗМОЖНО ТОЛЬКО У ООП компонентах
+                }
+
+                return (
+                    &lt;div&gt;
+                        &lt;Test3 ref={refTest} /&gt;      - через реф получаем ссылку на компонент
+                        &lt;button onClick={tst3}&gt;ts3&lt;/button&gt;
+                    &lt;/div&gt;
+                )
+            }
+            
+            export default Test;
+        </code>
+    </pre>
+        <h3>Компонент</h3>
+        <pre>
+        <code class="">
+            import React from "react";
+
+            class Test3 extends React.Component {
+            
+                drive() {
+                    console.log('dr.dr.dr')
+                }
+                render() {
+                    return (
+                        &lt;&gt;
+                            &lt;div&gt;bla bla&lt;/div&gt;
+                        &lt;/&gt;
+                    )
+                }
+            }
+            export default Test3;
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

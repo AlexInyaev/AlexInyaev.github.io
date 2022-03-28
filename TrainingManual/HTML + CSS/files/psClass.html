@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Псевдоклассы</h2>
+        <pre>
+        <code class="">
+            :first-child задаёт стиль первого элемента в группе братских элементов (имеющих одного родителя).
+            article :first-child { color: red; }
+
+            :last-child задаёт стиль последнего элемента в группе братских элементов (имеющих одного родителя).
+            article :last-child { color: red; }
+
+            :nth-child используется для добавления стиля к элементам на основе нумерации в дереве элементов.
+            Подробнее на - https://webref.ru/css/nth-child
+
+            :hover - Определяет стиль элемента при наведении на него курсора мыши, но при этом элемент еще не активирован, иными словами кнопка мыши не нажата.
+            Селектор:hover { ... }
+
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

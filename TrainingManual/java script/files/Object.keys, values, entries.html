@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка </title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Object or array</h2>
+
+    <pre>
+        <code class="js">
+    Mетоды map.keys(), map.values(), map.entries(). поддерживаются для структур: Map Set Array;
+    Простые объекты также можно перебирать похожими методами, но синтаксис немного отличается.
+    Object.keys(obj) – возвращает массив ключей.
+    Object.values(obj) – возвращает массив значений.
+    Object.entries(obj) – возвращает массив пар [ключ, значение].
+    
+    Синтаксис вызова Map        map.keys() - Возвращает	перебираемый объект
+    Синтаксис вызова Object     Object.keys(obj), НЕ obj.keys() - Возвращает  «реальный» массив
+
+    Object.keys/values/entries игнорируют символьные свойства (Читать в лерне)
+        </code>
+    </pre>
+</div>
+<h2>Трансформации объекта</h2>
+<pre>
+    <code class="js">
+    У объектов нет множества методов, которые есть в массивах, например map, filter и других.
+    Если мы хотели бы их применить, то можно использовать Object.entries с последующим вызовом Object.fromEntries:
+    1) Вызов Object.entries(obj) возвращает массив пар ключ/значение для obj.
+    2) На нём вызываем методы массива, например, map.
+    3) Используем Object.fromEntries(array) на результате, чтобы преобразовать его обратно в объект.
+    </code>
+</pre>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+        

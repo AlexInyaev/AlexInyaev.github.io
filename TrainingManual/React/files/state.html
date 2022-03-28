@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>State</h2>
+        <p class="definition"><span class="mainWordInDefinition">State</span> - это данные внутри компонента, изменение
+            которых
+            приводит к перерисовки
+            компонента
+            на странице.</p>
+        <pre>
+        <code class="">
+            import React from 'react';
+            import { useState } from 'react';
+            
+            function Comp2() {
+                const [count, setCount] = useState(0);    //для первого примера 
+                const [comment, setComment] = useState([]); // для второго примера
+                let myRef = React.createRef();
+                // **************************************************** Первый пример
+                const handler = () =&gt; {
+                    let currentCount = count;
+                    currentCount++;
+                    setCount(currentCount);          //ИЗМЕНЯЕС СТЭЙТ И ПЕРЕЗАПИСЫВАЯ КОМПОНЕНТ
+                }
+            
+                // *********************************** Второй пример
+            
+                const addComment = () =&gt; {
+                    let commentValue = myRef.current.value;        // получаем commentValue с инпут через реф 
+                    let comments = [...comment, commentValue];     // кладем в comments массив comment плюс значение из commentValue полученое из инпут
+                    setComment(comments);                      // кладем в comment comments ТЕМ САМЫМ ИЗМЕНЯЕС СТЭЙТ И ПЕРЕЗАПИСЫВАЯ КОМПОНЕНТ
+                    myRef.current.value = '';
+                }
+                return (
+                    &lt;&gt;
+                        {/* Верстка для первого примера */}
+                        &lt;h1&gt;State&lt;/h1&gt;
+                        &lt;div&gt;&lt;button onClick={handler}&gt;This button change state&lt;/button&gt;&lt;/div&gt;
+                        &lt;div&gt;{count % 2 === 0 ? 'even' : 'odd'}&lt;/div&gt;
+                        &lt;div&gt;{count}&lt;/div&gt;
+            
+                        {/* Верстка для второго примера */}
+                        &lt;div&gt;
+                            &lt;textarea ref={myRef}&gt;&lt;/textarea&gt;
+                            &lt;button onClick={addComment}&gt;Add comment&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;ul&gt;
+                                {comment.map((item, index) =&gt; &lt;li key={index.toString()}&gt;{item}&lt;/li&gt;)}
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/&gt;
+                );
+            }
+            
+            export default Comp2
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

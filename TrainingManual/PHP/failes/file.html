@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Работа с файлом</h2>
+    <pre>
+        <code class="">
+            &lt;?php 
+                                                                        //ЧТЕНИЕ
+            $filename = 'file.txt'; 
+                                                                        // СПОСОБ1
+            
+            if (file_exists($filename)){   //проверка на существование файла
+               $handle = fopen($filename, "r");  //открытие файла для чтения
+                $contents = fread($handle, filesize($filename)); // чтение файла в переменную filesize($filename)- размер файла может быть просто цифра размера в символах
+                echo $contents;                                 // вывод файла
+               fclose($handle);      //закрытие файла
+            
+            }
+            
+                                                                        //СПОСОБ2
+            $second = file_get_contents($filename);
+            echo'&lt;hr&gt;';
+            echo $second;
+            
+            
+                                                                        //ЗАПИСЬ
+
+
+                                                                        // СПОСОБ1
+            
+            if (file_exists($filename)){ //проверка на существование файла
+                
+                $handle = fopen($filename, "a"); //открытие для записи
+                fwrite($handle, 'bla bla');       // запись
+            
+            
+                fclose($handle);
+            }
+            // r   -   открытие файла на чтение
+            // r+  -   ставит курсор в начало и затирает текст в начале
+            // w   -   заминяет текст
+            // a   -   дописывает текст в конец
+                                                                        // СПОСОБ2
+            file_put_contents($filename, 'second write',FILE_APPEND);
+            ?&gt;
+        </code>
+    </pre>
+</div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

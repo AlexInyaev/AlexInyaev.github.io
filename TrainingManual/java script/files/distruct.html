@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    <h2>Деструктурирующее присваивание</h2>
+    <ul>
+        <a name="top"></a>
+        <li><a href="#obj">Деструктуризация объекта</a></li>
+        <li><a href="#bot">Итого</a></li>
+    </ul>
+    <div class="wrapper">
+        <h2>Деструктуризация массива</h2>
+    <pre>
+        <code class="js">
+    Деструктурирующее присваивание – это специальный синтаксис, который позволяет нам «распаковать»
+    массивы или объекты в кучу переменных, так как иногда они более удобны.
+
+    let arr = ["Ilya", "Kantor"];
+    let [firstName, surname] = arr;
+    alert(firstName); // Ilya
+    alert(surname);  // 
+
+    Отлично смотрится в сочетании со split или другими методами, возвращающими массив:
+    let [firstName, surname] = "Ilya Kantor".split(' ');
+
+    Ненужные элементы массива также могут быть отброшены через запятую:
+    // второй элемент не нужен
+    let [firstName, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+    alert( title ); // Consul
+
+    Mы можем использовать любой перебираемый объект, не только массивы:
+    let [a, b, c] = "abc";
+    let [one, two, three] = new Set([1, 2, 3]);
+
+    Мы можем использовать что угодно «присваивающее» с левой стороны.
+    Например, можно присвоить свойству объекта:
+    let user = {};
+    [user.name, user.surname] = "Ilya Kantor".split(' ');
+    alert(user.name); // Ilya
+
+    Мы можем использовать Object.entries(obj) с деструктуризацией для цикличного перебора ключей и значений объекта:
+    let user = {
+    name: "John",
+    age: 30
+    };
+
+    // цикл по ключам и значениям
+    for (let [key, value] of Object.entries(user)) {
+    alert(`${key}:${value}`); // name:John, then age:30
+    }
+    Вместо Object.entries(user) можно использовать Map коллекцию
+
+    **************************************************** Остаточные параметры «…» *****************************************
+
+    let [name1, name2, ...rest] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+    alert(name1); // Julius
+    alert(name2); // Caesar
+
+    // Обратите внимание, что `rest` является массивом.
+    alert(rest[0]); // Consul
+    alert(rest[1]); // of the Roman Republic
+    alert(rest.length); // 2
+    Вместо rest можно использовать любое другое название переменной
+
+    *************************************************** Значения по умолчанию ***********************************************
+
+    let [firstName, surname] = [];
+    Отсутствующие значения считаются неопределёнными:
+    alert(firstName); // undefined
+    alert(surname); // undefined
+
+    Если нам необходимо указать значения по умолчанию, то мы можем использовать =:
+    // значения по умолчанию
+    let [name = "Guest", surname = "Anonymous"] = ["Julius"];
+
+    alert(name);    // Julius (из массива)
+    alert(surname); // Anonymous (значение по умолчанию)
+
+    Значения по умолчанию могут быть гораздо более сложными выражениями или даже функциями.
+    Они выполняются, только если значения отсутствуют.
+
+    // prompt запустится только для surname
+    let [name = prompt('name?'), surname = prompt('surname?')] = ["Julius"];
+
+    alert(name);    // Julius (из массива)
+    alert(surname); // результат prompt
+         </code>
+    </pre>
+    <a href="#top">top</a>
+    <a name="obj"></a>
+    <h2>Деструктуризация объекта</h2>
+    <pre>
+        <code class="js">
+    Синтаксис: let {var1, var2} = {var1:…, var2:…}
+
+    У нас есть существующий объект с правой стороны, который мы хотим разделить на переменные.
+    Левая сторона содержит «шаблон» для соответствующих свойств.
+    В простом случае это список названий переменных в {...}.
+
+    Например:
+let options = {
+    title: "Menu",
+    width: 100,
+    height: 200
+};
+
+let {title, width, height} = options;
+
+    alert(title);  // Menu
+    alert(width);  // 100
+    alert(height); // 200
+
+    Свойства options.title, options.width и options.height присваиваются соответствующим переменным.
+    Порядок не имеет значения. Вот так – тоже работает:
+
+    // изменён порядок в let {...}
+let {height, width, title} = { title: "Menu", height: 200, width: 100 }
+    Шаблон с левой стороны может быть более сложным и определять соответствие между свойствами и переменными.
+
+    Если мы хотим присвоить свойство объекта переменной с другим названием, например, свойство options.width присвоить переменной w,
+    то мы можем использовать двоеточие:
+
+let options = {
+    title: "Menu",
+    width: 100,
+    height: 200
+};
+
+    // { sourceProperty: targetVariable }
+let {width: w, height: h, title} = options;
+    // width -> w
+    // height -> h
+    // title -> title
+
+    alert(title);  // Menu
+    alert(w);      // 100
+    alert(h);      // 200
+
+    Двоеточие показывает «что : куда идёт». В примере выше свойство width сохраняется в переменную w, свойство height сохраняется в h,
+    а title присваивается одноимённой переменной.
+
+    Для потенциально отсутствующих свойств мы можем установить значения по умолчанию, используя "=", как здесь:
+let options = {
+    title: "Menu"
+};
+
+let {width = 100, height = 200, title} = options;
+    alert(title);  // Menu
+    alert(width);  // 100
+    alert(height); // 200
+
+    значениями по умолчанию могут быть любые выражения или даже функции.
+    В коде ниже prompt запросит width, но не title:
+
+let options = {
+    title: "Menu"
+};
+let {width = prompt("width?"), title = prompt("title?")} = options;
+    alert(title);  // Menu
+    alert(width);  // (результат prompt)
+
+    Если у нас есть большой объект с множеством свойств, можно взять только то, что нужно:
+
+let options = {
+    title: "Menu",
+    width: 100,
+    height: 200
+};
+
+    // взять только title, игнорировать остальное
+    let { title } = options;
+    alert(title); // Menu
+
+    ***************************************** Остаток объекта «…» ****************************************
+
+    let options = {
+        title: "Menu",
+        height: 200,
+        width: 100
+    };
+      
+      // title = свойство с именем title
+      // rest = объект с остальными свойствами
+    let {title, ...rest} = options;
+      
+      // сейчас title="Menu", rest={height: 200, width: 100}
+      alert(rest.height);  // 200
+      alert(rest.width);   // 100
+
+      *****************************************************  ({})  ************************************
+    let title, width, height;
+
+    {title, width, height} = {title: "Menu", width: 200, height: 100}; //ERROR
+
+    // сейчас всё работает
+    ({title, width, height} = {title: "Menu", width: 200, height: 100});
+
+    alert( title ); // Menu
+
+    () - ПОКАЗЫВАЕТ JavaScript, что это не блок кода, а Деструктуризация
+
+    **************************************************** Вложенная деструктуризация *****************************
+
+    Если объект или массив содержит другие вложенные объекты или массивы,
+     то мы можем использовать более сложные шаблоны с левой стороны, чтобы извлечь более глубокие свойства.
+
+    В приведённом ниже коде options хранит другой объект в свойстве size и массив в свойстве items.
+     Шаблон в левой части присваивания имеет такую же структуру, чтобы извлечь данные из них:
+
+let options = {
+    size: {
+        width: 100,
+        height: 200
+},
+    items: ["Cake", "Donut"],
+    extra: true
+};
+
+    // деструктуризация разбита на несколько строк для ясности
+let {
+size: { // положим size сюда
+        width,
+        height
+},
+    items: [item1, item2], // добавим элементы к items
+    title = "Menu" // отсутствует в объекте (используется значение по умолчанию)
+} = options;
+
+    alert(title);  // Menu
+    alert(width);  // 100
+    alert(height); // 200
+    alert(item1);  // Cake
+    alert(item2);  // Donut
+
+    ********************************************** Умные параметры функций *************************************
+
+    если в функцию нужно передать много пораметров  например:
+    function showMenu(title = "Untitled", width = 200, height = 100, items = []) { // плохой способ писать подобные функции
+        // ... 
+    }
+    Можно использовать Деструктурирующее присваивание 
+    Мы можем передать параметры как объект, и функция немедленно деструктурирует его в переменные:
+    // мы передаём объект в функцию
+let options = {
+  title: "My menu",
+  items: ["Item1", "Item2"]
+};
+
+// ...и она немедленно извлекает свойства в переменные
+function showMenu({title = "Untitled", width = 200, height = 100, items = []}) {
+  // title, items – взято из options,
+  // width, height – используются значения по умолчанию
+  alert( `${title} ${width} ${height}` ); // My Menu 200 100
+  alert( items ); // Item1, Item2
+}
+
+showMenu(options);
+
+Мы также можем использовать более сложное деструктурирование с вложенными объектами и двоеточием:
+let options = {
+  title: "My menu",
+  items: ["Item1", "Item2"]
+};
+
+function showMenu({
+  title = "Untitled",
+  width: w = 100,  // width присваиваем в w
+  height: h = 200, // height присваиваем в h
+  items: [item1, item2] // первый элемент items присваивается в item1, второй в item2
+}) {
+  alert( `${title} ${w} ${h}` ); // My Menu 100 200
+  alert( item1 ); // Item1
+  alert( item2 ); // Item2
+}
+
+showMenu(options);
+
+Пожалуйста, обратите внимание, что такое деструктурирование подразумевает,
+что в showMenu() будет обязательно передан аргумент.
+Если нам нужны все значения по умолчанию, то нам следует передать пустой объект:
+
+showMenu({}); // ок, все значения - по умолчанию
+
+showMenu(); // так была бы ошибка
+
+Мы можем исправить это, сделав {} значением по умолчанию для всего объекта параметров:
+
+function showMenu({ title = "Menu", width = 100, height = 200 } = {}) {
+  alert( `${title} ${width} ${height}` );
+}
+
+showMenu(); // Menu 100 200
+
+
+        </code>
+    </pre>
+    <a name="bot"></a>
+    <h2>Итого</h2>
+    <a href="#top">top</a>
+    <pre>
+        <code>
+Деструктуризация позволяет разбивать объект или массив на переменные при присвоении.
+
+Полный синтаксис для объекта:
+
+let {prop : varName = default, ...rest} = object
+Свойства, которые не были упомянуты, копируются в объект rest.
+
+Полный синтаксис для массива:
+
+let [item1 = default, item2, ...rest] = array
+Первый элемент отправляется в item1; второй отправляется в item2, все остальные элементы попадают в массив rest.
+
+Можно извлекать данные из вложенных объектов и массивов, для этого левая сторона должна иметь ту же структуру, что и правая.
+        </code>
+    </pre>
+</div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+        

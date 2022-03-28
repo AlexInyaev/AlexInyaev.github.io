@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>DOM</h2>
+        <pre>
+        <code class="js">
+            const one = document.querySelector('.one'); // получаем элемене с классом one
+
+            one.style.width = '150px';           //добовляем стили
+            one.style.paddingBottom = '40px';
+            
+            one.classList.add('two', 'three'); // добовляем класс
+            one.classList.remove('three');     //удоляем класс
+            
+            one.getAttribute('data');         //получаем атрибут 
+            one.setAttribute('data-num', 6);  //устонавливаем атрибут (имя атрибута,значение)
+            
+            let a = document.createElement('div'); // создаем элемент div
+            a.innerHTML = 'Hello!';               // 
+            one.replaceWith(div)                //заменяет элемент на тот что в скобках
+            one.after(div);                        // добовляет элемент псле one тот что в скобках
+            one.before(div);                        // добовляет элемент до one тот что в скобках
+            Node.appendChild(div)             // добавляет узел в конец списка дочерних элементов указанного родительского узла.
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

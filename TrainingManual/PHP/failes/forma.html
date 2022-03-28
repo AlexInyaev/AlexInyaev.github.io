@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка php</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>форма</h2>
+    <pre>
+        <code class="">
+            &lt;?php
+            function test_input($data) {          //проверка формы от хак
+                $data = trim($data);               // обрезает пробелы
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);  //преобразует спец символы
+                return $data;
+              } 
+            ?&gt;
+            &lt;?php
+            // определить переменные и установить пустые значения
+            $nameErr = $emailErr = $genderErr = $websiteErr = "";
+            $name = $email = $gender = $comment = $website = "";
+            
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              if (empty($_POST["name"])) {
+                $nameErr = "Name is required";
+              } else {
+                $name = test_input($_POST["name"]);
+                // проверьте, содержит ли имя только буквы и пробелы
+                if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+                  $nameErr = "Разрешены только буквы и пробелы";
+                }
+              }
+            
+              if (empty($_POST["email"])) {
+                $emailErr = "Email is required";
+              } else {
+                $email = test_input($_POST["email"]);
+                // проверьте, правильно ли сформирован адрес электронной почты
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                  $emailErr = "Invalid email format";
+                }
+              }
+            
+              if (empty($_POST["website"])) {
+                $website = "";
+              } else {
+                $website = test_input($_POST["website"]);
+                // проверить правильность синтаксиса URL-адреса (это регулярное выражение также допускает тире в URL-адресе)
+                if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&amp;@#\/%?=~_|!:,.;]*[-a-z0-9+&amp;@#\/%=~_|]/i",$website)) {
+                  $websiteErr = "Invalid URL";
+                }
+              }
+            
+              if (empty($_POST["comment"])) {
+                $comment = "";
+              } else {
+                $comment = test_input($_POST["comment"]);
+              }
+            
+              if (empty($_POST["gender"])) {
+                $genderErr = "Пол указывать обязательно";
+              } else {
+                $gender = test_input($_POST["gender"]);
+              }
+            }
+            ?&gt;
+            
+            &lt;form method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?&gt;"&gt;
+            
+            Name: &lt;input type="text" name="name"value="&lt;?php echo $name;?&gt;"&gt;
+            &lt;span class="error"&gt;* &lt;?php echo  $nameErr;?&gt;&lt;/span&gt;
+            &lt;br&gt;&lt;br&gt;
+            E-mail:
+            &lt;input type="text" name="email" value="&lt;?php echo $email;?&gt;"&gt;
+            &lt;span class="error"&gt;* &lt;?php echo $emailErr;?&gt;&lt;/span&gt;
+            &lt;br&gt;&lt;br&gt;
+            Website:
+            &lt;input type="text" name="website" value="&lt;?php echo $website;?&gt;"&gt;
+            &lt;span class="error"&gt;&lt;?php echo $websiteErr;?&gt;&lt;/span&gt;
+            &lt;br&gt;&lt;br&gt;
+            Comment: &lt;textarea name="comment" rows="5" cols="40"&gt;&lt;?php echo $comment;?&gt;&lt;/textarea&gt;
+            &lt;br&gt;&lt;br&gt;
+            Gender:
+            &lt;input type="radio" name="gender" &lt;?php if (isset($gender) &amp;&amp; $gender=="female") echo "checked";?&gt; value="female"&gt;Female
+            &lt;input type="radio" name="gender" &lt;?php if (isset($gender) &amp;&amp; $gender=="male") echo "checked";?&gt; value="male"&gt;Male
+            &lt;input type="radio" name="gender" &lt;?php if (isset($gender) &amp;&amp; $gender=="other") echo "checked";?&gt; value="other"&gt;Other
+            &lt;span class="error"&gt;* &lt;?php echo $genderErr;?&gt;&lt;/span&gt;
+            &lt;br&gt;&lt;br&gt;
+            &lt;input type="submit" name="submit" value="Submit"&gt;
+            
+            &lt;/form&gt;
+            &lt;P&gt;&lt;?php echo $name ?&gt;&lt;/P&gt;
+        </code>
+    </pre>
+</div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+        

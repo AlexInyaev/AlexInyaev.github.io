@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="../css/forFlexBox.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>FlexBox</h2>
+        <img class="flexImg" src="../img/flex-axis.jpg" alt="FlexBox">
+        <ul class="list">
+            <li><span class="colorFont">Main Axis</span> - главная ось (по горизонтали)</li>
+            <li><span class="colorFont">Cross Axis</span> - второстепенная ось (по вертикали)</li>
+        </ul>
+        <h3 class="header3">Flex-контенер</h3>
+        <h4>Display</h4>
+        <pre>
+        <code class="">
+            .flex-container {
+                display: flex;  # задание flex
+            }
+        </code>
+    </pre>
+        <!--  -->
+        <h4>flex-flow: row nowrap</h4>
+        <li class="discriptionOut">Рекомендуется использовать flex-flow, a не отдельные свойства (работает быстрее)</li>
+        <h5>flex-direction: row</h5>
+        <li class="discriptionIn">Задаёт направление основных осей в контейнере</li>
+        <img src="../img/flex-direction.jpg" alt="position" class="position">
+        <pre>
+            <code>
+        .flex-container {
+            flex-direction: row;              # расположение блоков по горизонтали (по умолчанию)
+            flex-direction: row-reverse;      # расположение блоков по горизонтали (реверсионно)
+            flex-direction: column;           # расположение блоков по вертикали
+            flex-direction: column-reverse;   # расположение блоков по вертикали (реверсионно)
+        }
+            </code>
+        </pre>
+        <h5>flex-wrap: nowrap</h5>
+        <li class="discriptionIn">Задает перенос флексов</li>
+        <img src="../img/flex-wrap.jpg" alt="position" class="position">
+        <pre>
+            <code>
+        .flex-container {
+            flex-wrap: nowrap;           # флексы выстраиваются в одну линию
+            flex-wrap: wrap;             # флексы выстраиваются в несколько строк
+            flex-wrap: wrap-reverse;     # флексы выстраиваются в несколько строк реверсивно
+        }
+            </code>
+        </pre>
+        <!--  -->
+        <h4>justify-content: flex-start</h4>
+        <li class="discriptionOut">Управляет размещением элемента вдоль главной оси (по горизонтали)</li>
+        <img src="../img/justify-content.jpg" alt="position" class="position">
+        <pre>
+            <code>
+        .flex-container {
+            justify-content: flex-start;       # флексы прижаты к началу строки
+            justify-content: flex-end;         # флексы прижаты к концу строки
+            justify-content: center;           # флексы выравниваются по центру строки
+            justify-content: space-between;    # флексы равномерно располагаются с одинаковыми расстояниями между ними (первый и последний элемент прижимаются к краям контейнера)
+            justify-content: space-around;     # флексы равномерно располагаются с одинаковыми расстояниями вокруг них (первый и последний элемент не прижимаются к краям контейнера)
+        }
+            </code>
+        </pre>
+        <!--  -->
+        <h4>align-items: stretch</h4>
+        <li class="discriptionOut">Управляет размещением элемента вдоль второстепенной оси (по вертикали)</li>
+        <img src="../img/align-items.jpg" alt="position" class="position">
+        <pre>
+            <code>
+        .flex-container {
+            align-items: flex-start;       # флексы выравниваются в начале поперечной оси контейнера
+            align-items: flex-end;         # флексы выравниваются в конце поперечной оси контейнера
+            align-items: center;           # флексы выравниваются по линии поперечной оси
+            align-items: stretch;          # флексы растягиваются таким образом, чтобы занять всё доступное пространство контейнера
+            align-items: baseline;         # флексы выравниваются по их базовой линии (по нижней части параграфа)
+        }
+            </code>
+        </pre>
+        <!--  -->
+        <h4>align-content: stretch</h4>
+        <li class="discriptionOut">Выравнивание многострочных элементов по вертикали (указывает,
+            как несколько рядов должны отделяться друг от друга)</li>
+        <li class="discriptionOut">align-content отвечает за расстояние между рядами, в то время как align-items
+            отвечает за то,
+            как элементы в целом будут выровнены в контейнере. Когда только один ряд, align-content ни на что не влияет
+        </li>
+        <img src="../img/align-content.jpg" alt="position" class="position">
+        <pre>
+            <code>
+        .flex-container {
+            align-content: flex-start;       # флексы располагаются в начале поперечной оси. Каждая следующая строка идёт вровень с предыдущей
+            align-content: flex-end;         # флексы располагаются начиная с конца поперечной оси. Каждая предыдущая строка идёт вровень со следующей
+            align-content: center;           # флексы располагаются по центру контейнер
+            align-content: space-between;    # флексы равномерно располагаются с одинаковыми расстояниями между ними (первый и последний элемент прижимаются к краям контейнера)
+            align-content: space-around;     # флексы равномерно располагаются с одинаковыми расстояниями вокруг них (первый и последний элемент не прижимаются к краям контейнера)
+            align-content: stretch;          # флексы растягиваются, заполняя контейнер равномерно (по умолчанию)
+        }
+            </code>
+        </pre>
+        <h3 class="header3">Flex-элемент</h3>
+        <h4>flex: 0 1 auto</h4>
+        <li class="discriptionOut">Блоки растягиваются на всю ширину контейнера (flex = flex-grow = 1)</li>
+        <pre>
+            <code>
+        .flex-element {
+            flex: auto;
+            flex: 1;
+            flex-grow: 1;
+        }
+            </code>
+        </pre>
+        <pre>
+            <code>
+        .flex-element {
+            flex: 1 1 auto;  # занимают равное место, пока влезают
+            flex: 1 1 250px; # указали фиксированную минимальную ширину
+        }
+            </code>
+        </pre>
+        <h5>flex-grow: 0</h5>
+        <li class="discriptionIn">Определяет для flex элемента возможность растягиваться по ширине</li>
+        <pre>
+            <code>
+        .flex-element {
+            flex-grow: 2; # если для всех flex-item, то это равные 2 части от container-flex (заполнят всю ширину блока)
+        }
+            </code>
+        </pre>
+        <h5>flex-shrink: 1</h5>
+        <li class="discriptionIn">Определяет возможность блока ужиматься при необходимости</li>
+        <li class="discriptionIn">Необходимо задать ширину элемента</li>
+        <pre>
+            <code>
+        .flex-element {
+            flex-shrink: 2;
+        }
+            </code>
+        </pre>
+        <h5>flex-basis: auto</h5>
+        <li class="discriptionIn">Базовый размер отдельно взятого блока (аналогично min-width)</li>
+        <pre>
+            <code>
+        .flex-element {
+            flex-basis: 20%;   # вместо width
+            flex-basis: auto;  # принимает значение ширины элемента
+        }
+            </code>
+        </pre>
+        <h4>order: 0</h4>
+        <li class="discriptionOut">Определяет порядок вывода флексов</li>
+        <pre>
+                 <code>
+        .flex-element {
+            order: 0;          # по умолчанию у всех элементов
+            order: 3;          # элемент выводится третьим по порядку
+            order: -1;         # элемент выводится первым по порядку
+        }
+                 </code>
+             </pre>
+        <h4>align-self: auto</h4>
+        <li class="discriptionOut">Переопределяет значение свойства align-items
+            (позволяет вручную управлять выравниванием конкретного элемента)</li>
+        <pre>
+                <code>
+        .flex-element {
+            align-self: auto;             # выравнивать как указано у контейнера (по умолчанию)
+            align-self: flex-start;       # флексы выравниваются в начале поперечной оси контейнера
+            align-self: flex-end;         # флексы выравниваются в конце поперечной оси контейнера
+            align-self: center;           # флексы выравниваются по линии поперечной оси
+            align-self: stretch;          # флексы растягиваются таким образом, чтобы занять всё доступное пространство контейнера
+            align-self: baseline;         # флексы выравниваются по их базовой линии (по нижней части параграфа)
+        }
+                </code>
+            </pre>
+        <h3 class="header3">Поведение margin</h3>
+        <li class="discriptionOut">Центрирование элемента</li>
+        <pre>
+            <code>
+    .flex-element {
+        margin: auto;      # центрирует 1 блок по горизонтали и вертикали
+        margin-left: auto; # выравнивает блок по правому краю, а остальные блоки по левому
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+    }
+            </code>
+        </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

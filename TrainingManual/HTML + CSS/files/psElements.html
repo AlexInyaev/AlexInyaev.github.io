@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Псевдоэлементы</h2>
+        <pre>
+        <code class="">
+    div::before{       - добовляет эл перед блоком
+        content: "";   - обязательное св-во
+        display: block;- является строчным эл переделываем в блочный
+    }
+    div::after{         - добовляет эл после блока
+        content: "text";
+    }
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
