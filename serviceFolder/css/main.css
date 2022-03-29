@@ -5,7 +5,7 @@ body{
     margin: 0;
     padding: 0;
 }
-.wrapper{
+.wrapperMain{
     width: 815px;
     /* height: 1165px; */
     margin:25px auto;
