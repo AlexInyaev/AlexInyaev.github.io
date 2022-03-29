@@ -15,7 +15,41 @@
         <h2>Раздел</h2>
         <pre>
         <code class="">
-           # Ваш Код
+    git  init -  инициализирует репозиторий  
+    git status – показывает статус 
+    git add “название файла” – добавление файла в гит
+    git add  “.” - добавляет все файлы
+    git commit –m  ‘добавили файлы проекта’ – сделали комит
+
+    Подключение
+
+    git config – global user.email  my@mail.ru
+    git config –global user.name account_name
+    Проверка 
+    git config – global user.email
+    git config –global user.name
+
+    Отмена изменений файлов
+
+    git restore    “название файла” – откатывает изменения в файле  # modified 
+    git restore    “.” - все файлы
+    git clean –f  - удаляем все файлы проекта
+    git restore    “.” Откат удаленных файлов
+    git restore    --staget “.” – откат из состояния staging area в рабочею директорию
+    git reset – тоже самое что и  git restore    --staget “.”
+    git reset HEAD~1 – откат камита в рабочею директорию где цифра количество комитов
+
+    подвязка с удаленном репозиторием
+
+    git remote add origin http://github.com/dev-pandaren/app.git
+    git push origin HEAD
+
+    клонирование
+    
+    git clone https://github.com/Account/Repo.git
+    git fetch  - состояние
+    git pull   - получить репозиторий
+            
         </code>
     </pre>
     </div>
