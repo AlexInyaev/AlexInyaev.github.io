@@ -1,52 +1,58 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
 }
-.wrapperMain{
+
+.wrapperMain {
     width: 815px;
     /* height: 1165px; */
-    margin:25px auto;
+    margin: 25px auto;
     background-color: #F7F4EF;
     padding-top: 25px;
     padding-bottom: 25px;
     /* box-shadow:         -6px -6px 9px 0px rgba(50, 50, 50, 0.75); */
     /* box-shadow: 7px 7px 5px rgba(0,0,0,0.6);  */
-    box-shadow: 0 0 8px 0 rgba(0,0,0,1);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 1);
 }
-.img{
+
+.img {
     width: 110px;
     height: 110px;
     border-radius: 50%;
     margin: 18px 15px 0 21px;
     border: 1px solid #FF6600;
-    background-image:url(../img/alex2.jpg);
+    background-image: url(../img/alex2.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
-.header{
+
+.header {
     display: flex;
     justify-content: flex-start;
     width: 749px;
     height: 145px;
     background: #fff;
-    margin:  auto;
+    margin: auto;
     border: 1px solid #C0C0C0;
 }
-h1{
+
+h1 {
     margin: 0;
 
 }
-.surname{
+
+.surname {
     padding-top: 50px;
 }
 
 /* ************************************************** About Me*********************************** */
 
-.AboutMe{
+.AboutMe {
     border: 3px outset #C0C0C0;
     border-radius: 5px;
     width: 749px;
@@ -55,7 +61,8 @@ h1{
     margin: 65px auto;
     cursor: pointer;
 }
-.res{
+
+.res {
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
@@ -64,14 +71,15 @@ h1{
 
 /* ************************************************** skillChart*********************************** */
 
-.skillChart{
+.skillChart {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 749px;
     margin: 65px auto;
-    
+
 }
+
 .diagram {
     width: 120px;
     height: 120px;
@@ -79,207 +87,277 @@ h1{
     border: 1px solid #C0C0C0;
     margin: 5px;
 }
-.imgDiagram{
+
+.imgDiagram {
     margin: 3px;
 }
-area{
-    cursor:default;
+
+area {
+    cursor: default;
 }
-.item p{
+
+.item p {
     margin: 5px;
     text-align: center;
 }
 
 /* ************************************************** myWorks********************************** */
 
-.myWorks{
+.myWorks {
     display: flex;
     justify-content: space-between;
     width: 749px;
     margin: auto;
+    flex-wrap: wrap;
 }
-.onePage, .siteShop, .elements{
+
+.elements {
     width: 240px;
-    height: 245px;
-    
+    /* height: 245px; */
     background: #fff;
     border: 1px solid #C0C0C0;
+    margin-bottom: 15px;
 }
-.onePage p, .siteShop p, .elements p{
+
+
+.elements p {
     margin-bottom: 5px;
     text-align: center;
 }
-hr{
+
+hr {
     width: 80px;
-    border: none; /* Убираем границу для браузера Firefox */
-    color: #FF6600; /* Цвет линии для остальных браузеров */
-    background-color: #FF6600; /* Цвет линии для браузера Firefox и Opera */
-    height: 2px; /* Толщина линии */
+    border: none;
+    /* Убираем границу для браузера Firefox */
+    color: #FF6600;
+    /* Цвет линии для остальных браузеров */
+    background-color: #FF6600;
+    /* Цвет линии для браузера Firefox и Opera */
+    height: 2px;
+    /* Толщина линии */
 }
-li{
+
+li {
     list-style: none;
     margin: 5px;
 }
+
 @media screen and (max-width: 830px) {
-    .wrapper{
+    .wrapper {
         width: 715px;
-        
     }
-    .header,.AboutMe,.skillChart,.myWorks{
-        
+
+    .wrapperMain {
+        width: 100%;
+        margin: 0;
+    }
+
+    .header,
+    .AboutMe,
+    .skillChart,
+    .myWorks {
+
         width: 649px;
     }
-    .onePage, .siteShop,.elements{
+
+
+    .elements {
         width: 210px;
     }
 }
-    
+
 @media screen and (max-width: 730px) {
-    .wrapper{
+    .wrapper {
         width: 615px;
-        
+
     }
-    .header,.AboutMe,.skillChart,.myWorks{
-        
+
+    .header,
+    .AboutMe,
+    .skillChart,
+    .myWorks {
+
         width: 549px;
     }
-    .onePage, .siteShop,.elements{
+
+
+    .elements {
         width: 180px;
     }
-    .diagram{
+
+    .diagram {
         width: 106px;
         height: 106px;
     }
 }
+
 @media screen and (max-width: 630px) {
-    .wrapper{
+    .wrapper {
         width: 515px;
-        
+
     }
-    .header,.AboutMe,.skillChart,.myWorks{
-        
+
+    .header,
+    .AboutMe,
+    .skillChart,
+    .myWorks {
+
         width: 449px;
     }
-    .AboutMe{
+
+    .AboutMe {
         margin: 30px auto 0 auto;
     }
-    .myWorks{
+
+    .myWorks {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .skillChart{
+
+    .skillChart {
         margin: 15px auto 15px auto;
         flex-wrap: wrap;
     }
-    .onePage, .siteShop,.elements{
+
+
+    .elements {
         width: 240px;
         margin-bottom: 5px;
         align-items: center;
     }
-    .siteShop,.elements{
-        height: 150px;
+
+
+    .elements {
+        /* height: 150px; */
     }
-    .diagram{
+
+    .diagram {
         width: 107px;
         height: 107px;
     }
 }
+
 @media screen and (max-width: 530px) {
-    .wrapper{
+    .wrapper {
         width: 415px;
-        
+
     }
-    .header{
+
+    .header {
         width: 349px;
         flex-wrap: wrap;
         justify-content: center;
         height: 230px;
     }
+
     .surname {
         padding-top: 0px;
         text-align: center;
     }
-    .AboutMe,.skillChart,.myWorks{
-        
+
+    .AboutMe,
+    .skillChart,
+    .myWorks {
+
         width: 349px;
     }
-    .AboutMe{
+
+    .AboutMe {
         margin: 30px auto 0 auto;
     }
-    .myWorks{
+
+    .myWorks {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .skillChart{
+
+    .skillChart {
         margin: 15px auto 15px auto;
         flex-wrap: wrap;
     }
-    .onePage, .siteShop,.elements{
+
+
+    .elements {
         width: 240px;
         margin-bottom: 5px;
         align-items: center;
     }
+
     /* .siteShop,.elements{
         height: 120px;
     }
     .onePage{
         height: 210px;
     } */
-    .diagram{
+    .diagram {
         width: 107px;
         height: 107px;
     }
 }
+
 @media screen and (max-width: 430px) {
-    .wrapper{
+    .wrapper {
         width: 315px;
         /* height: 1220px; */
     }
-    .header{
+
+    .header {
         width: 249px;
         height: 235px;
     }
+
     .surname p {
         margin: 5px;
-        
+
     }
-    .AboutMe,.skillChart,.myWorks{
-        
+
+    .AboutMe,
+    .skillChart,
+    .myWorks {
+
         width: 249px;
     }
+
     /* .siteShop,.elements{
         height: 110px;
     } */
-    .onePage{
+    .onePage {
         height: 200px;
     }
 }
+
 @media screen and (max-width: 330px) {
-    .wrapper{
+    .wrapper {
         width: 190px;
         /* height: 850px; */
     }
-    .header{
+
+    .header {
         width: 170px;
         height: 235px;
     }
-    .AboutMe,.myWorks{
-        
+
+    .AboutMe,
+    .myWorks {
+
         width: 170px;
     }
-    .AboutMe{
+
+    .AboutMe {
         margin-bottom: 20px;
     }
+
     /* .siteShop,.elements{
          height: 110px; 
     } */
     /* .onePage{
         height: 200px;
     } */
-    .skillChart{
+    .skillChart {
         display: none;
     }
-    h2{
+
+    h2 {
         font-size: 16px;
     }
 }
