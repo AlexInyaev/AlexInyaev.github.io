@@ -36,7 +36,9 @@ h2 {
 }
 
 li {
-    /* position: relative; */
+    /* list-style-type: none; */
+    /* width: 100px; */
+    padding: 5px;
 }
 
 .d_progress_wrapper {
@@ -46,7 +48,7 @@ li {
 
 .d_progress {
     height: 4px;
-    width: 80%;
+    width: 70%;
     background-color: white;
     margin: 20px auto;
 }
