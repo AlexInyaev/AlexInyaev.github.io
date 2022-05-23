@@ -36,7 +36,7 @@ h2 {
 }
 
 li {
-    /* list-style-type: none; */
+    list-style-type: none;
     /* width: 100px; */
     padding: 5px;
 }
