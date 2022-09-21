@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Сессии index</h2>
+        <pre>
+        <code class="">
+            &lt;body&gt;
+            &lt;?php session_start();?&gt; &lt;!--перед началом работы с сессиями их нужно установить в файле где форма и в файле обработчике--&gt;
+                &lt;form action="action.php" method="post"&gt;
+                    &lt;label for="name"&gt;you're name&lt;/label&gt;
+                    &lt;input type="text" name="name"&gt;&lt;br&gt;
+                    &lt;label for="email"&gt;you're email&lt;/label&gt;
+                    &lt;input type="email" name="email"&gt;
+                    &lt;input type="submit" value="go"&gt;
+                &lt;/form&gt;
+                &lt;?php 
+                if($_SESSION['name'] != ""&amp;&amp;$_SESSION['email'] != "" )//проверка на существование сессии 
+                var_dump($_SESSION);
+                // session_destroy(); //удаляет сессию если нужно
+                ?&gt;
+            &lt;/body&gt;
+        </code>
+    </pre>
+    </div>
+    <div class="wrapper">
+        <h2>Сессии Action</h2>
+        <pre>
+        <code class="">
+            &lt;?php
+            session_start(); //перед началом работы с сессиями их нужно установить в файле где форма и в файле обработчике
+            
+            $_SESSION['name'] = $_POST['name']; // в сессию пишем ключ который хотим и присваиваем значение из post
+            $_SESSION['email'] = $_POST['email']; 
+            
+            
+                ?&gt;
+            
+        </code>
+    </pre>
+    </div>
+    <div class="wrapper">
+        <h2>Куки index</h2>
+        <pre>
+        <code class="">
+            &lt;body&gt;
+            &lt;?php ?&gt; 
+                &lt;form action="action.php" method="post"&gt;
+                    &lt;label for="name"&gt;you're name&lt;/label&gt;
+                    &lt;input type="text" name="name"&gt;&lt;br&gt;
+                    &lt;label for="email"&gt;you're email&lt;/label&gt;
+                    &lt;input type="email" name="email"&gt;
+                    &lt;input type="submit" value="go"&gt;
+                &lt;/form&gt;
+                &lt;?php 
+                if($_COOKIE['name'] != ""&amp;&amp;$_COOKIE['email'] != "" )//проверка на существование куки 
+                var_dump($_COOKIE);
+                ?&gt;
+            &lt;/body&gt;
+        </code>
+    </pre>
+    </div>
+    <div class="wrapper">
+        <h2>Куки Action</h2>
+        <pre>
+        <code class="">
+            &lt;?php
+            setcookie('name',$_POST['name'],time() + 3600);
+            setcookie('email',$_POST['email'],time() + 3600);
+            // setcookie('email',$_POST['email'],time() - 3600); для удаления куки указываем врем с минусом от установленного
+            
+            // 1 - параметр имя куки
+            // 2 - параметр то что ложим в куки
+            // 3 - параметр время действия куки
+            
+                ?&gt;
+            
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
