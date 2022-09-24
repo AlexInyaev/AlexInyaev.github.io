@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Проверка переменных и работа с числами и строками</h2>
+        <h3>Проверка переменных</h3>
+        <pre>
+        <code class="">
+            $x = 12;
+            echo 'Цифра ли? = ' . is_numeric($x) . '&lt;br&gt;';
+            echo 'Целое ли число? = ' . is_integer($x) . '&lt;br&gt;';
+            echo 'Дробное ли число? = ' . is_double($x) . '&lt;br&gt;';
+            echo 'Строка ли эта переменная? = ' . is_string($x) . '&lt;br&gt;';
+            echo 'Является ли переменная Boolean? =' . is_bool($x) . '&lt;br&gt;';
+            echo 'Является ли переменная Массивом? =' . is_array($x) . '&lt;br&gt;';
+            echo 'Проверяет тип переменной? = ' . gettype($x) . '&lt;br&gt;';
+        </code>
+    </pre>
+        <h3>Работа со строками</h3>
+        <pre>
+        <code class="">
+            $str = 'Пример обычной строки';
+            $strEng = 'Just string';
+        
+            echo strlen($str).'&lt;br&gt;'; //длинна строки 
+            echo strpos($str, "При") === false ? '\'При\' не найдено':'\'При\' найдено';  //поиск букв или слов в строке
+            echo '&lt;br&gt;';
+            echo substr($str, 4, 9).'&lt;br&gt;'; //обрезать с 4 го по 9й символ в кириллице символ равен 2
+            echo strtolower($strEng) . '&lt;br&gt;' . strtoupper($strEng) . '&lt;br&gt;'; //перевод в регистры для латиницы
+            echo mb_strtolower($str) . '&lt;br&gt;' . mb_strtoupper($str) . '&lt;br&gt;'; //перевод в регистры для кириллице
+            echo trim("           просто тексе с    пробелами"); //обрезает  пробелы до и после текста
+        </code>
+    </pre>
+        <h3>Работа с числами</h3>
+        <pre>
+        <code class="">
+            $some = -15;
+            echo abs($some).'&lt;br&gt;'; //число по модулю
+            $num = 23.84;
+            echo round($num).'&lt;br&gt;'; //округляет как в математике 
+            echo ceil($num).'&lt;br&gt;'; //округляет в большую сторону 
+            echo floor($num).'&lt;br&gt;'; //округляет в меньшую сторону
+        
+            echo mt_rand(7,200).'&lt;br&gt;'; //возвращает число в заданном диапазоне
+            echo min(1,4,6,3,2,7,55).'&lt;br&gt;'; //возвращает наименьшее число также работает с массивами
+            echo max(1,4,6,3,2,7,55).'&lt;br&gt;'; //возвращает наибольшее число
+        
+            $z = 1;
+            echo sin($z) .'&lt;br&gt;'; // синус числа 
+            echo cos($z) .'&lt;br&gt;'; // косинус 
+            echo tan($z) .'&lt;br&gt;'; // тангенс
+            echo 1 / tan($z) .'&lt;br&gt;'; //котангенс
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
