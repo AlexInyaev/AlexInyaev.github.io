@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Конструкторы , Деструкторы , Константы</h2>
+        <p><span class="red">Конструктор</span> - это обычная функция которая позволяет нам при создание объекта
+            присвоить значения
+            как публичным
+            так и приватным переменным</p>
+        <p><span class="red">Деструктор</span> - вызывается для удаления класса когда весь код отработал.Для
+            освобождения памяти </p>
+        <p><span class="red">Константу</span> можем вызывать как в классе echo self::ConstantName так и вне класса echo
+            ClassName::ConstantName.Имя константы пишем в верхнем регистре</p>
+        <pre>
+        <code class="">
+            &lt;?php   
+            class User3{ 
+                const PASS = 'password';
+                const PA = 'password';
+        
+                public $name = '555';
+                private $surname = 'private';
+                private $email;
+                private $login;
+                private $pass;
+        
+                function __construct($name,$surname,$login){  //**************************************************Функция конструктор
+                    $this-&gt;name = $name;                      //Полученные параметры сразу кладет в поля объекта
+                    $this-&gt;surname = $surname;
+                    $this-&gt;login = $login;
+        
+                   $this-&gt;showAll3("Пользователь: " );  //вызывается сразу для всех созданных объектов
+        
+                   echo "&lt;br&gt;", self::PASS, "&lt;br&gt;";  //вызов константы внутри класса
+                }
+        
+                function showAll3($text){
+                    echo $text.$this -&gt; name.':'.$this -&gt; surname.':'.$this -&gt; login . "&lt;br&gt;";
+            }
+        
+            function __destruct(){                       //*****************************************************Деструктор
+                print 'Уничтожается '. __CLASS__. "&lt;br&gt;"; //Можно нечего не писать
+            }
+            }
+        // ************************************************************** ********************************************end class
+        
+            $admin3 = new User3('john', 'smit' , 'admin'); //Переданные параметры попадают в конструктор затем он их записывает в свойства объекта
+            // $admin3-&gt;showAll3("Пользователь: " ); Этот вызов больше не нужен он вызывается в конструкторе.Но если нужно передать другой параметр то его можно вызвать
+        
+            echo User3::PASS ,'&lt;br&gt;'; //вызов константы вне класса
+            ?&gt;
+        
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
