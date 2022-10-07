@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Методы</h2>
+        <pre>
+        <code class="">
+          
+            &lt;?php
+             class User2{
+                public $name = '555';
+                private $surname = 'private';
+                private $email;
+                private $login;
+                private $pass;
+        
+                function showAll(){
+                    echo  $this -&gt; name;           //$name и name -это разные переменные одно выводит свойство мз класса другое из объекта 
+                                                    // но если в объекте написать так $admin -&gt;name то свойство класса перезапишется
+                }
+        
+                function getVal($userName){  //$userName - передаваемый параметр в метод
+                    echo  $this -&gt; surname .'-'. $userName . $this -&gt; name; //чтобы получить свойство из переменной как в классе то $ -  не пишется 
+                }
+        
+                function returnPrivet(){    //функция возврата приватной переменной
+                    return $this -&gt; surname;
+                }
+               }
+        
+               $admin = new User2(); //создал объект на основе класса User
+           $admin -&gt;$name = 'John'; //присвоил строку в поле name
+           $admin -&gt; showAll();     // John
+           echo '&lt;br&gt;';
+        
+           $admin2 = new User2(); //создал второй объект на основе класса User
+           $admin2 -&gt;$name = 'Jack'; //присвоил строку в поле name
+           $admin2 -&gt; showAll();  //jack
+           echo '&lt;br&gt;';
+           $admin2 -&gt; getVal('lex');
+           echo '&lt;br&gt;';
+           echo $admin2 -&gt; returnPrivet();
+        
+            ?&gt;
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
