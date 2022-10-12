@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка arr</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Интерфейс Трейт Абстрактный класс</h2>
+        <p>Класс мы не можем наследовать от одного класса, с этим справляются интерфейсы </p>
+        <pre>
+        <code class="">
+            &lt;?php
+            interface Human{             //создание интерфейса 
+                public function talk();
+                public function walk();
+            }
+            interface Mutant{              //создание интерфейса 
+                public function fly(); 
+            }
+        
+            class Person implements Human, Mutant{       //наследование от двух интерфейсов. При наследование от интерфейса в классе должны  быть реализованы все методы интерфейса
+                function talk(){
+                    echo 'say' , '&lt;br&gt;';
+                }
+        
+                function walk(){
+                    echo 'go' , '&lt;br&gt;';
+                }
+        
+                function fly(){
+                    echo 'go to fly' , '&lt;br&gt;';
+                }
+            }
+        
+            $bob = new Person; //создаем объект на основе класса 
+        
+            $bob -&gt; talk();
+            $bob -&gt; walk();
+            $bob -&gt; fly();
+        
+            // ****************** также интерфейсы могут наследоваться 
+            interface Test extends Mutant{
+        
+            }
+            
+            class Test2 implements Mutant{
+                function fly(){
+                    echo 'test2';
+                }
+            }
+        
+            $bob2 = new Test2;
+            $bob2 -&gt; fly();
+            ?&gt;
+        </code>
+    </pre>
+        <p>В трейте мы можем прописать функции и затем их использовать в множестве методов </p>
+        <pre>
+        <code class="">
+            &lt;?php  
+            trait PrintSome{            //создаем трейт 
+                public function talk(){
+                    echo 'Привет всем &lt;br&gt;';
+                }
+                public function SeyBay(){
+                    echo 'Пока всем &lt;br&gt;';
+                }
+            }
+        
+            trait SecondTrait{
+                public function secondFunction(){
+                    echo 'secondFunction';
+                }
+            }
+        
+            class TestTr{
+                // use PrintSome,SecondTrait;      //добавляем трейт в класс 
+                use PrintSome,SecondTrait;      //добавляем второй трейт в класс 
+            }
+        
+            $obj = new TestTr;
+            $obj -&gt; talk(); //используем функции трейта в объекте
+            $obj -&gt; SeyBay();
+            $obj -&gt; secondFunction();  //вызываем метод из второго трейта
+            ?&gt;
+        </code>
+    </pre>
+        <p>Абстрактные классы это те классы на основе которых нельзя создать объекты</p>
+        <p>В абстрактных классах могут быть абстрактные методы которые должны быть реализованы в классах наследниках
+        </p>
+        <pre>
+        <code class="">
+            &lt;?php
+    abstract class Car { //создаем абстрактный класс
+        protected $speed;
+        protected $color;
+
+        abstract protected function showInfo(); //создаем абстрактный метод 
+    }
+
+    class BMW extends Car {  //наследуемся от абстрактного класса
+
+        function __construct($speed){
+            $this -&gt; speed = $speed;
+        }
+        public function showInfo(){                 // Обязательно реализуем абстрактный метод
+            echo  'Скорость автомобиля: ' . $this -&gt; speed; 
+        }
+    }
+    
+    $m3 = new BMW(240);
+    $m3 -&gt; showInfo();
+    ?&gt;
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
