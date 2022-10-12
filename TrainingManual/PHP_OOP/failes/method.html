@@ -25,8 +25,9 @@
                 private $pass;
         
                 function showAll(){
-                    echo  $this -&gt; name;           //$name и name -это разные переменные одно выводит свойство мз класса другое из объекта 
-                                                    // но если в объекте написать так $admin -&gt;name то свойство класса перезапишется
+                    echo  $this -&gt; name;          
+                                                    //для работы с свойствами класса используется следующий синтаксис $admin -&gt;name или  $this -> name;
+                                                   
                 }
         
                 function getVal($userName){  //$userName - передаваемый параметр в метод
