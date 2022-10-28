@@ -2,18 +2,18 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Update</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+  <meta charset="UTF-8">
+  <title>Update</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
 
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <h2>Обновление данных</h2>
-        <pre>
+  <div class="wrapper">
+    <h2>Обновление данных</h2>
+    <pre>
         <code class="">
 &lt;?php
 require_once 'config.php';  //подключение файла с переменными
@@ -55,8 +55,8 @@ close($conn);
 ?&gt;
         </code>
     </pre>
-        <h3>Вынесеные функции</h3>
-        <pre>
+    <h3>Вынесеные функции</h3>
+    <pre>
         <code>
             &lt;?php
 //СОЕДИНЕНИЕ
@@ -102,9 +102,9 @@ function close($conn) {
 }
         </code>
     </pre>
-        <h2>Обновление</h2>
+    <h2>Обновление и добавление</h2>
 
-        <pre>
+    <pre>
             <code>
             &lt;?php
 
@@ -113,16 +113,29 @@ function close($conn) {
             
             $conn = connect();
             
-            $id = 3;
-            $name = 'бананы';
-            $sql = "UPDATE goods set name = '$name' WHERE id = $id"; //если вставляем переменную со строкой то ее берем в кавычки
-            
-            if (mysqli_query($conn, $sql)) {                        //обновляем данные
-              echo "Record updated successfully";
-            } else {
-              echo "Error updating record: " . mysqli_error($conn);
-            }
-            
+            //обновление начало
+$id = 3;
+$name = 'бананы';
+$sql = "UPDATE goods set name = '$name' WHERE id = $id"; //если вставляем переменную со строкой то ее берем в кавычки
+
+if (mysqli_query($conn, $sql)) {                        //обновляем данные
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . mysqli_error($conn);
+}
+//обновление окончание
+
+//добавление в базу
+$sql = "INSERT INTO goods (name, description, cost, amount, image )
+VALUES ('Peach', 'Персик', 150 , 500, 'Peach.jpg')";
+
+if (mysqli_query($conn, $sql)) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "&lt;br&gt;" . mysqli_error($conn);
+}
+
+//добавление в базу окончание
             
             $a = select($conn);
             echo '&lt;pre&gt;';
@@ -135,10 +148,10 @@ function close($conn) {
         </code>
         </pre>
 
-    </div>
+  </div>
 
-    <script src="../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+  <script src="../libs/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>
