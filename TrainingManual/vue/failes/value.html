@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Раздел</h2>
+        <pre>
+        <code class="">
+            &lt;div id="app"&gt;
+
+            &lt;input type="text" v-on:input="increment($event.target.value)"&gt;
+            &lt;p&gt;{{value}}&lt;/p&gt;
+            &lt;p&gt;{{dubleValue}}&lt;/p&gt;
+            &lt;p&gt;valueFromComputed: {{valueFromComputed}}&lt;/p&gt;
+    
+    
+        &lt;/div&gt;
+
+
+        код js
+
+        let app = new Vue({
+            el: '#app',
+            data: {
+                value: 1,
+                dubleValue: 1
+            },
+            methods: {
+                increment(value) {
+                    this.value = value,
+                        this.dubleValue = value * 2
+                    // this.dubleValue =  this.value * 2 // второй вариант записи устанавливает связь между переменными
+                }
+            },
+            computed: {                 //вычисляемые свойства
+                valueFromComputed() {
+                    return this.value * 3;
+                }
+            }
+        
+        })
+        
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
