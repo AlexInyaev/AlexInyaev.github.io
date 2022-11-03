@@ -28,6 +28,26 @@
             &lt;img v-bind:src="address" :alt="alt"&gt; добавление атрибутов address и alt это свойства из массива vue если поставить строку то будет ошибка
 
         &lt;/div&gt;
+
+
+        код js
+
+        let app = new Vue({
+            el: '#app',
+            data: {
+                title: "hello world",
+                styleCss: "",
+                address: 'https://cdn-icons-png.flaticon.com/512/254/254232.png',
+                alt: "просто картинка"
+            },
+            methods: {
+                useFunction() {
+                    this.title = 'use function'
+                }
+            },
+        
+        })
+        
         </code>
     </pre>
     </div>
