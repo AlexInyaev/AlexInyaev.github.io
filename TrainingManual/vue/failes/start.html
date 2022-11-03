@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>события классы переменные атрибуты</h2>
+        <pre>
+        <code class="">
+            &lt;div id="app"&gt;
+            &lt;p&gt;{{title}}&lt;/p&gt; //вывод переменной
+            &lt;button v-on:click="title='v-on'"&gt;v-on&lt;/button&gt; //событие
+            &lt;button @click="title='@'"&gt;@&lt;/button&gt; //событие короткая запись
+            &lt;button @click="useFunction"&gt;function&lt;/button&gt; событие и метод из массива vue
+    
+            &lt;p v-bind:class="styleCss"&gt;{{styleCss}}&lt;/p&gt; бандим класс
+            &lt;p :class="styleCss"&gt;{{styleCss}}&lt;/p&gt; бандим класс короткая запись
+            &lt;input type="text" v-on:input="styleCss = $event.target.value"&gt; записываем в переменную значение из объекта событий и выводим ее в параграфах
+
+            &lt;img v-bind:src="address" :alt="alt"&gt; добавление атрибутов address и alt это свойства из массива vue если поставить строку то будет ошибка
+
+        &lt;/div&gt;
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
