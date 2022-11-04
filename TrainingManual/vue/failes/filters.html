@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Фильтры</h2>
+        <pre>
+        <code class="">
+            &lt;div id="app"&gt;
+
+            &lt;p&gt;При помощи computed:{{showMassage}}&lt;/p&gt;
+            &lt;p&gt;При помощи локального фильтра:{{showMassage | lowercase}}&lt;/p&gt; &lt;!-- пишется через | --&gt;
+            &lt;p&gt;При помощи глобального фильтра:{{showMassage | capitalize }}&lt;/p&gt;  
+
+        &lt;/div&gt;
+
+        js code 
+
+        Vue.filter('capitalize', function (value) { //глобальный фильтр можно применять и в других компонентах
+            return value.toUpperCase();
+        });
+        
+        let app = new Vue({
+            el: '#app',
+            data: {
+                massage: 'hello'
+            },
+        
+            methods: {
+        
+            },
+            computed: {
+                showMassage() {
+                    return this.massage.toUpperCase();
+                }
+            },
+            filters: {
+                lowercase(value) {              //локальный фильтр может применятся к любой переменной только в этом компоненте
+                    return value.toUpperCase();
+                }
+            }
+        
+        })
+        
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

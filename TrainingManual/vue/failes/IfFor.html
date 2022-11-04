@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>if for</h2>
+        <pre>
+        <code class="">
+            &lt;p v-if="marker == 4"&gt;if:{{marker}}&lt;/p&gt;
+            &lt;p v-else-if="marker == 5"&gt;else if:{{marker}}&lt;/p&gt; при ифе добавляется или удаляется из дом дерева элемент
+            &lt;p v-else&gt;else:{{marker}}&lt;/p&gt;
+    
+            &lt;p v-show="marker == 7 "&gt;show:{{marker}}&lt;/p&gt; при шов навешивается display none
+    
+            &lt;input type="text" v-on:input="breaker($event)"&gt;
+
+            &lt;ul&gt;
+                &lt;li v-for="(car, i) in cars"&gt;{{i+1}} - {{car.model}}, speed: {{car.speed}}&lt;/li&gt;
+            &lt;/ul&gt;
+                            js code
+
+            let app = new Vue({
+                el: '#app',
+                data: {
+                    marker: 0,
+                    cars: [
+                        { model: 'bmw', speed: '100' },
+                        { model: 'bmw1', speed: '110' },
+                        { model: 'bmw2', speed: '200' },
+                    ],
+                },
+            
+                methods: {
+                    breaker(e) {
+                        console.log(e.target.value),
+                            this.marker = e.target.value
+                    }
+                },
+            
+            })
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
