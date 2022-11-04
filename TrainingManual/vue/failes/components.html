@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Компоненты</h2>
+        <pre>
+        <code class="">
+            &lt;div id="app"&gt;
+            &lt;component-name&gt;&lt;/component-name&gt;
+        &lt;/div&gt;
+        &lt;div id="app2"&gt;
+            &lt;component-name2&gt;&lt;/component-name2&gt;
+        &lt;/div&gt;
+
+
+        js код
+
+        // Глобальный компонент его можно применять к любым Vue объектам 
+Vue.component('component-name', {
+    data: function () {
+        return {
+            ggg: 'эта функция возвращает объект данных'
+        }
+    },
+    template: '<div>{{ggg}}</div>'
+});
+new Vue({ el: '#app' })
+
+// локальный компонент
+
+new Vue({
+    el: '#app2',
+    components: {
+        'component-name2': {
+            data: function () {
+                return {
+                    ggg: 'эта функция возвращает объект данных2'
+                }
+            },
+            template: '<div>{{ggg}}</div>'
+        }
+    }
+})
+
+        </code>
+    </pre>
+    </div>
+
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
