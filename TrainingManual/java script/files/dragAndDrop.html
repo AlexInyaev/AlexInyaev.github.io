@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Drag And Drop</h2>
+        <h3>Вариант 1</h3>
+        <pre>
+        <code class="">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;title&gt;Drag And Drop&lt;/title&gt;
+                &lt;link rel="stylesheet" href="css.css"&gt;
+                &lt;style&gt;
+                    body {
+                        background-color: #ccc;
+                        position: relative
+                    }
+            
+                    .oneDiv {
+                        width: 100px;
+                        height: 100px;
+                        margin: 10px;
+                        border-radius: 5px;
+                        background-color: rgb(86, 184, 56);
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            
+            &lt;body&gt;
+                &lt;script&gt;
+                    let bodyFrame = document.querySelector('body');
+                    function test1(body) {
+                        let buttonAddEl = document.createElement('button');
+                        buttonAddEl.setAttribute('id', 'addEl');
+                        buttonAddEl.innerHTML = "Add Text";
+                        body.prepend(buttonAddEl);
+            
+                        let eddEl = document.querySelector('#addEl');
+                        eddEl.onclick = () =&gt; addDiv(body);
+                        // eddEl.onclick = () =&gt; console.log('body');
+            
+                        function addDiv(body) {
+                            let div = document.createElement('div');
+                            div.classList.add('oneDiv');
+                            div.onclick = () =&gt; dropAndDrag(div);
+                            body.appendChild(div);
+                            console.log('body')
+                        }
+            
+                        function dropAndDrag(div) {
+                            div.ondragstart = function () {
+                                return false;
+                            };
+                            div.onmousedown = function (event) { // (1) отследить нажатие
+                                console.log('duwn')
+            
+                                let shiftX = event.clientX - div.getBoundingClientRect().left;
+                                let shiftY = event.clientY - div.getBoundingClientRect().top;
+                                // (2) подготовить к перемещению:
+                                // разместить поверх остального содержимого и в абсолютных координатах
+                                div.style.position = 'absolute';
+                                div.style.zIndex = 1000;
+                                // переместим в body, чтобы мяч был точно не внутри position:relative
+                                document.body.append(div);
+                                // и установим абсолютно спозиционированный мяч под курсор
+            
+                                moveAt(event.pageX, event.pageY);
+            
+                                // передвинуть мяч под координаты курсора
+                                // и сдвинуть на половину ширины/высоты для центрирования
+                                function moveAt(pageX, pageY) {
+                                    div.style.left = pageX - shiftX + 'px';
+                                    div.style.top = pageY - shiftY + 'px';
+                                }
+            
+                                function onMouseMove(event) {
+                                    moveAt(event.pageX, event.pageY);
+                                }
+            
+                                // (3) перемещать по экрану
+                                document.addEventListener('mousemove', onMouseMove);
+            
+                                // (4) положить мяч, удалить более ненужные обработчики событий
+                                div.onmouseup = function (event) {
+                                    console.log(event)
+                                    document.removeEventListener('mousemove', onMouseMove);
+                                    div.onmouseup = null;
+                                };
+            
+                            };
+                        }
+                    }
+            
+                    test1(bodyFrame);
+                &lt;/script&gt;
+            &lt;/body&gt;
+            
+            &lt;/html&gt;
+        </code>
+    </pre>
+        <h3>Вариант 2</h3>
+        <pre>
+        <code class="">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;title&gt;Document&lt;/title&gt;
+                &lt;style&gt;
+                    .zone1 {
+                        height: 200px;
+                        border: 1px solid green;
+                        margin: 10px 0;
+                    }
+            
+                    .zone2 {
+                        height: 200px;
+                        border: 1px solid green;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            
+            &lt;body&gt;
+                &lt;div class="zone1"&gt;&lt;/div&gt;
+                &lt;div class="zone2"&gt;
+                    &lt;img src="ufo (1).png" alt="ufo" id="ufo" draggable="true"&gt;
+                &lt;/div&gt;
+                &lt;script&gt;
+                    const zone1 = document.querySelector('.zone1');
+                    const zone2 = document.querySelector('.zone2');
+                    const ufo = document.querySelector('#ufo');
+            
+                    zone1.ondragover = allowDrop;
+                    zone2.ondragover = allowDrop;
+            
+                    function allowDrop(event) {
+                        event.preventDefault();
+            
+                    }
+            
+                    ufo.ondragstart = drag;
+            
+                    function drag(event) {
+                        event.dataTransfer.setData('id', event.target.id)
+                    }
+            
+                    zone1.ondrop = drop;
+                    zone2.ondrop = drop;
+            
+                    function drop(event) {
+                        let itemId = event.dataTransfer.getData('id');
+                        console.log(itemId);
+                        event.target.append(document.getElementById(itemId));
+                    }
+                &lt;/script&gt;
+            &lt;/body&gt;
+            
+            &lt;/html&gt;
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
