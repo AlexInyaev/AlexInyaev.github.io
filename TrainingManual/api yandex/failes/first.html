@@ -82,6 +82,53 @@
                 placemarkBalloon.balloon.open(); - //открывает боллун 
         </code>
     </pre>
+        <h3>Отрисовка маршрута</h3>
+        <pre>
+        <code class="">
+            &lt;body&gt;
+            &lt;div id="map" style="width: 600px; height: 400px"&gt;&lt;/div&gt;
+            &lt;button class="open"&gt;open&lt;/button&gt;
+            &lt;script&gt;
+                ymaps.ready(init);
+        
+                function init() {
+        
+                    let myMap = new ymaps.Map('map', {
+                        center: [59.91, 30.30],
+                        zoom: '8',
+                        controls: ["routePanelControl"]  // добавлении контрол панели
+                    });
+        
+                    let control = myMap.controls.get('routePanelControl'); // получаем routePanelControl
+                    let city = 'Санкт-Петербург';
+        
+                    control.routePanel.state.set({
+                        type: 'masstransit',                         //для указания видов транспорта
+                        fromEnabled: false,                         //запрещает менять поле от куда
+                        from: `${city}, Проспект Энергетиков 9`,    //устанавливаем адрес от куда
+                        toEnabled: true,                             //можем менять поле куда
+                        to: `${city}, Невский проспект 146`,        //устанавливаем адрес  куда
+                    });
+        
+                    control.routePanel.options.set({               //устанавливаем типы транспорта
+                        types: {
+                            masstransit: true,
+                            pedestrian: true,
+                            taxi: true
+                        }
+                    });
+        
+        
+        
+                }
+        
+        
+            &lt;/script&gt;
+        
+        &lt;/body&gt;
+        
+        </code>
+    </pre>
     </div>
 
     <script src="../libs/highlight/highlight.pack.js"></script>
