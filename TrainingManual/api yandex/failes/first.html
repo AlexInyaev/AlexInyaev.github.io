@@ -16,9 +16,70 @@
         <p> <a href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html?from=jsapi"
                 target="_blank">Документация :</a>
             https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html?from=jsapi</p>
+        <p> <a href="http://dimik.github.io/ymaps/examples/location-tool/" target="_blank">Определение координат :</a>
+            http://dimik.github.io/ymaps/examples/location-tool/</p>
+        <h3>добавление карты на страницу и маркера на карту</h3>
         <pre>
         <code class="">
-           # Ваш Код
+            &lt;div id="map" style="width: 600px; height: 400px"&gt;&lt;/div&gt;
+            &lt;script&gt;
+                ymaps.ready(init);   //init - вызывается после загрузки страницы 
+        
+                function init() {
+                                                            
+                    var myMap = new ymaps.Map("map", {      /*создание карты 2 обязательных параметра  center и  zoom.  
+                                                         Первый параметр "map" -это селектор элемента на странице*/
+                        center: [55.76, 37.64],
+                        zoom: 7
+                    });
+        
+        
+                    // let placemark = new ymaps.Placemark([координаты маркера], {параметры болуна}, {параметры картинки вместо маркера});  - добавление маркера
+        
+                    let placemark = new ymaps.Placemark([55.76, 37.64],
+                     {
+                        balloonContentHeader: "Header - болуна ",
+                        balloonContentBody: 'body- болуна',
+                        balloonContentFooter: 'footer- болуна '
+                     },
+                      {                                                             //добавление маркера с картинкой вместо маркера
+                        iconLayout: 'default#image',                                //указываем что будет наша картинка
+                        iconImageHref: 'img/checked.png',                           //путь
+                        iconImageSize: [20, 20],                                     //размер
+                        iconImageOffset: [10, 10]                                   //смещение
+                    });
+        
+        
+                    myMap.geoObjects.add(placemark);                                    //добавление маркера в объект
+                }
+        
+        
+            &lt;/script&gt;
+        </code>
+    </pre>
+        <h3> болун с версткой</h3>
+        <pre>
+        <code class="">
+            let placemarkBalloon = new ymaps.Placemark(
+                [53.17575664, 44.01093414],
+                {
+                    balloonContent: `&lt;div class="ballon"&gt;  
+                                        &lt;div class="balloon__address"&gt;address&lt;/div&gt;
+                                        &lt;div class="balloon__content"&gt;content&lt;/div&gt;
+                                        &lt;a href="tel: +7999999999"&gt;+7999999999&lt;/a&gt;
+                                    &lt;/div&gt;`,
+                    //Селектор для стилизации кнопки закрытия [class*= 'balloon__close-button']{}
+
+                },
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/checked.png',
+                    iconImageSize: [16, 16],
+                    iconImageOffset: [0, 0]
+                });
+
+                myMap.geoObjects.add(placemarkBalloon);
+                placemarkBalloon.balloon.open(); - //открывает боллун 
         </code>
     </pre>
     </div>
