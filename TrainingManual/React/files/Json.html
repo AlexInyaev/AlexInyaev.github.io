@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Описание файла json из react приложения</h2>
+        <h4>Содержимое файла может меняться в зависимости от проекта</h4>
+    <pre>
+        <code class="">
+            { //в этом объекте храниться общая информация о проложение в основном используется при залитии собственно неписаной библиотеки на npm сайт
+                "homepage": "./",    //Для того чтобы запустить проект на локальном компьютере после сборки нужно добавить это свойство 
+                "name": "less1",
+                "version": "0.1.0",
+                "private": true,
+                "dependencies": {   // здесь расположены библиотеки
+                  "@testing-library/jest-dom": "^5.17.0",
+                  "@testing-library/react": "^13.4.0",
+                  "@testing-library/user-event": "^13.5.0",
+                  "react": "^18.2.0",
+                  "react-dom": "^18.2.0",
+                  "react-scripts": "5.0.1",
+                  "web-vitals": "^2.1.4"
+                },
+                "scripts": { //здесь хранятся команды которые можно запустить для каких-то целей
+                  "start": "react-scripts start", //запуск проекта при разработке
+                  "build": "react-scripts build", //сборка проекта 
+                  "test": "react-scripts test",
+                  "eject": "react-scripts eject"
+                },
+                "eslintConfig": {  //lint помогают писать одинаково красивый код
+                  "extends": [
+                    "react-app",
+                    "react-app/jest"
+                  ]
+                },
+                "browserslist": { //здесь пишутся браузеры которые будут поддерживаться после сборки
+                  "production": [
+                    ">0.2%",
+                    "not dead",
+                    "not op_mini all"
+                  ],
+                  "development": [
+                    "last 1 chrome version",
+                    "last 1 firefox version",
+                    "last 1 safari version"
+                  ]
+                }
+              }
+              
+        </code>
+    </pre>
+    <div class="section">
+        <p>Можно также создать файл json при помощи команды консоли </p>
+        <p>Первая команда : npm init - после этой команды нужно несколько раз подтвердить данные или изменить их</p>
+        <p>Вторая команда  : npm init -y - все подтвердится автоматически</p>
+       
+    </div>
+    <h2>Описание версий библиотек</h2>
+    <p>semver - Семантическое Версионирование  <a href="https://semver.org/lang/ru/">Подробное описание</a></p>
+    <pre>
+        <code>
+            пример названий индексов версии описание выше
+            "react-dom": "^18.2.0",
+            ^- - 
+            18 - МАЖОРНАЯ - может обновление может поломать сайт надо читать документацию что поменялось
+            2 - МИНОРНУЮ - добавлена функциональность нечего не ломается в сайте и приносит новые фитчи в библиотеке
+            0 - ПАТЧ- не чего не добавляет фиксит баги
+        </code>
+    </pre>
+    <p>PS  мелкие библиотеки могут не придерживаися этих правил</p>
+</div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+        
