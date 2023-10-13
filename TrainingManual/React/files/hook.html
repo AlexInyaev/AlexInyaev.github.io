@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Хуки</h2>
+        <h4>useState</h4>
+        <p>useState - Это функция которая принимает первоначальное значение переменной и возвращает эту переменную и функцию setState (setNameVariable) </p>
+        <p>setState (setNameVariable) - принимает новое значение для переменной и заменяет его в переменной и перерисовывает компонент</p>
+    <pre>
+        <code>
+            import { useState } from "react"
+            import Children from "./Children"
+            
+            
+            export default function UseEffect(){
+            
+                const [state, setState] = useState(true);
+                const [count,setCount] = useState(0);
+
+                function onClickHandler(){
+                    setState((currentState)=&gt;!currentState)
+                };
+            
+                function onChangeCountHandler(){
+                    setCount((currentState)=&gt; ++currentState);   
+                };
+
+            return(
+            &lt;div&gt;
+                &lt;p&gt;{count}&lt;/p&gt;
+                {state&amp;&amp;&lt;Children count={count}/&gt;} {/* если переменная state равна true то элемент Children - будет отрисован*/}
+                &lt;button onClick={onChangeCountHandler}&gt;changeCount&lt;/button&gt;
+                &lt;button onClick={onClickHandler}&gt;change&lt;/button&gt;
+            &lt;/div&gt;
+            )
+            };
+        </code>
+    </pre>
+        <h4>useEffect</h4>
+        <p>useEffect - это функция которая принимает два параметра :</p>
+        <ol>
+            <li> Функцию которая отслеживает отрисовку компонента 
+                <br> Также эта функция может вернуть другую функцию и возвращаемая функция отслеживает удаление компонента</li>
+            <li>Массив переменных, если в массив передано значение то useEffect уже будет отслеживать только изменение этих переменных</li>
+        </ol>
+    <pre>
+        <code class="">
+            useEffect(()=>{
+                console.log('компонент отрисовал'); //когда компонент отрисован можно делать запрос на сервер или еще что-то
+            },[]);
+        
+            useEffect(()=>{
+                return()=>{
+                    console.log('элемент удален') //когда компонент удаляется используется чтобы подчистить мусор
+                }
+            },[]);
+        
+            useEffect(()=>{
+                if(props.count === 10) setDelivery(true); //отслеживает изменение переменных которые занесены в массив (второй аргумент)
+                console.log('переменная изменена') //переменная изменена
+            },[props.count]); //в этот массив можно заносить много переменных и он на них на всех будет срабатывать
+        
+        </code>
+    </pre>
+</div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+        
