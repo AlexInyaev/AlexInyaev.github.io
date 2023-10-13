@@ -70,6 +70,58 @@
         
         </code>
     </pre>
+
+    <h4>useMemo</h4>
+    <pre>
+        <code>
+            import { useMemo, useState } from "react";
+
+
+            export default function UseMemo(){
+            
+                const [clicker, setClicker] = useState(0);
+                const [count, setCount] = useState(0);
+            
+                function plusClickerHandler(){
+                    setClicker((value)=&gt; ++value)
+                }
+                function minusClickerHandler(){
+                    setClicker((value)=&gt; --value)
+                }
+                function changeCountHandler(){
+                    setCount((value)=&gt;++value)
+                }
+            
+                function counter(count){   /*допустим что это ресурса затратная функция и она будет запускаться при каждой перерисовке компонента
+                а перерисовку мы получаем при каждом изменение useState т.е функция counter будет запускаться даже тогда когда нам не нужен 
+                результат ее вычислений тем самым будет грузить систему. Для того чтобы избежать этого мы вызов функции помещаем в функцию в useMemo
+                а входные параметры нашей функции добавляем в массив второй параметр useMemo, и useMemo отслеживает изменение переменных в этом массиве 
+                и если там произошли изменения то useMemo запускает функцию первый аргумент где и вызывается counter  */
+                    for(let i = 2; i &lt; 10 ;i++){
+                        count *= i;    
+                    }
+                    return count;
+                }
+            
+                let outCount = useMemo(()=&gt;{ // функция стрелка первый аргумент useMemo
+                    console.log('work useMemo');
+                  return   counter(count); // вызов функции counter
+                },[count])// массив второй аргумент useMemo
+                
+              
+            
+                return(
+                    &lt;div&gt;
+                        &lt;p&gt;Clicker: {clicker}&lt;/p&gt;
+                        &lt;p&gt;Count: {outCount}&lt;/p&gt;
+                        &lt;button onClick={plusClickerHandler}&gt;+&lt;/button&gt;
+                        &lt;button onClick={minusClickerHandler}&gt;-&lt;/button&gt;
+                        &lt;button onClick={changeCountHandler}&gt;Count + 1&lt;/button&gt;
+                    &lt;/div&gt;
+                )
+            }
+        </code>
+    </pre>
 </div>
 
     <script src="../../libs/highlight/highlight.pack.js"></script>
