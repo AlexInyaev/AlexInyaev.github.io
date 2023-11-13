@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Иммутабильность</h2>
+      <h3>Объект user</h3>
+      <pre>
+        <code class="">
+            const user = {
+                id: 1,
+                name: "evgeny",
+                posts: [
+                  { id: 1, title: "React 1" },
+                  { id: 2, title: "React 2" },
+                  { id: 3, title: "React 3" },
+                  { id: 4, title: "React 4" },
+                ],
+              };
+            
+        </code>
+    </pre>
+      <h3>Добавление/Обновление поля объекта</h3>
+      <pre>
+        <code class="">
+            const user2 = {
+                id: 1,
+                name: "evgeny",
+              };
+            
+              const user3 = {
+                ...user, // Разворачиваем user
+                name: "evgeny bloger", // Обновляем поле
+                status: "hero", // Добавляем поле
+              };
+              // используя assign https://learn.javascript.ru/object-copy
+              const user4 = Object.assign({}, user2, {
+                name: "evgeny bloger",
+                status: "hero",
+              });
+            
+        </code>
+    </pre>
+      <h3>Глубокое изменение когда нужно изменить поля внутренних объектов</h3>
+      <pre>
+        <code class="">
+            const deepUser = {
+                id: 1,
+                name: "evgeny",
+                post: {
+                  title: "hey",
+                },
+                photo: {
+                  url: "http//...",
+                },
+              };
+            
+              const deepUser2 = {
+                ...deepUser,
+                post: {
+                  ...deepUser.post,
+                  title: "hoy",
+                },
+              };
+        </code>
+    </pre>
+      <h3>Удаление поля объекта</h3>
+      <pre>
+        <code class="">
+            const userCopy = { ...user };
+            delete userCopy.name; // хоть это и мутабельная операция но если сразу написано то оно так допускается
+          
+            //===
+          
+            const { name: _, ...userRest } = user; //более правильный метод нижнее подчеркивание означает что мы это поле не будем использовать
+          
+            // ===
+          
+            const user5 = {
+              ...user,
+              name: undefined, //при этом способе может возникнуть проблема при итерации
+            };
+          
+        </code>
+    </pre>
+
+      <h3>массив posts</h3>
+      <pre>
+        <code class="">
+            const posts = [
+            { id: 1, title: "React 1" },
+            { id: 2, title: "React 2" },
+            { id: 3, title: "React 3" },
+            { id: 4, title: "React 4" },
+          ];
+        </code>
+    </pre>
+
+      <h3>Добавление элементов в массив</h3>
+      <pre>
+        <code class="">
+          const posts2 = [{ id: 0, title: "React 0" }, ...posts]; //добавление в начало
+          const posts3 = [...posts, { id: 5, title: "React 5" }]; //добавление в конец
+          const posts4 = [
+            //добавление по индексу
+            ...posts.slice(0, 3), // копируем элементы массива от нуля до индекса 3
+            { id: 5, title: "React 5" }, // добавляем элемент
+            ...posts.slice(3), //копируем с индекса 3 до конца массива
+          ];
+        
+        </code>
+    </pre>
+      <h3>Обновление элементов массива</h3>
+      <pre>
+        <code class="">
+            const postsCopy = posts.slice();
+            postsCopy[3] = { ...postsCopy[3], title: "React 4444" }; // хоть эта операция и мутабельна но сразу после копирования применение допускается
+          
+            const posts5 = posts.map(
+              (post) => (post.id === 3 ? { ...post, title: "React 3333" } : post) //где id == 3  мы объект обновляем остальные копируем без изменений
+            );
+          
+        </code>
+    </pre>
+      <h3>Удаление элементов массива</h3>
+      <pre>
+        <code class="">
+            const posts6 = posts.slice();
+            posts6.splice(2, 1);
+          
+            const posts7 = posts.filter((post) => post.id !== 1);
+          
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>
