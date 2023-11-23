@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>JSX</h2>
+      <h3>Что мы можем передавать в jsx</h3>
+      <pre>
+        <code class="">
+         1 - string => string
+         1 - number => string
+         1 - bool   => игнор
+         1 - null   => игнор
+         1 - NAN   => NAN + error
+         1 - undefined => игнор
+         1 - [] => все элементы
+         1 - {} => error
+         1 - другие реакт элементы => другие реакт элементы
+         1 - массив реакт элементов + key => отрисует все
+        </code>
+    </pre>
+      <h3>Динамически выбираем элемент</h3>
+      <pre>
+      <code>
+        export default function App() {
+          return &lt;DynamicTypeEl typeEl="P"&gt;Hello world&lt;/DynamicTypeEl&gt;; //передаем пропсом название элемента
+        }
+        
+        function DynamicTypeEl({ typeEl }) {
+          const DynamicEl = FormUi[typeEl]; // динамически выбираем элемент из массива
+          return &lt;DynamicEl /&gt;;
+        }
+        
+        const FormUi = {
+          Input() {
+            return &lt;input /&gt;;
+          },
+          TextArea() {
+            return &lt;textarea /&gt;;
+          },
+          P() {
+            return &lt;p&gt;{[1, 2, 3]}&lt;/p&gt;;
+          },
+        };
+      </code>
+    </pre>
+
+      <h3>Условный рендеринг</h3>
+      <h4>expression выражения</h4>
+      <pre>
+      <code>
+        const isElement = false;
+        В jsx мы не можем использовать if(){} т.к он ничего не возвращает
+        В jsx мы  можем использовать экспрешин выражения ? &amp;&amp; ||
+        isElement ? &lt;div&gt;1&lt;/div&gt; : &lt;div&gt;2&lt;/div&gt;
+        isElement &amp;&amp; &lt;div&gt;1&lt;/div&gt; если isElement = true;
+        isElement || &lt;div&gt;2&lt;/div&gt; если isElement = false;
+        return &lt;&gt;{isElement || &lt;div&gt;2&lt;/div&gt;}&lt;/&gt;;
+      </code>
+    </pre>
+      <h3>Условный рендеринг</h3>
+      <h4>используем объект для условия</h4>
+      <pre>
+      <code>
+        const type = "3";
+        const elements = {
+          1: &lt;div&gt;2&lt;/div&gt;,
+          2: &lt;p&gt;p2&lt;/p&gt;,
+          3: &lt;h3&gt;h3&lt;/h3&gt;,
+        };
+      
+        return &lt;&gt;{elements[type]}&lt;/&gt;;
+      }
+      </code>
+    </pre>
+      <h3>Условный рендеринг</h3>
+      <h4>Используя функцию</h4>
+      <pre>
+      <code>
+        export default function App() {
+          function renderElement(value) {
+            if (value === "1") {
+              return &lt;div&gt;2&lt;/div&gt;;
+            }
+            if (value === "2") {
+              return &lt;p&gt;p2&lt;/p&gt;;
+            }
+            if (value === "3") {
+              return &lt;h3&gt;h3&lt;/h3&gt;;
+            }
+          }
+          return &lt;&gt;{renderElement("3")}&lt;/&gt;;
+        }
+      </code>
+    </pre>
+      <h3>условное навешивание класса</h3>
+      <h4>для присвоения класса в jsx используется атрибут className</h4>
+      <p>
+        <a href="https://www.npmjs.com/package/classnames"
+          >библиотека для работы с классами
+          https://www.npmjs.com/package/classnames</a
+        >
+      </p>
+      <pre>
+      <code>
+        export default function App() {
+          const isClassName = true;
+          return (
+            &lt;div className={`anyClass ${isClassName ? "dynamic-className" : ""}`}&gt;&lt;/div&gt;
+             // anyClass - просто класс его может и не быть и запись будет такой className={`${isClassName ? "dynamic-className" : ""}`}
+          );
+        }
+      </code>
+    </pre>
+      <h3>Стили</h3>
+      <p>Стили в jsx это объект и поэтому пишем их в двойные скобки</p>
+      <p>Стили в jsx пишутся в camel case</p>
+      <pre>
+      <code>
+        export default function App() {
+          return (
+            &lt;div
+              style={{
+                color: "Red",
+                textDecoration: "underline",
+              }}
+            &gt;
+              Text
+            &lt;/div&gt;
+          );
+        }
+      </code>
+    </pre>
+      <h3>обработчики событий</h3>
+      <pre>
+      <code>
+        export default function App() {
+
+          function HandlerFunc() {}
+
+          return &lt;div onClick={HandlerFunc}&gt;Text&lt;/div&gt;;
+
+        }
+          1) обработчик начинается с on  и затем само событие с большой буквы, в скобках функция обработчик 
+          2) при событиях тоже работает всплытие и поэтому событие сработает и на дочерних элементах
+          3) если нужно поймать событие на погружение то нужно писать onClickCapture  &lt;div onClickCapture={HandlerFunc}&gt;Text&lt;/div&gt;
+          
+        
+      </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>

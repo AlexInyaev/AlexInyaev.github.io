@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Пропс в виде строки</h2>
+      <p>
+        Если нужно в пропс передать true то мы можем написать просто название
+        пропса без присвоения ему значения
+      </p>
+      <p>
+        Мы можем передавать любые значения используя {} &lt;Component
+        userName={} &gt;&lt;/Component&gt;;
+      </p>
+      <pre>
+        <code class="">
+            export default function App() {
+                return (
+                  &lt;div&gt;
+                    &lt;Component userName="text" isDisabled&gt;&lt;/Component&gt;
+                    &lt;ComponentFE userName="text" isDisabled&gt;&lt;/ComponentFE&gt;
+                  &lt;/div&gt;
+                );
+              }
+              
+              function Component(props) {
+                //можно получить пропс объектом или сразу развернуть его пример ниже ComponentFE
+                console.log(props.userName);
+                return null;
+              }
+              function ComponentFE({ userName }) {
+                console.log(userName);
+                return null;
+              }
+              
+        </code>
+    </pre>
+      <h2>Передаем объект в пропс</h2>
+      <pre>
+        <code class="">
+            export default function App() {
+                const compObj = {
+                  age: 15,
+                  name: "test",
+                };
+                return (
+                  &lt;div&gt;
+                    &lt;ComponentObj {...compObj}&gt;&lt;/ComponentObj&gt;
+                  &lt;/div&gt;
+                );
+              }
+              
+              function ComponentObj(props) {
+                console.log(props);
+                return null;
+              }
+        </code>
+    </pre>
+      <h2>Все то что между тегами компонента попадает в children</h2>
+      <pre>
+        <code class="">
+            export default function App() {
+                return (
+                  &amp;lt;div&amp;gt;
+                    &amp;lt;ComponentChildren&amp;gt;to prop children&amp;lt;/ComponentChildren&amp;gt;
+                  &amp;lt;/div&amp;gt;
+                );
+              }
+              
+              function ComponentChildren(props) {
+                console.log(props); //{children: 'to prop children'}
+                return null;
+              }
+              
+        </code>
+    </pre>
+      <h2>в children можно пробросить верстку</h2>
+      <pre>
+        <code class="">
+            export default function App() {
+                return (
+                  &lt;ComponentChildrenUse&gt;
+                    &lt;p&gt;
+                      to &lt;i&gt;prop&lt;/i&gt;
+                      &lt;b&gt; children&lt;/b&gt;
+                    &lt;/p&gt;
+                  &lt;/ComponentChildrenUse&gt;
+                );
+              }
+              
+              function ComponentChildrenUse({ children }) {
+                return &lt;div&gt;{children}&lt;/div&gt;;
+              }
+        </code>
+    </pre>
+      <h2>пробрасываем функцию в children которая возвращает элемент</h2>
+      <pre>
+        <code class="">
+            export default function App() {
+                return (
+                  &lt;ComponentWithFunc&gt;
+                    {(text) =&gt; {
+                      return &lt;div&gt;{text}&lt;/div&gt;;
+                    }}
+                  &lt;/ComponentWithFunc&gt;
+                );
+              }
+              
+              function ComponentWithFunc({ children }) {
+                console.log(typeof children); //function
+                return &lt;div&gt;{children("anyText")}&lt;/div&gt;;
+              }
+        </code>
+    </pre>
+      <h2>Пример с Layout</h2>
+      <p>
+        Layout - используется для стилизации элементов про которые этот
+        компонент и не знает удобно при смене компонентов можно поменять в одном
+        месте а компонент Layout все сделает
+      </p>
+      <pre>
+        <code class="">
+            export default function App() {
+                return (
+                  &lt;Layout
+                    header={&lt;div&gt;header&lt;/div&gt;}
+                    aside={&lt;div&gt;aside&lt;/div&gt;}
+                    main={&lt;div&gt;main&lt;/div&gt;}
+                  &gt;&lt;/Layout&gt;
+                );
+              }
+              
+              function Layout({ header, aside, main }) {
+                return (
+                  &lt;div&gt;
+                    &lt;header&gt;{header}&lt;/header&gt;
+                    &lt;aside&gt;{aside}&lt;/aside&gt;
+                    &lt;main&gt;{main}&lt;/main&gt;
+                  &lt;/div&gt;
+                );
+              }
+              
+        </code>
+    </pre>
+      <h2>React.Fragment</h2>
+      <p>
+        Fragment - используется для того чтобы избежать лишнего &lt;div&gt;
+        обертки т.к Fragment не отрисовывается есть 2 вида записи
+        &lt;React.Fragment&gt;header&lt;/React.Fragment&gt; и
+        &lt;&gt;aside&lt;/&gt; для того чтобы прописать key нужно писать
+        полностью &lt;React.Fragment key={5}&gt;main&lt;/React.Fragment&gt;
+      </p>
+      <pre>
+        <code class="">
+import React from "react";
+
+export default function App() {
+  return (
+    &lt;LayoutFragment
+      header={&lt;React.Fragment&gt;header&lt;/React.Fragment&gt;}
+      aside={&lt;&gt;aside&lt;/&gt;}
+      main={&lt;React.Fragment key={5}&gt;main&lt;/React.Fragment&gt;}
+    &gt;&lt;/LayoutFragment&gt;
+  );
+}
+
+function LayoutFragment({ header, aside, main }) {
+  return (
+    &lt;div&gt;
+      &lt;header&gt;{header}&lt;/header&gt;
+      &lt;aside&gt;{aside}&lt;/aside&gt;
+      &lt;main&gt;{main}&lt;/main&gt;
+    &lt;/div&gt;
+  );
+}
+
+        </code>
+    </pre>
+      <h2>Проброс функции которая возвращает элемент</h2>
+      <pre>
+        <code class="">
+            import { useState } from "react";
+
+export default function App() {
+  return (
+    &lt;LayoutFunc
+      renderHeader={(isBeautifulHeader) =&gt; (                                // 1 - объявляется и пробрасывается стрелочная функция
+        &lt;div&gt;header{isBeautifulHeader &amp;&amp; " hey"}&lt;/div&gt;
+      )}
+      aside={&lt;div&gt;aside&lt;/div&gt;}
+      main={&lt;div&gt;main&lt;/div&gt;}
+    &gt;&lt;/LayoutFunc&gt;
+  );
+}
+
+function LayoutFunc({ renderHeader, aside, main }) {
+  const [isBeautifulHeader] = useState(true);
+  return (
+    &lt;div&gt;
+      &lt;header&gt;{renderHeader(isBeautifulHeader)}&lt;/header&gt;                       // 2 - Вызывается и получает в качестве параметра state
+      &lt;aside&gt;{aside}&lt;/aside&gt;
+      &lt;main&gt;{main}&lt;/main&gt;
+    &lt;/div&gt;
+  );
+}
+
+        </code>
+    </pre>
+    </div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>
