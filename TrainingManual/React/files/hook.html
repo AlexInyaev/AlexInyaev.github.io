@@ -11,39 +11,112 @@
     
     <div class="wrapper">
         <h2>Хуки</h2>
-        <h4>useState</h4>
-        <p>useState - Это функция которая принимает первоначальное значение переменной и возвращает эту переменную и функцию setState (setNameVariable) </p>
+        <div>
+            <h2>Правила хуков</h2>
+            <ol>
+                <li>Реакт хуки мы можем вызывать только в нутрии компонентов и других кастомных хуков</li>
+                <li>Порядок и количество вызовов реакт хуков должно быть одинаковыми между всеми ререндарами компонента(хуки нельзя пихать в условия и циклы)</li>
+            </ol>
+        </div>
+        
+        <h2>useState</h2>
+        <p>useState - Это функция которая принимает первоначальное значение переменной и возвращает эту переменную состояния и функцию setState (setNameVariable) </p>
         <p>setState (setNameVariable) - принимает новое значение для переменной и заменяет его в переменной и перерисовывает компонент</p>
-    <pre>
-        <code>
-            import { useState } from "react"
-            import Children from "./Children"
-            
-            
-            export default function UseEffect(){
-            
-                const [state, setState] = useState(true);
-                const [count,setCount] = useState(0);
-
-                function onClickHandler(){
-                    setState((currentState)=&gt;!currentState)
-                };
-            
-                function onChangeCountHandler(){
-                    setCount((currentState)=&gt; ++currentState);   
-                };
-
-            return(
-            &lt;div&gt;
-                &lt;p&gt;{count}&lt;/p&gt;
-                {state&amp;&amp;&lt;Children count={count}/&gt;} {/* если переменная state равна true то элемент Children - будет отрисован*/}
-                &lt;button onClick={onChangeCountHandler}&gt;changeCount&lt;/button&gt;
-                &lt;button onClick={onClickHandler}&gt;change&lt;/button&gt;
-            &lt;/div&gt;
-            )
-            };
-        </code>
-    </pre>
+        <p>переменная состояния отличается от обычной переменной тем что react нам гарантирует что состояние всегда синхронизировано с отображением (если соблюдены правила использования стэйта)</p>
+        <div>
+            <h4>Правила использования стэйт</h4>
+            <ol>
+                <li>UseState - это хук и он должен соблюдать правила использования хуков</li>
+                <li>Мы должны использовать функцию setState для изменения значения переменной состояния </li>
+                <li>Состояние должно быть имутабельном</li>
+            </ol>
+        </div>
+        <div>
+            <h4>Пример использования state</h4>
+            <pre>
+                <code>
+                    import { useState } from "react"
+                    import Children from "./Children"
+                    
+                    
+                    export default function UseEffect(){
+                    
+                        const [state, setState] = useState(true);
+                        const [count,setCount] = useState(0);
+        
+                        function onClickHandler(){
+                            setState((currentState)=&gt;!currentState)
+                        };
+                    
+                        function onChangeCountHandler(){
+                            setCount((currentState)=&gt; ++currentState);   
+                        };
+        
+                    return(
+                    &lt;div&gt;
+                        &lt;p&gt;{count}&lt;/p&gt;
+                        {state&amp;&amp;&lt;Children count={count}/&gt;} {/* если переменная state равна true то элемент Children - будет отрисован*/}
+                        &lt;button onClick={onChangeCountHandler}&gt;changeCount&lt;/button&gt;
+                        &lt;button onClick={onClickHandler}&gt;change&lt;/button&gt;
+                    &lt;/div&gt;
+                    )
+                    };
+                </code>
+            </pre>
+            <h4>4 особенности useState</h4>
+            <p class="underline"><span class="colorBlue">1.</span> Функция изменения состояния меняет состояние асинхронно</p>
+            <p>Поэтому реакт меняет состояние не сразу и из за этого возникает баг который показан ниже</p>
+            <pre>
+                <code>
+                    function App() {
+                        const [counter , setCounter] = useState(0);
+                        const increment = ()=&gt;{
+                          setCounter(counter + 1); //здесь все работает нормально 
+                        }
+                       
+                         const increment3 = ()=&gt;{
+                           /* т.к мы меняем counter  в функции increment то вызвав 3 раза increment мы должны получить  counter увеличенный на 3
+                         но этого не происходит потому что переменная counter хранится в замыкание useState и пока ее useState не изменит она всегда будет иметь одно значение.
+                         Для решения этой проблемы (и доже всегда когда мы работаем над изменением состояния используя значение этого состояния) нужно использовать функцию колбэк которая получает последнее состояние из State lastCount 
+                         и изменяет его и возвращает
+                         Вое запись с использованием этой функции  :
+                                                                      setCounter((lastCount)=&gt;{
+                                                                        return lastCount + 1;
+                                                                      })
+                         */ 
+                          increment();
+                          increment();
+                          increment();
+                        }
+                        return (
+                          &lt;div &gt;
+                           &lt;p&gt;Счетчик : {counter}&lt;/p&gt;
+                           &lt;button onClick={increment}&gt;+1&lt;/button&gt;
+                           &lt;button onClick={increment3}&gt;+3&lt;/button&gt;
+                          &lt;/div&gt;
+                        );
+                      }
+                </code>
+            </pre>
+            <p  class="underline"><span class="colorBlue">2.</span> setState - не вызывает ререндер если состояние не поменялось</p>
+            <p>Из за этой особенности мы не можем работать с мутабельными объектами. Нам нужно работать с объектами в имутабельном стиле т.е при изменение поля объекта нам нужно создать копию объекта и в этой копии поменять это поле пример ниже  </p>
+            <pre>
+                <code>
+                    const [counter , setCounter] = useState({counter:0});
+                    const increment = ()=&gt;{
+                      setCounter((lastCounter)=&gt;{
+                        return {...lastCounter, counter: lastCounter.counter + 1} /*возвращаем объект в который разворачиваем состояние и меняем поле
+                                                                                     (даже если одно поле всеравно нужно разворачивать объект стейта в бедующим может быть больше полей )*/ 
+                      }); 
+                    }
+                </code>
+            </pre>
+             <p  class="underline"><span class="colorBlue">3.</span> Начиная с 18 версии в реакт встроен автобагчин. Если в компоненте несколько изменений состояний то реакт выполнит один ререндер для всех изменений состояний а не для каждого в отдельности</p>
+             <p class="underline"><span class="colorBlue">4.</span> В useState - ми можем передавать не просто значение но и функцию которая вернет это значение</p>
+             <p>Пои реренденге useState () буден запускать функцию в скобках ее запуск не нужен т.к useState значение нужно только при монтирование компонента</p>
+             <p>Для избежания вызова этой функции нужно использовать функцию колбэк примерно так: <span class="colorBlue">useState(()=> func(initialState)</span></p>
+        </div>
+    
         <h4>useEffect</h4>
         <p>useEffect - это функция которая принимает два параметра :</p>
         <ol>
