@@ -1,0 +1,49 @@
+!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методичка</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Раздел</h2>
+    <pre>
+        <code class="">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+               &lt;meta charset="UTF-8"&gt;
+               &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+               &lt;title&gt;Document&lt;/title&gt;
+                &lt;script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin&gt;&lt;/script&gt;
+                &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin&gt;&lt;/script&gt;
+                &lt;script src="https://unpkg.com/babel-standalone@6/babel.min.js"&gt;&lt;/script&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+               &lt;div id="root"&gt;&lt;/div&gt;
+               
+               &lt;script type="text/babel"&gt;
+                      function App(){
+                        return &lt;div&gt;Hello world&lt;/div&gt;
+                      }
+            
+                    const domContainer = document.querySelector('#root');
+                    const root = ReactDOM.createRoot(domContainer);
+                    root.render(&lt;App/&gt;);
+               &lt;/script&gt;
+               
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </code>
+    </pre>
+</div>
+
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+        
