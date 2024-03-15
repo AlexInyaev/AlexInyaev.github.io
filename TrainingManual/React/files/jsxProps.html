@@ -185,32 +185,30 @@ function LayoutFragment({ header, aside, main }) {
         </code>
     </pre>
       <h2>Проброс функции которая возвращает элемент</h2>
+      <p>Пригодится когда нужно state хранить в компоненте когда его нельзя поднять в верх </p>
       <pre>
         <code class="">
-            import { useState } from "react";
+          function App(){
 
-export default function App() {
-  return (
-    &lt;LayoutFunc
-      renderHeader={(isBeautifulHeader) =&gt; (                                // 1 - объявляется и пробрасывается стрелочная функция
-        &lt;div&gt;header{isBeautifulHeader &amp;&amp; " hey"}&lt;/div&gt;
-      )}
-      aside={&lt;div&gt;aside&lt;/div&gt;}
-      main={&lt;div&gt;main&lt;/div&gt;}
-    &gt;&lt;/LayoutFunc&gt;
-  );
-}
 
-function LayoutFunc({ renderHeader, aside, main }) {
-  const [isBeautifulHeader] = useState(true);
-  return (
-    &lt;div&gt;
-      &lt;header&gt;{renderHeader(isBeautifulHeader)}&lt;/header&gt;                       // 2 - Вызывается и получает в качестве параметра state
-      &lt;aside&gt;{aside}&lt;/aside&gt;
-      &lt;main&gt;{main}&lt;/main&gt;
-    &lt;/div&gt;
-  );
-}
+            return (
+                    &lt;div&gt;
+                        &lt;Layout renderHeader={(idBeautifyHeader)=&gt;&lt;div&gt;Header {idBeautifyHeader &amp;&amp; 'is Beautify'}&lt;/div&gt;}&gt; &lt;/Layout&gt;
+                    &lt;/div&gt;
+            )
+            
+            
+               
+            }
+            function Layout({renderHeader}){
+               const [idBeautifyHeader,setIdBeautifyHeader] = React.useState(false);
+            
+               const handelClick = ()=&gt; idBeautifyHeader ? setIdBeautifyHeader(false):setIdBeautifyHeader(true);
+
+                 return&lt;div&gt;&lt;header onClick={handelClick}&gt;{renderHeader(idBeautifyHeader)}&lt;/header&gt;
+                       &lt;/div&gt;
+                
+            }
 
         </code>
     </pre>
