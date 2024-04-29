@@ -14,3 +14,8 @@ function showMenu() {
 
 hideButton.addEventListener("click", hideMenu);
 showMenuButton.addEventListener("click", showMenu);
+
+function test(){
+    alert()
+}
+document.querySelector("#Rus").addEventListener("click", test);

@@ -38,6 +38,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+
 .topNavigation {
   width: 15%;
   height: 100vh;
@@ -76,6 +77,12 @@ body {
   background-position: center;
   background-size: cover;
   transform: rotate(90deg);
+}
+.list:hover{
+  cursor: pointer;
+}
+.infoBlock{
+  background-color: #47474a;
 }
 .content{
   padding-top: 25px;
