@@ -1,17 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
 * {
   box-sizing: border-box;
   /* margin: 0; */
   /* padding: 0; */
 }
 body {
-  background-color: gray;
+  background-color: #2a2929;
+  margin: 0;
+  color:#B0ABBF;
+  /* color:#8F8B9C; */
+
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:18px;
 }
 .wrapper {
   display: flex;
   max-width: 1280px;
   margin: auto;
-  background-color: rgb(241, 240, 240);
+  background-color: #1C1C1C;
   height: 100vh;
+  position: relative;
+  /* padding-top: 25px; */
+}
+.showMenu {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 20px;
+  width: 20px;
+  background-image: url(../icons/next.png);
+  transform: rotate(90deg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .topNavigation {
   width: 15%;
@@ -38,7 +63,7 @@ body {
   background-position: center;
   background-size: cover;
 }
-.topButton {
+.hideButton {
   background-image: url(../icons/next.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -51,4 +76,10 @@ body {
   background-position: center;
   background-size: cover;
   transform: rotate(90deg);
+}
+.content{
+  padding-top: 25px;
+  padding-left: 15px;
+  max-width: 807px;
+  /* margin: auto; */
 }
