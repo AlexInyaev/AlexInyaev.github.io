@@ -1,21 +1,31 @@
-const hideButton = document.querySelector(".hideButton");
-const showMenuButton = document.querySelector(".showMenu");
-const menuField = document.querySelector(".topNavigation");
 function hideMenu() {
-  
-  console.log(menuField);
-  menuField.classList.add("hideElement");
-  showMenuButton.classList.remove("hideElement")
+  topNavigation.classList.add("hideElement");
+  showMenuButton.classList.remove("hideElement");
 }
 function showMenu() {
-  menuField.classList.remove("hideElement");
-  showMenuButton.classList.add("hideElement")
+  topNavigation.classList.remove("hideElement");
+  showMenuButton.classList.add("hideElement");
 }
 
 hideButton.addEventListener("click", hideMenu);
 showMenuButton.addEventListener("click", showMenu);
+// добавление обработчиков на пункты меню
+document.querySelector("#Rus").addEventListener("click", () => {
+  makeRusMenu(event);
+});
+document.querySelector("#Eng").addEventListener("click", () => {
+  makeEngMenu(event);
+});
 
-function test(){
-    alert()
+// возвращение стартового меню
+document
+  .querySelector("#startMenu")
+  .addEventListener("click", () => returnToStartMenu());
+
+function returnToStartMenu() {
+  if(anchorForAddElement!=='') anchorForAddElement.before(currantElement);
+  anchorForAddElement = "";
+  elementsStartMenu.style.display = "block";
+  englandMenu.style.display = "none";
+  russianMenu.style.display = "none";
 }
-document.querySelector("#Rus").addEventListener("click", test);

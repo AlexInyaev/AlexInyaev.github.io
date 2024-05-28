@@ -81,12 +81,33 @@ body {
 .list:hover{
   cursor: pointer;
 }
-.infoBlock{
+#infoBlock{
+  
   background-color: #47474a;
 }
+.infoBlockHide{
+  display: none;
+}
+
 .content{
   padding-top: 25px;
   padding-left: 15px;
   max-width: 807px;
   /* margin: auto; */
+}
+
+#mainMenu{
+/* display: none; */
+}
+#EnglandMenu{
+  display: none;
+}
+#RussianMenu{
+  display: none;
+}
+.colorGreen{
+  color:green;
+}
+.bigText{
+  font-size: xx-large;
 }
