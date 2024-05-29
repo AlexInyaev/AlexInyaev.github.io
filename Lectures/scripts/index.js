@@ -1,3 +1,21 @@
+// добавление обработчиков на пункты меню **************************************************************************
+
+/* как добавить новый раздел создаем разметку, копируем код ниже и изменяем параметры makeMenu(event,ol - полученный по id,'название класса директории','название директории'); 
+и еще новые страницы должны иметь такие-же названия что и id li ссылок
+ пример rusLess1 и <li id="rusLess1" class="название класса директории"></li>*/
+ 
+ document.querySelector("#Rus").addEventListener("click", () => {   // document.querySelector("#Rus") = это пункт mainMenu
+  parametersDirectory = makeMenu(event,russianMenu,'rusLess','Russian'); //parametersDirectory = используется для постройки меню 3-го уровня
+  addEvents();
+});
+// 
+document.querySelector("#Eng").addEventListener("click", () => {
+  parametersDirectory = makeMenu(event,englandMenu,'engLess','England');
+  addEvents();
+});
+
+// добавление обработчиков на пункты меню **************************************************************************
+
 function hideMenu() {
   topNavigation.classList.add("hideElement");
   showMenuButton.classList.remove("hideElement");
@@ -9,17 +27,10 @@ function showMenu() {
 
 hideButton.addEventListener("click", hideMenu);
 showMenuButton.addEventListener("click", showMenu);
-// добавление обработчиков на пункты меню
-document.querySelector("#Rus").addEventListener("click", () => {
-  parametersDirectory = makeMenu(event,russianMenu,'rusLess','Russian');
-  addEvents();
-});
-document.querySelector("#Eng").addEventListener("click", () => {
-  parametersDirectory = makeMenu(event,englandMenu,'engLess','England');
-  addEvents();
-});
+
 // обработчик второго уровня
 function makeMenu(event,blockMenu,classDirectory,nameDirectory) {
+  
   let elementForTopMenu = document.createElement("li");
   elementForTopMenu.classList.add("markerSecondLevel");
   elementForTopMenu.innerText = event.srcElement.innerText;

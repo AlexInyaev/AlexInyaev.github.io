@@ -8,10 +8,7 @@ const englandMenu = document.querySelector("#EnglandMenu");
 const russianMenu = document.querySelector("#RussianMenu");
 const objectContent = document.querySelector("#objectContent");
 
-// let anchorForAddElement = '';
-let currantElement = {};
 
 const engLess = document.querySelectorAll(".engLess");
-// const rusLess = document.querySelectorAll(".rusLess");
 
 let parametersDirectory ;
