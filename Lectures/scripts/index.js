@@ -11,14 +11,29 @@ hideButton.addEventListener("click", hideMenu);
 showMenuButton.addEventListener("click", showMenu);
 // добавление обработчиков на пункты меню
 document.querySelector("#Rus").addEventListener("click", () => {
-  parametersDirectory = makeRusMenu(event);
+  parametersDirectory = makeMenu(event,russianMenu,'rusLess','Russian');
   addEvents();
 });
 document.querySelector("#Eng").addEventListener("click", () => {
-  parametersDirectory = makeEngMenu(event);
+  parametersDirectory = makeMenu(event,englandMenu,'engLess','England');
   addEvents();
 });
 // обработчик второго уровня
+function makeMenu(event,blockMenu,classDirectory,nameDirectory) {
+  let elementForTopMenu = document.createElement("li");
+  elementForTopMenu.classList.add("markerSecondLevel");
+  elementForTopMenu.innerText = event.srcElement.innerText;
+  infoBlock.firstElementChild.appendChild(elementForTopMenu);
+  elementsStartMenu.style.display = "none";
+
+  blockMenu.style.display = "block";
+
+  objectContent.setAttribute(
+    "data",
+    `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`
+  );
+  return {classDirectory:classDirectory,nameDirectory:nameDirectory}
+}
 
 // возвращение стартового меню
 document
@@ -36,7 +51,7 @@ function returnToStartMenu() {
   objectContent.setAttribute("data", "startPage.html");
 }
 
-// third level menu
+// third level menu навешиваем события
 function addEvents(){
   for (let item of document.querySelectorAll(`.${parametersDirectory.classDirectory}`)) {
     item.addEventListener("click", () => {
@@ -44,7 +59,7 @@ function addEvents(){
     });
   }
 }
-
+//обработчик третьего уровня
 
 function drawMainePage(event, addressFrame) {
   if (document.querySelector(".markerThirdLevel")) {
