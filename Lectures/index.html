@@ -17,14 +17,14 @@
           <button class="topNavigationNavMenuButtons downButton"></button>
           <button class="topNavigationNavMenuButtons nextButton"></button>
         </div>
-        <div id="infoBlock" >
+        <div id="infoBlock">
           <ol>
-            <li id="startMenu">StartMenu</li>
+            <li id="startMenu" class="hoverEffect">StartMenu</li>
           </ol>
         </div>
         <ol id="mainMenu">
-          <li id="Eng">English</li>
-          <li id="Rus" class="list">Russia</li>
+          <li id="Eng" class="hoverEffect">English</li>
+          <li id="Rus" class="hoverEffect">Russia</li>
           <li>Harum, amet.</li>
           <li>Iste, fugit?</li>
           <li>Corrupti, quos!</li>
@@ -34,33 +34,35 @@
           <li>Eum, saepe!</li>
           <li>Sapiente, omnis?</li>
         </ol>
+       
         <ol id="EnglandMenu">
-          <li>England menu</li>
-          <li>England menu</li>
-          <li>England menu</li>
-          <li>England menu</li>
-          <li>England menu</li>
-          <li>England menu</li>
-          <li>England menu</li>
-          <li>England menu</li>
-          <li>England menu</li>
-          <li>England menu</li>
+           <!-- Id должен совпадать с названием файла -->
+          <li id="engLess1" class="engLess">Lesson1 Eng</li>
+          <li id="engLess2" class="engLess">Lesson2</li>
+          <li id="engLess3" class="engLess">lesson3</li>
+          <li id="engLess4" class="engLess">lesson4</li>
+          
         </ol>
         <ol id="RussianMenu">
-          <li id="RussianMenuTest">Russian menu test</li>
-          <li>Russian menu</li>
-          <li>Russian menu</li>
-          <li>Russian menu</li>
-          <li>Russian menu</li>
-          <li>Russian menu</li>
-          <li>Russian menu</li>
-          <li>Russian menu</li>
-          <li>Russian menu</li>
-          <li>Russian menu</li>
+          
+           <!-- Id должен совпадать с названием файла -->
+           <li id="rusLess1" class="rusLess">lesson4 Rus</li>
+           <li id="rusLess2" class="rusLess">lesson4</li>
+           <li id="rusLess3" class="rusLess">lesson4</li>
+           <li id="rusLess4" class="rusLess">lesson4</li>
         </ol>
       </div>
       <!-- side bar finish -->
-      <div id="content" class="content"></div>
+      <div id="content" class="content">
+        <!-- <div style="margin: 0 auto; width: 100%; height: 400px"> -->
+        <object
+          id="objectContent"
+          type="text/html"
+          data="startPage.html"
+          style="width: 100%; height: 100%; margin: 1%"
+        ></object>
+        <!-- </div> -->
+      </div>
     </div>
     <script src="scripts/variables.js"></script>
     <script src="disciplines/England/England.js"></script>

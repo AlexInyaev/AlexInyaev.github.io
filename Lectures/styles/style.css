@@ -78,8 +78,13 @@ body {
   background-size: cover;
   transform: rotate(90deg);
 }
-.list:hover{
+.hoverEffect{
+  /* color: blue; */
+  text-decoration: underline;
+}
+.hoverEffect:hover{
   cursor: pointer;
+  font-size: 20px;
 }
 #infoBlock{
   
