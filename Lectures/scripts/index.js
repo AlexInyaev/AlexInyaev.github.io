@@ -95,15 +95,14 @@ changeFrame.onmousedown = function (event) {
   console.log(window.innerWidth);
   console.log(wrapper.offsetWidth);
   moveAt(event.pageX);
-  // console.log(event)
-  // console.log(event.srcElement.offsetParent.srcElement)
+ 
   function moveAt(pageX) {
     if (window.innerWidth > wrapper.offsetWidth + 17) {
       topNavigation.style.width = `${pageX-((window.innerWidth - wrapper.offsetWidth )/2 )+6}px`;
     } else {
       topNavigation.style.width = `${pageX}px`;
     }
-    // topNavigation.style.width = `${parseInt(topNavigation.style.width.match(/\d+/)) + (pageX - startPositionCursor) }px` ;
+   
   }
 
   function onMouseMove(event) {
