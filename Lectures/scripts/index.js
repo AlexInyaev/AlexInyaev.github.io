@@ -92,8 +92,7 @@ function drawMainePage(event, addressFrame) {
 // изменение окон
 
 changeFrame.onmousedown = function (event) {
-  console.log(window.innerWidth);
-  console.log(wrapper.offsetWidth);
+  
   moveAt(event.pageX);
  
   function moveAt(pageX) {
@@ -115,5 +114,4 @@ changeFrame.onmousedown = function (event) {
     changeFrame.onmouseup = null;
   };
 };
-
-//
+// Mobile
