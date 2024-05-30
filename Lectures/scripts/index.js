@@ -3,14 +3,15 @@
 /* как добавить новый раздел создаем разметку, копируем код ниже и изменяем параметры makeMenu(event,ol - полученный по id,'название класса директории','название директории'); 
 и еще новые страницы должны иметь такие-же названия что и id li ссылок
  пример rusLess1 и <li id="rusLess1" class="название класса директории"></li>*/
- 
- document.querySelector("#Rus").addEventListener("click", () => {   // document.querySelector("#Rus") = это пункт mainMenu
-  parametersDirectory = makeMenu(event,russianMenu,'rusLess','Russian'); //parametersDirectory = используется для постройки меню 3-го уровня
+
+document.querySelector("#Rus").addEventListener("click", () => {
+  // document.querySelector("#Rus") = это пункт mainMenu
+  parametersDirectory = makeMenu(event, russianMenu, "rusLess", "Russian"); //parametersDirectory = используется для постройки меню 3-го уровня
   addEvents();
 });
-// 
+//
 document.querySelector("#Eng").addEventListener("click", () => {
-  parametersDirectory = makeMenu(event,englandMenu,'engLess','England');
+  parametersDirectory = makeMenu(event, englandMenu, "engLess", "England");
   addEvents();
 });
 
@@ -29,8 +30,7 @@ hideButton.addEventListener("click", hideMenu);
 showMenuButton.addEventListener("click", showMenu);
 
 // обработчик второго уровня
-function makeMenu(event,blockMenu,classDirectory,nameDirectory) {
-  
+function makeMenu(event, blockMenu, classDirectory, nameDirectory) {
   let elementForTopMenu = document.createElement("li");
   elementForTopMenu.classList.add("markerSecondLevel");
   elementForTopMenu.innerText = event.srcElement.innerText;
@@ -43,7 +43,7 @@ function makeMenu(event,blockMenu,classDirectory,nameDirectory) {
     "data",
     `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`
   );
-  return {classDirectory:classDirectory,nameDirectory:nameDirectory}
+  return { classDirectory: classDirectory, nameDirectory: nameDirectory };
 }
 
 // возвращение стартового меню
@@ -63,10 +63,15 @@ function returnToStartMenu() {
 }
 
 // third level menu навешиваем события
-function addEvents(){
-  for (let item of document.querySelectorAll(`.${parametersDirectory.classDirectory}`)) {
+function addEvents() {
+  for (let item of document.querySelectorAll(
+    `.${parametersDirectory.classDirectory}`
+  )) {
     item.addEventListener("click", () => {
-      drawMainePage(event, `disciplines/${parametersDirectory.nameDirectory}/pages/${item.id}.html`);
+      drawMainePage(
+        event,
+        `disciplines/${parametersDirectory.nameDirectory}/pages/${item.id}.html`
+      );
     });
   }
 }
@@ -80,6 +85,36 @@ function drawMainePage(event, addressFrame) {
   elementForTopMenu.classList.add("markerThirdLevel");
   elementForTopMenu.innerText = event.srcElement.innerText;
   infoBlock.firstElementChild.appendChild(elementForTopMenu);
-console.log(addressFrame)
+  console.log(addressFrame);
   objectContent.setAttribute("data", addressFrame);
 }
+
+// изменение окон
+
+changeFrame.onmousedown = function (event) {
+  console.log(window.innerWidth);
+  console.log(wrapper.offsetWidth);
+  moveAt(event.pageX);
+  // console.log(event)
+  // console.log(event.srcElement.offsetParent.srcElement)
+  function moveAt(pageX) {
+    if (window.innerWidth > wrapper.offsetWidth + 17) {
+      topNavigation.style.width = `${pageX-((window.innerWidth - wrapper.offsetWidth )/2 )+6}px`;
+    } else {
+      topNavigation.style.width = `${pageX}px`;
+    }
+    // topNavigation.style.width = `${parseInt(topNavigation.style.width.match(/\d+/)) + (pageX - startPositionCursor) }px` ;
+  }
+
+  function onMouseMove(event) {
+    moveAt(event.pageX);
+  }
+  document.addEventListener("mousemove", onMouseMove);
+  // mousemove mousedown
+  changeFrame.onmouseup = function () {
+    document.removeEventListener("mousemove", onMouseMove);
+    changeFrame.onmouseup = null;
+  };
+};
+
+//

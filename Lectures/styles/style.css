@@ -40,9 +40,9 @@ body {
 }
 
 .topNavigation {
-  width: 15%;
+  width: 200px;
   height: 100vh;
-  border-right: 10px solid rgb(183, 149, 149);
+  /* border-right: 10px solid rgb(183, 149, 149); */
 }
 .hideElement {
   display: none;
@@ -93,7 +93,14 @@ body {
 .infoBlockHide{
   display: none;
 }
-
+#changeFrame{
+  height: 100%;
+  width: 5px;
+  background-color:  #B79595;
+}
+#changeFrame:hover{
+  cursor: w-resize;
+}
 .content{
   padding-top: 25px;
   padding-left: 15px;
