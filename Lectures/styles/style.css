@@ -88,6 +88,10 @@ body {
   cursor: pointer;
   font-size: 20px;
 }
+.hoverPointer:hover{
+  cursor: pointer;
+  font-size: 20px;
+}
 #infoBlock{
   
   background-color: #47474a;
@@ -108,6 +112,12 @@ body {
   padding-left: 15px;
   max-width: 807px;
   /* margin: auto; */
+ 
+}
+.parametersContentWindow{
+  width: 1000px; 
+  height: 100%;
+   margin: 1%
 }
 
 #mainMenu{

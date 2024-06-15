@@ -8,7 +8,7 @@
     <!--  -->
   </head>
   <body>
-    <div class="wrapper"id="wrapper">
+    <div class="wrapper" id="wrapper">
       <button class="showMenu hideElement"></button>
       <!-- side bar -->
       <div class="topNavigation">
@@ -22,6 +22,7 @@
             <li id="startMenu" class="hoverEffect">StartMenu</li>
           </ol>
         </div>
+        <!-- Пункты меню второго уровня -->
         <ol id="mainMenu">
           <li id="Eng" class="hoverEffect">English</li>
           <li id="Rus" class="hoverEffect">Russia</li>
@@ -34,23 +35,26 @@
           <li>Eum, saepe!</li>
           <li>Sapiente, omnis?</li>
         </ol>
-       
+         <!-- Пункты меню второго уровня окончание -->
+        <!-- Пункты меню третьего уровня ********************************************************-->
+        <!-- Английский язык -->
         <ol id="EnglandMenu">
-           <!-- Id должен совпадать с названием файла -->
-          <li id="engLess1" class="engLess">Lesson1 Eng</li>
-          <li id="engLess2" class="engLess">Lesson2</li>
-          <li id="engLess3" class="engLess">lesson3</li>
-          <li id="engLess4" class="engLess">lesson4</li>
-          
+          <!-- Id должен совпадать с названием файла (иначе программа не найдет файл)-->
+          <li id="engLess1" class="engLess hoverPointer">Les Eng</li>
+          <li id="engLess2" class="engLess hoverPointer">Lesson2</li>
+          <li id="engLess3" class="engLess hoverPointer">lesson3</li>
+          <li id="engLess4" class="engLess hoverPointer">lesson4</li>
+          <li id="engLess5" class="engLess hoverPointer">lesson5</li>
         </ol>
+        <!-- Русский язык -->
         <ol id="RussianMenu">
-          
-           <!-- Id должен совпадать с названием файла -->
-           <li id="rusLess1" class="rusLess">Lesson1 Rus</li>
-           <li id="rusLess2" class="rusLess">Lesson2</li>
-           <li id="rusLess3" class="rusLess">lesson3</li>
-           <li id="rusLess4" class="rusLess">lesson4</li>
+          <!-- Id должен совпадать с названием файла (иначе программа не найдет файл) -->
+          <li id="rusLess1" class="rusLess hoverPointer">Lesson1 Rus</li>
+          <li id="rusLess2" class="rusLess hoverPointer">Lesson2</li>
+          <li id="rusLess3" class="rusLess hoverPointer">lesson3</li>
+          <li id="rusLess4" class="rusLess hoverPointer">lesson4</li>
         </ol>
+        <!-- Пункты меню третьего окончание **********************************************************-->
       </div>
       <!-- side bar finish -->
       <div id="changeFrame"></div>
@@ -60,7 +64,7 @@
           id="objectContent"
           type="text/html"
           data="startPage.html"
-          style="width: 100%; height: 100%; margin: 1%"
+          class="parametersContentWindow"
         ></object>
         <!-- </div> -->
       </div>

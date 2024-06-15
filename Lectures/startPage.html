@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=, initial-scale=1.0"> -->
+  <head>
+    <meta charset="UTF-8" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        Start
+      Start
+      <h3>Добавление раздела</h3>
+      <ol>
+        <li>
+          В файле index.html в раздел Пункты меню второго уровня (отмечен
+          комментарием) добавляем в список пункт меню: <br />
+          <pre>
+    &lt;li id="Eng" class="hoverEffect"&gt;English&lt;/li&gt;</pre
+          >
+        </li>
+        <li>
+          B раздел Пункты меню третьего уровня добавляем меню для нового раздела
+          это выглядит так:<br />
+          <pre>
+    &lt;ol id="EnglandMenu"&gt; //здесь берем атрибут ol для переменной blockMenu в  функцию makeMenu
+            &lt;!-- Id должен совпадать с названием файла --&gt;
+            &lt;li id="engLess1" class="engLess hoverPointer"&gt;Lesson1 Eng&lt;/li&gt; 
+            // class="engLess" используется в функции makeMenu 
+            &lt;li id="engLess2" class="engLess hoverPointer"&gt;Lesson2&lt;/li&gt;
+    &lt;/ol&gt;</pre
+          >
+        </li>
+        <li>
+          В файле index.js в разделе "Добавление Раздела и обработчиков на
+          пункты меню" (выделено комментариями) добавляем код :<br />
+          <pre>
+document.querySelector("#Eng").addEventListener("click", () =&gt; {
+parametersDirectory = makeMenu(event, blockMenu, classDirectory, nameDirectory);
+addEvents();
+});</pre>
+<p>Далее нам нужно изменить только параметры функции makeMenu</p>
+<ol>
+    <li>event - объект события , остается без изменения</li>
+    <li>blockMenu - полный список меню третьего уровня полученный по Id пример :
+        <pre>const englandMenu = document.querySelector("#EnglandMenu");</pre>  
+    </li>
+    <li>classDirectory - этот класс должен быть прописан в каждом li пункта меню </li>
+    <li>nameDirectory - название папки директории в которой хранятся файлы страниц используется для построения пути </li>
+</ol>
+        </li>
+      </ol>
     </div>
     <style>
-        div{
-            color:aliceblue;
-            font-size: 30px;
-            width: 100px;
-        }
+      body {
+        /* width: 100%; */
+      }
+      div {
+        color: aliceblue;
+        font-size: 20px;
+        /* width: 100px; */
+      }
     </style>
-</body>
+  </body>
 </html>
