@@ -1,19 +1,115 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+    <style>li{
+        font-size: large;
+        font-weight: 400;
+    }
 
-</head>
+    </style>
+  </head>
 
-<body>
-
+  <body>
     <div class="wrapper">
-        <h2>Команды гит</h2>
-        <pre>
+      <h2>Команды гит</h2>
+      <h3>Пошагово старт работы с гит на компьютере</h3>
+      <ol>
+        <li>
+          Создать папку на компе и открыть из нее консоль или открыть консоль в
+          другом месте в консоли написать команду <b>cd</b>  и перетащить папку в
+          консоль чтобы прописать путь автоматом
+        </li>
+        <li>
+          <b>ls</b>  – проверка cодержимого папки – выводит в консоль (папка должна быть
+          пустой)
+        </li>
+        <li>
+          Генерим ssh ключ:
+          <ol>
+            <li>вводим в консоль команду <b>ssh-keygen</b> </li>
+            <li>
+              затем программа просит ввести пароль можно не вводить просто
+              нажать enter
+            </li>
+            <li>Затем подтверждение пароля</li>
+            <li>
+              И в папке c/users/user/.ssh добавится файл id-rsa.pab открываем
+              его в блокноте копируем ключ (ctr+a, ctr+c)
+            </li>
+            <li>И в настройках на сайте гит-хаб вводим этот ключ</li>
+          </ol>
+        </li>
+        <li>
+         <b><i>(!Срабатывает со второго раза, сначала пишет что нужно ввести просто
+            clone)</i></b>  Вводим в консоль находясь в папке проекта “<b>git clone</b>  + адрес с
+          сайте git hub(который мы получаем из: заходим в нужный нам репозиторий
+          нажимаем зеленую кнопку code в открытом окне выбираем ssh и там чуть
+          ниже появится ссылка для копирования которую нужно вставить после git
+          clone)” Справка <b>«git--help»</b>  – команды гита
+        </li>
+        <li>
+          Открываем папку которая с качалась с git в редакторе кода и также в
+          консоли тоже меняем путь до папки
+        </li>
+        <li>
+          Команды Git:
+          <ol>
+            <li>
+              <b>git status</b>
+              => показывает статус (все изменённые файлы светятся красным)
+            </li>
+            <li>
+              <b> git add .</b> git add . => добавляет файлы в гит (в статусе
+              файл светится зеленом)
+            </li>
+            <li><b>git commit - - m “сообщение”</b> => делает коммит</li>
+            <li>
+              <b> git push</b> git push => отправляет изменения на удаленный
+              репозиторий
+            </li>
+            <li>работа с ветками</li>
+            <li>
+              <b> git checkout</b>
+              – b name branch => создает ветку с названием name branch
+            </li>
+            <li><b>git branch</b> => показывает ветку в которой я нахожусь</li>
+            <li><b>git checkout master</b> => переключились на мастер</li>
+            <li>
+              когда пушим новую ветку там гитхаб подскажет что нужно дописать к
+              команде <b>git push</b> и на удаленном репозитории появится новая
+              ветка
+            </li>
+            <li>
+              для того чтобы слить новую ветку с веткой мастер нужно нажать
+              зеленую кнопку
+              <ul>
+                <li><b>compare pull request</b></li>
+                <li><b>create pull request</b></li>
+                <li><b>marge pull request</b></li>
+                <li><b>если изменение не конфликтует confirm marge</b></li>
+                <li>
+                  <b
+                    >git pull – для того чтобы внести изменения в локальный
+                    репозиторий</b
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>git branch -- delete</b> <i>name branch</i> – удалить ветку
+              name branch
+            </li>
+          </ol>
+        </li>
+      </ol>
+      <pre>
         <code class="">
     git  init -  инициализирует репозиторий  
     git status – показывает статус 
@@ -51,8 +147,8 @@
     git pull   - получить репозиторий
         </code>
     </pre>
-        <h2>Минин</h2>
-        <pre>
+      <h2>Минин</h2>
+      <pre>
         <code>
             Основные команды
 git init
@@ -106,7 +202,8 @@ git clone
     </div>
 
     <script src="../../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
-
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>
