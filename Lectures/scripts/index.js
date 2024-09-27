@@ -18,23 +18,28 @@ document.querySelector("#PHP").addEventListener("click", () => {
   parametersDirectory = makeMenu(event, phpMenu, "phpLess", "PHP");
   addEvents();
 });
+document.querySelector("#TemplateId").addEventListener("click", () => {
+  parametersDirectory = makeMenu(event, templateMenu, "templateLess", "TemplateFolder");
+  addEvents();
+});
 
 // обработчик второго уровня - отрисовывает выбранный элемент второго уровня
-function makeMenu(event, blockMenu, classDirectory, nameDirectory) {
+function makeMenu(event, blockMenu, classDirectory, nameDirectory) { // nameDirectory - название папки в которой лежит проект
+ 
   let elementForTopMenu = document.createElement("li");
   elementForTopMenu.classList.add("markerSecondLevel");
   elementForTopMenu.innerText = event.srcElement.innerText;
   console.log(event.srcElement.innerText)
   infoBlock.firstElementChild.appendChild(elementForTopMenu);
   elementsStartMenu.style.display = "none";
-
+  console.log(blockMenu)
   blockMenu.style.display = "block";
 
   objectContent.setAttribute(
     "data",
     `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`
   );
-  console.log(classDirectory, nameDirectory)
+  // console.log(classDirectory, nameDirectory)
   return { classDirectory: classDirectory, nameDirectory: nameDirectory };
 }
 
@@ -52,6 +57,7 @@ function returnToStartMenu() {
   englandMenu.style.display = "none";
   russianMenu.style.display = "none";
   phpMenu.style.display = "none";
+  templateMenu.style.display = "none";
   objectContent.setAttribute("data", "startPage.html");
 }
 

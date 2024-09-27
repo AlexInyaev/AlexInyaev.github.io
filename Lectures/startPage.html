@@ -9,37 +9,57 @@
       Start
       <h3>Добавление раздела</h3>
       <ol>
-        <li>В папке disciplines добавляем папку с новой дисциплиной с вложенной папкой pages в которой будут лежать страницы уроков/разделов</li>
+        <li>В папке disciplines дублируем папку TemplateFolder меняя  название папки на свое и таг-же меняем название файлов в этой папке </li>
         <li>
           В файле index.html в раздел Пункты меню второго уровня (отмечен
-          комментарием) добавляем в список пункт меню: <br />
+          комментарием) находим дублируем строку снизу : <br />
           <pre>
-    &lt;li id="Eng" class="hoverEffect"&gt;English&lt;/li&gt;</pre
+    &lt;li id="TemplateId" class="hoverEffect"&gt;Template&lt;/li&gt;</pre
           >
+          и меняем названия атрибута id на свое : TemplateId - будем использовать для навешивания события onClick 
         </li>
         <li>
-          B раздел Пункты меню третьего уровня добавляем меню для нового раздела
-          это выглядит так:<br />
-          <pre>
+          B раздел Пункты меню третьего уровня находим и дублируем код ниже и все Template заменяем на свои значения:<br />
+<pre>
             &lt;!-- Название предмета --&gt;
 
-    &lt;ol id="EnglandMenu"&gt; //здесь берем атрибут ol для переменной blockMenu в  функцию makeMenu
-            &lt;!-- Id должен совпадать с названием файла --&gt;
-            &lt;li id="engLess1" class="engLess hoverPointer"&gt;Lesson1 Eng&lt;/li&gt; 
-            // class="engLess" используется в функции makeMenu 
-            &lt;li id="engLess2" class="engLess hoverPointer"&gt;Lesson2&lt;/li&gt;
-    &lt;/ol&gt;</pre
-          >
+&lt;ol id="TemplateMenu"&gt; //здесь берем атрибут ol для переменной blockMenu
+  //в  функцию makeMenu
+    &lt;!-- Id элементов li  должны совпадать с названиями файлов в папке 
+    TemplateFolder/pages на этом строится логика отрисовки страниц --&gt;
+    &lt;li id="templateLess1" class="templateLess hoverPointer"&gt;Lesson1 Template&lt;/li&gt; 
+    // class="templateLess" используется в функции makeMenu 
+    &lt;li id="templateLess2" class="templateLess hoverPointer"&gt;Lesson2&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
         </li>
         <li>
           В файле index.js в разделе "Добавление Раздела и обработчиков на
-          пункты меню" (выделено комментариями) добавляем код :<br />
+          пункты меню" (выделено комментариями) дублируем код :<br />
+<pre>
+document.querySelector("#TemplateId").addEventListener("click", () => {
+  parametersDirectory = makeMenu(event, templateMenu, "templateLess", "TemplateFolder");
+  addEvents();
+});
+  
+</pre>
+          <p>Описание кода</p>
           <pre>
-document.querySelector("#Eng").addEventListener("click", () =&gt; {
+document.querySelector("#TemplateId").addEventListener("click", () =&gt; {
 parametersDirectory = makeMenu(event, blockMenu, classDirectory, nameDirectory);
 addEvents();
 });</pre>
-<p>Далее нам нужно изменить только параметры функции makeMenu</p>
+<p>Далее нам нужно изменить  параметры функции makeMenu</p>
+<p>Чтобы получить blockMenu нужно в файле variables найти продублировать строку : const templateMenu = document.querySelector("#TemplateMenu"); 
+  и заменить в ней templateMenu на свое значение </p>
+  <p>classDirectory : это класс который навешен на все пункты меню</p>
+  <p>nameDirectory : это папка TemplateFolder (название папки проекта)</p>
+
+
+<p>Находим функцию  returnToStartMenu() в ней находим и дублируем строку  templateMenu.style.display = "none"; в которой меняем 
+  templateMenu на свое </p>
+<p>CSS для id тега ol (TemplateMenu) прописать display:none</p>
+
 <ol>
     <li>event - объект события , остается без изменения</li>
     <li>blockMenu - полный список меню третьего уровня полученный по Id пример :

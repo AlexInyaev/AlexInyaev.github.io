@@ -132,6 +132,9 @@ body {
 #phpMenu{
   display: none;
 }
+#TemplateMenu{
+  display: none;
+}
 .colorGreen{
   color:green;
 }
