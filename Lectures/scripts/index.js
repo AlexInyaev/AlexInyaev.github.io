@@ -14,35 +14,32 @@ document.querySelector("#Eng").addEventListener("click", () => {
   parametersDirectory = makeMenu(event, englandMenu, "engLess", "England");
   addEvents();
 });
+document.querySelector("#PHP").addEventListener("click", () => {
+  parametersDirectory = makeMenu(event, phpMenu, "phpLess", "PHP");
+  addEvents();
+});
+document.querySelector("#TemplateId").addEventListener("click", () => {
+  parametersDirectory = makeMenu(event, templateMenu, "templateLess", "TemplateFolder");
+  addEvents();
+});
 
-// добавление Раздела и обработчиков на пункты меню **************************************************************************
-
-function hideMenu() {
-  topNavigation.classList.add("hideElement");
-  showMenuButton.classList.remove("hideElement");
-}
-function showMenu() {
-  topNavigation.classList.remove("hideElement");
-  showMenuButton.classList.add("hideElement");
-}
-
-hideButton.addEventListener("click", hideMenu);
-showMenuButton.addEventListener("click", showMenu);
-
-// обработчик второго уровня
-function makeMenu(event, blockMenu, classDirectory, nameDirectory) {
+// обработчик второго уровня - отрисовывает выбранный элемент второго уровня
+function makeMenu(event, blockMenu, classDirectory, nameDirectory) { // nameDirectory - название папки в которой лежит проект
+ 
   let elementForTopMenu = document.createElement("li");
   elementForTopMenu.classList.add("markerSecondLevel");
   elementForTopMenu.innerText = event.srcElement.innerText;
+  console.log(event.srcElement.innerText)
   infoBlock.firstElementChild.appendChild(elementForTopMenu);
   elementsStartMenu.style.display = "none";
-
+  console.log(blockMenu)
   blockMenu.style.display = "block";
 
   objectContent.setAttribute(
     "data",
     `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`
   );
+  // console.log(classDirectory, nameDirectory)
   return { classDirectory: classDirectory, nameDirectory: nameDirectory };
 }
 
@@ -59,11 +56,15 @@ function returnToStartMenu() {
   elementsStartMenu.style.display = "block";
   englandMenu.style.display = "none";
   russianMenu.style.display = "none";
+  phpMenu.style.display = "none";
+  templateMenu.style.display = "none";
   objectContent.setAttribute("data", "startPage.html");
 }
 
 // third level menu навешиваем события
 function addEvents() {
+ 
+
   for (let item of document.querySelectorAll(
     `.${parametersDirectory.classDirectory}`
   )) {
@@ -85,33 +86,45 @@ function drawMainePage(event, addressFrame) {
   elementForTopMenu.classList.add("markerThirdLevel");
   elementForTopMenu.innerText = event.srcElement.innerText;
   infoBlock.firstElementChild.appendChild(elementForTopMenu);
-  console.log(addressFrame);
-  objectContent.setAttribute("data", addressFrame);
+
+  objectContent.setAttribute("data", addressFrame); 
+}
+// добавление Раздела и обработчиков на пункты меню **************************************************************************
+
+function hideMenu() {
+  topNavigation.classList.add("hideElement");
+  showMenuButton.classList.remove("hideElement");
+}
+function showMenu() {
+  topNavigation.classList.remove("hideElement");
+  showMenuButton.classList.add("hideElement");
 }
 
+hideButton.addEventListener("click", hideMenu);
+showMenuButton.addEventListener("click", showMenu);
 // изменение окон
 
-changeFrame.onmousedown = function (event) {
-  
-  moveAt(event.pageX);
- 
-  function moveAt(pageX) {
-    if (window.innerWidth > wrapper.offsetWidth + 17) {
-      topNavigation.style.width = `${pageX-((window.innerWidth - wrapper.offsetWidth )/2 )+6}px`;
-    } else {
-      topNavigation.style.width = `${pageX}px`;
-    }
-   
-  }
+// changeFrame.onmousedown = function (event) {
 
-  function onMouseMove(event) {
-    moveAt(event.pageX);
-  }
-  document.addEventListener("mousemove", onMouseMove);
-  // mousemove mousedown
-  changeFrame.onmouseup = function () {
-    document.removeEventListener("mousemove", onMouseMove);
-    changeFrame.onmouseup = null;
-  };
-};
-// Mobile
+//   moveAt(event.pageX);
+
+//   function moveAt(pageX) {
+//     if (window.innerWidth > wrapper.offsetWidth + 17) {
+//       topNavigation.style.width = `${pageX-((window.innerWidth - wrapper.offsetWidth )/2 )+6}px`;
+//     } else {
+//       topNavigation.style.width = `${pageX}px`;
+//     }
+
+//   }
+
+//   function onMouseMove(event) {
+//     moveAt(event.pageX);
+//   }
+//   document.addEventListener("mousemove", onMouseMove);
+//   // mousemove mousedown
+//   changeFrame.onmouseup = function () {
+//     document.removeEventListener("mousemove", onMouseMove);
+//     changeFrame.onmouseup = null;
+//   };
+// };
+// // Mobile

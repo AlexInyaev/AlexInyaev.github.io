@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <title>Лекции</title>
     <!-- <link rel="shortcut icon" href="img/animals.svg" type="image/x-icon" /> -->
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <!--  -->
   </head>
@@ -26,6 +28,8 @@
         <ol id="mainMenu">
           <li id="Eng" class="hoverEffect">English</li>
           <li id="Rus" class="hoverEffect">Russia</li>
+          <li id="PHP" class="hoverEffect">PHP</li>
+          <li id="TemplateId" class="hoverEffect">Template</li>
           <li>Harum, amet.</li>
           <li>Iste, fugit?</li>
           <li>Corrupti, quos!</li>
@@ -33,9 +37,9 @@
           <li>Beatae, facere.</li>
           <li>Impedit, aperiam?</li>
           <li>Eum, saepe!</li>
-          <li>Sapiente, omnis?</li>
+          <li>Sapiente, omnis? </li>
         </ol>
-         <!-- Пункты меню второго уровня окончание -->
+        <!-- Пункты меню второго уровня окончание -->
         <!-- Пункты меню третьего уровня ********************************************************-->
         <!-- Английский язык -->
         <ol id="EnglandMenu">
@@ -54,19 +58,33 @@
           <li id="rusLess3" class="rusLess hoverPointer">lesson3</li>
           <li id="rusLess4" class="rusLess hoverPointer">lesson4</li>
         </ol>
+        <!-- PHP -->
+        <ol id="phpMenu">
+          <li id="phpLess1" class="phpLess hoverPointer">Lesson1 PHP</li>
+          <li id="phpLess2" class="phpLess hoverPointer">Lesson2</li>
+        </ol>
+        <!-- Template -->
+        <ol id="TemplateMenu">
+          <!-- здесь берем атрибут ol для переменной blockMenu в функцию makeMenu -->
+            <!-- Id элементов li должны совпадать с названиями файлов в папке TemplateFolder/pages 
+             на этом строится логика отрисовки страниц -->
+          <li id="templateLess1" class="templateLess hoverPointer">Lesson1 Template</li>
+           <!-- class="templLess" используется в функции makeMenu -->
+          <li id="templateLess2" class="templateLess hoverPointer">Lesson2</li>
+        </ol>
         <!-- Пункты меню третьего окончание **********************************************************-->
       </div>
       <!-- side bar finish -->
       <div id="changeFrame"></div>
-      <div id="content" class="content">
-        <!-- <div style="margin: 0 auto; width: 100%; height: 400px"> -->
+      <div id="content" class="content ">
+      
         <object
           id="objectContent"
           type="text/html"
           data="startPage.html"
           class="parametersContentWindow"
         ></object>
-        <!-- </div> -->
+       
       </div>
     </div>
     <script src="scripts/variables.js"></script>
