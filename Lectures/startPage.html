@@ -1,26 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.jade.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="libs/highlight/styles/tomorrow-night-bright.css"
+    />
   </head>
   <body>
-    <div>
-      Start
+    <div class="container">
       <h3>Добавление раздела</h3>
       <ol>
-        <li>В папке disciplines дублируем папку TemplateFolder меняя  название папки на свое и таг-же меняем название файлов в этой папке </li>
+        <li>
+          В папке disciplines дублируем папку TemplateFolder меняя название
+          папки на свое и таг-же меняем название файлов в этой папке
+        </li>
         <li>
           В файле index.html в раздел Пункты меню второго уровня (отмечен
           комментарием) находим дублируем строку снизу : <br />
-          <pre>
-    &lt;li id="TemplateId" class="hoverEffect"&gt;Template&lt;/li&gt;</pre
-          >
-          и меняем названия атрибута id на свое : TemplateId - будем использовать для навешивания события onClick 
+          <pre><code>
+    &lt;li id="TemplateId" class="hoverEffect"&gt;Template&lt;/li&gt;</code></pre>
+          и меняем названия атрибута id на свое : TemplateId - будем
+          использовать для навешивания события onClick
         </li>
         <li>
-          B раздел Пункты меню третьего уровня находим и дублируем код ниже и все Template заменяем на свои значения:<br />
-<pre>
+          B раздел Пункты меню третьего уровня находим и дублируем код ниже и
+          все Template заменяем на свои значения:<br />
+          <pre><code>
             &lt;!-- Название предмета --&gt;
 
 &lt;ol id="TemplateMenu"&gt; //здесь берем атрибут ol для переменной blockMenu
@@ -31,43 +42,63 @@
     // class="templateLess" используется в функции makeMenu 
     &lt;li id="templateLess2" class="templateLess hoverPointer"&gt;Lesson2&lt;/li&gt;
 &lt;/ol&gt;
-</pre>
+</code></pre>
         </li>
         <li>
           В файле index.js в разделе "Добавление Раздела и обработчиков на
           пункты меню" (выделено комментариями) дублируем код :<br />
-<pre>
+          <pre>
+  <code class="js">
 document.querySelector("#TemplateId").addEventListener("click", () => {
   parametersDirectory = makeMenu(event, templateMenu, "templateLess", "TemplateFolder");
   addEvents();
 });
-  
+</code>
 </pre>
           <p>Описание кода</p>
-          <pre>
+          <pre><code>
 document.querySelector("#TemplateId").addEventListener("click", () =&gt; {
 parametersDirectory = makeMenu(event, blockMenu, classDirectory, nameDirectory);
 addEvents();
-});</pre>
-<p>Далее нам нужно изменить  параметры функции makeMenu</p>
-<p>Чтобы получить blockMenu нужно в файле variables найти продублировать строку : const templateMenu = document.querySelector("#TemplateMenu"); 
-  и заменить в ней templateMenu на свое значение </p>
-  <p>classDirectory : это класс который навешен на все пункты меню</p>
-  <p>nameDirectory : это папка TemplateFolder (название папки проекта)</p>
+});</code></pre
+          >
+          <p>Далее нам нужно изменить параметры функции makeMenu</p>
+          <p>
+            Чтобы получить blockMenu нужно в файле variables найти
+            продублировать строку : const templateMenu =
+            document.querySelector("#TemplateMenu"); и заменить в ней
+            templateMenu на свое значение
+          </p>
+          <p>classDirectory : это класс который навешен на все пункты меню</p>
+          <p>
+            nameDirectory : это папка TemplateFolder (название папки проекта)
+          </p>
 
+          <p>
+            Находим функцию returnToStartMenu() в ней находим и дублируем строку
+            templateMenu.style.display = "none"; в которой меняем templateMenu
+            на свое
+          </p>
+          <p>CSS для id тега ol (TemplateMenu) прописать display:none</p>
 
-<p>Находим функцию  returnToStartMenu() в ней находим и дублируем строку  templateMenu.style.display = "none"; в которой меняем 
-  templateMenu на свое </p>
-<p>CSS для id тега ol (TemplateMenu) прописать display:none</p>
-
-<ol>
-    <li>event - объект события , остается без изменения</li>
-    <li>blockMenu - полный список меню третьего уровня полученный по Id пример :
-        <pre>const englandMenu = document.querySelector("#EnglandMenu");</pre>  
-    </li>
-    <li>classDirectory - этот класс должен быть прописан в каждом li пункта меню </li>
-    <li>nameDirectory - название папки директории в которой хранятся файлы страниц используется для построения пути </li>
-</ol>
+          <ol>
+            <li>event - объект события , остается без изменения</li>
+            <li>
+              blockMenu - полный список меню третьего уровня полученный по Id
+              пример :
+              <pre><code>
+const englandMenu = document.querySelector("#EnglandMenu");</code></pre
+              >
+            </li>
+            <li>
+              classDirectory - этот класс должен быть прописан в каждом li
+              пункта меню
+            </li>
+            <li>
+              nameDirectory - название папки директории в которой хранятся файлы
+              страниц используется для построения пути.
+            </li>
+          </ol>
         </li>
       </ol>
     </div>
@@ -81,5 +112,10 @@ addEvents();
         /* width: 100px; */
       }
     </style>
+
+    <script src="libs/highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
   </body>
 </html>
