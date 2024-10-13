@@ -135,6 +135,9 @@ body {
 #phpMenu{
   display: none;
 }
+#GolangMenu{
+  display: none;
+}
 #TemplateMenu{
   display: none;
 }

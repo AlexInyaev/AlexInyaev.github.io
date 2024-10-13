@@ -18,6 +18,10 @@ document.querySelector("#PHP").addEventListener("click", () => {
   parametersDirectory = makeMenu(event, phpMenu, "phpLess", "PHP");
   addEvents();
 });
+document.querySelector("#Golang").addEventListener("click", () => {
+  parametersDirectory = makeMenu(event, GolangMenu, "GolangLess", "Golang");
+  addEvents();
+});
 document.querySelector("#TemplateId").addEventListener("click", () => {
   parametersDirectory = makeMenu(event, templateMenu, "templateLess", "TemplateFolder");
   addEvents();
@@ -40,6 +44,15 @@ function makeMenu(event, blockMenu, classDirectory, nameDirectory) { // nameDire
     `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`
   );
   // console.log(classDirectory, nameDirectory)
+  // блок отработки ошибок
+  if(classDirectory === 'templateLess'){
+    console.log('Дефолтный параметр classDirectory заменить на класс который прописан во всех путктах меню li. Сейчас там это значение: '+ classDirectory );
+  }else if(nameDirectory === 'TemplateFolder'){
+    console.log('Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: '+ nameDirectory );
+  }else if(nameDirectory === 'TemplateFolder'){
+    console.log('Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: '+ nameDirectory );
+  }
+  
   return { classDirectory: classDirectory, nameDirectory: nameDirectory };
 }
 
@@ -57,6 +70,7 @@ function returnToStartMenu() {
   englandMenu.style.display = "none";
   russianMenu.style.display = "none";
   phpMenu.style.display = "none";
+  GolangMenu.style.display = "none";
   templateMenu.style.display = "none";
   objectContent.setAttribute("data", "startPage.html");
 }
