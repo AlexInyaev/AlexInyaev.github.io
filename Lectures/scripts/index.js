@@ -118,27 +118,27 @@ hideButton.addEventListener("click", hideMenu);
 showMenuButton.addEventListener("click", showMenu);
 // изменение окон
 
-// changeFrame.onmousedown = function (event) {
+changeFrame.onmousedown = function (event) {
 
-//   moveAt(event.pageX);
+  moveAt(event.pageX);
 
-//   function moveAt(pageX) {
-//     if (window.innerWidth > wrapper.offsetWidth + 17) {
-//       topNavigation.style.width = `${pageX-((window.innerWidth - wrapper.offsetWidth )/2 )+6}px`;
-//     } else {
-//       topNavigation.style.width = `${pageX}px`;
-//     }
+  function moveAt(pageX) {
+    if (window.innerWidth > wrapper.offsetWidth + 17) {
+      topNavigation.style.width = `${pageX-((window.innerWidth - wrapper.offsetWidth )/2 )+6}px`;
+    } else {
+      topNavigation.style.width = `${pageX}px`;
+    }
 
-//   }
+  }
 
-//   function onMouseMove(event) {
-//     moveAt(event.pageX);
-//   }
-//   document.addEventListener("mousemove", onMouseMove);
-//   // mousemove mousedown
-//   changeFrame.onmouseup = function () {
-//     document.removeEventListener("mousemove", onMouseMove);
-//     changeFrame.onmouseup = null;
-//   };
-// };
-// // Mobile
+  function onMouseMove(event) {
+    moveAt(event.pageX);
+  }
+  document.addEventListener("mousemove", onMouseMove);
+  // mousemove mousedown
+  changeFrame.onmouseup = function () {
+    document.removeEventListener("mousemove", onMouseMove);
+    changeFrame.onmouseup = null;
+  };
+};
+// Mobile

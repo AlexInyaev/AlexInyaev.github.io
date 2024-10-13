@@ -87,11 +87,13 @@ body {
 }
 .hoverEffect:hover{
   cursor: pointer;
-  font-size: 20px;
+  /* font-size: 20px; */
+  color:aqua;
 }
 .hoverPointer:hover{
   cursor: pointer;
-  font-size: 20px;
+  color:aqua;
+  /* font-size: 20px; */
 }
 #infoBlock{
   
