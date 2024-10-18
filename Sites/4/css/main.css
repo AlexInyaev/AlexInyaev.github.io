@@ -1,914 +1,904 @@
-body{
-	margin: 0;
-	height: 0;
+body {
+  margin: 0;
+  height: 0;
 }
-*{
-	box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-a{
-	text-decoration: none;
+a {
+  text-decoration: none;
 }
-@font-face{
-	font-family:Montserrat-Light;
-	src:url(../fonts/Montserrat-Light.ttf);
-
+@font-face {
+  font-family: Montserrat-Light;
+  src: url(../fonts/Montserrat-Light.ttf);
 }
-@font-face{
-	font-family: Raleway-Regular;
-	src:url(../fonts/Raleway-Regular.ttf);
+@font-face {
+  font-family: Raleway-Regular;
+  src: url(../fonts/Raleway-Regular.ttf);
 }
-button{
-	width: 174px;
-	height: 59px;
-	background-color: #998675;
-	outline: none;
-	border-radius: 5px;
-	cursor: pointer;
- 	 font-size: 14px;
- 	 font-family: "Raleway";
- 	 color: rgb(255, 255, 255);
- 	 font-weight: bold;
- 	 text-transform: uppercase;
- 	 line-height: 1.643;
- 	 margin-top: 52px;
+button {
+  width: 174px;
+  height: 59px;
+  background-color: #998675;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Raleway";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.643;
+  margin-top: 52px;
 }
 /*Начало блока header---------------------------------------------------------*/
-.header{
-	padding-top: 44px;
-	width: 100%;
-	height: 1017px;
-	background-color: #555556;
-	background-image: url(../img/headerBG.jpg);
-	background-position: center;
+.header {
+  padding-top: 44px;
+  width: 100%;
+  height: 1017px;
+  background-color: #555556;
+  background-image: url(../img/headerBG.jpg);
+  background-position: center;
 }
-.slogan{
- 	font-size: 34px;
- 	font-family: "Raleway-Regular";
- 	color: rgb(255, 255, 255);
- 	line-height: 1.2;
+.slogan {
+  font-size: 34px;
+  font-family: "Raleway-Regular";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
 }
- .nav ul{
-	display: flex;
-	width: 670px;
-	justify-content: space-around;
+.nav ul {
+  display: flex;
+  width: 670px;
+  justify-content: space-around;
 }
-.nav ul li{
-	list-style-type: none;
+.nav ul li {
+  list-style-type: none;
 }
-.nav ul li a{
-	color: white;
-	font-family:Montserrat-Light;
+.nav ul li a {
+  color: white;
+  font-family: Montserrat-Light;
 }
-.nav a:hover{
-	color: #c7b299;
+.nav a:hover {
+  color: #c7b299;
 }
-.navIcon{
-	width: 80px;
-	height: 24px;
-	display: flex;
-	justify-content: space-between;
+.navIcon {
+  width: 80px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
 }
-.topNav{
-	display: flex;
-	justify-content: space-around;
-	align-items: baseline;
+.topNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
 }
-.headerContent{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
+.headerContent {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.headerContent h2{
- 	font-size: 36px;
- 	font-family: "Raleway";
- 	color: rgb(255, 255, 255);
- 	line-height: 1.2;
+.headerContent h2 {
+  font-size: 36px;
+  font-family: "Raleway";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
 }
 .headerContent h1 {
- 	font-size: 52px;
- 	font-family: "Raleway";
- 	color: rgb(255, 255, 255);
- 	font-weight: bold;
- 	line-height: 1.2;
+  font-size: 52px;
+  font-family: "Raleway";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
 }
-.headerContent p{
- 	font-size: 16px;
- 	font-family: "Montserrat";
- 	color: rgb(255, 255, 255);
- 	line-height: 1.5;
+.headerContent p {
+  font-size: 16px;
+  font-family: "Montserrat";
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
 }
-.points{
-	display: flex;
-	width: 106px;
-	height: 15px;
-	justify-content: space-between;
-	-ms-align-items: center;
-	align-items: center;
-	margin: 400px;
-
+.points {
+  display: flex;
+  width: 106px;
+  height: 15px;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+  margin: 400px;
 }
 /*конец блока header---------------------------------------------------------*/
 /*начало блока services -------------------------------------------------*/
-.services{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-around;
+.services {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-around;
 }
 
-.services a{
-	 font-size: 22px;
-	 font-family: "Raleway";
-	 color: rgb(85, 85, 85);
-	 font-weight: bold;
-	 line-height: 1.2;
+.services a {
+  font-size: 22px;
+  font-family: "Raleway";
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+  line-height: 1.2;
 }
-.services p{
- 	 font-size: 14px;
- 	 font-family: "Montserrat";
- 	 color: rgb(140, 140, 140);
- 	 line-height: 1.714;
+.services p {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(140, 140, 140);
+  line-height: 1.714;
 }
-.item{
-	text-align: center;
-	margin: 87px 0px;
+.item {
+  text-align: center;
+  margin: 87px 0px;
 }
-.item hr{
-	width: 81px;
-	border: none; /* Убираем границу для браузера Firefox */
- 	color: #f1eee9; /* Цвет линии для остальных браузеров */
- 	background-color: #f1eee9; /* Цвет линии для браузера Firefox и Opera */
- 	height: 2px; /* Толщина линии */
+.item hr {
+  width: 81px;
+  border: none; /* Убираем границу для браузера Firefox */
+  color: #f1eee9; /* Цвет линии для остальных браузеров */
+  background-color: #f1eee9; /* Цвет линии для браузера Firefox и Opera */
+  height: 2px; /* Толщина линии */
 }
 /*конец блока services ---------------------------------------------------*/
 /*начало блока slides-----------------------------------------------------*/
-.slides{
-	height: 700px;
-	position: relative;
-	background-color: #fbfaf8;
-	padding-top: 91px;
+.slides {
+  height: 700px;
+  position: relative;
+  background-color: #fbfaf8;
+  padding-top: 91px;
 }
-.slide1{
-	width: 770px;
-	height: 400px;
-	background-image: url(../img/browser-left.jpg);
-	position: absolute;
-	background-repeat: no-repeat;
-	bottom: 0;
+.slide1 {
+  width: 770px;
+  height: 400px;
+  background-image: url(../img/browser-left.jpg);
+  position: absolute;
+  background-repeat: no-repeat;
+  bottom: 0;
 }
-.slide2{
-	width: 100%;
-	height: 442px;
-	background-image: url(../img/browser-center.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	position: absolute;
-	bottom: 0;
-	z-index: 2;
+.slide2 {
+  width: 100%;
+  height: 442px;
+  background-image: url(../img/browser-center.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
 }
-.slide3{
-	background-image: url(../img/browser-right.jpg);
-	background-repeat: no-repeat;
-	width: 770px;
-	height: 400px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
+.slide3 {
+  background-image: url(../img/browser-right.jpg);
+  background-repeat: no-repeat;
+  width: 770px;
+  height: 400px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
-.slides p{
-	text-align: center;
- 	font-size: 16px;
- 	font-family: "Montserrat";
- 	color: rgb(140, 140, 140);
- 	line-height: 1.75;
+.slides p {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Montserrat";
+  color: rgb(140, 140, 140);
+  line-height: 1.75;
 }
-.slides h2{
-	text-align: center;
- 	font-size: 30px;
- 	font-family: "Raleway";
- 	color: rgb(85, 85, 85);
- 	font-weight: bold;
- 	line-height: 1.2;
-
+.slides h2 {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Raleway";
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+  line-height: 1.2;
 }
 /*конец блока slides-------------------------------------------------------*/
 /*начало блока paragraph --------------------------------------------------*/
-.paragraph{
-	height: 170px;
-	padding: 0 10px;
-	background-color: #271e1b;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-around;
-	-ms-align-items: center;
-	align-items: center;
+.paragraph {
+  height: 170px;
+  padding: 0 10px;
+  background-color: #271e1b;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-around;
+  -ms-align-items: center;
+  align-items: center;
 }
-.paragraph h2{
-	font-size: 28px;
-	font-family: "Raleway";
-	color: rgb(199, 178, 153);
-	line-height: 1.2;
-	margin: 0;
+.paragraph h2 {
+  font-size: 28px;
+  font-family: "Raleway";
+  color: rgb(199, 178, 153);
+  line-height: 1.2;
+  margin: 0;
 }
-.paragraph p{
-	font-size: 18px;
- 	font-family: "Montserrat";
-	color: rgb(97, 88, 85);
-	line-height: 1.2;
-	margin: 14px;
+.paragraph p {
+  font-size: 18px;
+  font-family: "Montserrat";
+  color: rgb(97, 88, 85);
+  line-height: 1.2;
+  margin: 14px;
 }
-.paragraph button{
-	margin: 0;
+.paragraph button {
+  margin: 0;
 }
 /*конец блока paragraph ----------------------------------------------------*/
 /*начало блока Projects-----------------------------------------------------*/
-.projects{
-	text-align: center;
-	padding: 0 20px;
+.projects {
+  text-align: center;
+  padding: 0 20px;
 }
-.projects h2{
- 	font-size: 30px;
- 	font-family: "Raleway";
- 	color: rgb(85, 85, 85);
- 	font-weight: bold;
- 	line-height: 1.2;
- 	margin-bottom: 20px;
+.projects h2 {
+  font-size: 30px;
+  font-family: "Raleway";
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
-.projects p{
- 	font-size: 16px;
- 	font-family: "Montserrat";
- 	color: rgb(140, 140, 140);
- 	line-height: 1.75;
- 	margin: 0;
+.projects p {
+  font-size: 16px;
+  font-family: "Montserrat";
+  color: rgb(140, 140, 140);
+  line-height: 1.75;
+  margin: 0;
 }
-.navCenter{
-	margin: 45px;
+.navCenter {
+  margin: 45px;
 }
-.navCenter ul{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: center;
+.navCenter ul {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
 }
-.navCenter ul li{
-	list-style-type: none;
+.navCenter ul li {
+  list-style-type: none;
 }
-.navCenter ul li a{
-	text-decoration: none;
-	border: 1px solid #ebebeb;
-	border-radius: 3px;
-	padding: 10px 20px;
- 	font-size: 14px;
- 	font-family: "Montserrat";
- 	color: rgb(140, 140, 140);
- 	line-height: 1.5;
- 	margin: 6px;
+.navCenter ul li a {
+  text-decoration: none;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(140, 140, 140);
+  line-height: 1.5;
+  margin: 6px;
 }
-.navCenter ul li a:hover{
-	background-color: #998675;
-	color: #fff;
+.navCenter ul li a:hover {
+  background-color: #998675;
+  color: #fff;
 }
-.gallery{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	-webkit-flex-wrap: wrap;
-	-moz-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	-o-flex-wrap: wrap;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	padding: 0 20px 0px 20px;
+.gallery {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px 0px 20px;
 }
-.itemImg img{
- 	max-width: 100%;
- 	height: auto;
+.itemImg img {
+  max-width: 100%;
+  height: auto;
 }
 
-.itemImg{
-	margin-bottom: 30px;
-	background-color: #fbfaf8;
+.itemImg {
+  margin-bottom: 30px;
+  background-color: #fbfaf8;
 }
-.itemImg:hover{
-background-color:rgba(0,0,0,0.1);
+.itemImg:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.triangle h3{
- 	font-size: 20px;
- 	font-family: "Raleway";
- 	color: rgb(199, 178, 153);
- 	line-height: 1.2;
- 	margin: 20px 0 10px 0;
+.triangle h3 {
+  font-size: 20px;
+  font-family: "Raleway";
+  color: rgb(199, 178, 153);
+  line-height: 1.2;
+  margin: 20px 0 10px 0;
 }
-.triangle p{
- 	font-size: 14px;
- 	font-family: "Montserrat";
- 	color: rgb(209, 209, 209);
- 	line-height: 1.429;
- 	margin: 0 0 22px 0;
+.triangle p {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(209, 209, 209);
+  line-height: 1.429;
+  margin: 0 0 22px 0;
 }
-.triangle{
-	margin-top: -4px;
-	border: 1px solid #fbfaf8;
-	position: relative;
+.triangle {
+  margin-top: -4px;
+  border: 1px solid #fbfaf8;
+  position: relative;
 }
-.triangle:hover{
-	border: 1px solid #E5E5E5;
-
+.triangle:hover {
+  border: 1px solid #e5e5e5;
 }
-.triangle:after{
-	content: "";
-	position: absolute;
-	border-bottom: 10px solid #fbfaf8;
-	border-left: 13px solid transparent;
-	border-right: 13px solid transparent;
-	left: 20px;
-	top: -10px;
+.triangle:after {
+  content: "";
+  position: absolute;
+  border-bottom: 10px solid #fbfaf8;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  left: 20px;
+  top: -10px;
 }
-.triangle:hover:after{
-	content: "";
-	position: absolute;
-	border-bottom: 10px solid #E5E5E5;
-	border-left: 13px solid transparent;
-	border-right: 13px solid transparent;
-	left: 20px;
-	top: -10px;
+.triangle:hover:after {
+  content: "";
+  position: absolute;
+  border-bottom: 10px solid #e5e5e5;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  left: 20px;
+  top: -10px;
 }
-.projects button{
-	margin: 42px 0px 81px 0px;
+.projects button {
+  margin: 42px 0px 81px 0px;
 }
 
 /*конец блока Projects --------------------------------------------------*/
 /*начало блока video-----------------------------------------------------*/
-.video{
-	background-image: url(../img/video.jpg);
-	background-position:center;
-	background-repeat: no-repeat;
-	width: 100%;
-	text-align: center;
-	padding: 210px 10px 192px 10px;
-	background-size: cover;
+.video {
+  background-image: url(../img/video.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  text-align: center;
+  padding: 210px 10px 192px 10px;
+  background-size: cover;
 }
-.play{
-	width: 100px;
-	height: 100px;
-	background-color: #4e565a;
-	background-image: url(../img/icon-play.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	border-radius: 50%;
-	margin:0 auto 41px auto;
-	cursor: pointer;
+.play {
+  width: 100px;
+  height: 100px;
+  background-color: #4e565a;
+  background-image: url(../img/icon-play.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  margin: 0 auto 41px auto;
+  cursor: pointer;
 }
-.video h3{
- 	font-size: 30px;
- 	font-family: "Raleway";
- 	color: rgb(255, 255, 255);
- 	line-height: 1.2;
+.video h3 {
+  font-size: 30px;
+  font-family: "Raleway";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
 }
-.video_p{
- 	font-size: 16px;
- 	font-family: "Montserrat";
- 	color: rgb(255, 255, 255);
- 	line-height: 1.75;
+.video_p {
+  font-size: 16px;
+  font-family: "Montserrat";
+  color: rgb(255, 255, 255);
+  line-height: 1.75;
 }
-.time{
- 	font-size: 14px;
- 	font-family: "Montserrat";
- 	color: rgb(199, 178, 153);
- 	line-height: 1.714;
+.time {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(199, 178, 153);
+  line-height: 1.714;
 }
 /*конец блока video ----------------------------------------------------*/
 /*начало блока mobile----------------------------------------------------*/
-.mobile{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: center;
-	padding: 80px 20px 0px 20px;
-	-webkit-flex-wrap: wrap;
-	-moz-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	-o-flex-wrap: wrap;
-	flex-wrap: wrap;
+.mobile {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px 0px 20px;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-.iPhone{
-	display: block;
-	object-fit: contain;
-	max-width: 100%;
-	height: auto;
+.iPhone {
+  display: block;
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
 }
-.mobileContent{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.mobileContent {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.mobileContent h2{
- 	font-size: 30px;
- 	font-family: "Raleway";
- 	color: rgb(85, 85, 85);
- 	font-weight: bold;
- 	line-height: 1.2;
+.mobileContent h2 {
+  font-size: 30px;
+  font-family: "Raleway";
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+  line-height: 1.2;
 }
-.mobileContent p{
- 	font-size: 16px;
- 	font-family: "Montserrat";
- 	color: rgb(140, 140, 140);
- 	line-height: 1.75;
+.mobileContent p {
+  font-size: 16px;
+  font-family: "Montserrat";
+  color: rgb(140, 140, 140);
+  line-height: 1.75;
 }
-.mobileContent ul li{
- 	font-size: 16px;
- 	font-family: "Montserrat";
- 	color: rgb(140, 140, 140);
- 	line-height: 2;
- 	background-image: url(../img/marker.png);
- 	background-repeat: no-repeat;
-	background-position: 1px center; 
- 	list-style: none;
- 	padding-left: 51px;
+.mobileContent ul li {
+  font-size: 16px;
+  font-family: "Montserrat";
+  color: rgb(140, 140, 140);
+  line-height: 2;
+  background-image: url(../img/marker.png);
+  background-repeat: no-repeat;
+  background-position: 1px center;
+  list-style: none;
+  padding-left: 51px;
 }
 /*конец блока	mobile------------------------------------------------------------*/
 /*начало блока statistics -------------------------------------------------------*/
-.statistics{
-	padding: 0px 20px 0px 40px;
-	background-color: #261e1b;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
-	-webkit-flex-wrap: wrap;
-	-moz-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	-o-flex-wrap: wrap;
-	flex-wrap: wrap;
+.statistics {
+  padding: 0px 20px 0px 40px;
+  background-color: #261e1b;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-.statistics img{
-
+.statistics img {
 }
-.numbers{
- 	font-size: 48px;
- 	font-family: "Montserrat";
- 	color: rgb(255, 255, 255);
- 	line-height: 0.75;
+.numbers {
+  font-size: 48px;
+  font-family: "Montserrat";
+  color: rgb(255, 255, 255);
+  line-height: 0.75;
 }
-.text{
- 	font-size: 14px;
- 	font-family: "Montserrat";
- 	color: rgb(199, 178, 153);
- 	text-transform: uppercase;
- 	line-height: 1.429;
+.text {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(199, 178, 153);
+  text-transform: uppercase;
+  line-height: 1.429;
 }
-.itemStatic{
-	text-align: center;
-	width: 135px;
-	margin: 66px 0 58px 0;
+.itemStatic {
+  text-align: center;
+  width: 135px;
+  margin: 66px 0 58px 0;
 }
-.itemStatic hr{
-	width: 40px;
-	border: none; /* Убираем границу для браузера Firefox */
- 	color: #fff; /* Цвет линии для остальных браузеров */
- 	background-color: #fff; /* Цвет линии для браузера Firefox и Opera */
- 	height: 2px; /* Толщина линии */
+.itemStatic hr {
+  width: 40px;
+  border: none; /* Убираем границу для браузера Firefox */
+  color: #fff; /* Цвет линии для остальных браузеров */
+  background-color: #fff; /* Цвет линии для браузера Firefox и Opera */
+  height: 2px; /* Толщина линии */
 }
 /*конец блока statistics --------------------------------------------------------*/
 /*начало блока recent -------------------------------------------------------*/
-.recent{
-	text-align: center;
-	padding: 0 20px 0px 20px;
-
+.recent {
+  text-align: center;
+  padding: 0 20px 0px 20px;
 }
-.recent h2{
- 	font-size: 30px;
- 	font-family: "Raleway";
- 	color: rgb(85, 85, 85);
- 	font-weight: bold;
- 	line-height: 1.2;
+.recent h2 {
+  font-size: 30px;
+  font-family: "Raleway";
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+  line-height: 1.2;
 }
-.recent p{
- 	font-size: 16px;
- 	font-family: "Montserrat";
- 	color: rgb(140, 140, 140);
- 	line-height: 1.75;
+.recent p {
+  font-size: 16px;
+  font-family: "Montserrat";
+  color: rgb(140, 140, 140);
+  line-height: 1.75;
 }
-.recentGallery{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
-	-webkit-flex-wrap: wrap;
-	-moz-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	-o-flex-wrap: wrap;
-	flex-wrap: wrap;
+.recentGallery {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-.recentGalleryItem{
-	margin-bottom: 40px;
-
+.recentGalleryItem {
+  margin-bottom: 40px;
 }
-.recentGalleryImg{
-	position: relative;
+.recentGalleryImg {
+  position: relative;
 }
-.recentGalleryImg img{
-	width: 100%;
-	height: auto;
+.recentGalleryImg img {
+  width: 100%;
+  height: auto;
 }
-.recentData{
-	position: absolute;
-	top: 15px;
-	left: 21px;
-	background-color: #363636;
-	width: 52px;
-	height: 36px;
-	border-radius: 5px 5px 0 0;
-	margin: 0;
-	text-align: center;
-	padding-top: 10px;
+.recentData {
+  position: absolute;
+  top: 15px;
+  left: 21px;
+  background-color: #363636;
+  width: 52px;
+  height: 36px;
+  border-radius: 5px 5px 0 0;
+  margin: 0;
+  text-align: center;
+  padding-top: 10px;
 }
-.recentMonth{
-	position: absolute;
-	top: 51px;
-	left: 21px;
-	background-color: #252525;
-	width: 52px;
-	height: 26px;
-	border-radius: 0 0 5px 5px;
-	margin: 0;
-	text-align: center;
+.recentMonth {
+  position: absolute;
+  top: 51px;
+  left: 21px;
+  background-color: #252525;
+  width: 52px;
+  height: 26px;
+  border-radius: 0 0 5px 5px;
+  margin: 0;
+  text-align: center;
 }
-.recentData h6{
-	margin: auto;
- 	font-size: 24px;
- 	font-family: "Montserrat";
- 	color: rgb(255, 255, 255);
- 	line-height: 0.833;
+.recentData h6 {
+  margin: auto;
+  font-size: 24px;
+  font-family: "Montserrat";
+  color: rgb(255, 255, 255);
+  line-height: 0.833;
 }
-.recentMonth h6{
-	margin: auto;
- 	font-size: 12px;
- 	font-family: "Roboto";
- 	color: rgb(255, 255, 255);
- 	line-height: 1.667;
+.recentMonth h6 {
+  margin: auto;
+  font-size: 12px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  line-height: 1.667;
 }
-.recentGalleryImg h3{
- 	font-size: 20px;
- 	font-family: "Raleway";
- 	color: rgb(85, 85, 85);
- 	line-height: 1.2;
+.recentGalleryImg h3 {
+  font-size: 20px;
+  font-family: "Raleway";
+  color: rgb(85, 85, 85);
+  line-height: 1.2;
 }
-.recentGalleryImg p{
- 	font-size: 14px;
- 	font-family: "Montserrat";
- 	color: rgb(140, 140, 140);
- 	line-height: 1.571; 
+.recentGalleryImg p {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(140, 140, 140);
+  line-height: 1.571;
 }
-.recentGalleryImg a{
- 	font-size: 14px;
- 	font-family: "Montserrat";
- 	color: rgb(199, 178, 153);
- 	line-height: 1.429;
- 	border: 1px solid #c7b299;
- 	display: block;
+.recentGalleryImg a {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(199, 178, 153);
+  line-height: 1.429;
+  border: 1px solid #c7b299;
+  display: block;
 }
-.recentButton img{
-	margin:40px 4px;
+.recentButton img {
+  margin: 40px 4px;
 }
 /*конец блока recent --------------------------------------------------------*/
 
 /*начало блока logos ---------------------------------------------------------*/
-.logos{
-	background-size: cover;
-	background-position: center center;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
-	-ms-align-items: center;
-	align-items: center;
-	-webkit-flex-wrap: wrap;
-	-moz-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	-o-flex-wrap: wrap;
-	flex-wrap: wrap;
-	background-image: url(../img/logos.jpg);
+.logos {
+  background-size: cover;
+  background-position: center center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background-image: url(../img/logos.jpg);
 }
-.logosItem{
-	margin: 40px;
+.logosItem {
+  margin: 40px;
 }
 /*конец блока logos:--------------------------------------------------------*/
 /*начало блока about ---------------------------------------------------------*/
-.about{
-	background-color: #191919;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
-	-webkit-flex-wrap: wrap;
-	-moz-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	-o-flex-wrap: wrap;
-	flex-wrap: wrap;
-	padding:0 20px; 
+.about {
+  background-color: #191919;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 20px;
 }
-.about p{
- 	font-size: 14px;
- 	font-family: "Montserrat";
-	color: rgb(85, 85, 85);
- 	line-height: 1.429;
+.about p {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(85, 85, 85);
+  line-height: 1.429;
 }
-.about h2{
- 	font-size: 24px;
- 	font-family: "Raleway";
- 	color: rgb(255, 255, 255);
- 	font-weight: bold;
- 	line-height: 1.2;
+.about h2 {
+  font-size: 24px;
+  font-family: "Raleway";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
 }
-.about h4{
- 	font-size: 12px;
- 	font-family: "Montserrat";
- 	color: rgb(54, 54, 54);
- 	line-height: 1.667;
+.about h4 {
+  font-size: 12px;
+  font-family: "Montserrat";
+  color: rgb(54, 54, 54);
+  line-height: 1.667;
 }
-.sloganBottom{
- 	font-size: 34px;
- 	font-family: "Raleway";
- 	color: rgb(255, 255, 255);
- 	line-height: 1.2;
+.sloganBottom {
+  font-size: 34px;
+  font-family: "Raleway";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
 }
-.aboutItem a{
- 	font-size: 14px;
- 	font-family: "Montserrat";
- 	color: rgb(209, 209, 209);
- 	line-height: 1.429;
+.aboutItem a {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(209, 209, 209);
+  line-height: 1.429;
 }
-.aboutItem hr{
-	border: none; /* Убираем границу для браузера Firefox */
- 	color: #fff; /* Цвет линии для остальных браузеров */
- 	background-color: #252525; /* Цвет линии для браузера Firefox и Opera */
- 	height: 1px; /* Толщина линии */
+.aboutItem hr {
+  border: none; /* Убираем границу для браузера Firefox */
+  color: #fff; /* Цвет линии для остальных браузеров */
+  background-color: #252525; /* Цвет линии для браузера Firefox и Opera */
+  height: 1px; /* Толщина линии */
 }
-.aboutItem{
-	width: 270px;
+.aboutItem {
+  width: 270px;
 }
-.ColorBlue{
-	color: #0D667F;
+.ColorBlue {
+  color: #0d667f;
 }
-.ColorGrey{
-	color:#959595;
+.ColorGrey {
+  color: #959595;
 }
 /*конец блока about --------------------------------------------------------*/
 /*начало блока footer---------------------------------------------------------*/
-.footer{
-	height: 112px;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-around;
-	-ms-align-items: center;
-	align-items: center;
-	background-color: #111111;
+.footer {
+  height: 112px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-around;
+  -ms-align-items: center;
+  align-items: center;
+  background-color: #111111;
 }
-.footer ul{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
+.footer ul {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
 }
-.footer ul li{
- 	font-size: 13px;
- 	font-family: "Montserrat";
- 	color: rgb(85, 85, 85);
- 	line-height: 1.538;
- 	padding: 0 10px 0 10px;
- 	list-style-type: none;
- 	border-right: 1px solid #252525;
- 	height: 17px;
- 	-ms-align-items: center;
+.footer ul li {
+  font-size: 13px;
+  font-family: "Montserrat";
+  color: rgb(85, 85, 85);
+  line-height: 1.538;
+  padding: 0 10px 0 10px;
+  list-style-type: none;
+  border-right: 1px solid #252525;
+  height: 17px;
+  -ms-align-items: center;
 }
-.footer ul li:last-child{
-	border: none;
+.footer ul li:last-child {
+  border: none;
 }
-.ColorGreyYollow{
-	color: #c7b299;
+.ColorGreyYollow {
+  color: #c7b299;
 }
 /*конец блока footer---------------------------------------------------------*/
 
-
-
 /*АДАПТАЦИЯ===========================================================================================================================*/
-@media screen and (max-width: 1024px){
-.adaptivButton{
- 	width: 26px;
- 	cursor: pointer;
- 	padding-top: 3px;
- }
- .adaptivButton span{
- 		display: block;
- 	width: 100%;
- 	height: 1px;
- 	background: white;
- 	border-radius: 10px;
- 	margin-bottom: 8px;
- }
- .nav{
- 		display: none;
- }
- .navIcon{
- 		width: 120px;
- }
- 	/*services==================================================================================*/
- 	.services	{
- 		-webkit-flex-wrap: wrap;
- 		-moz-flex-wrap: wrap;
- 		-ms-flex-wrap: wrap;
- 		-o-flex-wrap: wrap;
- 		flex-wrap: wrap;
- 		justify-content: space-between;
- }	
- .item{
- 		margin: 87px 20px;
- }
- 	/*recent====================================================================================*/
- .recentGallery{
- 		justify-content: space-between;
- }
- .recent{
- 		
- }
-
+@media screen and (max-width: 1024px) {
+  .adaptivButton {
+    width: 26px;
+    cursor: pointer;
+    padding-top: 3px;
+  }
+  .adaptivButton span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .nav {
+    display: none;
+  }
+  .navIcon {
+    width: 120px;
+  }
+  /*services==================================================================================*/
+  .services {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .item {
+    margin: 87px 20px;
+  }
+  /*recent====================================================================================*/
+  .recentGallery {
+    justify-content: space-between;
+  }
+  .recent {
+  }
 }
 /*797px====================================================================================================================*/
-@media screen and (max-width: 797px){
-	/*.projects=================================================================================================*/
-.navCenter ul {
-		display: none;
-}
-.adaptivButtonCenter{
- 	width: 26px;
- 	cursor: pointer;
- 	padding-top: 3px;
- 	margin-right: 20px;
- }
- .adaptivButtonCenter span{
- 		display: block;
- 	width: 100%;
- 	height: 1px;
- 	background: grey;
- 	border-radius: 10px;
- 	margin-bottom: 8px;
- }
- .wrepperButtonCenter{
- 		display: -webkit-flex;
- 		display: -moz-flex;
- 		display: -ms-flex;
- 		display: -o-flex;
- 		display: flex;
- 		justify-content: flex-end;
- }
- 	/*.gallery==================================================================*/
- .gallery{
- 		justify-content: center;
- }
- 	/*.slide==================================================================================*/
- .slide1,.slide3{
- 		display: none;
- }
- 	/*.recent==========================================================================*/
- .recentGallery{
- 		justify-content: center;
- }
- 	/*footer==========================================================================*/
- .footer{
- 		-webkit-flex-wrap: wrap;
- 		-moz-flex-wrap: wrap;
- 		-ms-flex-wrap: wrap;
- 		-o-flex-wrap: wrap;
- 		flex-wrap: wrap;
- }
+@media screen and (max-width: 797px) {
+  /*.projects=================================================================================================*/
+  .navCenter ul {
+    display: none;
+  }
+  .adaptivButtonCenter {
+    width: 26px;
+    cursor: pointer;
+    padding-top: 3px;
+    margin-right: 20px;
+  }
+  .adaptivButtonCenter span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: grey;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .wrepperButtonCenter {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: flex-end;
+  }
+  /*.gallery==================================================================*/
+  .gallery {
+    justify-content: center;
+  }
+  /*.slide==================================================================================*/
+  .slide1,
+  .slide3 {
+    display: none;
+  }
+  /*.recent==========================================================================*/
+  .recentGallery {
+    justify-content: center;
+  }
+  /*footer==========================================================================*/
+  .footer {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 }
 /*596px====================================================================================================================*/
-@media screen and (max-width: 596px){
-	/*начало блока logos ---------------------------------------------------------*/
-.logos{
-		justify-content: center;
- }
-/*начало блока about ---------------------------------------------------------*/
-.about{
-		justify-content: center;
- }
- /*services==================================================================================*/
- 	.services{
- 		justify-content: center;
- }
- 	/*начало блока button --------------------------------------------------*/
- button{
- 		width: 100px;
- 		height: 30px;
- 		font-size: 8px;
- 		border-right: 3px;
- }
+@media screen and (max-width: 596px) {
+  /*начало блока logos ---------------------------------------------------------*/
+  .logos {
+    justify-content: center;
+  }
+  /*начало блока about ---------------------------------------------------------*/
+  .about {
+    justify-content: center;
+  }
+  /*services==================================================================================*/
+  .services {
+    justify-content: center;
+  }
+  /*начало блока button --------------------------------------------------*/
+  button {
+    width: 100px;
+    height: 30px;
+    font-size: 8px;
+    border-right: 3px;
+  }
 }
 /*480px====================================================================================================================*/
-@media screen and (max-width: 480px){
-	/*Начало блока header---------------------------------------------------------*/
- .slogan img,.points{
-		display: none;
- }
-
+@media screen and (max-width: 480px) {
+  /*Начало блока header---------------------------------------------------------*/
+  .slogan img,
+  .points {
+    display: none;
+  }
 }
 /*320px====================================================================================================================*/
-@media screen and (max-width: 320px){
-	/*Начало блока header---------------------------------------------------------*/
- .slogan{
-		display: none;
- }
-	/*Начало блока recent---------------------------------------------------------*/
- .recentData{
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	background-color: #363636;
-	width: 26px;
-	height: 18px;
-	border-radius: 3px 3px 0 0;
-	margin: 0;
-	text-align: center;
-	padding-top: 0px;
-}
-.recentMonth{
-	position: absolute;
-	top: 27px;
-	left: 10px;
-	background-color: #252525;
-	width: 26px;
-	height: 17px;
-	border-radius: 0 0 3px 3px;
-	margin: 0;
-	text-align: center;
-	padding-bottom: 3px;
-}
-.recentData time{
-	margin: auto;
- 	font-size: 12px;
- 	font-family: "Montserrat";
- 	color: rgb(255, 255, 255);
- 	line-height: 0.1;
-}
-.recentMonth time{
-	margin: auto ;
- 	font-size: 9px;
- 	font-family: "Roboto";
- 	color: rgb(255, 255, 255);
- 	line-height: 0.1;
- }
- /*.start projects=======================================================*/
- .projects h2{
- 	font-size: 20px;
- }
- .projects p{
- 	font-size: 10px;
- }
-/*start paragraph=========================================*/
- .paragraph h2{
-	font-size: 20px;
- }
- .paragraph p{
-	font-size: 10px;
- }
- button{
- 		width: 50px;
- 		height: 15px;
- 		font-size: 4px;
- 		border-right: 2px;
- }
+@media screen and (max-width: 320px) {
+  /*Начало блока header---------------------------------------------------------*/
+  .slogan {
+    display: none;
+  }
+  /*Начало блока recent---------------------------------------------------------*/
+  .recentData {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #363636;
+    width: 26px;
+    height: 18px;
+    border-radius: 3px 3px 0 0;
+    margin: 0;
+    text-align: center;
+    padding-top: 0px;
+  }
+  .recentMonth {
+    position: absolute;
+    top: 27px;
+    left: 10px;
+    background-color: #252525;
+    width: 26px;
+    height: 17px;
+    border-radius: 0 0 3px 3px;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 3px;
+  }
+  .recentData time {
+    margin: auto;
+    font-size: 12px;
+    font-family: "Montserrat";
+    color: rgb(255, 255, 255);
+    line-height: 0.1;
+  }
+  .recentMonth time {
+    margin: auto;
+    font-size: 9px;
+    font-family: "Roboto";
+    color: rgb(255, 255, 255);
+    line-height: 0.1;
+  }
+  /*.start projects=======================================================*/
+  .projects h2 {
+    font-size: 20px;
+  }
+  .projects p {
+    font-size: 10px;
+  }
+  /*start paragraph=========================================*/
+  .paragraph h2 {
+    font-size: 20px;
+  }
+  .paragraph p {
+    font-size: 10px;
+  }
+  button {
+    width: 50px;
+    height: 15px;
+    font-size: 4px;
+    border-right: 2px;
+  }
 }

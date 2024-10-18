@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="wrapper">
-        <h2>Установка необходимых пакетов</h2>
-        <a href="https://react-redux.js.org/" target="_blank">React-redux</a>
-        <pre>
+      <h2>Установка необходимых пакетов</h2>
+      <a href="https://react-redux.js.org/" target="_blank">React-redux</a>
+      <pre>
         <code class="">
 Для начала стоит подчеркнуть, что Redux не имеет отношения к React. Вы можете создавать
     Redux-приложения c помощью React, Angular, Ember, jQuery или обычного JavaScript.
@@ -27,8 +27,8 @@
             npm i @reduxjs/toolkit    -установка toolkit -набор инструментов по работе с redux
         </code>
     </pre>
-        <h2>Вид index.JS</h2>
-        <pre>
+      <h2>Вид index.JS</h2>
+      <pre>
         <code class="">
     import store from './app/store';                         -подоключаем хранилище
     import { Provider } from 'react-redux';                  -подоключаем Provider - Для того чтобы указать каким компонентам давать доступ к хранилищю
@@ -132,9 +132,9 @@
         </code>
     </pre>
         </pre>
-        <h2>Хранилище1</h2>
-        <h2>store</h2>
-        <pre>
+      <h2>Хранилище1</h2>
+      <h2>store</h2>
+      <pre>
         <code class="">
     import { configureStore } from '@reduxjs/toolkit';
     import counterReducer from '../Counter/counterSlice'; //импорт хранилищ
@@ -148,9 +148,9 @@
     });
         </code>
     </pre>
-        <h2>Хранилище2</h2>
-        <h2>counterSlice</h2>
-        <pre>
+      <h2>Хранилище2</h2>
+      <h2>counterSlice</h2>
+      <pre>
         <code class="">
     import { createSlice } from '@reduxjs/toolkit';
 
@@ -179,9 +179,9 @@
     export default counterSlice.reducer;   //экспортируем сам сзданый блок 
         </code>
     </pre>
-        <h2>Хранилище3</h2>
-        <h2>mytextSlice</h2>
-        <pre>
+      <h2>Хранилище3</h2>
+      <h2>mytextSlice</h2>
+      <pre>
         <code class="">
     import { createSlice } from '@reduxjs/toolkit';
 
@@ -208,11 +208,11 @@
             
         </code>
     </pre>
-
     </div>
 
     <script src="../../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
-
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

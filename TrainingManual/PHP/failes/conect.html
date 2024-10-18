@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="wrapper">
-        <h2>Подключение файлов</h2>
-        <pre>
+      <h2>Подключение файлов</h2>
+      <pre>
         <code class="php">
             require 'func.php';         // при ошибке скрипт остановится. 'func.php' -имя подключаемого файла
             include 'func.php';         // при ошибке скрипт продолжит работать
@@ -22,11 +22,15 @@
             include_once 'func.php';    // если 2 раза подключить скрипт таким способом ошибки не будет
         </code>
     </pre>
-        <p>При подключении файла также становятся видны все данные из подключаемого файла </p>
+      <p>
+        При подключении файла также становятся видны все данные из подключаемого
+        файла
+      </p>
     </div>
 
     <script src="../../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
-
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

@@ -1,363 +1,344 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapperMain {
-    width: 815px;
-    /* height: 1165px; */
-    margin: 25px auto;
-    background-color: #F7F4EF;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    /* box-shadow:         -6px -6px 9px 0px rgba(50, 50, 50, 0.75); */
-    /* box-shadow: 7px 7px 5px rgba(0,0,0,0.6);  */
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 1);
+  width: 815px;
+  /* height: 1165px; */
+  margin: 25px auto;
+  background-color: #f7f4ef;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /* box-shadow:         -6px -6px 9px 0px rgba(50, 50, 50, 0.75); */
+  /* box-shadow: 7px 7px 5px rgba(0,0,0,0.6);  */
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 1);
 }
 
 .img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    margin: 18px 15px 0 21px;
-    border: 1px solid #FF6600;
-    background-image: url(../img/alex2.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: 18px 15px 0 21px;
+  border: 1px solid #ff6600;
+  background-image: url(../img/alex2.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 .header {
-    display: flex;
-    justify-content: flex-start;
-    width: 749px;
-    height: 145px;
-    background: #fff;
-    margin: auto;
-    border: 1px solid #C0C0C0;
+  display: flex;
+  justify-content: flex-start;
+  width: 749px;
+  height: 145px;
+  background: #fff;
+  margin: auto;
+  border: 1px solid #c0c0c0;
 }
 
 h1 {
-    margin: 0;
-
+  margin: 0;
 }
 
 .surname {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 /* ************************************************** About Me*********************************** */
 
 .AboutMe {
-    border: 3px outset #C0C0C0;
-    border-radius: 5px;
-    width: 749px;
-    height: 65px;
-    background: #eee;
-    margin: 65px auto;
-    cursor: pointer;
+  border: 3px outset #c0c0c0;
+  border-radius: 5px;
+  width: 749px;
+  height: 65px;
+  background: #eee;
+  margin: 65px auto;
+  cursor: pointer;
 }
 
 .res {
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
 }
-
 
 /* ************************************************** skillChart*********************************** */
 
 .skillChart {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 749px;
-    margin: 65px auto;
-
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 749px;
+  margin: 65px auto;
 }
 
 .diagram {
-    width: 120px;
-    height: 120px;
-    background: #fff;
-    border: 1px solid #C0C0C0;
-    margin: 5px;
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border: 1px solid #c0c0c0;
+  margin: 5px;
 }
 
 .imgDiagram {
-    margin: 3px;
+  margin: 3px;
 }
 
 area {
-    cursor: default;
+  cursor: default;
 }
 
 .item p {
-    margin: 5px;
-    text-align: center;
+  margin: 5px;
+  text-align: center;
 }
 
 /* ************************************************** myWorks********************************** */
 
 .myWorks {
-    display: flex;
-    justify-content: space-between;
-    width: 749px;
-    margin: auto;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  width: 749px;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
 .elements {
-    width: 240px;
-    /* height: 245px; */
-    background: #fff;
-    border: 1px solid #C0C0C0;
-    margin-bottom: 15px;
+  width: 240px;
+  /* height: 245px; */
+  background: #fff;
+  border: 1px solid #c0c0c0;
+  margin-bottom: 15px;
 }
 
-
 .elements p {
-    margin-bottom: 5px;
-    text-align: center;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 hr {
-    width: 80px;
-    border: none;
-    /* Убираем границу для браузера Firefox */
-    color: #FF6600;
-    /* Цвет линии для остальных браузеров */
-    background-color: #FF6600;
-    /* Цвет линии для браузера Firefox и Opera */
-    height: 2px;
-    /* Толщина линии */
+  width: 80px;
+  border: none;
+  /* Убираем границу для браузера Firefox */
+  color: #ff6600;
+  /* Цвет линии для остальных браузеров */
+  background-color: #ff6600;
+  /* Цвет линии для браузера Firefox и Opera */
+  height: 2px;
+  /* Толщина линии */
 }
 
 li {
-    list-style: none;
-    margin: 5px;
+  list-style: none;
+  margin: 5px;
 }
 
 @media screen and (max-width: 830px) {
-    .wrapper {
-        width: 715px;
-    }
+  .wrapper {
+    width: 715px;
+  }
 
-    .wrapperMain {
-        width: 100%;
-        margin: 0;
-    }
+  .wrapperMain {
+    width: 100%;
+    margin: 0;
+  }
 
-    .header,
-    .AboutMe,
-    .skillChart,
-    .myWorks {
+  .header,
+  .AboutMe,
+  .skillChart,
+  .myWorks {
+    width: 649px;
+  }
 
-        width: 649px;
-    }
-
-
-    .elements {
-        width: 210px;
-    }
+  .elements {
+    width: 210px;
+  }
 }
 
 @media screen and (max-width: 730px) {
-    .wrapper {
-        width: 615px;
+  .wrapper {
+    width: 615px;
+  }
 
-    }
+  .header,
+  .AboutMe,
+  .skillChart,
+  .myWorks {
+    width: 549px;
+  }
 
-    .header,
-    .AboutMe,
-    .skillChart,
-    .myWorks {
+  .elements {
+    width: 180px;
+  }
 
-        width: 549px;
-    }
-
-
-    .elements {
-        width: 180px;
-    }
-
-    .diagram {
-        width: 106px;
-        height: 106px;
-    }
+  .diagram {
+    width: 106px;
+    height: 106px;
+  }
 }
 
 @media screen and (max-width: 630px) {
-    .wrapper {
-        width: 515px;
+  .wrapper {
+    width: 515px;
+  }
 
-    }
+  .header,
+  .AboutMe,
+  .skillChart,
+  .myWorks {
+    width: 449px;
+  }
 
-    .header,
-    .AboutMe,
-    .skillChart,
-    .myWorks {
+  .AboutMe {
+    margin: 30px auto 0 auto;
+  }
 
-        width: 449px;
-    }
+  .myWorks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .AboutMe {
-        margin: 30px auto 0 auto;
-    }
+  .skillChart {
+    margin: 15px auto 15px auto;
+    flex-wrap: wrap;
+  }
 
-    .myWorks {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .elements {
+    width: 240px;
+    margin-bottom: 5px;
+    align-items: center;
+  }
 
-    .skillChart {
-        margin: 15px auto 15px auto;
-        flex-wrap: wrap;
-    }
+  .elements {
+    /* height: 150px; */
+  }
 
-
-    .elements {
-        width: 240px;
-        margin-bottom: 5px;
-        align-items: center;
-    }
-
-
-    .elements {
-        /* height: 150px; */
-    }
-
-    .diagram {
-        width: 107px;
-        height: 107px;
-    }
+  .diagram {
+    width: 107px;
+    height: 107px;
+  }
 }
 
 @media screen and (max-width: 530px) {
-    .wrapper {
-        width: 415px;
+  .wrapper {
+    width: 415px;
+  }
 
-    }
+  .header {
+    width: 349px;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 230px;
+  }
 
-    .header {
-        width: 349px;
-        flex-wrap: wrap;
-        justify-content: center;
-        height: 230px;
-    }
+  .surname {
+    padding-top: 0px;
+    text-align: center;
+  }
 
-    .surname {
-        padding-top: 0px;
-        text-align: center;
-    }
+  .AboutMe,
+  .skillChart,
+  .myWorks {
+    width: 349px;
+  }
 
-    .AboutMe,
-    .skillChart,
-    .myWorks {
+  .AboutMe {
+    margin: 30px auto 0 auto;
+  }
 
-        width: 349px;
-    }
+  .myWorks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .AboutMe {
-        margin: 30px auto 0 auto;
-    }
+  .skillChart {
+    margin: 15px auto 15px auto;
+    flex-wrap: wrap;
+  }
 
-    .myWorks {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .elements {
+    width: 240px;
+    margin-bottom: 5px;
+    align-items: center;
+  }
 
-    .skillChart {
-        margin: 15px auto 15px auto;
-        flex-wrap: wrap;
-    }
-
-
-    .elements {
-        width: 240px;
-        margin-bottom: 5px;
-        align-items: center;
-    }
-
-    /* .siteShop,.elements{
+  /* .siteShop,.elements{
         height: 120px;
     }
     .onePage{
         height: 210px;
     } */
-    .diagram {
-        width: 107px;
-        height: 107px;
-    }
+  .diagram {
+    width: 107px;
+    height: 107px;
+  }
 }
 
 @media screen and (max-width: 430px) {
-    .wrapper {
-        width: 315px;
-        /* height: 1220px; */
-    }
+  .wrapper {
+    width: 315px;
+    /* height: 1220px; */
+  }
 
-    .header {
-        width: 249px;
-        height: 235px;
-    }
+  .header {
+    width: 249px;
+    height: 235px;
+  }
 
-    .surname p {
-        margin: 5px;
+  .surname p {
+    margin: 5px;
+  }
 
-    }
+  .AboutMe,
+  .skillChart,
+  .myWorks {
+    width: 249px;
+  }
 
-    .AboutMe,
-    .skillChart,
-    .myWorks {
-
-        width: 249px;
-    }
-
-    /* .siteShop,.elements{
+  /* .siteShop,.elements{
         height: 110px;
     } */
-    .onePage {
-        height: 200px;
-    }
+  .onePage {
+    height: 200px;
+  }
 }
 
 @media screen and (max-width: 330px) {
-    .wrapper {
-        width: 190px;
-        /* height: 850px; */
-    }
+  .wrapper {
+    width: 190px;
+    /* height: 850px; */
+  }
 
-    .header {
-        width: 170px;
-        height: 235px;
-    }
+  .header {
+    width: 170px;
+    height: 235px;
+  }
 
-    .AboutMe,
-    .myWorks {
+  .AboutMe,
+  .myWorks {
+    width: 170px;
+  }
 
-        width: 170px;
-    }
+  .AboutMe {
+    margin-bottom: 20px;
+  }
 
-    .AboutMe {
-        margin-bottom: 20px;
-    }
-
-    /* .siteShop,.elements{
+  /* .siteShop,.elements{
          height: 110px; 
     } */
-    /* .onePage{
+  /* .onePage{
         height: 200px;
     } */
-    .skillChart {
-        display: none;
-    }
+  .skillChart {
+    display: none;
+  }
 
-    h2 {
-        font-size: 16px;
-    }
+  h2 {
+    font-size: 16px;
+  }
 }

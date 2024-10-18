@@ -1,20 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка arr</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="wrapper">
-        <h2>Интерфейс Трейт Абстрактный класс</h2>
-        <p>Класс мы не можем наследовать от одного класса, с этим справляются интерфейсы </p>
-        <pre>
+      <h2>Интерфейс Трейт Абстрактный класс</h2>
+      <p>
+        Класс мы не можем наследовать от одного класса, с этим справляются
+        интерфейсы
+      </p>
+      <pre>
         <code class="">
             &lt;?php
             interface Human{             //создание интерфейса 
@@ -61,8 +64,11 @@
             ?&gt;
         </code>
     </pre>
-        <p>В трейте мы можем прописать функции и затем их использовать в множестве методов </p>
-        <pre>
+      <p>
+        В трейте мы можем прописать функции и затем их использовать в множестве
+        методов
+      </p>
+      <pre>
         <code class="">
             &lt;?php  
             trait PrintSome{            //создаем трейт 
@@ -92,10 +98,15 @@
             ?&gt;
         </code>
     </pre>
-        <p>Абстрактные классы это те классы на основе которых нельзя создать объекты</p>
-        <p>В абстрактных классах могут быть абстрактные методы которые должны быть реализованы в классах наследниках
-        </p>
-        <pre>
+      <p>
+        Абстрактные классы это те классы на основе которых нельзя создать
+        объекты
+      </p>
+      <p>
+        В абстрактных классах могут быть абстрактные методы которые должны быть
+        реализованы в классах наследниках
+      </p>
+      <pre>
         <code class="">
             &lt;?php
     abstract class Car { //создаем абстрактный класс
@@ -123,7 +134,8 @@
     </div>
 
     <script src="../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
-
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

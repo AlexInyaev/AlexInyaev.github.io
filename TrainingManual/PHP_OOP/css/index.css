@@ -1,39 +1,33 @@
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: gray;
-    /* display: flex; */
-
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: gray;
+  /* display: flex; */
 }
 
 html {
-    border-left: 2px solid gold;
-    /* height: 100%; */
-
+  border-left: 2px solid gold;
+  /* height: 100%; */
 }
 
 h2 {
-
-    /* margin-top: 15px; */
-    margin-left: 40%;
-
+  /* margin-top: 15px; */
+  margin-left: 40%;
 }
 
 h3 {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .wrapper {
-    width: 100%;
-
-
+  width: 100%;
 }
 
 p {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .red {
-    color: red;
+  color: red;
 }

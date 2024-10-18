@@ -1,93 +1,87 @@
-body{
-    background-color: darkgray;
+body {
+  background-color: darkgray;
 }
-.wrapper{
-    max-width: 1300px;
-    margin: auto;
-    
+.wrapper {
+  max-width: 1300px;
+  margin: auto;
 }
-#canvas{
-    border: solid 30px black;
-    margin: auto;
-    text-align: center;
-   
+#canvas {
+  border: solid 30px black;
+  margin: auto;
+  text-align: center;
 }
-.canva{
-    /* display: flex; */
+.canva {
+  /* display: flex; */
 }
-.form{
-    float: left;
-    display: flex;
-    flex-direction: column;
-    margin: 50px;
+.form {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
 }
-.wrapperInput{
-    display: flex;
+.wrapperInput {
+  display: flex;
 }
-button{
-    margin: 10px;
+button {
+  margin: 10px;
 }
-.s1{
-   
-    cursor: pointer;
+.s1 {
+  cursor: pointer;
 }
-.green{
-    background-color: chartreuse;
+.green {
+  background-color: chartreuse;
 }
 
-.gameManagement{
-    text-align: center;  
-    /* display: flex; */
+.gameManagement {
+  text-align: center;
+  /* display: flex; */
 }
-.gameManagement img{
-    /* margin-top: -15px;
+.gameManagement img {
+  /* margin-top: -15px;
     margin-left: -200px; */
 }
-.gameManagementP{
-   /* float: left; */
-    font-size: 30px;
-    
+.gameManagementP {
+  /* float: left; */
+  font-size: 30px;
 }
 
 /* ******************************************* Стилизация блока кнопок *********************************************************/
-.controlButtons{
-    outline: 1px solid blue;
-    height: 600px;
-    width: 600px;
-    padding: 0;
-    position: relative;
-    margin: auto;
-    display: none;
+.controlButtons {
+  outline: 1px solid blue;
+  height: 600px;
+  width: 600px;
+  padding: 0;
+  position: relative;
+  margin: auto;
+  display: none;
 }
 
-.controlButtons button{
-width: 200px;
-height: 200px;
-background-image:url('../img/arrow.png') ;
-background-repeat: no-repeat;
-background-position: center center;
-margin: 0;
+.controlButtons button {
+  width: 200px;
+  height: 200px;
+  background-image: url("../img/arrow.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
 
-position: absolute;
+  position: absolute;
 }
-.toTop{
-    transform: rotate(270deg);
-    top: 2px;
-    left: 200px;
+.toTop {
+  transform: rotate(270deg);
+  top: 2px;
+  left: 200px;
 }
-.toBottom{
-    transform: rotate(90deg);
-    bottom: 2px;
-    left: 200px;
+.toBottom {
+  transform: rotate(90deg);
+  bottom: 2px;
+  left: 200px;
 }
-.toLeft{
-    transform: rotate(180deg);
-    bottom: 200px;
-    left: 2px;
-
+.toLeft {
+  transform: rotate(180deg);
+  bottom: 200px;
+  left: 2px;
 }
-.toRight{
-   
-    bottom: 200px;
-    left: 398px;
+.toRight {
+  bottom: 200px;
+  left: 398px;
 }

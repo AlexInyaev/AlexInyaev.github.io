@@ -1,10 +1,9 @@
-var itemFull = document.querySelector('.galleryFull');
+var itemFull = document.querySelector(".galleryFull");
 
-
-function testclick (id){
-itemFull.style.display="block";
-itemFull.style.backgroundImage = id.style.backgroundImage;
+function testclick(id) {
+  itemFull.style.display = "block";
+  itemFull.style.backgroundImage = id.style.backgroundImage;
 }
 function galClose() {
-	itemFull.style.display="none";
+  itemFull.style.display = "none";
 }

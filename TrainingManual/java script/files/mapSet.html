@@ -1,26 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка arr</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
-    
-</head>
-<body>
-    
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
+  <body>
     <div class="wrapper">
-        <a name="menu"></a>
-        
-        <ul>
-            <li><a href="#Map">Map</a></li>
-            <li><a href="#Set">Set</a></li>
-            <li><a href="#Weak">WeakMap WeakSet</a></li>
-        </ul>
-        
-        <h2>Map Set WeakMap WeakSet</h2>
-        <a name="Map"></a>
-    <pre>
+      <a name="menu"></a>
+
+      <ul>
+        <li><a href="#Map">Map</a></li>
+        <li><a href="#Set">Set</a></li>
+        <li><a href="#Weak">WeakMap WeakSet</a></li>
+      </ul>
+
+      <h2>Map Set WeakMap WeakSet</h2>
+      <a name="Map"></a>
+      <pre>
         <code class="">
           
     Map – это коллекция ключ/значение, как и Object. Но основное отличие в том,
@@ -69,10 +70,10 @@
     let obj = Object.fromEntries(map); // убрать .entries() покороче  
         </code>
     </pre>
-    <a href="#menu">menu</a>
-    <a name="Set"></a>
-    <h2>Set</h2>
-    <pre>
+      <a href="#menu">menu</a>
+      <a name="Set"></a>
+      <h2>Set</h2>
+      <pre>
         <code>
     Объект Set – это особый вид коллекции: «множество» значений (без ключей), где каждое значение может появляться только один раз.
 
@@ -92,10 +93,10 @@
     set.entries() – возвращает перебираемый объект для пар вида [значение, значение], присутствует для обратной совместимости с Map.
         </code>
     </pre>
-    <a href="#menu">menu</a>
-    <a name="Weak"></a>
-    <h2>WeakMap WeakSet</h2>
-    <pre>
+      <a href="#menu">menu</a>
+      <a name="Weak"></a>
+      <h2>WeakMap WeakSet</h2>
+      <pre>
         <code>
     WeakMap – это Map-подобная коллекция, позволяющая использовать в качестве ключей только объекты,
     и автоматически удаляющая их вместе с соответствующими значениями, как только они становятся недостижимыми иными путями.
@@ -113,9 +114,11 @@
     Как и Set, она поддерживает add, has и delete, но не size, keys() и не является перебираемой.
         </code>
     </pre>
-</div>
+    </div>
 
     <script src="../../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

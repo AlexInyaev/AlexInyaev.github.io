@@ -1,125 +1,145 @@
-
-body{
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    background-color: #565;
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #565;
 }
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-.wrepper{
-    background-image: url(../img/autumn.jpg);
-    border: 1px solid #000;
-    animation: backgroundChange 30s linear infinite;
-    background-size: cover;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-}   
+.wrepper {
+  background-image: url(../img/autumn.jpg);
+  border: 1px solid #000;
+  animation: backgroundChange 30s linear infinite;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
 @keyframes backgroundChange {
-    0% {
-        background-image: url(../img/autumn.jpg);
-    }
+  0% {
+    background-image: url(../img/autumn.jpg);
+  }
 
-    33% {
-        background-image: url(../img/winter.jpg);
-    }
+  33% {
+    background-image: url(../img/winter.jpg);
+  }
 
-    66% {
-        background-image: url(../img/spring.jpg);
-    }
-    100% {
-        background-image: url(../img/summer.jpg);
-    }
+  66% {
+    background-image: url(../img/spring.jpg);
+  }
+  100% {
+    background-image: url(../img/summer.jpg);
+  }
 }
-h1{
-    font-family: sans-serif;
-    color: white;
-    font-size: 50px;
+h1 {
+  font-family: sans-serif;
+  color: white;
+  font-size: 50px;
 }
-h2{
-    font-family:  sans-serif;
-    color: white;
+h2 {
+  font-family: sans-serif;
+  color: white;
 }
-p{
-    font-style: italic;
-    color: white;
-    font-size: 20px;
+p {
+  font-style: italic;
+  color: white;
+  font-size: 20px;
 }
-ul{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 75px;
-	flex-wrap:wrap;
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 75px;
+  flex-wrap: wrap;
 }
-li{
-    display: block;
-    list-style-type:none;
+li {
+  display: block;
+  list-style-type: none;
 }
-.door{
-    display: block;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    background-color: #555;
-    background-image:url(../img/door.jpg), url(../img/door.jpg);
-    background-position:-1100px 0, 100px 0;
-    background-repeat: no-repeat;
-    transition: all 1s ease-in-out;
-    outline: none;
-	margin:10px;
+.door {
+  display: block;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: #555;
+  background-image: url(../img/door.jpg), url(../img/door.jpg);
+  background-position:
+    -1100px 0,
+    100px 0;
+  background-repeat: no-repeat;
+  transition: all 1s ease-in-out;
+  outline: none;
+  margin: 10px;
 }
-.winter{
-    background-image:url(../img/door.jpg), url(../img/door.jpg),  url(../img/imgWinter.jpg);
-    background-position:-1100px 0, 100px 0, center center;
+.winter {
+  background-image: url(../img/door.jpg), url(../img/door.jpg),
+    url(../img/imgWinter.jpg);
+  background-position:
+    -1100px 0,
+    100px 0,
+    center center;
 }
-.spring{
-    background-image:url(../img/door.jpg), url(../img/door.jpg),  url(../img/spring1.jpg);
-    background-position:-1100px 0, 100px 0, center center;
+.spring {
+  background-image: url(../img/door.jpg), url(../img/door.jpg),
+    url(../img/spring1.jpg);
+  background-position:
+    -1100px 0,
+    100px 0,
+    center center;
 }
-.summer{
-    background-image:url(../img/door.jpg), url(../img/door.jpg),  url(../img/summer.jpg);
-    background-position:-1100px 0, 100px 0, center center; 
+.summer {
+  background-image: url(../img/door.jpg), url(../img/door.jpg),
+    url(../img/summer.jpg);
+  background-position:
+    -1100px 0,
+    100px 0,
+    center center;
 }
-.autumn{
-    background-image:url(../img/door.jpg), url(../img/door.jpg),  url(../img/autumn.jpg);
-    background-position:-1100px 0, 100px 0, center center; 
+.autumn {
+  background-image: url(../img/door.jpg), url(../img/door.jpg),
+    url(../img/autumn.jpg);
+  background-position:
+    -1100px 0,
+    100px 0,
+    center center;
 }
-.door img{
-    width: 200px;
-    height: 200px;
+.door img {
+  width: 200px;
+  height: 200px;
 }
-.door:hover{
-    background-position:-1200px 0, 200px 0, center center;
+.door:hover {
+  background-position:
+    -1200px 0,
+    200px 0,
+    center center;
 }
-.door:active{
-    border: 2px solid #7CB6FD;
+.door:active {
+  border: 2px solid #7cb6fd;
 }
 /*адаптация------------------------------------------------------------------------------*/
-@media screen and (max-width: 940px){
-	.door{
-		margin:20px;
-	}
-	.wrepper{
-		height:auto;
-	}
+@media screen and (max-width: 940px) {
+  .door {
+    margin: 20px;
+  }
+  .wrepper {
+    height: auto;
+  }
 }
-@media screen and (max-width: 540px){
-	.door{
-		margin:10px;
-	}
-	ul{
-	padding-left:0;
-	}
-	h1{
+@media screen and (max-width: 540px) {
+  .door {
+    margin: 10px;
+  }
+  ul {
+    padding-left: 0;
+  }
+  h1 {
     font-size: 25px;
-	}
-	h2{
-		 font-size: 20px;
-	}
-	p{
-		font-size: 15px;
-	}
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 15px;
+  }
 }

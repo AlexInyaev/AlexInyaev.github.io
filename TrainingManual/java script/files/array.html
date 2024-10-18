@@ -1,36 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка arr</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
-    
-</head>
-<body>
-    
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
+  <body>
     <div class="wrapper">
-        <h2>Массивы</h2>
-        <ul>
-            <li><a href="#hint">Шпаргалка</a></li>
-            <li><a href="#one">Объявление массивов</a></li>
-            <li> <a href="#push">push pop shift unshift - </a>добавляют/удоляют элементы</li>
-            <li><a href="#for">Перебор элементов Многомерные массивы Метод toString</a></li>
-            <li><a href="#splice">Splice Slice Concat</a></li>
-            <li><a href="#forEach">forEach</a></li>
-            <li><a href="#indexOf">indexOf lastIndexOf includes</a></li>
-            <li><a href="#find">find и findIndex</a></li>
-            <li><a href="#filter">filter</a></li>
-            <li><a href="#map">map</a></li>
-            <li><a href="#sort">sort</a></li>
-            <li><a href="#reverse">reverse</a></li>
-            <li><a href="#split">split и join</a></li>
-            <li><a href="#reduce">arr.reduce и arr.reduceRight</a></li>
-            <li><a href="#Array">Array.isArray Array.from()</a></li>
-        </ul>
-       <a name="one" href="#top">top</a>
-        <h3>Объявление массивов</h3>
-    <pre>
+      <h2>Массивы</h2>
+      <ul>
+        <li><a href="#hint">Шпаргалка</a></li>
+        <li><a href="#one">Объявление массивов</a></li>
+        <li>
+          <a href="#push">push pop shift unshift - </a>добавляют/удоляют
+          элементы
+        </li>
+        <li>
+          <a href="#for"
+            >Перебор элементов Многомерные массивы Метод toString</a
+          >
+        </li>
+        <li><a href="#splice">Splice Slice Concat</a></li>
+        <li><a href="#forEach">forEach</a></li>
+        <li><a href="#indexOf">indexOf lastIndexOf includes</a></li>
+        <li><a href="#find">find и findIndex</a></li>
+        <li><a href="#filter">filter</a></li>
+        <li><a href="#map">map</a></li>
+        <li><a href="#sort">sort</a></li>
+        <li><a href="#reverse">reverse</a></li>
+        <li><a href="#split">split и join</a></li>
+        <li><a href="#reduce">arr.reduce и arr.reduceRight</a></li>
+        <li><a href="#Array">Array.isArray Array.from()</a></li>
+      </ul>
+      <a name="one" href="#top">top</a>
+      <h3>Объявление массивов</h3>
+      <pre>
         <code class="js">
     # Ваш Код
     let arr = new Array();
@@ -63,10 +71,10 @@
     arr[3](); // привет
         </code>
     </pre>
-    <a name="push" href="#top">top</a>
-    <h3>Методы pop/push, shift/unshift</h3>
-    
-    <pre>
+      <a name="push" href="#top">top</a>
+      <h3>Методы pop/push, shift/unshift</h3>
+
+      <pre>
         <code class="js">
     shift   //удаляет элемент в начале
     unshift //Добовляет элемент в начало
@@ -82,9 +90,9 @@
 
         </code>
     </pre>
-    <a name="for" href="#top">top</a>
-    <h3>Перебор элементов Многомерные массивы Метод toString </h3>
-    <pre>
+      <a name="for" href="#top">top</a>
+      <h3>Перебор элементов Многомерные массивы Метод toString</h3>
+      <pre>
         <code class="js">
                                     цикл for по цифровым индексам
 
@@ -128,9 +136,9 @@
         </code>
     </pre>
 
-<a name="splice" href="#top">top</a>
-<h3>Splice Slice Concat</h3>
-<pre>
+      <a name="splice" href="#top">top</a>
+      <h3>Splice Slice Concat</h3>
+      <pre>
 <code class="js">
     arr.splice(index[, deleteCount, elem1, ..., elemN])
 
@@ -167,9 +175,9 @@
     alert( arr.concat([3, 4], 5, 6) ); // 1,2,3,4,5,6
 </code>
 </pre>
-<a name="forEach" href="#top">top</a>
-<h3>forEach</h3>
-<pre>
+      <a name="forEach" href="#top">top</a>
+      <h3>forEach</h3>
+      <pre>
     <code class="js">
     Метод arr.forEach позволяет запускать функцию для каждого элемента массива.
     ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
@@ -177,9 +185,9 @@
       });
     </code>
 </pre>
-<a name="indexOf" href="#top">top</a>
-<h3>indexOf lastIndexOf includes</h3>
-<pre>
+      <a name="indexOf" href="#top">top</a>
+      <h3>indexOf lastIndexOf includes</h3>
+      <pre>
     <code class="js">
     Методы arr.indexOf, arr.lastIndexOf и arr.includes имеют одинаковый синтаксис и делают по сути то же самое,
     что и их строковые аналоги, но работают с элементами вместо символов:
@@ -190,9 +198,9 @@
     includes правильно обрабатывает NaN в отличие от indexOf/lastIndexOf
     </code>
 </pre>
-<a name="find" href="#top">top</a>
-<h3>find и findIndex</h3>
-<pre>
+      <a name="find" href="#top">top</a>
+      <h3>find и findIndex</h3>
+      <pre>
     <code>
     let result = arr.find(function(item, index, array) {
         });
@@ -217,9 +225,9 @@
     Метод arr.findIndex – по сути, то же самое, но возвращает индекс, на котором был найден элемент, а не сам элемент, и -1, если ничего не найдено.
     </code>
 </pre>
-<a name="filter" href="#top">top</a>
-<h3>filter</h3>
-<pre>
+      <a name="filter" href="#top">top</a>
+      <h3>filter</h3>
+      <pre>
     <code class="js">
     filter возвращает массив из всех подходящих элементов:
 
@@ -240,9 +248,9 @@ let someUsers = users.filter(item => item.id < 3);
 alert(someUsers.length); // 2
     </code>
 </pre>
-<a name="map" href="#top">top</a>
-<h3>map</h3>
-<pre>
+      <a name="map" href="#top">top</a>
+      <h3>map</h3>
+      <pre>
     <code class="js">
     Метод arr.map является одним из наиболее полезных и часто используемых.
 
@@ -256,9 +264,9 @@ alert(someUsers.length); // 2
     alert(lengths); // 5,7,6  преобразуем каждый элемент в его длину:
     </code>
 </pre>
-<a name="sort" href="#top">top</a>
-<h3>sort</h3>
-<pre>
+      <a name="sort" href="#top">top</a>
+      <h3>sort</h3>
+      <pre>
     <code class="js">
     Вызов arr.sort() сортирует массив на месте, меняя в нём порядок элементов.
 
@@ -280,9 +288,9 @@ alert(someUsers.length); // 2
       или коротко: arr.sort( (a, b) => a - b ); 
     </code>
 </pre>
-<a name="reverse" href="#top">top</a>
-<h3>reverse</h3>
-<pre>
+      <a name="reverse" href="#top">top</a>
+      <h3>reverse</h3>
+      <pre>
     <code class="js">
     Метод arr.reverse меняет порядок элементов в arr на обратный.
 
@@ -293,9 +301,9 @@ alert(someUsers.length); // 2
     Он также возвращает массив arr с изменённым порядком элементов.
     </code>
 </pre>
-<a name="split" href="#top">top</a>
-<h3>split и join</h3>  
-<pre>
+      <a name="split" href="#top">top</a>
+      <h3>split и join</h3>
+      <pre>
     <code class="js">
     str.split(delim) разбивает строку на массив по заданному разделителю delim.
 
@@ -316,9 +324,9 @@ alert(someUsers.length); // 2
 
     </code>
 </pre>
-<a name="reduce" href="#top">top</a>
-<h3>arr.reduce и arr.reduceRight</h3>
-<pre>
+      <a name="reduce" href="#top">top</a>
+      <h3>arr.reduce и arr.reduceRight</h3>
+      <pre>
     <code class="js">
     arr.reduce и arr.reduceRight используются для вычисления какого-нибудь единого значения на основе всего массива.
 
@@ -352,9 +360,9 @@ alert(someUsers.length); // 2
     Метод arr.reduceRight работает аналогично, но проходит по массиву справа налево.
     </code>
 </pre>
-<a name="Array" href="#top">top</a>
-<h3>Array.isArray Array.from()</h3>
-<pre>
+      <a name="Array" href="#top">top</a>
+      <h3>Array.isArray Array.from()</h3>
+      <pre>
     <code class="js">
     typeof не может отличить простой объект от массива:
     Array.isArray  может отличить простой объект от массива:
@@ -377,9 +385,9 @@ alert(someUsers.length); // 2
             let keys = Array.from(map.keys());
     </code>
 </pre>
-<a href="#top" name="hint">top</a>
-<h3>Шпаргалка по массивам</h3>
-<pre>
+      <a href="#top" name="hint">top</a>
+      <h3>Шпаргалка по массивам</h3>
+      <pre>
     <code class="js">
         Для добавления/удаления элементов:
 
@@ -430,8 +438,10 @@ alert(someUsers.length); // 2
         Всякий раз, когда вам будет необходимо что-то сделать с массивом, а вы не знаете, как это сделать – приходите сюда, смотрите на таблицу и ищите правильный метод. Примеры помогут вам всё сделать правильно, и вскоре вы быстро запомните методы без особых усилий.
     </code>
 </pre>
-</div>
+    </div>
     <script src="../../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

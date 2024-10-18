@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка arr</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
-    
-</head>
-<body>
-    
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
+  <body>
     <div class="wrapper">
-        <h2>Canvas</h2>
-    <pre>
+      <h2>Canvas</h2>
+      <pre>
         <code class="js">
 let canvas = document.getElementById('c1'); 
 let ctx = canvas.getContext('2d');
@@ -107,8 +108,8 @@ restore() - Восстанавливает последнее сохраненн
 
         </code>
     </pre>
-    <h2>Анимация на конве</h2>
-    <pre>
+      <h2>Анимация на конве</h2>
+      <pre>
         <code>
 setInterval(function, delay) - Начинает периодически исполнять функцию function каждые delay миллисекунд.
 setTimeout(function, delay) - Запускает выполнение указанной функции function через delay миллисекунд.
@@ -117,8 +118,8 @@ requestAnimationFrame(callback) - Сообщает браузеру, что вы
         </code>
     </pre>
 
-    <h2>Анимация мяч</h2>
-    <pre>
+      <h2>Анимация мяч</h2>
+      <pre>
         <code>
             &lt;canvas width="800" height="500" id="c1" style="background-image: url(setka.png);border: 1px dotted black;"&gt;r&lt;/canvas&gt; 
             &lt;script&gt;
@@ -171,10 +172,11 @@ requestAnimationFrame(callback) - Сообщает браузеру, что вы
            &lt;/script&gt; 
         </code>
     </pre>
-    
-</div>
+    </div>
 
     <script src="../../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

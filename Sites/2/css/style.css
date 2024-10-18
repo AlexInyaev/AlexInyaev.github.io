@@ -1,547 +1,544 @@
 @import url(reset.css);
-#wrapper{
-    width: 1024px;
-    
-    margin: 0 auto;
-   
+#wrapper {
+  width: 1024px;
+
+  margin: 0 auto;
 }
-#topLine{
-     height: 18px;
-     background-image: url(../images/topLine.png);
-     background-repeat: repeat-x;
-     background-color: #cccccc;
-     
+#topLine {
+  height: 18px;
+  background-image: url(../images/topLine.png);
+  background-repeat: repeat-x;
+  background-color: #cccccc;
 }
 /*начело heder*/
-#heder{
-    height: 157px;
-    position: relative;
-   
-
+#heder {
+  height: 157px;
+  position: relative;
 }
-#logo{
-    width: 235px;
-    height: 80px;
-    background-image: url(../images/logo.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 34px;
-    left: 31px;
+#logo {
+  width: 235px;
+  height: 80px;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 34px;
+  left: 31px;
 }
-#logo a{
-    display: block;
-    height: 80px;
-    
+#logo a {
+  display: block;
+  height: 80px;
 }
-#faq{
-    width: 82px;
-    height: 164px;
-    background-image:url(../images/faq.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    top: -17px;
-    right: 44px;
-    
+#faq {
+  width: 82px;
+  height: 164px;
+  background-image: url(../images/faq.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -17px;
+  right: 44px;
 }
-#faq a{
-    display: block;
-    height: 164px;
+#faq a {
+  display: block;
+  height: 164px;
 }
-#nav{
-    width: 520px;
-    height: 30px;
-    position: absolute;
-    top: 57px;
-    left: 379px; 
-    
+#nav {
+  width: 520px;
+  height: 30px;
+  position: absolute;
+  top: 57px;
+  left: 379px;
 }
-#nav li{
-    float: left;
-    margin: 0 27px 0 0;
-    
-    
-    
+#nav li {
+  float: left;
+  margin: 0 27px 0 0;
 }
-#nav li a{
-  text-decoration: none;  
+#nav li a {
+  text-decoration: none;
   text-transform: uppercase;
-  font:16px Arial, sans-serif ;
-  color: #6F6F6F;
+  font:
+    16px Arial,
+    sans-serif;
+  color: #6f6f6f;
 }
-#nav li a.active,#nav li a:hover{
-   
-    color:#2c789c ;
+#nav li a.active,
+#nav li a:hover {
+  color: #2c789c;
 }
 /*начало piople*/
-#piople{
-    height: 404px;
-   
-    position: relative;
-    
-}
-#background{
-    width: 463px;
-    height: 334px;
-    
-    background-image:url(../images/background.png) ;
-    position: absolute;
-    left: 72px;
-    bottom: 11px;
+#piople {
+  height: 404px;
 
+  position: relative;
 }
-#slogan{
-    width: 332px;
-    height: 51px;
-     position: absolute;
-    top: 202px;
-    left: 72px;
+#background {
+  width: 463px;
+  height: 334px;
+
+  background-image: url(../images/background.png);
+  position: absolute;
+  left: 72px;
+  bottom: 11px;
 }
-#slogan h2{
-   
-    font: 24px Arial, sans-serif;
-    text-transform: uppercase;
-    margin-left: 25px;
-    
+#slogan {
+  width: 332px;
+  height: 51px;
+  position: absolute;
+  top: 202px;
+  left: 72px;
 }
-#slogan a{
-   
-    left: 150px;
-    text-decoration: none;
-    font: 16px Arial, sans-serif;
-    color: #5E97B2;
-    float: right;
-    margin-right: 12px;
+#slogan h2 {
+  font:
+    24px Arial,
+    sans-serif;
+  text-transform: uppercase;
+  margin-left: 25px;
 }
-#piopleJpg{
-    width: 375px;
-    height: 389px;
-    background-image: url(../images/piople.jpg);
-    position: absolute;
-    bottom: 14px;
-    right: 53px;
+#slogan a {
+  left: 150px;
+  text-decoration: none;
+  font:
+    16px Arial,
+    sans-serif;
+  color: #5e97b2;
+  float: right;
+  margin-right: 12px;
 }
-#lines{
-    width: 100%;
-    height: 92px;
-    background-image: url(../images/lines.png);
-    background-repeat: repeat-y;
-    position: absolute;
-    bottom: 0;
-    }
+#piopleJpg {
+  width: 375px;
+  height: 389px;
+  background-image: url(../images/piople.jpg);
+  position: absolute;
+  bottom: 14px;
+  right: 53px;
+}
+#lines {
+  width: 100%;
+  height: 92px;
+  background-image: url(../images/lines.png);
+  background-repeat: repeat-y;
+  position: absolute;
+  bottom: 0;
+}
 /*начало colorsBlock*/
-#colorsBlock{
-   background-image: url(../images/linesRL.png);
-   background-repeat: repeat-y;
-    height: 147px;
-   
-    padding: 0 49px 0 42px;  
+#colorsBlock {
+  background-image: url(../images/linesRL.png);
+  background-repeat: repeat-y;
+  height: 147px;
 
+  padding: 0 49px 0 42px;
 }
-#blue{
-    width: 292px;
-    height: 147px;
-    float: left;
-    background-color: #2C789C;
-    padding-left: 14px;
-    position: relative;
+#blue {
+  width: 292px;
+  height: 147px;
+  float: left;
+  background-color: #2c789c;
+  padding-left: 14px;
+  position: relative;
 }
-#yellow{
-    width: 302px;
-    height: 147px;
-    float: left;
-    background-color:#E5B00D ;
-    padding-left: 19px;
-    position: relative;
-     
+#yellow {
+  width: 302px;
+  height: 147px;
+  float: left;
+  background-color: #e5b00d;
+  padding-left: 19px;
+  position: relative;
 }
-#green{
-    width: 282px;
-    height: 147px;
-    float: left;
-     background-color:#97BA15 ;
-     padding-left: 24px;
-     position: relative;
+#green {
+  width: 282px;
+  height: 147px;
+  float: left;
+  background-color: #97ba15;
+  padding-left: 24px;
+  position: relative;
 }
-#green h2, #yellow h2, #blue h2{
-    font: 19px Arial, sans-serif;
-    margin: 14px 0 14px 0;
-    
+#green h2,
+#yellow h2,
+#blue h2 {
+  font:
+    19px Arial,
+    sans-serif;
+  margin: 14px 0 14px 0;
 }
-#colorsBlock a{
-    display: block;
-    width: 99px;
-    height: 26px;
-    background-image: url(../images/readMore.png);
-    text-decoration: none;
-    color: #A9A9A9;
-    font: 16px Arial,sans-serif ;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    padding: 4px 10px;
-    margin:12px 0 4px 0;
+#colorsBlock a {
+  display: block;
+  width: 99px;
+  height: 26px;
+  background-image: url(../images/readMore.png);
+  text-decoration: none;
+  color: #a9a9a9;
+  font:
+    16px Arial,
+    sans-serif;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin: 12px 0 4px 0;
 }
-#blueR{
-    width: 16px;
-    height: 38px;
-    background-image:url(../images/blueR.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
-    top: 60px;
+#blueR {
+  width: 16px;
+  height: 38px;
+  background-image: url(../images/blueR.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 60px;
 }
-#e5{
-    width: 26px;
-    height: 49px;
-    position: absolute;
-    background-image:url(../images/e5.png);
-    top: 55px;
-    left: -11px;
-    
+#e5 {
+  width: 26px;
+  height: 49px;
+  position: absolute;
+  background-image: url(../images/e5.png);
+  top: 55px;
+  left: -11px;
 }
-#e1,#e2,#e3{ 
-    position: absolute;
-    top: 8px;
+#e1,
+#e2,
+#e3 {
+  position: absolute;
+  top: 8px;
 }
-#e1{
-    width: 47px;
-    height: 47px;
-    background-image: url(../images/E1.png);
-    right: 7px;
-    top: 7px;
+#e1 {
+  width: 47px;
+  height: 47px;
+  background-image: url(../images/E1.png);
+  right: 7px;
+  top: 7px;
 }
-#e2{
-   width: 41px;
-    height: 41px;
-    background-image: url(../images/e2.png);
-    right: 7px; 
+#e2 {
+  width: 41px;
+  height: 41px;
+  background-image: url(../images/e2.png);
+  right: 7px;
 }
-#e3{
-   width: 41px;
-    height: 41px;
-    background-image: url(../images/e3.png);
-    right: 7px; 
+#e3 {
+  width: 41px;
+  height: 41px;
+  background-image: url(../images/e3.png);
+  right: 7px;
 }
 /*начало blockFeld */
 
-#blockFeld{
-    height: 272px;
-    position: relative;
-    
-    background-image: url(../images/linesRL.png);
-   background-repeat: repeat-y;
-  
-}
-#text{
-    width: 575px;
-    height: 252px;
-    
-    padding:20px 43px 0 42px ;
+#blockFeld {
+  height: 272px;
+  position: relative;
 
-   
+  background-image: url(../images/linesRL.png);
+  background-repeat: repeat-y;
 }
-#form{
-    width: 333px;
-    height: 272px;
-     
-     position: absolute;
-     top: 0;
-     right: 0;
-     padding-left: 31px;
-}
-#eR{
-    width: 30px;
-    height: 101px;
-    background-image: url(../images/eR.png);
-    position: absolute;
-    left: 0px;
-    bottom: -1px;
-    
+#text {
+  width: 575px;
+  height: 252px;
 
-    
+  padding: 20px 43px 0 42px;
 }
-#eL{
-    width: 30px;
-    height: 101px;
-    background-image: url(../images/eL.png);
-    position: absolute;
-    right: 0px;
-    bottom: 0;
-   
+#form {
+  width: 333px;
+  height: 272px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-left: 31px;
 }
-#text h2{
-    font: 24px Arial, sans-serif;
-    color: #000;
-    margin-bottom: 16px;
-    font-weight: bold;
+#eR {
+  width: 30px;
+  height: 101px;
+  background-image: url(../images/eR.png);
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
 }
-#text h3{
-    font: 16px Arial, sans-serif;
-    color: #000;
-    margin-bottom: 23px;
-    font-weight: bold;
-    
+#eL {
+  width: 30px;
+  height: 101px;
+  background-image: url(../images/eL.png);
+  position: absolute;
+  right: 0px;
+  bottom: 0;
 }
-#text p{
-    color:#DEDEDD ;
+#text h2 {
+  font:
+    24px Arial,
+    sans-serif;
+  color: #000;
+  margin-bottom: 16px;
+  font-weight: bold;
 }
-#text a{
-    display: block;
-    width: 75px;
-    height: 21px;
-    background-image: url(../images/readMoreBlack.png);
-    position: absolute;
-    bottom: 30px;
-    left: 57px;
-    text-decoration: none;
-    color: white;
-    padding: 4px 12px 4px 12px;
-    background-repeat: no-repeat;
-    
+#text h3 {
+  font:
+    16px Arial,
+    sans-serif;
+  color: #000;
+  margin-bottom: 23px;
+  font-weight: bold;
+}
+#text p {
+  color: #dededd;
+}
+#text a {
+  display: block;
+  width: 75px;
+  height: 21px;
+  background-image: url(../images/readMoreBlack.png);
+  position: absolute;
+  bottom: 30px;
+  left: 57px;
+  text-decoration: none;
+  color: white;
+  padding: 4px 12px 4px 12px;
+  background-repeat: no-repeat;
 }
 
-#form input{
-    width: 264px;
-    height: 31px;
-    margin-bottom: 12px;
-    color:#BEBEBE ;
-    border:1px solid #DEDEDE;
-   
-    font: 16px Arial, sans-serif;
-    padding-left: 17px;
+#form input {
+  width: 264px;
+  height: 31px;
+  margin-bottom: 12px;
+  color: #bebebe;
+  border: 1px solid #dedede;
+
+  font:
+    16px Arial,
+    sans-serif;
+  padding-left: 17px;
 }
-#form h2{
-    font: 24px Arial, sans-serif;
-    color: #000;
-    margin: 19px 0 3px 0;
+#form h2 {
+  font:
+    24px Arial,
+    sans-serif;
+  color: #000;
+  margin: 19px 0 3px 0;
 }
-#buttom{
-    width: 99px;
-    height: 26px;
-    
+#buttom {
+  width: 99px;
+  height: 26px;
 }
 /*начало black*/
 
-#black{
-    height: 430px;
-    background-color: black;
-    
-    width: 1024px;
+#black {
+  height: 430px;
+  background-color: black;
+
+  width: 1024px;
 }
-#planning{
-    width: 292px;
-    height: 417px;
-    margin-left: 38px;
-   
-    padding-top: 13px;
-    float: left;
-   
+#planning {
+  width: 292px;
+  height: 417px;
+  margin-left: 38px;
+
+  padding-top: 13px;
+  float: left;
 }
-#ourTeam{
-     
-      width: 292px;
-      height: 417px;
-      margin-left: 38px;
-      
-      padding-top: 13px;
-      float: left;
-    
+#ourTeam {
+  width: 292px;
+  height: 417px;
+  margin-left: 38px;
+
+  padding-top: 13px;
+  float: left;
 }
 
-#black h2{
-     font: 19px Arial, sans-serif;
-     color: #FFFFFF;
-     text-transform: uppercase;
-     margin-bottom: 9px;
-     
-}
-#planning p, #ourTeam p{
-     font: 11px Arial, sans-serif;
-     color: #94998F;
-     margin: 8px 0 32px 0;
-}
-#planning a, #ourTeam a{
-     font: 16px Arial, sans-serif;
-     color: #BBD4DF;
-     text-decoration: none;
-     display: block;
-     width: 91px;
-     height: 26px;
-     background-image: url(../images/ReadMoreBlue.png);
-     padding:4px 8px;
-     background-repeat: no-repeat;
-}
-#BaxterBlog{
-    width: 292px;
-    height: 417px;
-   
-    float: left;
-    margin-left: 38px;
-    padding-top: 13px;
-}
-.clear{
-    clear: both;
- }
- #post1,#post2,#post3 {
-     margin-bottom: 36px;
- }
-  
- #BaxterBlog img{
-    float: left;
-    margin-right: 11px;
- }
-  #BaxterBlog h3{
-     font: 15px Arial, sans-serif;
-     color: #FFFFFF;
-     margin: 4px 0 0 0;
- }
- #BaxterBlog a{
-    color: #28617C;
- }
-  #BaxterBlog p{
-     font: 11px Arial, sans-serif;
-     color: #94998F;
-     margin: 4px 0 4px 0;
- }
- /*начало gray*/
- 
- #gray{
-    background-color:#2E302C ;
-    width: 1024px;
-    height: 216px;
-   
- }
- #aboutB{
-    width: 292px;
-    height: 214px;
-   
-    float: left;
-    margin-left: 38px; 
-
-
- }
- #ourP{
-    width: 292px;
-    height: 214px;
-   
-    float: left;
-    margin-left: 38px;
- }
- #ourP2{
-    width: 292px;
-    height: 166px;
-    
-    float: left;
-    margin-left: 38px;
-    padding-top: 48px;
- }
- #gray h2{
-    font: 19px Arial, sans-serif;
-     color: #FFFFFF;
-     text-transform: uppercase;
-     margin: 17px 0 7px 0;
- }
-  #aboutB p{
-    font: 11px Arial, sans-serif;
-    color:#7A7F76 ;
-    margin-bottom: 8px;
-  }
-  #aboutB a{
-    text-decoration: none;
-    color: #2C789C;
-  }
-  #gray li{
-    list-style-image: url(../images/marker.png);
-    font: 11px Arial, sans-serif;
-    color:#7A7F76 ;
-    margin: 0 0 17px 16px;
-    list-style-position: outside;
-    
-  }
-  #gray ul{
-    margin: 0 0 0 21px;
-  }
-  /*начало footer*/ 
-  
-  #footer{
-    width: 1024px;
-    height: 152px;
-    background-color:#131412 ;
-    position: relative;
-    
-  }
-  
-  #footernav{
-    width: 520px;
-    height: 30px;
-    position: absolute;
-    top: 78px;
-    right: 35px; 
-    
-}
-#footernav li{
-    float: right;
-    margin: 0  0 0 27px;
-    
-    
-    
-}
-#footernav a{
-  text-decoration: none;  
+#black h2 {
+  font:
+    19px Arial,
+    sans-serif;
+  color: #ffffff;
   text-transform: uppercase;
-  font:13px Arial, sans-serif ;
-  color: #6F6F6F;
+  margin-bottom: 9px;
 }
-#footernav li a.active,#footernav li a:hover{
-   
-    color:#2c789c ;
+#planning p,
+#ourTeam p {
+  font:
+    11px Arial,
+    sans-serif;
+  color: #94998f;
+  margin: 8px 0 32px 0;
 }
-#copy{
-    position: absolute;
-    top: 79px;
-    left: 35px;
-    color: #9B9D99;
-    
+#planning a,
+#ourTeam a {
+  font:
+    16px Arial,
+    sans-serif;
+  color: #bbd4df;
+  text-decoration: none;
+  display: block;
+  width: 91px;
+  height: 26px;
+  background-image: url(../images/ReadMoreBlue.png);
+  padding: 4px 8px;
+  background-repeat: no-repeat;
 }
-#copy a{
-     color: #9B9D99;
-     text-decoration: none;
-    
+#BaxterBlog {
+  width: 292px;
+  height: 417px;
+
+  float: left;
+  margin-left: 38px;
+  padding-top: 13px;
 }
-#Social{
-    height: 22px;
-    position: absolute;
-    width: 160px;
-    
-    right: 35px;
-    top: 109px;
+.clear {
+  clear: both;
+}
+#post1,
+#post2,
+#post3 {
+  margin-bottom: 36px;
+}
+
+#BaxterBlog img {
+  float: left;
+  margin-right: 11px;
+}
+#BaxterBlog h3 {
+  font:
+    15px Arial,
+    sans-serif;
+  color: #ffffff;
+  margin: 4px 0 0 0;
+}
+#BaxterBlog a {
+  color: #28617c;
+}
+#BaxterBlog p {
+  font:
+    11px Arial,
+    sans-serif;
+  color: #94998f;
+  margin: 4px 0 4px 0;
+}
+/*начало gray*/
+
+#gray {
+  background-color: #2e302c;
+  width: 1024px;
+  height: 216px;
+}
+#aboutB {
+  width: 292px;
+  height: 214px;
+
+  float: left;
+  margin-left: 38px;
+}
+#ourP {
+  width: 292px;
+  height: 214px;
+
+  float: left;
+  margin-left: 38px;
+}
+#ourP2 {
+  width: 292px;
+  height: 166px;
+
+  float: left;
+  margin-left: 38px;
+  padding-top: 48px;
+}
+#gray h2 {
+  font:
+    19px Arial,
+    sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 17px 0 7px 0;
+}
+#aboutB p {
+  font:
+    11px Arial,
+    sans-serif;
+  color: #7a7f76;
+  margin-bottom: 8px;
+}
+#aboutB a {
+  text-decoration: none;
+  color: #2c789c;
+}
+#gray li {
+  list-style-image: url(../images/marker.png);
+  font:
+    11px Arial,
+    sans-serif;
+  color: #7a7f76;
+  margin: 0 0 17px 16px;
+  list-style-position: outside;
+}
+#gray ul {
+  margin: 0 0 0 21px;
+}
+/*начало footer*/
+
+#footer {
+  width: 1024px;
+  height: 152px;
+  background-color: #131412;
+  position: relative;
+}
+
+#footernav {
+  width: 520px;
+  height: 30px;
+  position: absolute;
+  top: 78px;
+  right: 35px;
+}
+#footernav li {
+  float: right;
+  margin: 0 0 0 27px;
+}
+#footernav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font:
+    13px Arial,
+    sans-serif;
+  color: #6f6f6f;
+}
+#footernav li a.active,
+#footernav li a:hover {
+  color: #2c789c;
+}
+#copy {
+  position: absolute;
+  top: 79px;
+  left: 35px;
+  color: #9b9d99;
+}
+#copy a {
+  color: #9b9d99;
+  text-decoration: none;
+}
+#Social {
+  height: 22px;
+  position: absolute;
+  width: 160px;
+
+  right: 35px;
+  top: 109px;
 }
 #s1 {
-    width: 21px;
-  background-image: url(../images/s1.png); 
-  
-   
-} 
-#s2{
-    background-image: url(../images/s2.png); 
-    width: 27px;
+  width: 21px;
+  background-image: url(../images/s1.png);
 }
-#s3{
-    background-image: url(../images/s3.png); 
-    width:22px ;
+#s2 {
+  background-image: url(../images/s2.png);
+  width: 27px;
 }
-#s4{
-    background-image: url(../images/s4.png); 
-    width: 63px;
+#s3 {
+  background-image: url(../images/s3.png);
+  width: 22px;
 }
-#Social li{
-     height: 22px;
-     float: right;
-     margin-left: 6px;
-     background-repeat: no-repeat;
+#s4 {
+  background-image: url(../images/s4.png);
+  width: 63px;
 }
-#Social li a{
-    display: block;
-    cursor: pointer;
-    height: 22px;
-    
+#Social li {
+  height: 22px;
+  float: right;
+  margin-left: 6px;
+  background-repeat: no-repeat;
+}
+#Social li a {
+  display: block;
+  cursor: pointer;
+  height: 22px;
 }

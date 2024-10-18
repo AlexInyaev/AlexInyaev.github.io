@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Update</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Update</title>
-  <link rel="stylesheet" href="../css/index.css">
-  <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
-
-</head>
-
-<body>
-
-  <div class="wrapper">
-    <h2>Обновление данных</h2>
-    <pre>
+  <body>
+    <div class="wrapper">
+      <h2>Обновление данных</h2>
+      <pre>
         <code class="">
 &lt;?php
 require_once 'config.php';  //подключение файла с переменными
@@ -55,8 +55,8 @@ close($conn);
 ?&gt;
         </code>
     </pre>
-    <h3>Вынесеные функции</h3>
-    <pre>
+      <h3>Вынесеные функции</h3>
+      <pre>
         <code>
             &lt;?php
 //СОЕДИНЕНИЕ
@@ -102,9 +102,9 @@ function close($conn) {
 }
         </code>
     </pre>
-    <h2>Обновление и добавление</h2>
+      <h2>Обновление и добавление</h2>
 
-    <pre>
+      <pre>
             <code>
             &lt;?php
 
@@ -147,11 +147,11 @@ if (mysqli_query($conn, $sql)) {
             ?&gt;
         </code>
         </pre>
+    </div>
 
-  </div>
-
-  <script src="../libs/highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</body>
-
+    <script src="../libs/highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

@@ -1,22 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
+  <body>
     <h2>Деструктурирующее присваивание</h2>
     <ul>
-        <a name="top"></a>
-        <li><a href="#obj">Деструктуризация объекта</a></li>
-        <li><a href="#bot">Итого</a></li>
+      <a name="top"></a>
+      <li><a href="#obj">Деструктуризация объекта</a></li>
+      <li><a href="#bot">Итого</a></li>
     </ul>
     <div class="wrapper">
-        <h2>Деструктуризация массива</h2>
-    <pre>
+      <h2>Деструктуризация массива</h2>
+      <pre>
         <code class="js">
     Деструктурирующее присваивание – это специальный синтаксис, который позволяет нам «распаковать»
     массивы или объекты в кучу переменных, так как иногда они более удобны.
@@ -92,10 +94,10 @@
     alert(surname); // результат prompt
          </code>
     </pre>
-    <a href="#top">top</a>
-    <a name="obj"></a>
-    <h2>Деструктуризация объекта</h2>
-    <pre>
+      <a href="#top">top</a>
+      <a name="obj"></a>
+      <h2>Деструктуризация объекта</h2>
+      <pre>
         <code class="js">
     Синтаксис: let {var1, var2} = {var1:…, var2:…}
 
@@ -300,10 +302,10 @@ showMenu(); // Menu 100 200
 
         </code>
     </pre>
-    <a name="bot"></a>
-    <h2>Итого</h2>
-    <a href="#top">top</a>
-    <pre>
+      <a name="bot"></a>
+      <h2>Итого</h2>
+      <a href="#top">top</a>
+      <pre>
         <code>
 Деструктуризация позволяет разбивать объект или массив на переменные при присвоении.
 
@@ -320,10 +322,11 @@ let [item1 = default, item2, ...rest] = array
 Можно извлекать данные из вложенных объектов и массивов, для этого левая сторона должна иметь ту же структуру, что и правая.
         </code>
     </pre>
-</div>
+    </div>
 
     <script src="../../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>
-        

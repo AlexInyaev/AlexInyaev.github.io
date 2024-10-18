@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка arr</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="wrapper">
-        <h2>Проверка переменных и работа с числами и строками</h2>
-        <h3>Проверка переменных</h3>
-        <pre>
+      <h2>Проверка переменных и работа с числами и строками</h2>
+      <h3>Проверка переменных</h3>
+      <pre>
         <code class="">
             $x = 12;
             echo 'Цифра ли? = ' . is_numeric($x) . '&lt;br&gt;';
@@ -26,8 +26,8 @@
             echo 'Проверяет тип переменной? = ' . gettype($x) . '&lt;br&gt;';
         </code>
     </pre>
-        <h3>Работа со строками</h3>
-        <pre>
+      <h3>Работа со строками</h3>
+      <pre>
         <code class="">
             $str = 'Пример обычной строки';
             $strEng = 'Just string';
@@ -41,8 +41,8 @@
             echo trim("           просто тексе с    пробелами"); //обрезает  пробелы до и после текста
         </code>
     </pre>
-        <h3>Работа с числами</h3>
-        <pre>
+      <h3>Работа с числами</h3>
+      <pre>
         <code class="">
             $some = -15;
             echo abs($some).'&lt;br&gt;'; //число по модулю
@@ -65,7 +65,8 @@
     </div>
 
     <script src="../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
-
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

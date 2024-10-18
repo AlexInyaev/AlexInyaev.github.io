@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка arr</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../libs/highlight/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="wrapper">
-        <h2>Дата и время</h2>
-        <h3>Функциональный способ</h3>
-        <pre>
+      <h2>Дата и время</h2>
+      <h3>Функциональный способ</h3>
+      <pre>
         <code class="">
             date_default_timezone_set('Europe/Moscow'); //устанавливает часовой пояс по умолчанию для всех функций даты/времени в скрипте.
             echo '&lt;br&gt;';
@@ -29,8 +29,8 @@
             echo '&lt;hr&gt;';
         </code>
     </pre>
-        <h3>Объектный способ</h3>
-        <pre>
+      <h3>Объектный способ</h3>
+      <pre>
         <code class="">
             $date_now = new DateTime(); //создаем объект
             $date_now->modify('+1 hour'); // можно модифицировать на любое время 
@@ -40,7 +40,8 @@
     </div>
 
     <script src="../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
-
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

@@ -23,36 +23,51 @@ document.querySelector("#Golang").addEventListener("click", () => {
   addEvents();
 });
 document.querySelector("#TemplateId").addEventListener("click", () => {
-  parametersDirectory = makeMenu(event, templateMenu, "templateLess", "TemplateFolder");
+  parametersDirectory = makeMenu(
+    event,
+    templateMenu,
+    "templateLess",
+    "TemplateFolder",
+  );
   addEvents();
 });
 
 // обработчик второго уровня - отрисовывает выбранный элемент второго уровня
-function makeMenu(event, blockMenu, classDirectory, nameDirectory) { // nameDirectory - название папки в которой лежит проект
- 
+function makeMenu(event, blockMenu, classDirectory, nameDirectory) {
+  // nameDirectory - название папки в которой лежит проект
+
   let elementForTopMenu = document.createElement("li");
   elementForTopMenu.classList.add("markerSecondLevel");
   elementForTopMenu.innerText = event.srcElement.innerText;
-  console.log(event.srcElement.innerText)
+  console.log(event.srcElement.innerText);
   infoBlock.firstElementChild.appendChild(elementForTopMenu);
   elementsStartMenu.style.display = "none";
-  console.log(blockMenu)
+  console.log(blockMenu);
   blockMenu.style.display = "block";
 
   objectContent.setAttribute(
     "data",
-    `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`
+    `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`,
   );
   // console.log(classDirectory, nameDirectory)
   // блок отработки ошибок
-  if(classDirectory === 'templateLess'){
-    console.log('Дефолтный параметр classDirectory заменить на класс который прописан во всех путктах меню li. Сейчас там это значение: '+ classDirectory );
-  }else if(nameDirectory === 'TemplateFolder'){
-    console.log('Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: '+ nameDirectory );
-  }else if(nameDirectory === 'TemplateFolder'){
-    console.log('Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: '+ nameDirectory );
+  if (classDirectory === "templateLess") {
+    console.log(
+      "Дефолтный параметр classDirectory заменить на класс который прописан во всех путктах меню li. Сейчас там это значение: " +
+        classDirectory,
+    );
+  } else if (nameDirectory === "TemplateFolder") {
+    console.log(
+      "Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: " +
+        nameDirectory,
+    );
+  } else if (nameDirectory === "TemplateFolder") {
+    console.log(
+      "Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: " +
+        nameDirectory,
+    );
   }
-  
+
   return { classDirectory: classDirectory, nameDirectory: nameDirectory };
 }
 
@@ -77,15 +92,13 @@ function returnToStartMenu() {
 
 // third level menu навешиваем события
 function addEvents() {
- 
-
   for (let item of document.querySelectorAll(
-    `.${parametersDirectory.classDirectory}`
+    `.${parametersDirectory.classDirectory}`,
   )) {
     item.addEventListener("click", () => {
       drawMainePage(
         event,
-        `disciplines/${parametersDirectory.nameDirectory}/pages/${item.id}.html`
+        `disciplines/${parametersDirectory.nameDirectory}/pages/${item.id}.html`,
       );
     });
   }
@@ -101,7 +114,7 @@ function drawMainePage(event, addressFrame) {
   elementForTopMenu.innerText = event.srcElement.innerText;
   infoBlock.firstElementChild.appendChild(elementForTopMenu);
 
-  objectContent.setAttribute("data", addressFrame); 
+  objectContent.setAttribute("data", addressFrame);
 }
 // добавление Раздела и обработчиков на пункты меню **************************************************************************
 
@@ -119,16 +132,14 @@ showMenuButton.addEventListener("click", showMenu);
 // изменение окон
 
 changeFrame.onmousedown = function (event) {
-
   moveAt(event.pageX);
 
   function moveAt(pageX) {
     if (window.innerWidth > wrapper.offsetWidth + 17) {
-      topNavigation.style.width = `${pageX-((window.innerWidth - wrapper.offsetWidth )/2 )+6}px`;
+      topNavigation.style.width = `${pageX - (window.innerWidth - wrapper.offsetWidth) / 2 + 6}px`;
     } else {
       topNavigation.style.width = `${pageX}px`;
     }
-
   }
 
   function onMouseMove(event) {

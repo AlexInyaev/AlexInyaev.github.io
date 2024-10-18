@@ -1,65 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <p class="gameManagementP">Для старта или продолжения игры нажмите кнопку <span class="green">start</span>
-            <br> для начала
-            движения змейки
-            нажмите кнопку
-            на
-            блоке управления в дополнительных кнопках<br> или на клавиатуре любую из кнопок w,d,s,a .
-        </p>
-        <div class="gameManagement">
+      <p class="gameManagementP">
+        Для старта или продолжения игры нажмите кнопку
+        <span class="green">start</span> <br />
+        для начала движения змейки нажмите кнопку на блоке управления в
+        дополнительных кнопках<br />
+        или на клавиатуре любую из кнопок w,d,s,a .
+      </p>
+      <div class="gameManagement">
+        <div class="form">
+          <div class="wrapperInput">
+            <input type="color" name="" id="color1" />
+            <input type="color" name="" id="color2" />
+            <input type="color" name="" id="color3" />
+            <input type="color" name="" id="color4" />
+          </div>
+          <button class="b1">colors</button>
 
-            <div class="form">
-                <div class="wrapperInput">
-                    <input type="color" name="" id="color1">
-                    <input type="color" name="" id="color2">
-                    <input type="color" name="" id="color3">
-                    <input type="color" name="" id="color4">
-                </div>
-                <button class="b1">colors</button>
+          <label for="widthCanva">widthCanva</label>
+          <input type="number" name="" id="widthCanva" value="15" />
+          <label for="heightCanva">heightCanva</label>
+          <input type="number" name="" id="heightCanva" value="15" />
+          <input type="checkbox" name="" id="checkbox" value="checkbox" />
+          <button class="changSizeFild">changSizeFild</button>
 
-                <label for="widthCanva">widthCanva</label>
-                <input type="number" name="" id="widthCanva" value="15">
-                <label for="heightCanva">heightCanva</label>
-                <input type="number" name="" id="heightCanva" value="15">
-                <input type="checkbox" name="" id="checkbox" value="checkbox">
-                <button class="changSizeFild">changSizeFild</button>
+          <button class="but">Дополнительные кнопки</button>
 
-
-                <button class="but">Дополнительные кнопки</button>
-
-                <button class="s1 green">Start</button>
-                <div class="count">Счет : </div>
-
-
-            </div>
-            <!-- <img src="img/arrows.png" alt="стрелки клавиатуры"> -->
+          <button class="s1 green">Start</button>
+          <div class="count">Счет :</div>
         </div>
-        <div class="canva">
-
-            <canvas id="canvas" width="600px" height="600px"></canvas>
+        <!-- <img src="img/arrows.png" alt="стрелки клавиатуры"> -->
+      </div>
+      <div class="canva">
+        <canvas id="canvas" width="600px" height="600px"></canvas>
+      </div>
+      <div class="control">
+        <div class="controlButtons">
+          <button class="toTop"></button>
+          <button class="toBottom"></button>
+          <button class="toLeft"></button>
+          <button class="toRight"></button>
         </div>
-        <div class="control">
-            <div class="controlButtons">
-                <button class="toTop"></button>
-                <button class="toBottom"></button>
-                <button class="toLeft"></button>
-                <button class="toRight"></button>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
-<script src="js/js.js"></script>
-
+  </body>
+  <script src="js/js.js"></script>
 </html>

@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Методичка</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="../../libs/highlight/styles/atom-one-dark-reasonable.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="wrapper">
-        <h2>Передача данных из формы в php</h2>
-        <pre>
+      <h2>Передача данных из формы в php</h2>
+      <pre>
         <code class="html">
         &lt;form action="main.php" method="get"&gt;   // action="main.php" - файл обработчик
             &lt;input type="text" name="a1"&gt;       // name="a1" - имя инпут обязательно в GET будет ключом
@@ -24,8 +24,8 @@
         после нажатия кнопки все данные передаются в супер глобальный массив  GET
         </code>
     </pre>
-        <h2> PHP</h2>
-        <pre>
+      <h2>PHP</h2>
+      <pre>
         <code class="php">
             &lt;?php
             var_dump($_GET);  // информация о переменной
@@ -43,8 +43,8 @@
             }
         </code>
     </pre>
-        <h2>Проверка вводимых данных</h2>
-        <pre>
+      <h2>Проверка вводимых данных</h2>
+      <pre>
         <code>
             function checkVar($a){
                 if (isset($a) AND trim($a) !=''AND is_numeric($a)){
@@ -69,7 +69,8 @@
     </div>
 
     <script src="../../libs/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</body>
-
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>

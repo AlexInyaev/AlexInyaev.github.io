@@ -1,4 +1,4 @@
-let div = document.createElement('div');
+let div = document.createElement("div");
 div.className = "map-themes";
 div.innerHTML = `
 <ol>
@@ -9,4 +9,4 @@ div.innerHTML = `
 <li><a href="#">Цикл For</a></li>
 <li><a href="#">if</a></li>
 </ol>`;
-document.body.prepend(div)
+document.body.prepend(div);
