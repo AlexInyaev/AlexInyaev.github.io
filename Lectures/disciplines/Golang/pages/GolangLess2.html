@@ -15,6 +15,19 @@
   <body>
     <div class="container">
       <h1>Начало изучения Golang</h1>
+      <a href="#" name="menu"></a>
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#install">Установка Go настройка VS code</a></li>
+        <li><a href="#firstProgram">Первая программа</a></li>
+        <li><a href="#variables">Переменные</a></li>
+        <li><a href="#dataType">Типы данных</a></li>
+        <li><a href="#books">books</a></li>
+        <li><a href="#paretic">paretic</a></li>
+        <li><a href="#open-source">open-source</a></li>
+        <li><a href="#study-plan">study-plan</a></li>
+        <li>
+          <a href="#menu" name="install">menu</a>
       <h4>Установка Golang</h4>
       <ol>
         <li>Заходим на https://go.dev/</li>
@@ -37,7 +50,14 @@
           installed. You are ready to Go.
         </li>
       </ol>
+
+      <a href="#menu" name="firstProgram">menu</a>
+
       <h4>Первая программа</h4>
+      <p>Программа на языке Go хранится в одном или нескольких файлах. Каждый файл с программным кодом должен принадлежать какому-нибудь пакету.
+          Вначале каждого файла должно быть объявление пакета, к которому этот файл принадлежит. Пакет объявляется с помощью ключевого слова package.</p>
+         <p>Мы можем  использовать в файле   функционал из других пакетов. Для этого используемые пакеты надо импортировать с помощью ключевого слова import.
+           Импортируемые пакеты должны идти после объявления пакета для текущего файла</p>
       <ol>
         <li>Указываем пакет <code>package main</code></li>
         <li>
@@ -51,14 +71,82 @@
         <li>В главной функции пишем <code>fmt.Println("Hello world")</code></li>
       </ol>
       <pre><code>
-          package main
+  package main
 
-          import "fmt"
-          
-          func main() {
-            fmt.Println("hello world")
-          }          
+  import "fmt"
+  
+  func main() {
+    fmt.Println("hello world")
+  }    
+  
+  // - однострочный комментарий
+  /* многострочный 
+  комментарий*/
         </code></pre>
+
+        <a href="#menu" name="variables">menu</a>
+
+        <h4>Переменные</h4>
+        <P> Go - регистрозависимый язык</P>
+        <pre>
+          <code>
+  var newVar int                   //объявление переменной
+  var a, b, c string               //Можно одновременно объявить сразу несколько переменных через запятую
+  var hello string = "Hello world" //Также можно сразу  присвоить начальное значение. Это называется инициализацией
+  var (
+    name string = "Tom" //Если мы хотим сразу определить несколько переменных , то можно обернуть их в скобки
+    age  int    = 27
+  )
+  var name, age = "Tom", 27
+  name := "Tom" // короткая запись
+          </code>
+        </pre>
+
+        <a href="#menu" name="dataType">menu</a>
+
+      <h4>Типы данных</h4>
+      <h5>числа</h5>
+      <ul>
+        <li><ul>
+          <li>int8: -128 до 127</li>
+          <li>int16: -32768 до 32767</li>
+          <li>int32: -2147483648 до 2147483647</li>
+          <li>int64: –9 223 372 036 854 775 808 до 9 223 372 036 854 775 807</li>
+          <li>int: -может быть или  int32, или int64  зависит от платформы</li>
+        </ul></li>
+        <li><ul>
+          <li>uint8: 0 до 255</li>
+          <li>uint16: 0 до 65535</li>
+          <li>uint32: от 0 до 4294967295</li>
+          <li>uint64: от 0 до 18 446 744 073 709 551 615</li>
+          <li>uint: -может быть или  uint32, или uint64  зависит от платформы</li>
+        </ul></li>
+       <li><ul> 
+              <li>byte: как uint8</li>
+             <li>rune: как int32</li>
+        </ul>
+       </li>
+        <li><ul>
+          <li>float32:- 1.4*10-45 до 3.4*1038</li>
+          <li>float32:- 4.9*10-324 до 1.8*10308</li>
+        </ul></li>
+      </ul>
+      <h5>Комплексные числа</h5>
+      <ul>
+        <li>complex64</li>
+        <li>complex128</li>
+      </ul>
+      <h5>Bool</h5>
+      <ul>
+        <li>true</li>
+        <li>false</li>
+      </ul>
+      <h5>String</h5>
+      <ul>
+        <li>Строки - заключаются в двойные кавычки и могут иметь специальные символы форматирования \n \r \\ \"</li>
+      </ul>
+      <p>Если мы объявили переемную и тип но не присвоили значение то значение определится автоматически будет 0 false ""</p>
+      <p>Если при инициализации присвоить значение без типа то тип определится автоматически  </p>
     </div>
 
     <script src="../../../libs/highlight/highlight.pack.js"></script>
