@@ -24,7 +24,7 @@
         <li><a href="#dataType">Типы данных</a></li>
         <li><a href="#arrays">Массивы</a></li>
         <li><a href="#ifElseSwitch">if-else-switch</a></li>
-        <li><a href="#open-source">open-source</a></li>
+        <li><a href="#cycles">Циклы</a></li>
         <li><a href="#study-plan">study-plan</a></li>
         <li>
           <a href="#menu" name="install">menu</a>
@@ -203,6 +203,56 @@ func main() {
 	default:              //не обязателен 
 		fmt.Println("default")
 	}
+}
+
+        </code></pre>
+
+        <a href="#menu" name="cycles">menu</a>
+        <h4>Циклы</h4>
+        <pre><code>
+          package main
+
+import "fmt"
+
+var i2 int = 1
+var i3 int = 1
+var colors = [3]string{"red", "blue", "green"}
+
+func main() {
+	//первый способ
+	for i := 1; i < 10; i++ {
+		fmt.Println(i * i)
+	}
+	//второй способ
+	for ; i2 < 10; i2++ {
+		fmt.Println(i2)
+	}
+	//третий способ
+	for i3 < 10 {
+		fmt.Println(i3)
+		i3++
+	}
+	//вложенный цикл
+
+	for i := 1; i < 10; i++ {
+		for j := 1; j < 10; j++ {
+			fmt.Print(i*j, "\t")
+		}
+		fmt.Println()
+	}
+	// перебор массивов
+	for index, value := range colors {
+		fmt.Println(index, value)
+	}
+	// если какое-то значение не нужно то его можно заменить подчеркиванием
+	for _, value := range colors {
+		fmt.Println(value)
+	}
+	//классика
+	for i := 0; i < len(colors); i++ {
+		fmt.Println(colors[i])
+	}
+	// В циклах также доступны операторы break и continue
 }
 
         </code></pre>
