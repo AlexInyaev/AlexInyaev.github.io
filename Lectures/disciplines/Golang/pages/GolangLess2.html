@@ -22,8 +22,8 @@
         <li><a href="#firstProgram">Первая программа</a></li>
         <li><a href="#variables">Переменные</a></li>
         <li><a href="#dataType">Типы данных</a></li>
-        <li><a href="#books">books</a></li>
-        <li><a href="#paretic">paretic</a></li>
+        <li><a href="#arrays">Массивы</a></li>
+        <li><a href="#ifElseSwitch">if-else-switch</a></li>
         <li><a href="#open-source">open-source</a></li>
         <li><a href="#study-plan">study-plan</a></li>
         <li>
@@ -147,6 +147,65 @@
       </ul>
       <p>Если мы объявили переемную и тип но не присвоили значение то значение определится автоматически будет 0 false ""</p>
       <p>Если при инициализации присвоить значение без типа то тип определится автоматически  </p>
+
+      <a href="#menu" name="arrays">menu</a>
+
+        <h4>Массивы</h4>
+        <pre><code>
+  package main
+
+  import "fmt"
+  
+  var arr [5]int                          // заполняется нулями по умолчанию [0 0 0 0 0]
+  var arr1 [5]int = [5]int{1, 2, 3, 4, 5} //[1 2 3 4 5]
+  var arr2 [5]int = [5]int{1, 2}          // нули допишутся [1 2 0 0 0]
+  //var arr3 [5]int = [5]int{1, 2, 3, 4, 5, 6} // ошибка нельзя добавить элементов больше длинны
+  var arr4 = [...]int{1, 2, 3, 4, 5} // если троеточие то длинна ставится количества переданных  элементов
+  
+  var arr5 [3]int = [3]int{1, 2, 3}
+  var arr6 [4]int = [4]int{1, 2, 3, 4}
+  
+  var arr7 [3]string = [3]string{2: "blue", 0: "red", 1: "green"} //ключи необязательно располагать в порядке возрастания
+  
+  func main() {
+  
+    //arr5 = arr6 // ! Ошибка-- длинна массива это часть его типа поэтому у этих массивов разные типы
+    fmt.Println(arr4)
+  
+  }
+          
+        </code></pre>
+        <a href="#menu" name="ifElseSwitch">menu</a>
+
+        <h4>if-else-switch</h4>
+        <pre><code>
+          package main
+
+import "fmt"
+
+func main() {
+
+	fmt.Println("arr4")
+	if false {
+
+	} else if false {
+
+	} else {
+
+	}
+	// switch
+	var condition int = 1
+	switch condition { //так-же можно использовать выражение 1+1 или condition - 1 итд
+	case 1:
+		fmt.Println("case 1")
+	case 2:
+		fmt.Println("case 2")
+	default:              //не обязателен 
+		fmt.Println("default")
+	}
+}
+
+        </code></pre>
     </div>
 
     <script src="../../../libs/highlight/highlight.pack.js"></script>
