@@ -11,11 +11,59 @@
   </head>
   <body>
     <div class="wrapper">
-      <h2>Раздел</h2>
+      <h2>Команды SQL</h2>
+      <h3>Все команды с урока Гоши</h3>
+      <p>Команды пишем в phpMyAdmin</p>
+      <p>Ключевые слова могут писаться как в верхнем так и в нижнем регистре<b>Но принято их писать в верхнем</b></p>
+      <p>Если нажать на ключевое слово то откроется документация с описанием этого слова</p>
+      <h5>Создание удаление баз таблиц колонок</h5>
       <pre>
-        <code class="">
-    INSERT INTO `shop`.`category` (`id`, `name`, `discount`) VALUES ('5', 'чегото там', '5'); 
-    добовляет строку в таблицу 
+        <code class="sql">
+          CREATE DATABASE shop;  - создание базы данных с названием shop
+          DROP DATABASE shop;    - удаление базы данных с названием shop 
+          
+          --Создание таблицы --
+
+          CREATE TABLE people(
+              id INT NOT NULL AUTO_INCREMENT,
+              name VARCHAR(30),
+              bio TEXT,
+              birth DATE,
+              PRIMARY KEY(ID)
+          );
+
+          people() - название таблицы в скобках пишем сначала поле затем атрибуты этого поля. Названия полей -- id name bio birth --
+          INT - тип данных
+          NOT NULL - не может быть пустым
+          AUTO_INCREMENT - автозаполнение 
+          VARCHAR(30) - тип данных в скобках прописывается длинна в символах
+          TEXT - тип данных
+          DATE - тип данных
+          PRIMARY KEY(ID) - поле будет уникальным
+
+          -- Удаление таблицы --
+          DROP TABLE shop
+          shop - название таблицы
+
+          -- Добавление полей в таблицу --
+
+          ALTER TABLE people ADD pass VARCHAR(32);
+
+          people - название таблицы
+          pass - название поля
+          VARCHAR(32); - тип данных и 32 -мы используем потому-что при кодировке пароля длинна хеша 32
+
+          -- Удаление поля таблицы --
+          ALTER TABLE people DROP COLUMN pass;
+
+          people - название таблицы
+          pass - название удаляемого поля
+        </code>
+      </pre>
+      <pre>
+        <code class="lang-sql">
+    INSERT INTO `shop`.`category` (`id`, `name`, `discount`) VALUES ('5', 'чего-то там', '5'); 
+    добавляет строку в таблицу 
 
 
 
@@ -42,7 +90,7 @@
     SELECT * FROM category WHERE  NOT (discount > 5);
     -- вывести категорию товара у которых есть псевдоним --
     SELECT * FROM category WHERE alias_name IS NOT NULL;
-    -- вывести категорию товара у которых нет псивдонима --
+    -- вывести категорию товара у которых нет псевдонима --
     SELECT * FROM category WHERE alias_name IS NULL;
 
     
@@ -51,7 +99,7 @@
     -- вывести название и скидки товаров --
     SELECT name,discount FROM category;
     -- DISTINCT --
-    -- вывести все унекальные значения скидок --
+    -- вывести все уникальные значения скидок --
     SELECT DISTINCT discount FROM category;
     -- ORDER BY --
     -- вывести все категории товаров и отсортировать их по размеру скидки --
@@ -72,7 +120,7 @@
     UPDATE category SET name = 'Головные уборы' WHERE id = 5;
     -- меняет скидку на 3 где id равен 2и5 --
     UPDATE category SET discount = 3 WHERE id IN (2,5);
-    -- удальть товар где id равен 5 --
+    -- удалить товар где id равен 5 --
     DELETE FROM category WHERE id = 5;
 
 
