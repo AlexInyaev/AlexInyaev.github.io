@@ -13,7 +13,161 @@
     />
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">Сайт на Go</div>
+    <h4>Функции</h4>
+    <pre>
+      <code>
+        http.HandleFunc("/", home_page) //отслеживает переход по url адресу и вызывает функцию обработчик которая передается вторым параметром
+     </code>
+  </pre>
+  <ul>
+    <li>первый параметр - url адрес </li>
+    <li>Второй параметр - функция обработчик</li>
+  </ul>
+    <pre>
+      <code>
+        http.ListenAndServe(":8000", nil) // Запускает лока-хост на порту 8000
+     </code>
+  </pre>
+  <ul>
+    <li>первый параметр номер свободного порта на компьютере может быть любой свободный порт</li>
+    <li>Второй параметр мы можем передать настройки сервера если они есть или передать nil если их нет</li>
+  </ul>
+  <h5>Функция обработчик</h5>
+  <pre>
+    <code>
+      func home_page(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "main page:")
+      }
+    </code>
+  </pre>
+  <ul>
+    <li>Первый параметр - с помощью этого параметра мы можем выводить что либо на страницу </li>
+    <li>Второй параметр - для работы с данными с форм </li>
+  </ul>
+  <h5> Функция  fmt.Fprintf(w, "main page:") </h5>
+  <ul>
+    <li>Первый параметр - w это страница на которую будем писать </li>
+    <li>Второй параметр - то что будем писать можно даже вставить html тэг или в обратных кавычках кусочек html кода </li>
+  </ul>
+  <h4>Минимум рабочая программа</h4>
+  <pre>
+    <code class="Goleng">
+            package main
+
+      import (
+        "fmt"
+        "net/http"
+      )
+
+      func home_page(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "main page:")
+
+      }
+
+      func main() {
+        http.HandleFunc("/", home_page)
+        http.ListenAndServe(":8000", nil)
+      }
+
+    </code>
+  </pre>
+  <p>Компилируем затем в адресной строке браузера пишем <code><b>http://localhost:8000</b> </code>   После чего откроется наша страница</p>
+
+  <h4>Отрефакторен код и добелена обработка страницы contacts</h4>
+  <pre>
+    <code>
+      package main
+
+      import (
+        "fmt"
+        "net/http"
+      )
+      
+      func home_page(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "main page:")
+      
+      }
+      func contacts_page(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "This is contacts page:")
+      }
+      func handleRequest() {
+        http.HandleFunc("/", home_page)
+        http.HandleFunc("/contacts", contacts_page)
+        http.ListenAndServe(":8000", nil)
+      }
+      func main() {
+      
+        handleRequest()
+      }
+      
+    </code>
+  </pre>
+  <!--  ******************************************************  -->
+  <!-- Вывод html -->
+   <!--  -->
+  <h3>Способы вывода html на страницу</h3>
+  <h4>1 - Способ : Используя  fmt.Fprintf и двойные кавычки выводится один тэг </h4>
+  <pre>
+    <code>
+      func home_page(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "&lt;b&gt;bold&lt;/b&gt;")
+      } 
+    </code>
+  </pre>
+  <h4>2 - Способ : Используя  fmt.Fprintf и обратные кавычки можно вывести кусочек кода</h4>
+  <pre>
+    <code>
+      func home_page(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, ` &lt;p&gt;second wey&lt;/p&gt;
+         				          &lt;b&gt;bold&lt;/b&gt;`)
+      } 
+    </code>
+  </pre>
+  <h4>3 - Способ : Используя  <code>"html/template"</code> - Пакет для вывода html страниц</h4>
+  <pre>
+    <code>
+      func home_page(w http.ResponseWriter, r *http.Request) {
+        tmpl, _ := template.ParseFiles("templates/home_page.html")
+	      tmpl.Execute(w, bob)
+      } 
+    </code>
+  </pre>
+  <p>Функция <code>template.ParseFiles()</code> возвращает два параметра 1- Объект который мы передаем 2 -  это ошибки но они нам не нужны в данном коде поэтому используем "_" при присвоение </p>
+  <p> И принимает адрес файла шаблона</p>
+  <p>Функция<code>tmpl.Execute(w, bob)</code> выполняет шаблон для отрисовки   <b>первый параметр - </b>  это сама страница на которою мы выводим код <b>вторым параметром - </b>  передаем объект (или другие данные) к которому будет доступ в html</p>
+  <h3>Шаблонизатор Go в html файле</h3>
+  <p>Для работы с кодом Go в html нужно использовать двойные фигурные скобки и точку внутри {{.}} Если передаем объект то после точки пишем имя поля чтобы вывести значение поля {{.nameField}}</p>
+  <h3>Условия</h3>
+  <pre>
+    <code>
+      {{if eq .Name "Bob"}}   - если поле name  равно строке  Bob
+      &lt;p&gt;Привет Bob&lt;/p&gt;
+       {{else if eq .Name "Alex"}}  - если поле name  равно строке  Alex
+       &lt;p&gt;Привет Alex&lt;/p&gt;
+       {{else}}                     - иначе
+       &lt;p&gt;А ты кто?&lt;/p&gt;
+       {{end}}                       - окончание блока кода
+    </code>
+  </pre>
+  <h5>Варианты условий</h5>
+  <ul>
+    <li>eq - равно</li>
+    <li>ne - не равно</li>
+    <li>lt - меньше чем (lower them)</li>
+    <li>gt - больше чем (grater them)</li>
+  </ul>
+  <h3>Цикл</h3>
+  <pre>
+    <code>
+      {{range .Hobbies}}
+        &lt;p class="lead"&gt;&lt;b&gt;{{.}}&lt;/b&gt;&lt;/p&gt;
+
+        {{else}}
+        &lt;p class="lead"&gt;&lt;b&gt;]У нас нет записей&lt;/b&gt;&lt;/p&gt;
+        {{end}}
+    </code>
+  </pre>
     <script src="../../../libs/highlight/highlight.pack.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
