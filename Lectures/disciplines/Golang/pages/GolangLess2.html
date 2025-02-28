@@ -29,6 +29,8 @@
         <li><a href="#ifElseSwitch">if-else-switch</a></li>
         <li><a href="#cycles">Циклы</a></li>
         <li><a href="#study-plan">study-plan</a></li>
+        <li><a href="#types">Основные типы в Go</a></li>
+        <li><a href="#convert-types">Конвертация типов данных в Go</a></li>
         <li>
           <a href="#menu" name="install">menu</a>
       <h4>Установка Golang</h4>
@@ -258,7 +260,86 @@ func main() {
 	// В циклах также доступны операторы break и continue
 }
 
-        </code></pre>
+        </code>
+      </pre>
+      <a href="#menu" name="types">menu</a>
+      <h4>Основные типы в Go</h4>
+      <pre>
+        <code>
+          bool // Boolean, имеет значение True или False
+          string // Строки
+          int int8  int16  int32  int64 // Целочисленные значения со знаком 
+          uint uint8 uint16 uint32 uint64 uintptr // Целочисленные значения без знаков
+          byte // alias для uint8
+          rune // alias для int32
+          float32 float64 // Числа с плавающей точкой
+          complex64 complex128 // Комплексные числа
+      </code>
+    </pre>
+        <a href="#menu" name="convert-types">menu</a>
+        <h4>Конвертация типов данных в Go</h4>
+        <h5>Преобразование чисел</h5>
+        <p>Чтобы преобразовать int d float Достаточно обернуть переменную конструкцией float64() или float32().</p>
+        <p>В примерах можно обойтись и без явного приведения к float. Если вы используете числа с плавающей точкой, то все остальные типы автоматически приводятся к float. <code>a := 5.0 * 2 </code> Но с переменными так работать не будет</p>
+        <pre>
+          <code>
+            func main() {
+              var x int64 = 57
+              var y float64 = float64(x)
+              fmt.Printf("%.2f\n", y)     //число перед f указывает количество знаков после запятой
+            }
+          </code>
+        </pre>
+        <h6>Из float в int </h6>
+        <pre>
+          <code>
+            func main() {
+              var f float64 = 409.8
+              var i int = int(f)  //округление не выполняется все что после запятой отбрасывается
+              fmt.Println(i)
+            }
+          </code>
+        </pre>
+        <h5>Преобразование строк</h5>
+        <p>В Golang число в строку можно преобразовать с помощью метода strconv.Itoa. Он входит в состав пакета strconv стандартной библиотеки языка. <br> синтаксис <code>a := strconv.Itoa(12)</code></p>
+        <p>Float к строке <code>test := fmt.Sprint(421.034)</code></p>
+
+        <h5>Строки в число</h5>
+        <p> Если строка имеет числовой вид то ее можно преобразовать в число</p>
+        <p>Строку в int <code>strconv.Atoi</code></p>
+        <p>Строку в Float <code>strconv.ParseFloat</code></p>
+        <pre>
+          <code>
+            func main() {
+              lines_yesterday := "50"
+              lines_today := "108"
+              yesterday, err := strconv.Atoi(lines_yesterday)
+              if err != nil {
+                log.Fatal(err)
+              }
+              today, err := strconv.Atoi(lines_today)
+              if err != nil {
+                log.Fatal(err)
+              }
+              lines_more := today - yesterday
+              fmt.Println(lines_more)
+            }
+          </code>
+        </pre>
+        <h5>Строки можно также преобразовывать в срезы байтов и обратно, используя конструкции []byte() и string(). </h5>
+        <pre>
+          <code>
+            func main() {
+              a := "timeweb"
+              b := []byte(a)
+              c := string(b)
+              fmt.Println(a)
+              fmt.Println(b)
+              fmt.Println(c)
+            }
+          </code>
+        </pre>
+       
     </div>
 
     <script src="../../../libs/highlight/highlight.pack.js"></script>
