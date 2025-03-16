@@ -32,6 +32,7 @@
         <li><a href="#types">Основные типы в Go</a></li>
         <li><a href="#convert-types">Конвертация типов данных в Go</a></li>
         <li><a href="#flow-and-files">Потоки и файлы</a></li>
+        <li><a href="#link-to-database">Подключение к базе данных</a></li>
         <li>
           <a href="#menu" name="install">menu</a>
       <h4>Установка Golang</h4>
@@ -39,7 +40,7 @@
         <li>Заходим на https://go.dev/</li>
         <li>Загружаем установщик для нашей системы</li>
         <li>
-          win+r затем набираем cmd затем enter и в командной строке пишим go для
+          win+r затем набираем cmd затем enter и в командной строке пишем go для
           проверки должны высветится команды для работы с Go
         </li>
       </ol>
@@ -342,6 +343,7 @@ func main() {
           </code>
         </pre>
         <a href="#menu" name="flow-and-files">menu</a>
+        
         <h2>Потоки и файлы</h2>
         <h4>Чтение и запись</h4>
         <pre>
@@ -391,6 +393,15 @@ func main() {
             А метод Name(), определенный для типа os.File, позволяет получить имя файла.
           </code>
         </pre>
+        <a href="#menu" name="link-to-database">menu</a>
+        <h2>Подключение и работа с базой данных</h2>
+        <h4>Установка mySql драйвера</h4>
+        <ol>
+          <li>Скачиваем mySql драйвер - для этого переходим на страницу драйвера https://github.com/go-sql-driver/mysql</li>
+          <li> Ищем пункт installation там берем команду и выполняем ее в терминале для скачивания (На данный момент команда такая: go get -u github.com/go-sql-driver/mysql)</li>
+          <li> Чуть ниже ищем пункт Usage там из примера копируем названия пакетов для импорта На данный момент названия такие: <code>"database/sql"</code>;<code>_ "github.com/go-sql-driver/mysql"</code></li>
+        </ol>
+        
     </div>
 
     <script src="../../../libs/highlight/highlight.pack.js"></script>
