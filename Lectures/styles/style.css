@@ -136,6 +136,9 @@ body {
 #GolangMenu {
   display: none;
 }
+#DockerMenu {
+  display: none;
+}
 #TemplateMenu {
   display: none;
 }

@@ -62,6 +62,23 @@ document.querySelector("#TemplateId").addEventListener("click", () =&gt; {
 parametersDirectory = makeMenu(event, blockMenu, classDirectory, nameDirectory);
 addEvents();
 });</code></pre>
+    <ol>
+      <li>event - объект события , остается без изменения</li>
+      <li>
+        blockMenu - полный список меню третьего уровня полученный по Id
+        пример :
+        <pre><code>
+    const englandMenu = document.querySelector("#EnglandMenu");</code></pre>
+      </li>
+      <li>
+        classDirectory - этот класс должен быть прописан в каждом li
+        пункта меню
+      </li>
+      <li>
+        nameDirectory - название папки директории в которой хранятся файлы
+        страниц используется для построения пути.
+      </li>
+    </ol>
           <p>Далее нам нужно изменить параметры функции makeMenu</p>
           <p>
             Чтобы получить blockMenu нужно в файле variables найти
@@ -80,24 +97,6 @@ addEvents();
             на свое
           </p>
           <p>CSS для id тега ol (TemplateMenu) прописать display:none</p>
-
-          <ol>
-            <li>event - объект события , остается без изменения</li>
-            <li>
-              blockMenu - полный список меню третьего уровня полученный по Id
-              пример :
-              <pre><code>
-const englandMenu = document.querySelector("#EnglandMenu");</code></pre>
-            </li>
-            <li>
-              classDirectory - этот класс должен быть прописан в каждом li
-              пункта меню
-            </li>
-            <li>
-              nameDirectory - название папки директории в которой хранятся файлы
-              страниц используется для построения пути.
-            </li>
-          </ol>
         </li>
       </ol>
     </div>

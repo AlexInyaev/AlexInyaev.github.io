@@ -22,6 +22,10 @@ document.querySelector("#Golang").addEventListener("click", () => {
   parametersDirectory = makeMenu(event, GolangMenu, "GolangLess", "Golang");
   addEvents();
 });
+document.querySelector("#DockerId").addEventListener("click", () => {
+  parametersDirectory = makeMenu(event, DockerMenu, "DockerLess", "DockerFolder");
+  addEvents();
+});
 document.querySelector("#TemplateId").addEventListener("click", () => {
   parametersDirectory = makeMenu(
     event,
@@ -86,6 +90,7 @@ function returnToStartMenu() {
   russianMenu.style.display = "none";
   phpMenu.style.display = "none";
   GolangMenu.style.display = "none";
+  DockerMenu.style.display = "none";
   templateMenu.style.display = "none";
   objectContent.setAttribute("data", "startPage.html");
 }

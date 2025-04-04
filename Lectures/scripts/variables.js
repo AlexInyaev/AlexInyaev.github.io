@@ -10,6 +10,7 @@ const englandMenu = document.querySelector("#EnglandMenu");
 const russianMenu = document.querySelector("#RussianMenu");
 const phpMenu = document.querySelector("#phpMenu");
 const GolangMenu = document.querySelector("#GolangMenu");
+const DockerMenu = document.querySelector("#DockerMenu");
 const templateMenu = document.querySelector("#TemplateMenu");
 //* ****** */
 const objectContent = document.querySelector("#objectContent");
