@@ -12,7 +12,61 @@
   </head>
   <body>
     <div class="container">
-      <p>Эта страница шаблона №1</p>
+      
+      <h1>Команды Docker и Запуск первого проекта</h1>
+      <a href="#" name="menu"></a>
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#quickly">Часто используемые</a></li>
+        <li><a href="#startWork">Скачивание установка образа с docker hub</a></li>
+      </ul>
+        
+          <a href="#menu" name="quickly">menu</a>
+         
+        
+     <ol>
+      <li><code>Docker</code> - список команд </li>
+      <li><code>docker run -d -p 80:80 docker/getting-started</code> - 
+        <ul>
+          <li>run - запускает проект</li>
+          <li>pull - скачивает проект</li>
+          <li>-d запускает проект с дебагером</li>
+          <li> -р 80:80 -связывает порт машины с портом компа</li>
+          <li> docker/getting-started -название проекта</li>
+        </ul> </li>
+      <li><code>docker command_name -- help </code> - подробная информация о команде </li>
+      <li><code>docker info</code> - информация о докере</li>
+      <li><code>docker  images</code> - информация об образах</li>
+      <li><code>docker ps</code> -  информация о контейнерах 
+        <ul>
+        <li><code>docker ps -a</code> - показать все контейнеры (all)</li>
+        </ul></li>
+      <li><code>docker stop container_id_or_name</code> - останавливает контейнер по имени или по id</li>
+      <li><code>docker start container_id_or_name</code> - </li>
+      <li><code>docker pause container_id_or_name</code> - </li>
+      <li><code> docker unpause container_id_or_name</code> - </li>
+      <li><code>docker restart container_id_or_name</code> - </li>
+      <li><code>docker login</code> - залогиниться</li>
+      <li><code>docker logout</code> - разлогинется</li>
+      <li><code> docker run -it --name My_project openjdk</code> -  запуск проекта по имени в интерактивном режиме 
+      </li>
+      <li><code>ctrl + d</code> - выход из контейнера</li>
+     </ol>
+     <a href="#menu" name="startWork">menu</a>
+     <h2>Скачивание и запуск образов</h2>
+     <ol>
+      <li>Скачать Docker desktop</li>
+      <li>Зарегистрироваться на docker hub <a href="https://hub.docker.com">https://hub.docker.com</a></li>
+      <li>Перейти на страницу с образами <a href="https://hub.docker.com/explore">https://hub.docker.com/explore</a></li>
+     </ol>
+     <h4>Команды для работы с образами</h4>
+      <ol>
+        <li><code>docker pull (имя образа)</code> скачивает образ по имени</li>
+        <li><code>docker pull (имя образа):(номер версии или last)</code> скачивает образ по имени</li>
+        <li><code>docker run (имя образа)</code> запускает образ и создает контейнер с рандомным именем</li>
+        <li><code>docker run -it --name(имя контейнера) (имя образа)</code> запускает образ в интерактивном режиме и создает контейнер с  именем (имя контейнера)</li>
+        <li><code>ctrl + d </code> - Выход из контейнера </li>
+      </ol>
     </div>
     <script src="../../../libs/highlight/highlight.pack.js"></script>
     <script>

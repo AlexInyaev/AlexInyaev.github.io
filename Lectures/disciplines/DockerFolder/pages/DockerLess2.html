@@ -12,7 +12,38 @@
   </head>
   <body>
     <div class="container">
-      <p>Эта страница шаблона №2</p>
+      <ol>
+        <li>Создаем DockerFile для программы на java
+        <ul>
+          поля DockerFile :
+          <li><code>FROM openjdk</code> Образ который будем загружать</li>
+          <li><code> COPY . /java</code> Первая точка от куда копируем файлы (если точка то эта папка) /java - куда копировать</li>
+          <li><code>WORKDIR /java</code> Рабочая директория </li>
+          <li><code>EXPOSE 8001</code> Указывает порт</li>
+          <li><code>RUN javac Main.java</code>Запускается один раз при создание образа</li>
+          <li><code>CMD ["java","Main"]</code>Запускается каждый раз при запуску контейнера. <code>["java","Main"]</code> - Это такой синтаксис Если писать в терминале то <code>java Main</code> </li>
+
+        </ul>
+      </li>
+      <li>Создаем файл в корне проекта <code>Main.java</code> с кодом
+      <pre>
+        <code>
+          class Main {
+            public static void main(String[] args) {
+                System.out.println("Hello World!");
+            }
+        }
+        </code>
+      </pre>
+      </li>
+      <li><code>docker build .</code> собирает проект, точка в конце обязательна</li>
+      <li><code>docker images</code> смотрим наш образ</li>
+      <li><code>docker run -p 3001:8001 (id - образа)</code>Запуск проекта, -p 3001:8001 - соединяет порты 3001 на компе </li>
+        <li><code>docker image rm (id - образа)</code> удаляет образ</li>
+        <li>Структура проекта Project > Dockerfile  Maim.java</li>
+        <li></li>
+        <li></li>
+      </ol>
     </div>
     <script src="../../../libs/highlight/highlight.pack.js"></script>
     <script>

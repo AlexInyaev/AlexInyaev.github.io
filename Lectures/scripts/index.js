@@ -57,7 +57,7 @@ function makeMenu(event, blockMenu, classDirectory, nameDirectory) {
   // блок отработки ошибок
   if (classDirectory === "templateLess") {
     console.log(
-      "Дефолтный параметр classDirectory заменить на класс который прописан во всех путктах меню li. Сейчас там это значение: " +
+      "Дефолтный параметр classDirectory заменить на класс который прописан во всех пунктах меню li. Сейчас там это значение: " +
         classDirectory,
     );
   } else if (nameDirectory === "TemplateFolder") {
