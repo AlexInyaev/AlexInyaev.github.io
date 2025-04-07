@@ -22,9 +22,11 @@ COPY . /var/www/html
 EXPOSE 80
         </code>
       </pre>
-      <p>Собираем <code>docker build -t my-php-app ./php</code></p>
+      <p>Собираем 1-вариант с указанием папки где лежит dockerfile <code>docker build -t my-php-app ./php</code></p>
+      <p>Собираем 2-вариант из самой папки где лежит dockerfile <code>docker build -t my-php-app . </code></p>
       <p>Запускаем <code>docker run -p 8001:80 -d my-php-app</code></p>
       <h2>Docker-compose файл</h2>
+      <p>docker-compose.yml</p>
       <pre>
         <code>
   version: '3.1'
