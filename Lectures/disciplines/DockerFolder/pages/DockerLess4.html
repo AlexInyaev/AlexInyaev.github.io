@@ -16,9 +16,11 @@
         <li><code>docker login</code>Авторизуемся внутри терминала</li>
         <li><code>docker build -t myLogin/nameImage ./php </code>-t myLogin/nameImage - мой логин и имя проекта которое сам назову ./php- папка где лежит dockerfile</li>
         <li><code>docker images</code> после сборки можем проверит наличие образа но не обязательно</li>
-        <li><code>docker push myLogin/nameImage:last</code> :last - номер версии можно не писать</li>
-        <li><code></code></li>
-        <li><code></code></li>
+        <li><code>docker push myLogin/nameImage:latest</code> :latest - номер версии можно не писать</li>
+        <li><code>https://hub.docker.com/repositories/...</code> в docker hub появится наш новый проект</li>
+        <li> Так же можно скачать образ для этого открываем его в docker hub и копируем там команду типа этой - <code>docker pull alexinpnz/testphp</code></li>
+        <li> При загрузки образов в докер все описание (номера портов и.т.д. пишем в overview на сайте)</li>
+        <li><code>docker run -p 3001:80 --name myapp alexinpnz/testphp</code>Запускаем скаченный проект</li>
       </ol>
     </div>
     <script src="../../../libs/highlight/highlight.pack.js"></script>
