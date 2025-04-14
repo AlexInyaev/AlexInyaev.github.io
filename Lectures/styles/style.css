@@ -139,6 +139,9 @@ body {
 #DockerMenu {
   display: none;
 }
+#GitCourseMenu {
+  display: none;
+}
 #TemplateMenu {
   display: none;
 }

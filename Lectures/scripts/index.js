@@ -26,6 +26,10 @@ document.querySelector("#DockerId").addEventListener("click", () => {
   parametersDirectory = makeMenu(event, DockerMenu, "DockerLess", "DockerFolder");
   addEvents();
 });
+document.querySelector("#GitCourseId").addEventListener("click", () => {
+  parametersDirectory = makeMenu(event, GitCourseMenu, "GitCourseLess", "GitCourse");
+  addEvents();
+});
 document.querySelector("#TemplateId").addEventListener("click", () => {
   parametersDirectory = makeMenu(
     event,
@@ -91,6 +95,7 @@ function returnToStartMenu() {
   phpMenu.style.display = "none";
   GolangMenu.style.display = "none";
   DockerMenu.style.display = "none";
+  GitCourseMenu.style.display = "none";
   templateMenu.style.display = "none";
   objectContent.setAttribute("data", "startPage.html");
 }
