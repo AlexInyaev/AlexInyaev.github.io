@@ -15,6 +15,7 @@
       <p>Эта страница шаблона №1</p>
       <h2>Команды</h2>
       <h4>Базовые команды Windows</h4>
+      <hr>
       <ul>
         <li><code>dir</code> - показывает директории</li>
         <li><code>cd</code> - смена директории поддерживается относительный и абсолютный путь</li>
@@ -28,6 +29,7 @@
         <li><code>move .\folder1 .\folder2</code> перемещение папок</li>
       </ul>
       <h4>Базовые команды Linux</h4>
+      <hr>
       <ul>
         <li><code></code></li>
         <li><code></code></li>
@@ -36,12 +38,8 @@
         <li><code></code></li>
       </ul>
       <h4>Работа с Git - 3</h4>
+      <hr>
       <ul>
-        <li><code></code></li>
-        <li><code></code></li>
-        <li><code></code></li>
-        <li><code></code></li>
-      
         <li><code>code .</code> -  открыть vs code</li>
         <li><code>git init</code> - инициализирует репозиторий в ту папку в которой исполняется</li>
         <li><code>git status</code> - Статус гита</li>
@@ -52,13 +50,114 @@
         <li><code>git config list</code> - список всех конфигураций</li>
         <li><code>git add file-name</code> -  добавление файла в отслеживание гитом</li>
         <li><code>git add . </code> -  добавление всех файлов в отслеживание гитом</li>
-        <li><code>git rm -cached file-name</code> - убирает файл из отслеживания</li>
+        <li><code>git rm --cached file-name</code> - убирает файл из отслеживания</li>
         <li><code>git commit -m "описание коммита"</code> -  делаем коммит</li>
         <li><code>git log</code> -  информация о каммитах</li>
-        <li><code>git checkout №коммита</code> - переход к нужному коимиту</li>
+        <li><code>git checkout №коммита</code> - переход к нужному коммиту</li>
         <li><code>git checkout master</code> - возврат в ветку мастер</li>
         <li><code></code></li>
       </ul>
+      <h4>Ветки</h4>
+      <hr>
+      <ul>
+        <li><code>git branch</code> - Показывает все ветки и отмечает главную</li>
+        <li><code>git branch branch-name</code> - создает новую ветку (branch-name)</li>
+        <li><code>git checkout branch-name</code> - переключение на ветку (branch-name) </li>
+      </ul>
+      <h6>Слияние веток</h6>
+      <p>Для слияния веток переходим в ту в которую будем вливать ветку</p>
+      <ul><li><code>git merge (branch-name)</code>- команда для слияния веток. (branch-name) - эту ветку вливаем</li></ul>
+      <h6>HEAD</h6>
+      <p>head -  указывает коммит на которым мы находимся. Если мы переходим на ветку то на последний коммит в этой ветке</p>
+      <h6>git tag</h6>
+      <p>git tag - Используется для добавления меток к коммитам по тегам можно перемещаться и они могут содержать информацию</p>
+      <ul>
+        <li><code>git tag tag-name</code>- добавление метки к коммиту в котором находимся</li>
+        <li><code>git tag </code>- показывает тэги</li>
+        <li><code>git checkout tag-name </code> - переключение на коммит с тэгом  tag-name </li>
+      </ul>
+      <h6>switch</h6>
+      <p>switch - Используется для перемещения между сетками и для создания веток</p>
+      <ul>
+        <li><code>git switch branch-name</code>переключение на ветку</li>
+        <li><code>git switch -с branch-name</code>создание ветки</li>
+      </ul>
+      <h4>Удаление Откат</h4>
+      <hr>
+      <h6>Удаление файла</h6>
+      <ul>
+        <li><code>git ls-files</code>показывает все файлы в репозитории</li>
+        <li><code>git rm file-name</code>удаляет файл</li>
+        <li>1 - <code>git restore --staged file-name</code> 2 <code>git restore file-name</code> откатывает удаление файла обязательно 2 команды</li>
+        <li>Затем делаем коммит чтобы зафиксировать удаление</li>
+      </ul>
+      <h6>откат изменений</h6>
+      <ul>
+        <li><code>git restore (file-name или адрес файла)</code> первый способ</li>
+        <li><code>git checkout (file-name или адрес файла)</code> второй способ</li>
+        <li>1<code>git clean -dn</code>показывает что будет удалено. 2<code>git clean -df</code>удаляет изменения</li>
+      </ul>
+      <h6> vim</h6>
+      <ul>
+        <li><code>git commit -m "описание" -m"дополнительное описание"</code></li>
+        <li><code>git commit</code> - вход в окно vim</li>
+      </ul>
+      <p>работа с vim</p>
+      <ul>
+        <li>жмем <code>i</code>или <code>а</code>для входа в режим редактирования</li>
+        <li>клавиши<code>h j k l</code>или стрелки перемещение по vim</li>
+        <li><code>esc</code>вход из режима редактирования</li>
+        <li>выход из vim<code>:wq</code>w-запись q-выход</li>
+      </ul>
+      <p>На случай если появится двоеточие</p>
+      <p>Двоеточие в последней строке после выполнения команды git log означает,<b> что выходные данные отображаются не целиком, а частично и разделены на «страницы».</b>  1
+
+        Это подсказка, указывающая перейти на следующую страницу выходных данных. Для перехода можно использовать клавиши вверх/вниз. Чтобы выйти из режима вывода, нужно нажать клавишу Q. 12</p>
+        <h6>Amend</h6>
+        <p><b><u>Работаем только в локальном репозитории</u></b></p>
+        <ul>
+          <li><code>git commit --amend -m "new message"</code> - редактирование описания последнего коммита</li>
+          <li><code>git commit --amend --no-edit</code> - редактирование последнего коммита без изменения описания</li>
+        </ul>
+        <h6>Reset</h6>
+        <p>Команда <code>git reset</code> имеет 3 режима работы</p>
+        <ol>
+          <li><code>git reset --soft HEAD~1</code>мы откатим коммит но все изменения останутся staged "зеленый файл в консоли" <code>HEAD~1</code> - указывает что откатится на один относительно текшего положения head</li>
+          <li><code>git reset HEAD~1</code>мы откатим коммит но все изменения останутся unstaged  "красный файл в консоли"</li>
+          <li><code>git reset --hard HEAD~1</code>мы откатим коммит и удаляем все изменения без возможности восстановления</li>
+        </ol>
+        <h6>Удаление веток</h6>
+        <p>При удаление ветки мы не должны находится в удаляемой ветке</p>
+        <p>При удаление ветки все коммиты в этой ветке тоже будут удалены для сохранения изменений в ветки ее сначала нужно слить с другой веткой а затем удалить</p>
+        <ul>
+          <li><code>git branch -d branch-name</code> первый способ удаления ветки</li>
+          <li><code>git branch --delete branch-name</code>второй способ удаления ветки</li>
+        </ul>
+        <h6>detached commit</h6>
+        <ol>
+          <li>С помощью команды <code>git checkout №коммита</code> переходим к нужному коммиту для висения изменений он будет detached</li>
+          <li>Вносим изменения</li>
+          <li><code>git add .</code></li>
+          <li><code>git commit -m "Внесли изменения" </code></li>
+          <li><code>git switch master </code> после переключения мы теряем наш коммит но у нас есть его id </li>
+          <li><code>git branch branch-name id-commit </code> для того чтобы не потерять коммит мы создаем ветку и вновь созданную ветку добавляем наш коммит </li>
+          <li><code>git merge branch-name </code> сливаем вновь созданную ветку с веткой мастер для сохранения изменений</li>
+        </ol>
+        <p>решение конфликта при вливание</p>
+        <p><code>git log --merge</code>показывает какие коммиты конфликтуют</p>
+        <p>В vs code моно решить конфликт варианты решения ниже</p>
+        <ol>
+          <li>отредактировать в ручную </li>
+          <li><code>Accept current change</code>Принять текущие изменение - это то которое было в главной ветке до вливания</li>
+          <li><code>Accept incoming change</code>Принять входящие изменение - это то которое вливаем</li>
+          <li><code>Accept both changes</code>Принять оба изменения</li>
+          <li><code>Compare changes</code>сравнить изменения</li>
+        </ol>
+        <p>если нам marge не нужен то его можно откатить <code>git merge --abort</code></p>
+        <p>Следующей шаг <code>git add .</code></p>
+        <p>Следующей шаг <code>git commit -m "Merge changes"</code></p>
+        <p>Все изменения внесены</p>
+
     </div>
     <script src="../../../libs/highlight/highlight.pack.js"></script>
     <script>
