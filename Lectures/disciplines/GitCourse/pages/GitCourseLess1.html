@@ -157,6 +157,21 @@
         <p>Следующей шаг <code>git add .</code></p>
         <p>Следующей шаг <code>git commit -m "Merge changes"</code></p>
         <p>Все изменения внесены</p>
+        <h6>Git ignore</h6>
+        <p><code>.gitignore</code>так выгладит файл перед точкой ничего писать не нужно</p>
+        <p>заполнение файла gitignore</p>
+        <ul>
+          <li><code>file-name.txt</code> - игнорирует файл,этот файл не будет сохраняться в гит</li>
+          <li><code>*.txt</code>- все файлы с расширением txt игнорируются</li>
+          <li><code>/*.txt</code>- из корня проекта на один уровень все файлы с расширением txt игнорируются</li>
+          <li><code>folder</code>папка folder будут игнорироваться</li>
+          <li><code>/folder</code> папка  folder которая лежит в корне будут игнорироваться</li>
+          <li><code>/folder.*</code>все файлы в папке  folder которая лежит в корне будут игнорироваться кроме самой папки</li>
+          <li><code>/folder.*</code>на следующей строке <code>!/folder/info.md</code>все файлы в папке  folder которая лежит в корне будут игнорироваться кроме самой папки и кроме файла info.md</li>
+
+        </ul>
+        <p>пустые директории не отслеживаются для их отслеживания можно использовать файл <code>.gitkeep</code>его добавляем в папку которую нужно отследить</p>
+        <p>Ну и в gitignore прописываем <code>!.gitkeep</code></p>
 
     </div>
     <script src="../../../libs/highlight/highlight.pack.js"></script>

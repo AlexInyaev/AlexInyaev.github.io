@@ -12,7 +12,33 @@
   </head>
   <body>
     <div class="container">
-      <p>Эта страница шаблона №2</p>
+      <h2>GitCourse Продвинутая работа</h2>
+      <h4>git stash</h4>
+      <hr>
+      <p>В Git (и на GitHub) команда <code>git stash</code> используется для временного сохранения ("припрятывания") текущих незакоммиченных изменений в рабочем каталоге.
+         Это позволяет вам временно "убрать" свои изменения, чтобы переключиться на другую ветку или поработать над чем-то ещё, 
+         а потом вернуться и восстановить отложенные изменения.</p>
+         <h6>Как работает <code>git stash</code>:</h6>
+         <ul>
+          <li>Все незакоммиченные изменения (как в проиндексированных файлах, так и в неотслеживаемых) сохраняются в специальном хранилище (стеке stash).</li>
+          <li>Рабочая директория возвращается к состоянию последнего коммита (чистая копия).</li>
+          <li>Позже эти изменения можно вернуть командой <code>git stash apply</code>  или <code>git stash pop</code>.</li>
+         </ul>
+         <h6>Пример использования:</h6>
+         <ul>
+          <li><code>git stash</code> - добавляем коммит в git stash</li>
+          <li><code>git stash list</code> - смотрим список  stash </li>
+          <li><code>git switch -c branch-name</code> - создаем новую ветку</li>
+          <li><code>git stash apply</code> - добавляем изменения из stash в новую ветку - <code>git switch -c hotfix/T-15</code></li>
+          <li><code>git stash</code> - Если нужно то можно изменения которые мы добавили в новую ветку снова поместить в <code>git stash</code></li>
+         </ul>
+         <p><code>git stash push -m "Название сохранения"</code> - для добавления названия сохранения</p>
+         <p><code>git stash apply</code> - добавляет последний stash из списка чтобы добавить нужный нам нужно указать его номер после apply<code>git stash apply 0</code> - 0 - это номер stash</p>
+         <h6>Удаление записей из git stash</h6>
+         <p>1-й способ - использовать вместо <code>git stash apply 0</code> такую команду <code>git stash pop 0</code> эта команда делает добавляет изменения в ветку и удаляет запись из stash</p>
+         <p><code>git stash clear</code> - очищает список git stash полностью</p>
+         <h4>Reflog</h4>
+         <hr>
     </div>
     <script src="../../../libs/highlight/highlight.pack.js"></script>
     <script>
