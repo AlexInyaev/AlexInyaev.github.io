@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sites Alexa</title>
-    <link rel="stylesheet" href="serviceFolder/css/main.css" />
+    <link rel="stylesheet" href="serviceFolder/css/iiimain.css" />
     <link rel="icon" type="image/jpg" href="serviceFolder/img/favicon.jpg" />
   </head>
 
@@ -156,5 +156,42 @@
         </div>
       </div>
     </div>
+    <script>
+  // Анимация при загрузке
+  document.addEventListener('DOMContentLoaded', () => {
+    // Плавное появление элементов
+    const elements = document.querySelectorAll('.header, .AboutMe, .item, .elements');
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, 100 * index);
+    });
+
+    // Эффект при наведении на карточки работ
+    const workCards = document.querySelectorAll('.elements');
+    workCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+      });
+    });
+  });
+
+  // Динамическое изменение тени при скролле
+  window.addEventListener('scroll', () => {
+    const wrapper = document.querySelector('.wrapperMain');
+    const scrollY = window.scrollY;
+    const shadowSize = Math.min(30, 10 + scrollY / 10);
+    wrapper.style.boxShadow = `0 ${shadowSize}px ${shadowSize * 1.5}px rgba(0, 0, 0, 0.15)`;
+  });
+</script>
   </body>
-</html>
+</html> 
+
+
+
+
+
