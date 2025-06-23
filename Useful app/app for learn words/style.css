@@ -1,0 +1,49 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: gray;
+}
+.container{
+    max-width: 1080px;
+    outline: 1px solid red;
+    margin: auto;
+}
+label {
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+.card{
+    width: 500px;
+    height: 300px;
+    border: 1px solid green;
+    margin: 100px auto;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+}
+#response{
+    height: 50px;
+    width: 100%;
+    font-size: 30px;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+}
+.sendResponse , .clearButton, .nextWord{
+    height: 50px;
+    width: 33%;
+}
