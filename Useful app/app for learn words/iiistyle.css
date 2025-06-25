@@ -28,8 +28,8 @@ body {
 }
 
 .container {
-  width: 100%;
-  max-width: 600px;
+  width: 600px;
+  /* max-width: 600px; */
   animation: fadeIn 0.8s ease-out;
 }
 
@@ -242,9 +242,10 @@ body {
     flex-direction: column;
   }
   
-  .sendResponse, .nextWord, .clearButton {
+  .sendResponse, .nextWord, .clearButton .container{
     width: 100%;
   }
+  
 }
 
 @media (max-width: 480px) {
@@ -255,4 +256,8 @@ body {
   #description {
     font-size: 16px;
   }
+  .container{
+    width: 100%;
+  }
+  
 }
