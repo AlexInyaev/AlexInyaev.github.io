@@ -339,13 +339,22 @@ hr {
   }
   
   .skillChart {
+    
     grid-template-columns: repeat(3, 1fr);
   }
+  
 }
 
 @media screen and (max-width: 600px) {
   .skillChart {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .skillChart {
+    display: none;
+    /* grid-template-columns: repeat(3, 1fr); */
+  }
+  .skillChartOn {
+    display: block;
   }
   
   .myWorks {
