@@ -349,13 +349,7 @@ hr {
   .skillChart {
     grid-template-columns: repeat(2, 1fr);
   }
-  .skillChart {
-    display: none;
-    /* grid-template-columns: repeat(3, 1fr); */
-  }
-  .skillChartOn {
-    display: block;
-  }
+  
   
   .myWorks {
     grid-template-columns: 1fr;
@@ -374,7 +368,12 @@ hr {
   .skillChart {
     grid-template-columns: 1fr;
   }
-  
+  .skillChart {
+    display: none;
+  }
+  .skillChartOn {
+    display: block;
+  }
   .diagram {
     width: 100px;
     height: 100px;
