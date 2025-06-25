@@ -199,6 +199,22 @@
     wrapper.style.boxShadow = `0 ${shadowSize}px ${shadowSize * 1.5}px rgba(0, 0, 0, 0.15)`;
   });
 </script>
+
+<script>
+// показывает иконки скилов
+let skillChart = document.querySelector(".skillChart");
+let switcher = true;
+document.querySelector(".skillChartOn").addEventListener('click',()=>{
+  if(switcher){
+    console.log(true);
+    skillChart.style.display = "block"
+    switcher = false;
+  }else{
+    skillChart.style.display = "none"
+    switcher = true;
+     console.log(false);
+  }})
+</script>
   </body>
 </html> 
 
