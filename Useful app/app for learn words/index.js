@@ -25,7 +25,7 @@ wordData  =   getObjectByIndex(listPhrases, getUniqueRandomIndex()); // wordData
 createCard(wordData)
 buttonSend.disabled = false;
 isKeyDownDisabled = false;
-response.style.backgroundColor = "rgb(255, 255, 255)";
+response.style.border = "3px solid rgb(237,240,246)";
 clearfield()
 }
 startCategory()
@@ -55,11 +55,12 @@ createCard(wordData);
     
     if (responseValue === wordData.wordOrPhrase){ //проверка правильного ответа
       if(switcher){
-        response.style.backgroundColor = 'rgb(156, 223, 156)'
+        response.style.border = '3px solid rgb(156, 223, 156)'
          switcher = false
       }else{
         nextWord()
         finishCategory()
+        response.style.border = "3px solid rgb(237,240,246)";
          switcher = true
       }
        
@@ -70,11 +71,11 @@ createCard(wordData);
         if ( trays > 0){
             if( finishCategory()) return;
             console.log(false,"-",trays);
-            response.style.backgroundColor = "rgb(255, 0, 0)";
+            response.style.border = "3px solid rgb(255, 0, 0)";
             trays--;
         } else {
            
-            response.style.backgroundColor = "rgb(255, 255, 255)";
+            response.style.border = "3px solid rgb(237,240,246)";
             trays += 3;
             nextWord() 
         } 

@@ -32,6 +32,11 @@ switch (selectOptionValue) {                                           //Суд�
      getUniqueRandomIndex  =  createUniqueRandomGenerator(listPhrases.length)
     break;
      // ******************
+  case "Vocabulary_2_1_1":
+    listPhrases = Vocabulary_2_1_1
+     getUniqueRandomIndex  =  createUniqueRandomGenerator(listPhrases.length)
+    break;
+     // ******************
   default:
     alert( "Нет таких значений" );
 }

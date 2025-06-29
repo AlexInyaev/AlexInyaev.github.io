@@ -121,7 +121,7 @@ body {
   width: 100%;
   padding: 12px 15px;
   margin-bottom: 20px;
-  border: 2px solid #ddd;
+  border: 3px solid rgb(237,240,246);
   border-radius: 8px;
   font-size: 16px;
   transition: all 0.3s ease;
@@ -261,6 +261,7 @@ body {
   }
   body{
  background-color: #fff;
+ 
   }
   
 }
