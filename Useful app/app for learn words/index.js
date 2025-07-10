@@ -20,82 +20,82 @@ let switcher = true;
 let isKeyDownDisabled = false;
 
 // *************************startCategory******************
-function startCategory(){ // запускается при старте и при сиене категории в файле selectDictionary
-wordData  =   getObjectByIndex(listPhrases, getUniqueRandomIndex()); // wordData - инициализируется в selectDictionary
-createCard(wordData)
-buttonSend.disabled = false;
-isKeyDownDisabled = false;
-response.style.border = "3px solid rgb(237,240,246)";
-clearfield()
+function startCategory() { // запускается при старте и при сиене категории в файле selectDictionary
+  wordData = getObjectByIndex(listPhrases, getUniqueRandomIndex()); // wordData - инициализируется в selectDictionary
+  createCard(wordData)
+  buttonSend.disabled = false;
+  isKeyDownDisabled = false;
+  response.style.border = "3px solid rgb(237,240,246)";
+  clearfield()
 }
 startCategory()
 // *************************startCategory******************
 console.log(wordData);
-buttonSend.addEventListener('click',()=>{ sendResponse()});
-clearButton.addEventListener('click',()=>{  clearfield()});
+buttonSend.addEventListener('click', () => { sendResponse() });
+clearButton.addEventListener('click', () => { clearfield() });
 
-document.addEventListener('keydown', (event)=> {
+document.addEventListener('keydown', (event) => {
   if (isKeyDownDisabled) return;
-  if(event.code == "Enter" ){
+  if (event.code == "Enter") {
     sendResponse();
     responseInput.focus();
-} ;
-  if(event.code == "ShiftLeft")clearfield();
-  if(event.code == "KeyX") console.log(getIterator(0, directoryToLearn.length));
+  };
+  if (event.ctrlKey && event.key == "x") clearfield();
+  if (event.code == "KeyX") console.log(getIterator(0, directoryToLearn.length));
 });
 
 
 
-function sendResponse(){
-console.log("sendResponse Started");
-createCard(wordData);
+function sendResponse() {
+  console.log("sendResponse Started");
+  createCard(wordData);
 
-   let responseValue = responseInput.value;
-   let response = responseInput
-    
-    if (responseValue === wordData.wordOrPhrase){ //проверка правильного ответа
-      if(switcher){
-        response.style.border = '3px solid rgb(156, 223, 156)'
-         switcher = false
-      }else{
-        nextWord()
-        finishCategory()
-        response.style.border = "3px solid rgb(237,240,246)";
-         switcher = true
-      }
-       
-        // checkEndArr()
-       
+  let responseValue = responseInput.value;
+  let response = responseInput
+
+  if (responseValue === wordData.wordOrPhrase) { //проверка правильного ответа
+    if (switcher) {
+      response.style.border = '3px solid rgb(156, 223, 156)'
+      switcher = false
     } else {
-       
-        if ( trays > 0){
-            if( finishCategory()) return;
-            console.log(false,"-",trays);
-            response.style.border = "3px solid rgb(255, 0, 0)";
-            trays--;
-        } else {
-           
-            response.style.border = "3px solid rgb(237,240,246)";
-            trays += 3;
-            nextWord() 
-        } 
-        trays == 0 ?  rightResponse(): rightResponse(true);
-         console.log( "trays-",trays)
-         document.querySelector("#attempts").textContent = trays;   
+      nextWord()
+      finishCategory()
+      response.style.border = "3px solid rgb(237,240,246)";
+      switcher = true
     }
-    
-   
- responseInput.focus()
+
+    // checkEndArr()
+
+  } else {
+
+    if (trays > 0) {
+      if (finishCategory()) return;
+      console.log(false, "-", trays);
+      response.style.border = "3px solid rgb(255, 0, 0)";
+      trays--;
+    } else {
+
+      response.style.border = "3px solid rgb(237,240,246)";
+      trays += 3;
+      nextWord()
+    }
+    trays == 0 ? rightResponse() : rightResponse(true);
+    console.log("trays-", trays)
+    document.querySelector("#attempts").textContent = trays;
+  }
+
+
+  responseInput.focus()
 }
 
- function rightResponse(boolArg = false){
-    if(boolArg){
-        document.querySelector("#rightResponseSpan").innerText = "- - - - -"
-    } else {
-        document.querySelector("#rightResponseSpan").innerText = wordData.wordOrPhrase
-    }
-    
-   }
+function rightResponse(boolArg = false) {
+  if (boolArg) {
+    document.querySelector("#rightResponseSpan").innerText = "- - - - -"
+  } else {
+    document.querySelector("#rightResponseSpan").innerText = wordData.wordOrPhrase
+  }
+
+}
 
 // **********************************************************************************************
 // Генерация рандомных чисел
@@ -132,7 +132,7 @@ function getObjectByIndex(arrayOfObjects, index) {          // arrayOfObjects, i
     return arrayOfObjects[index];
   } else {
     // Можно вернуть null или выбросить ошибку, если индекс невалидный
-    return {"translation":"Все слова в данном разделе закончились выберете другой раздел"}; // или throw new Error("Индекс вне границ массива");
+    return { "translation": "Все слова в данном разделе закончились выберете другой раздел" }; // или throw new Error("Индекс вне границ массива");
   }
 }
 
@@ -147,7 +147,7 @@ function getObjectByIndex(arrayOfObjects, index) {          // arrayOfObjects, i
 // *******************************************************
 
 // function getNewPhrase(arrayOfObjects, getUniqueRandomIndex) {
-  
+
 // let g =   getObjectByIndex(arrayOfObjects, getUniqueRandomIndex())
 // console.log(g);
 // console.log(g.wordOrPhrase);
@@ -159,27 +159,27 @@ function getObjectByIndex(arrayOfObjects, index) {          // arrayOfObjects, i
 
 // 
 
-function createCard(wordData){
+function createCard(wordData) {
 
-   console.log(wordData.translation);
-    description.innerText = wordData.translation
+  console.log(wordData.translation);
+  description.innerText = wordData.translation
 }
 
-function clearfield(){
+function clearfield() {
   responseInput.value = "";
 }
-function nextWord(){
-        response.style.backgroundColor = "rgb(255, 255, 255)";
-        wordData  =   getObjectByIndex(listPhrases, getUniqueRandomIndex()); // wordData - инициализируется в selectDictionary
-        createCard(wordData);
-        clearfield();
+function nextWord() {
+  response.style.backgroundColor = "rgb(255, 255, 255)";
+  wordData = getObjectByIndex(listPhrases, getUniqueRandomIndex()); // wordData - инициализируется в selectDictionary
+  createCard(wordData);
+  clearfield();
 }
-function finishCategory(){
-  if(wordData.translation == "Все слова в данном разделе закончились выберете другой раздел"){
-          buttonSend.disabled = true;
-          isKeyDownDisabled = true;
-          clearfield();
-           return true
-        }
-       
+function finishCategory() {
+  if (wordData.translation == "Все слова в данном разделе закончились выберете другой раздел") {
+    buttonSend.disabled = true;
+    isKeyDownDisabled = true;
+    clearfield();
+    return true
+  }
+
 }

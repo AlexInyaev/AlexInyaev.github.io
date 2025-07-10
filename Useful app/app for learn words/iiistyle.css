@@ -34,8 +34,15 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Стили для select */
@@ -121,7 +128,7 @@ body {
   width: 100%;
   padding: 12px 15px;
   margin-bottom: 20px;
-  border: 3px solid rgb(237,240,246);
+  border: 3px solid rgb(237, 240, 246);
   border-radius: 8px;
   font-size: 16px;
   transition: all 0.3s ease;
@@ -140,7 +147,9 @@ body {
   margin-bottom: 20px;
 }
 
-.sendResponse, .nextWord, .clearButton {
+.sendResponse,
+.nextWord,
+.clearButton {
   flex: 1;
   padding: 12px;
   border: none;
@@ -166,7 +175,9 @@ body {
   color: var(--text-color);
 }
 
-.sendResponse:hover, .nextWord:hover, .clearButton:hover {
+.sendResponse:hover,
+.nextWord:hover,
+.clearButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -225,11 +236,23 @@ body {
   line-height: 1.5;
 }
 
+.manualApp {
+  margin-bottom: 20px;
+}
+
 /* Анимации */
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .correct-animation {
@@ -241,27 +264,39 @@ body {
   .buttons {
     flex-direction: column;
   }
-  
-  .sendResponse, .nextWord, .clearButton .container{
+
+  .sendResponse,
+  .nextWord,
+  .clearButton .container {
     width: 100%;
   }
-  
+
 }
 
 @media (max-width: 480px) {
-  .card, .manual {
+
+  .card,
+  .manual {
     padding: 15px;
   }
-  
+
   #description {
     font-size: 16px;
   }
-  .container{
+
+  .container {
     width: 100%;
   }
-  body{
- background-color: #fff;
- 
+
+  body {
+    background-color: #fff;
+    display: block;
+    margin: auto;
+
   }
-  
+
+  .manual {
+    display: none;
+  }
+
 }

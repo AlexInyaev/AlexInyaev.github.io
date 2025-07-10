@@ -1,7 +1,7 @@
 function createUniqueRandomGenerator(max) {
     let usedNumbers = [];
     let availableNumbers = Array.from({ length: max }, (_, i) => i); // Генерация чисел от 1 до max
-    return function(reset = false) {
+    return function (reset = false) {
         if (reset) {
             // Сброс: возвращаем все числа в доступные и очищаем использованные
             availableNumbers = [...usedNumbers];

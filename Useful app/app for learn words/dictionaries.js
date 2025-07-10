@@ -9,17 +9,17 @@ const people = [
 ];
 // ***************************************
 const Cmd_work_with_git = [
-    {wordOrPhrase: 'code .',translation:"открыть vs code",},
-    { wordOrPhrase: 'code .1',translation:"открыть vs code1",},
-    {wordOrPhrase: 'code .2', translation:"открыть vs code2",},
-    {wordOrPhrase: 'code .3',translation:"открыть vs code3",},
-    {wordOrPhrase: 'code .4',translation:"открыть vs code4",}
+  { wordOrPhrase: 'code .', translation: "открыть vs code", },
+  { wordOrPhrase: 'code .1', translation: "открыть vs code1", },
+  { wordOrPhrase: 'code .2', translation: "открыть vs code2", },
+  { wordOrPhrase: 'code .3', translation: "открыть vs code3", },
+  { wordOrPhrase: 'code .4', translation: "открыть vs code4", }
 ]
-const vocabulary = [  
-    {wordOrPhrase: "apple", translation: "яблоко", },  
-    {wordOrPhrase: "banana", translation: "банан", },  
-    {wordOrPhrase: "algorithm", translation: "алгоритм",}  
-]  
+const vocabulary = [
+  { wordOrPhrase: "apple", translation: "яблоко", },
+  { wordOrPhrase: "banana", translation: "банан", },
+  { wordOrPhrase: "algorithm", translation: "алгоритм", }
+]
 // 1) Vocabulary 2-1.1
 const Vocabulary_2_1_1 = [
   { wordOrPhrase: 'database administrator', translation: "администратор баз данных" },
@@ -35,3 +35,5 @@ const pattern = [
   { wordOrPhrase: "pattern", translation: "555" },
   { wordOrPhrase: "pattern", translation: "555" },
 ];
+console.log('fjkd');
+

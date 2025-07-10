@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="iiistyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="iiistyle.css">
 </head>
+
 <body style="background-color: gray;">
   <div class="container">
-<!-- select -->
- <!-- <label for="dictionary-select">Choose a dictionary:</label> -->
+    <!-- select -->
+    <!-- <label for="dictionary-select">Choose a dictionary:</label> -->
 
-<select name="dictionary" id="dictionary-select">
-  <option value="test">--Please choose a dictionary--</option>
-  <option value="Cmd_work_with_git">Команды Git</option>
-  <option value="people">people</option>
-  <option value="vocabulary">vocabulary</option>
-  <option value="parrot">Parrot</option>
-  <option value="spider">Spider</option>
-  <option value="Vocabulary_2_1_1">Vocabulary_2_1_1</option>
-  <!-- 2) - дублируем и меняем значения pattern на свои 2-места-->
-  <option value="pattern">pattern</option>
- 
-</select>
+    <select name="dictionary" id="dictionary-select">
+      <option value="test">--Please choose a dictionary--</option>
+      <option value="Cmd_work_with_git">Команды Git</option>
+      <option value="people">people</option>
+      <option value="vocabulary">vocabulary</option>
+      <option value="parrot">Parrot</option>
+      <option value="spider">Spider</option>
+      <option value="Vocabulary_2_1_1">Vocabulary_2_1_1</option>
+      <!-- 2) - дублируем и меняем значения pattern на свои 2-места-->
+      <option value="pattern">pattern</option>
 
-<!-- select finish -->
-<!-- <button id="test">Test</button> -->
-<!-- card -->
- <div class="card">
-       <p id="description">description</p>
-       <input type="text" id="response" placeholder="Введите ответ" autocomplete="off" autofocus> 
-       <div class="buttons">
-        <button class="sendResponse"id="sendResponse">Ответ</button> 
+    </select>
+
+    <!-- select finish -->
+    <!-- <button id="test">Test</button> -->
+    <!-- card -->
+    <div class="card">
+      <p id="description">description</p>
+      <input type="text" id="response" placeholder="Введите ответ" autocomplete="off" autofocus>
+      <div class="buttons">
+        <button class="sendResponse" id="sendResponse">Ответ</button>
         <!-- <button class="nextWord"id="nextWord">Next</button> -->
-        <button class="clearButton"id="clearButton">Очистить</button>  
-       </div>
-       <p>Осталось попыток : <span id="attempts">3</span></p>
-       <p id="rightResponse">Правильный ответ : </br><span id="rightResponseSpan">- - - - -</span> </p>
+        <button class="clearButton" id="clearButton">Очистить</button>
+      </div>
+      <p>Осталось попыток : <span id="attempts">3</span></p>
+      <p id="rightResponse">Правильный ответ : </br><span id="rightResponseSpan">- - - - -</span> </p>
     </div>
-<!-- card -->
- <div class="manual">
-  <h3>Добавление директории слов</h3>
-  <ol>
-    <li>В dictionaries.js ищем массив pattern и дублируем  сам "pattern" - меняем на свое значение</li>
-    <li>В index.html ищем select и дублируем опцию pattern сам "pattern" - меняем на свое значение</li>
-    <li>В selectDictionary.js ищем switch и дублируем кейс pattern сам "pattern" - меняем на свое значение</li>
-  </ol>
- </div>
-</div>
-    <!-- ******************************** -->
-    <script src="dictionaries.js"></script>
-    <script src="createUniqueRandomGenerator.js"></script>
-    <script src="selectDictionary.js"></script>
-    <script src="index.js"></script>
-    <!-- <script src="animation.js"></script> -->
+    <!-- card -->
+    <div class="manual manualApp">
+      <h3>Работа в приложении</h3>
+      <ol>
+        <li>Выбираем нужную нам категорию</li>
+        <li>В карточке появится слово вопрос на которое пишем ответ ниже и нажимаем enter или кнопку ответ. Повторное
+          нажатие переключает слово</li>
+        <li>Кнопка очистить и клавиша Ctrl + x очищают поле</li>
+        <li>Если 3 раза дать неправильный ответ то в низу высветится правильный ответ</li>
+      </ol>
+    </div>
+    <div class="manual manualAdd">
+      <h3>Добавление директории слов</h3>
+      <ol>
+        <li>В dictionaries.js ищем массив pattern и дублируем сам "pattern" - меняем на свое значение</li>
+        <li>В index.html ищем select и дублируем опцию pattern сам "pattern" - меняем на свое значение</li>
+        <li>В selectDictionary.js ищем switch и дублируем кейс pattern сам "pattern" - меняем на свое значение</li>
+      </ol>
+    </div>
+  </div>
+  <!-- ******************************** -->
+  <script src="dictionaries.js"></script>
+  <script src="createUniqueRandomGenerator.js"></script>
+  <script src="selectDictionary.js"></script>
+  <script src="index.js"></script>
+  <!-- <script src="animation.js"></script> -->
 </body>
+
 </html>
