@@ -29,11 +29,31 @@ const Vocabulary_2_1_1 = [
   { wordOrPhrase: 'project manager', translation: "проект-менеджер" },
   { wordOrPhrase: 'systems analyst', translation: "системный аналитик" },
 ];
-// 1) дублируем и меняем поля на свои 
+// 2) Vocabulary 2-1.4
+const Vocabulary_2_1_4 = [
+  { wordOrPhrase: "to run information", translation: "работать с информацией" },
+  { wordOrPhrase: "to store information", translation: "хранить информацию" },
+  { wordOrPhrase: "a leading provider", translation: "лидирующий поставщик" },
+  { wordOrPhrase: "an international provider", translation: "международный поставщик" },
+  { wordOrPhrase: "a supplier", translation: "поставщик" },
+  { wordOrPhrase: "to supply something", translation: "поставлять что-либо" },
+  { wordOrPhrase: "a manufacturer", translation: "производитель" },
+  { wordOrPhrase: "to manufacture something", translation: "производить что-либо" },
+  { wordOrPhrase: "a production facility", translation: "производственная мощность" },
+  { wordOrPhrase: "a major market", translation: "крупный рынок" },
+  { wordOrPhrase: "a fast-growing company", translation: "быстрорастущая компания" },
+  { wordOrPhrase: "a small company", translation: "маленькая компания" },
+  { wordOrPhrase: "a medium-sized company", translation: "средняя компания" },
+  { wordOrPhrase: "to include something", translation: "включать что-либо" },
+  { wordOrPhrase: "to get feedback", translation: "получать обратную связь" },
+  { wordOrPhrase: "an award-winning game", translation: "игра, получившая премию" },
+  { wordOrPhrase: "an entertaining product", translation: "развлекательный продукт" },
+];
+// №) дублируем и меняем поля на свои 
 const pattern = [
   { wordOrPhrase: "pattern", translation: "555" },
   { wordOrPhrase: "pattern", translation: "555" },
   { wordOrPhrase: "pattern", translation: "555" },
 ];
-console.log('fjkd');
+
 
