@@ -63,6 +63,17 @@ const Vocabulary_2_1_5 = [
   { wordOrPhrase: "a character", translation: "знак (в пароле) (n.)" },
   { wordOrPhrase: "frequently", translation: "часто (adv.)" },
 ];
+// Vocabulary_2_1_6) дублируем и меняем поля на свои 
+const Vocabulary_2_1_6 = [
+  { wordOrPhrase: "a chairperson", translation: "председатель(тот, кто отвечает за организацию собрания) *(n.)" },
+  { wordOrPhrase: "an agenda", translation: "повестка (темы для обсуждения) *(n.)" },
+  { wordOrPhrase: "in attendance", translation: "список присутствующих *(phr.)" },
+  { wordOrPhrase: "to replace sth", translation: "заменить что-л. *(v.)" },
+  { wordOrPhrase: "furniture", translation: "мебель *(n.)" },
+  { wordOrPhrase: "a suggestion", translation: "предложение *(n.)" },
+  { wordOrPhrase: "to make a suggestion", translation: "сделать предложение *(phr.)" },
+  { wordOrPhrase: "a chief accountant", translation: "главный бухгалтер *(n.)" },
+];
 const pattern = [
   { wordOrPhrase: "pattern", translation: "555" },
   { wordOrPhrase: "pattern", translation: "555" },
