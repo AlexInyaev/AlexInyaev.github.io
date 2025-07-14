@@ -14,7 +14,8 @@ let trays = 3;
 let description = document.getElementById("description");
 let buttonSend = document.getElementById("sendResponse");
 let clearButton = document.getElementById("clearButton");
-let responseInput = document.querySelector("#response");
+let responseInput = document.getElementById("response");
+let quickAnswer = document.getElementById("quickAnswer");
 // let response = "";
 let switcher = true;
 let isKeyDownDisabled = false;
@@ -27,12 +28,14 @@ function startCategory() { // запускается при старте и пр
   isKeyDownDisabled = false;
   response.style.border = "3px solid rgb(237,240,246)";
   clearfield()
+  trays = 3;
+  document.querySelector("#attempts").textContent = trays;
 }
 startCategory()
 // *************************startCategory******************
-console.log(wordData);
 buttonSend.addEventListener('click', () => { sendResponse() });
 clearButton.addEventListener('click', () => { clearfield() });
+quickAnswer.addEventListener('click', () => { sendResponse(true) });
 
 document.addEventListener('keydown', (event) => {
   if (isKeyDownDisabled) return;
@@ -46,13 +49,13 @@ document.addEventListener('keydown', (event) => {
 
 
 
-function sendResponse() {
+function sendResponse(quickAnswer = false) {
   // console.log("sendResponse Started");
+  if (quickAnswer) { trays = 1 }
   createCard(wordData);
 
   let responseValue = lowercaseFirstLetter(responseInput.value); // lowercaseFirstLetter - преобразует первые буквы в нижний регистр костыль для клавиатуры которая делает первые буквы заглавными 
   let response = responseInput
-  console.log(responseValue)
   if (responseValue === wordData.wordOrPhrase) { //проверка правильного ответа
     if (switcher) {
       response.style.border = '3px solid rgb(156, 223, 156)'
@@ -61,7 +64,10 @@ function sendResponse() {
       nextWord()
       finishCategory()
       response.style.border = "3px solid rgb(237,240,246)";
-      switcher = true
+      switcher = true;
+      trays = 3;
+      document.querySelector("#attempts").textContent = trays;
+
     }
 
     // checkEndArr()
@@ -74,7 +80,6 @@ function sendResponse() {
       response.style.border = "3px solid rgb(255, 0, 0)";
       trays--;
     } else {
-
       response.style.border = "3px solid rgb(237,240,246)";
       trays += 3;
       nextWord()
