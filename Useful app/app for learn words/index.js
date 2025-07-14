@@ -1,5 +1,5 @@
-console.log(getUniqueRandomIndex);
-console.log(listPhrases);
+// console.log(getUniqueRandomIndex);
+// console.log(listPhrases);
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // listPhrases -  массив объектов
@@ -26,7 +26,7 @@ function startCategory() { // запускается при старте и пр
   createCard(wordData)
   buttonSend.disabled = false;
   isKeyDownDisabled = false;
-  response.style.border = "3px solid rgb(237,240,246)";
+  response.style.border = "3px solid rgb(46 56 75)";
   clearfield()
   trays = 3;
   document.querySelector("#attempts").textContent = trays;
@@ -44,7 +44,7 @@ document.addEventListener('keydown', (event) => {
     responseInput.focus();
   };
   if (event.ctrlKey && event.key == "x") clearfield();
-  if (event.code == "KeyX") console.log(getIterator(0, directoryToLearn.length));
+  // if (event.code == "KeyX") console.log(getIterator(0, directoryToLearn.length));
 });
 
 
@@ -56,6 +56,8 @@ function sendResponse(quickAnswer = false) {
 
   let responseValue = lowercaseFirstLetter(responseInput.value); // lowercaseFirstLetter - преобразует первые буквы в нижний регистр костыль для клавиатуры которая делает первые буквы заглавными 
   let response = responseInput
+  console.log("response = ", responseValue, "=",)
+  console.log("response = ", wordData.wordOrPhrase, "=",)
   if (responseValue === wordData.wordOrPhrase) { //проверка правильного ответа
     if (switcher) {
       response.style.border = '3px solid rgb(156, 223, 156)'
@@ -63,7 +65,7 @@ function sendResponse(quickAnswer = false) {
     } else {
       nextWord()
       finishCategory()
-      response.style.border = "3px solid rgb(237,240,246)";
+      response.style.border = "3px solid rgb(46 56 75)";
       switcher = true;
       trays = 3;
       document.querySelector("#attempts").textContent = trays;
@@ -76,16 +78,16 @@ function sendResponse(quickAnswer = false) {
 
     if (trays > 0) {
       if (finishCategory()) return;
-      console.log(false, "-", trays);
+      // console.log(false, "-", trays);
       response.style.border = "3px solid rgb(255, 0, 0)";
       trays--;
     } else {
-      response.style.border = "3px solid rgb(237,240,246)";
+      response.style.border = "3px solid  rgb(46 56 75)";
       trays += 3;
       nextWord()
     }
     trays == 0 ? rightResponse() : rightResponse(true);
-    console.log("trays-", trays)
+    // console.log("trays-", trays)
     document.querySelector("#attempts").textContent = trays;
   }
 
@@ -134,7 +136,7 @@ function lowercaseFirstLetter(str) {
 
 
 function getObjectByIndex(arrayOfObjects, index) {          // arrayOfObjects, index = from  selectDictionary.js
-  console.log("getObjectByIndex - started");
+  // console.log("getObjectByIndex - started");
   // Проверяем, что индекс находится в пределах массива
   if (index >= 0 && index < arrayOfObjects.length) {
     return arrayOfObjects[index];
@@ -169,7 +171,7 @@ function getObjectByIndex(arrayOfObjects, index) {          // arrayOfObjects, i
 
 function createCard(wordData) {
 
-  console.log(wordData.translation);
+  // console.log(wordData.translation);
   description.innerText = wordData.translation
 }
 
@@ -177,7 +179,7 @@ function clearfield() {
   responseInput.value = "";
 }
 function nextWord() {
-  response.style.backgroundColor = "rgb(255, 255, 255)";
+  response.style.border = "3px solid rgb(46 56 75)";
   wordData = getObjectByIndex(listPhrases, getUniqueRandomIndex()); // wordData - инициализируется в selectDictionary
   createCard(wordData);
   clearfield();

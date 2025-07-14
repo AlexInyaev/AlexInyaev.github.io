@@ -42,6 +42,11 @@ function selectDictionary(event) {
       getUniqueRandomIndex = createUniqueRandomGenerator(listPhrases.length)
       break;
     // ******************
+    case "Vocabulary_2_1_5":
+      listPhrases = Vocabulary_2_1_5
+      getUniqueRandomIndex = createUniqueRandomGenerator(listPhrases.length)
+      break;
+    // ******************
     default:
       alert("Нет таких значений");
   }

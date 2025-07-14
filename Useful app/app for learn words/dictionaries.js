@@ -49,7 +49,20 @@ const Vocabulary_2_1_4 = [
   { wordOrPhrase: "an award-winning game", translation: "игра, получившая премию" },
   { wordOrPhrase: "an entertaining product", translation: "развлекательный продукт" },
 ];
-// №) дублируем и меняем поля на свои 
+// Vocabulary_2_1_5) дублируем и меняем поля на свои 
+const Vocabulary_2_1_5 = [
+  { wordOrPhrase: "a rule, rules", translation: "правило, правила (n.)" },
+  { wordOrPhrase: "a workplace", translation: "рабочее место (n.)" },
+  { wordOrPhrase: "safe", translation: "безопасный (adj.)" },
+  { wordOrPhrase: "to keep sth safe", translation: "держать что-л. в безопасности (phr.)" },
+  { wordOrPhrase: "to type sth into a computer", translation: "ввести что-л. в компьютер (phr.)" },
+  { wordOrPhrase: "punctuation marks", translation: "знаки пунктуации (n.)" },
+  { wordOrPhrase: "recently", translation: "недавно (adv.)" },
+  { wordOrPhrase: "a reminder/a memo", translation: "напоминание 2 два слова через / (n.)" },
+  { wordOrPhrase: "secure", translation: "защищённый (adj.)" },
+  { wordOrPhrase: "a character", translation: "знак (в пароле) (n.)" },
+  { wordOrPhrase: "frequently", translation: "часто (adv.)" },
+];
 const pattern = [
   { wordOrPhrase: "pattern", translation: "555" },
   { wordOrPhrase: "pattern", translation: "555" },
