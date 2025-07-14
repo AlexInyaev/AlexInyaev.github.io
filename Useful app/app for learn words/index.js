@@ -47,12 +47,12 @@ document.addEventListener('keydown', (event) => {
 
 
 function sendResponse() {
-  console.log("sendResponse Started");
+  // console.log("sendResponse Started");
   createCard(wordData);
 
-  let responseValue = responseInput.value;
+  let responseValue = lowercaseFirstLetter(responseInput.value); // lowercaseFirstLetter - преобразует первые буквы в нижний регистр костыль для клавиатуры которая делает первые буквы заглавными 
   let response = responseInput
-
+  console.log(responseValue)
   if (responseValue === wordData.wordOrPhrase) { //проверка правильного ответа
     if (switcher) {
       response.style.border = '3px solid rgb(156, 223, 156)'
@@ -97,8 +97,11 @@ function rightResponse(boolArg = false) {
 
 }
 
-// **********************************************************************************************
-// Генерация рандомных чисел
+// функция для переноса первой буквы в нижний регистр **********************************************************************************************
+function lowercaseFirstLetter(str) {
+  if (!str) return str; // Проверка на пустую строку
+  return str.charAt(0).toLowerCase() + str.slice(1);
+}
 // **********************************************************************************************
 
 // ********************************************************
