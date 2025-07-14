@@ -149,7 +149,8 @@ body {
 
 .sendResponse,
 .nextWord,
-.clearButton {
+.clearButton,
+.quickAnswer {
   flex: 1;
   padding: 12px;
   border: none;
@@ -161,6 +162,11 @@ body {
 }
 
 .sendResponse {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.quickAnswer {
   background-color: var(--primary-color);
   color: white;
 }
@@ -177,7 +183,8 @@ body {
 
 .sendResponse:hover,
 .nextWord:hover,
-.clearButton:hover {
+.clearButton:hover,
+.quickAnswer:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -297,6 +304,10 @@ body {
 
   .manual {
     display: none;
+  }
+
+  .buttons {
+    flex-direction: row;
   }
 
 }
