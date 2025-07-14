@@ -30,6 +30,7 @@ function startCategory() { // запускается при старте и пр
   clearfield()
   trays = 3;
   document.querySelector("#attempts").textContent = trays;
+  responseInput.focus();
 }
 startCategory()
 // *************************startCategory******************

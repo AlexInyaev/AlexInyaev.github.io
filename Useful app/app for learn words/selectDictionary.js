@@ -57,6 +57,7 @@ function selectDictionary(event) {
   }
   startCategory()
 
+
   //  createCard(listPhrases  )
 
   //return [dictionary, createUniqueRandomGenerator(dictionary.length)] // from  createUniqueRandomGenerator.js
