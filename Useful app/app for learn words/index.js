@@ -14,11 +14,15 @@ let trays = 3;
 let description = document.getElementById("description");
 let buttonSend = document.getElementById("sendResponse");
 let clearButton = document.getElementById("clearButton");
+let repeatButton = document.getElementById("repeatButton");
 let responseInput = document.getElementById("response");
+// let responseValue = '';
 let quickAnswer = document.getElementById("quickAnswer");
 // let response = "";
 let switcher = true;
 let isKeyDownDisabled = false;
+let yourAnswer = ""
+
 
 // *************************startCategory******************
 function startCategory() { // запускается при старте и при сиене категории в файле selectDictionary
@@ -37,6 +41,7 @@ startCategory()
 buttonSend.addEventListener('click', () => { sendResponse() });
 clearButton.addEventListener('click', () => { clearfield() });
 quickAnswer.addEventListener('click', () => { sendResponse(true) });
+repeatButton.addEventListener('click', () => { sendResponse(false, false) });
 
 document.addEventListener('keydown', (event) => {
   if (isKeyDownDisabled) return;
@@ -50,21 +55,25 @@ document.addEventListener('keydown', (event) => {
 
 
 
-function sendResponse(quickAnswer = false) {
+function sendResponse(quickAnswer = false, noRepeat = true) {
   // console.log("sendResponse Started");
   if (quickAnswer) { trays = 1 }
   createCard(wordData);
 
   let responseValue = lowercaseFirstLetter(responseInput.value); // lowercaseFirstLetter - преобразует первые буквы в нижний регистр костыль для клавиатуры которая делает первые буквы заглавными 
   let response = responseInput
+  console.log(Boolean(responseValue))
+
+  yourAnswer = responseValue;
+
   console.log("response = ", responseValue, "=",)
   console.log("response = ", wordData.wordOrPhrase, "=",)
   if (responseValue === wordData.wordOrPhrase) { //проверка правильного ответа
     if (switcher) {
       response.style.border = '3px solid rgb(156, 223, 156)'
-      switcher = false
+      if (noRepeat) switcher = false
     } else {
-      nextWord()
+      if (noRepeat) nextWord()
       finishCategory()
       response.style.border = "3px solid rgb(46 56 75)";
       switcher = true;
@@ -81,11 +90,11 @@ function sendResponse(quickAnswer = false) {
       if (finishCategory()) return;
       // console.log(false, "-", trays);
       response.style.border = "3px solid rgb(255, 0, 0)";
-      trays--;
+      if (noRepeat) trays--;
     } else {
       response.style.border = "3px solid  rgb(46 56 75)";
-      trays += 3;
-      nextWord()
+      if (noRepeat) trays += 3;
+      if (noRepeat) nextWord();
     }
     trays == 0 ? rightResponse() : rightResponse(true);
     // console.log("trays-", trays)
@@ -99,8 +108,10 @@ function sendResponse(quickAnswer = false) {
 function rightResponse(boolArg = false) {
   if (boolArg) {
     document.querySelector("#rightResponseSpan").innerText = "- - - - -"
+    document.querySelector("#yourAnswer").innerText = "- - - - -";
   } else {
     document.querySelector("#rightResponseSpan").innerText = wordData.wordOrPhrase
+    if (yourAnswer) document.querySelector("#yourAnswer").innerText = yourAnswer;
   }
 
 }
@@ -111,7 +122,9 @@ function lowercaseFirstLetter(str) {
   return str.charAt(0).toLowerCase() + str.slice(1);
 }
 // **********************************************************************************************
-
+function repeatWord() {
+  alert()
+}
 // ********************************************************
 
 

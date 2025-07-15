@@ -148,10 +148,7 @@ body {
     margin-bottom: 20px;
 }
 
-.sendResponse,
-.nextWord,
-.clearButton,
-.quickAnswer {
+.buttonsItem {
     flex: 1;
     padding: 12px;
     border: none;
@@ -167,13 +164,8 @@ body {
     color: white;
 }
 
-.quickAnswer {
+.blueButtons {
     background-color: var(--primary-color);
-    color: white;
-}
-
-.nextWord {
-    background-color: var(--accent-color);
     color: white;
 }
 
@@ -182,15 +174,12 @@ body {
     color: var(--text-color);
 }
 
-.sendResponse:hover,
-.nextWord:hover,
-.clearButton:hover,
-.quickAnswer:hover {
+.buttonsItem:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.sendResponse:hover {
+.blueButtons:hover {
     background-color: #5a7ab8;
 }
 
@@ -214,7 +203,8 @@ body {
     border-top: 1px solid var(--border-color);
 }
 
-#rightResponseSpan {
+#rightResponseSpan,
+#yourAnswer {
     display: inline-block;
     margin-top: 5px;
     padding: 5px 10px;
@@ -326,5 +316,6 @@ body {
 
     .buttons {
         flex-direction: row;
+        flex-wrap: wrap;
     }
 }

@@ -36,12 +36,15 @@
       <p id="description">description</p>
       <input type="text" id="response" placeholder="Введите ответ" autocomplete="off" autofocus>
       <div class="buttons">
-        <button class="sendResponse" id="sendResponse">Ответ</button>
-        <button class="quickAnswer" id="quickAnswer">Быстрый отв</button>
-        <button class="clearButton" id="clearButton">Очистить</button>
+        <button class="sendResponse buttonsItem blueButtons" id="sendResponse">Ответ
+        </button>
+        <button class="quickAnswer buttonsItem blueButtons" id="quickAnswer">Быстрый отв</button>
+        <button class="repeatButton buttonsItem blueButtons" id="repeatButton">Повторить</button>
+        <button class="clearButton buttonsItem" id="clearButton">Очистить</button>
       </div>
       <p>Осталось попыток : <span id="attempts">3</span></p>
-      <p id="rightResponse">Правильный ответ : </br><span id="rightResponseSpan">- - - - -</span> </p>
+      <p id="rightResponse">Правильный ответ/Ваш ответ : </br><span id="rightResponseSpan">- - - - -</span> </br><span
+          id="yourAnswer">- - - - -</span> </p>
     </div>
     <!-- card -->
     <div class="manual manualApp">
@@ -55,6 +58,8 @@
         <li>Для получения быстрого ответа нужно нажать на Быстрый отв. И затем для переключения на следующие слово
           нажать на
           Ответ</li>
+        <li>Кнопка повторить используется для отработки написания сложных слов пре нажатие на нее слово проверяется но
+          переход на новое слово не происходит</li>
       </ol>
     </div>
     <div class="manual manualAdd">
