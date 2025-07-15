@@ -62,12 +62,12 @@ function sendResponse(quickAnswer = false, noRepeat = true) {
 
   let responseValue = lowercaseFirstLetter(responseInput.value); // lowercaseFirstLetter - преобразует первые буквы в нижний регистр костыль для клавиатуры которая делает первые буквы заглавными 
   let response = responseInput
-  console.log(Boolean(responseValue))
+  // console.log(Boolean(responseValue))
 
   yourAnswer = responseValue;
 
-  console.log("response = ", responseValue, "=",)
-  console.log("response = ", wordData.wordOrPhrase, "=",)
+  // console.log("response = ", responseValue, "=",)
+  // console.log("response = ", wordData.wordOrPhrase, "=",)
   if (responseValue === wordData.wordOrPhrase) { //проверка правильного ответа
     if (switcher) {
       response.style.border = '3px solid rgb(156, 223, 156)'
@@ -81,18 +81,13 @@ function sendResponse(quickAnswer = false, noRepeat = true) {
       document.querySelector("#attempts").textContent = trays;
 
     }
-
-    // checkEndArr()
-
   } else {
-
     if (trays > 0) {
       if (finishCategory()) return;
-      // console.log(false, "-", trays);
       response.style.border = "3px solid rgb(255, 0, 0)";
       if (noRepeat) trays--;
     } else {
-      response.style.border = "3px solid  rgb(46 56 75)";
+      if (noRepeat) { response.style.border = "3px solid  rgb(46 56 75)"; } else { response.style.border = "3px solid rgb(255, 0, 0)"; } //для корректной работы повторение
       if (noRepeat) trays += 3;
       if (noRepeat) nextWord();
     }
@@ -191,6 +186,7 @@ function createCard(wordData) {
 
 function clearfield() {
   responseInput.value = "";
+  responseInput.focus();
 }
 function nextWord() {
   response.style.border = "3px solid rgb(46 56 75)";
