@@ -16,6 +16,23 @@ const linuxCommand = [
   { wordOrPhrase: 'cat', translation: "Вывод содержимого файла в консоль" },
   { wordOrPhrase: 'Tab', translation: "автодополнение  Упрощение ввода команд и путей" },
 ];
+const windowsCommand = [
+  { wordOrPhrase: "dir", translation: "показывает директории" },
+  { wordOrPhrase: "cd", translation: "смена директории поддерживается относительный и абсолютный путь" },
+  { wordOrPhrase: "cd ./", translation: "выбор папки" },
+  { wordOrPhrase: "cd ./Tab", translation: "Показывает попеременно все папки если написать первую букву папки то будет показывать папки которые начинаются с этой буквы" },
+  { wordOrPhrase: "cd ..", translation: "шаг назад" },
+  { wordOrPhrase: "mkdir name-folder", translation: "создание папки" },
+  { wordOrPhrase: "echo hi > index.txt", translation: "создает файл и передает в него hi" },
+  { wordOrPhrase: "cat index.txt", translation: "показывает содержимое файла (в cmd не работает)" },
+  { wordOrPhrase: "del .\index.txt", translation: "удаляет файл" },
+  { wordOrPhrase: "rm .\index.txt", translation: " удаляет файл (в cmd не работает)" },
+  { wordOrPhrase: "copy .\folder1 .\folder2", translation: "копирование папки1 в папку2 без содержимого" },
+  { wordOrPhrase: "move .\folder1 .\folder2", translation: "перемещение папки1 в папку2 без содержимого" },
+  { wordOrPhrase: "cp .\folder1 .\folder2", translation: "копирование папки1 в папку2 без содержимого(в cmd не работает)" },
+  { wordOrPhrase: "mv .\folder1 .\folder2", translation: "перемещение папки1 в папку2 с содержимом(в cmd не работает)" },
+  { wordOrPhrase: "arrow up/arrow down", translation: "перемещение между введенными командами" },
+];
 // ***************************************
 const Cmd_work_with_git = [
   { wordOrPhrase: 'code .', translation: "открыть vs code", },
@@ -83,6 +100,7 @@ const Vocabulary_2_1_6 = [
   { wordOrPhrase: "to make a suggestion", translation: "сделать предложение *(phr.)" },
   { wordOrPhrase: "a chief accountant", translation: "главный бухгалтер *(n.)" },
 ];
+
 const pattern = [
   { wordOrPhrase: "pattern", translation: "555" },
   { wordOrPhrase: "pattern", translation: "555" },

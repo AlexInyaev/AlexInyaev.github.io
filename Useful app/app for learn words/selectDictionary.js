@@ -21,6 +21,11 @@ function selectDictionary(event) {
       getUniqueRandomIndex = createUniqueRandomGenerator(listPhrases.length)
       break;
     // ******************
+    case "windowsCommand":
+      listPhrases = windowsCommand
+      getUniqueRandomIndex = createUniqueRandomGenerator(listPhrases.length)
+      break;
+    // ******************
     case "vocabulary":
       listPhrases = vocabulary
       getUniqueRandomIndex = createUniqueRandomGenerator(listPhrases.length)
