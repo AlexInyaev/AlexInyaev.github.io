@@ -16,8 +16,8 @@ function selectDictionary(event) {
       getUniqueRandomIndex = createUniqueRandomGenerator(listPhrases.length)
       break;
     // ******************
-    case "people":
-      listPhrases = people
+    case "linuxCommand":
+      listPhrases = linuxCommand
       getUniqueRandomIndex = createUniqueRandomGenerator(listPhrases.length)
       break;
     // ******************

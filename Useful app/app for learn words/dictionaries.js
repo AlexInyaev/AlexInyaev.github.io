@@ -1,11 +1,20 @@
 
-const people = [
-  { wordOrPhrase: 'Алексей', translation: 30 },
-  { wordOrPhrase: 'Мария', translation: 26 },
-  { wordOrPhrase: 'Мария', translation: 27 },
-  { wordOrPhrase: 'Мария', translation: 28 },
-  { wordOrPhrase: 'Мария', translation: 29 },
-  { wordOrPhrase: 'Иван', translation: 40 }
+const linuxCommand = [
+  { wordOrPhrase: 'ls', translation: "Вывод списка файлов и папок в текущей директории." },
+  { wordOrPhrase: 'pwd', translation: "Показывает текущую директорию" },
+  { wordOrPhrase: 'man ls', translation: "показывает документацию для команды ls/выход и мануала клавиша - q" },
+  { wordOrPhrase: 'man pwd', translation: "показывает документацию для команды pwd/выход и мануала клавиша - q" },
+  { wordOrPhrase: 'ls -l', translation: "Выводит все директории с дополнительной информацией (исползаем флаг)" },
+  { wordOrPhrase: 'cd', translation: 'Перемещение между папками. если дополнительно нажать Tab то покажет возможные варианты' },
+  { wordOrPhrase: 'cd ..', translation: "Вернутся на папку назад" },
+  { wordOrPhrase: 'mkdir', translation: "Создание новой папки" },
+  { wordOrPhrase: 'touch', translation: "Создание нового файла" },
+  { wordOrPhrase: 'rm', translation: " Удаление файлов и папок (с флагом -r для папок)." },
+  { wordOrPhrase: 'cp', translation: "Копирование файлов и папок (с флагом -r для папок)" },
+  { wordOrPhrase: 'mv', translation: "Перемещение файлов и папок" },
+  { wordOrPhrase: 'clear', translation: "Очистить терминал" },
+  { wordOrPhrase: 'cat', translation: "Вывод содержимого файла в консоль" },
+  { wordOrPhrase: 'Tab', translation: "автодополнение  Упрощение ввода команд и путей" },
 ];
 // ***************************************
 const Cmd_work_with_git = [
