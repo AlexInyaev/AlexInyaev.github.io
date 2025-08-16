@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="navigation.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-container" id="navContainer">
+            <!-- Навигация будет загружена через JS -->
+
+            <!-- Навигация будет загружена через JS -->
+
+
+        </div>
+        <div class="content" id="content">
+            <h1>Добро пожаловать в документацию</h1>
+            <article>
+                <h2>Как пользоваться сайтом</h2>
+                <p>Сайт организован в виде многоуровневой структуры:</p>
+                <ul>
+                    <li>Используйте навигационное меню слева для перехода между разделами</li>
+                    <li>Каждый раздел содержит несколько глав</li>
+                    <li>Вы можете скрыть меню кнопкой в верхнем правом углу навигации</li>
+                    <li>Перетаскивайте границу между меню и контентом для изменения ширины</li>
+                    <li>Используйте кнопку переключения темы для изменения цветовой схемы</li>
+                </ul>
+
+                <h2>Как добавлять контент</h2>
+                <p>Для добавления нового контента:</p>
+                <ol>
+                    <li>Создайте новый HTML-файл в папке chapters/sectionX/</li>
+                    <li>Добавьте ссылку на файл в navigation.html</li>
+                    <li>Для вставки кода используйте теги &lt;pre&gt;&lt;code class="language-xxx"&gt;</li>
+                </ol>
+
+                <h3>Пример кода</h3>
+                <pre><code class="language-javascript">
+// Пример JavaScript кода
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(greet('World'));
+                </code></pre>
+            </article>
+        </div>
+    </div>
+</body>
+
+</html>

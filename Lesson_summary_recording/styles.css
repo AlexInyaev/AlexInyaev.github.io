@@ -1,0 +1,343 @@
+:root {
+    /* Светлая тема */
+    /* --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --nav-bg: #e9ecef;
+    --nav-border: #dee2e6;
+    --content-bg: #ffffff;
+    --link-color: #0d6efd;
+    --hover-color: #0b5ed7;
+    --toggle-btn: #6c757d;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --resizer: #adb5bd;
+    --current-chapter: #d4edff;
+    --code-bg: #f8f8f8;
+    --code-text: #333;
+    --code-comment: #888;
+    --code-keyword: #00f;
+    --code-string: #a11;
+    --code-number: #099;
+    --code-function: #0086b3; */
+
+    --bg-color: #212529;
+    --text-color: #f8f9fa;
+    --nav-bg: #343a40;
+    --nav-border: #495057;
+    --content-bg: #2b3035;
+    --link-color: #86b7fe;
+    --hover-color: #a6c8ff;
+    --toggle-btn: #adb5bd;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --resizer: #6c757d;
+    --current-chapter: #1e3a5f;
+    --code-bg: #2d2d2d;
+    --code-text: #f8f8f2;
+    --code-comment: #75715e;
+    --code-keyword: #66d9ef;
+    --code-string: #e6db74;
+    --code-number: #ae81ff;
+    --code-function: #a6e22e;
+}
+
+[data-theme="dark"] {
+    /* Темная тема */
+    /* --bg-color: #212529;
+    --text-color: #f8f9fa;
+    --nav-bg: #343a40;
+    --nav-border: #495057;
+    --content-bg: #2b3035;
+    --link-color: #86b7fe;
+    --hover-color: #a6c8ff;
+    --toggle-btn: #adb5bd;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --resizer: #6c757d;
+    --current-chapter: #1e3a5f;
+    --code-bg: #2d2d2d;
+    --code-text: #f8f8f2;
+    --code-comment: #75715e;
+    --code-keyword: #66d9ef;
+    --code-string: #e6db74;
+    --code-number: #ae81ff;
+    --code-function: #a6e22e; */
+
+    /*  */
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --nav-bg: #e9ecef;
+    --nav-border: #dee2e6;
+    --content-bg: #ffffff;
+    --link-color: #0d6efd;
+    --hover-color: #0b5ed7;
+    --toggle-btn: #6c757d;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --resizer: #adb5bd;
+    --current-chapter: #d4edff;
+    --code-bg: #f8f8f8;
+    --code-text: #333;
+    --code-comment: #888;
+    --code-keyword: #00f;
+    --code-string: #a11;
+    --code-number: #099;
+    --code-function: #0086b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    /* background-color: var(--bg-color); */
+    background-color: #212529;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Навигация */
+.nav-container {
+    position: relative;
+    width: 280px;
+    background-color: var(--nav-bg);
+    border-right: 1px solid var(--nav-border);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 50%;
+}
+
+.nav-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--nav-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--nav-bg);
+    z-index: 10;
+}
+
+.current-location {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    background-color: var(--current-chapter);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.nav-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-menu {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+
+}
+
+nav ul {
+    list-style: none;
+    display: none;
+}
+
+nav li {
+    margin-bottom: 0.5rem;
+}
+
+nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    display: block;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: var(--hover-color);
+    background-color: var(--current-chapter);
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--nav-border);
+}
+
+.section-title:hover {
+    cursor: pointer;
+}
+
+/* Основной контент */
+.content {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--content-bg);
+    overflow-y: auto;
+    max-width: 100%;
+}
+
+article {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Кнопки */
+.toggle-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--toggle-btn);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Стили для кнопки меню */
+.toggle-nav {
+    /* display: none; */
+    position: relative;
+}
+
+.toggle-nav::before,
+.toggle-nav::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.toggle-nav::before {
+    transform: translateY(-4px);
+}
+
+.toggle-nav::after {
+    transform: translateY(4px);
+}
+
+.nav-container.collapsed .toggle-nav::before {
+    transform: rotate(45deg);
+}
+
+.nav-container.collapsed .toggle-nav::after {
+    transform: rotate(-45deg);
+}
+
+/* Стили для кнопки темы */
+.toggle-theme::before {
+    content: '☀️';
+}
+
+[data-theme="dark"] .toggle-theme::before {
+    content: '🌙';
+}
+
+/* Стили для ресайзера */
+.resizer {
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: col-resize;
+    z-index: 1;
+}
+
+/* Стили для блоков кода */
+pre {
+    background-color: var(--code-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border-left: 4px solid var(--link-color);
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    color: var(--code-text);
+}
+
+/* Подсветка синтаксиса (упрощенная) */
+.token.comment {
+    color: var(--code-comment);
+}
+
+.token.keyword {
+    color: var(--code-keyword);
+}
+
+.token.string {
+    color: var(--code-string);
+}
+
+.token.number {
+    color: var(--code-number);
+}
+
+.token.function {
+    color: var(--code-function);
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .nav-container {
+        width: 100%;
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--nav-border);
+    }
+
+    .nav-header {
+        align-items: start;
+    }
+
+    .toggle-nav {
+        position: relative;
+    }
+
+    .nav-container.collapsed {
+        height: 50px;
+        overflow: hidden;
+    }
+
+    .content {
+        padding: 1.5rem;
+    }
+
+    .resizer {
+        display: none;
+    }
+}
