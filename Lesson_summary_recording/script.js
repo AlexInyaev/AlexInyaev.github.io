@@ -51,9 +51,9 @@ function loadNavigation() {
             </div>
 
             <div class="section">
-                <div class="section-title">Продвинутые темы</div>
+                <div class="section-title">Golang</div>
                 <ul  class="listNav">
-                    <li><a href="${basePath}chapters/section2/chapter1.html">Оптимизация</a></li>
+                    <li><a href="${basePath}chapters/Golang/arraysAndSlice.html">Arrays and Slice</a></li>
                 </ul>
             </div>
 
