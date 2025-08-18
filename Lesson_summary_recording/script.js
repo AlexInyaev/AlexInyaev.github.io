@@ -31,6 +31,7 @@ function loadNavigation() {
 
     const basePath = getBasePath();
     // Встроенная навигация с корректными относительными путями
+    // *********************************navigation**********************************************
     navContainer.innerHTML = `
         <div class="nav-header">
             <div class="current-location">Главная</div>
@@ -67,7 +68,7 @@ function loadNavigation() {
         </nav>
          <div class="resizer" data-direction="horizontal"></div>
     `;
-
+    // *********************************navigation**********************************************
     // Инициализация кнопок после загрузки навигации
     initNavButtons();
 }
