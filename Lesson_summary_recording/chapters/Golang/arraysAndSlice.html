@@ -7,6 +7,10 @@
     <title>Введение</title>
     <link rel="stylesheet" href="../../styles.css">
     <script src="../../script.js" defer></script>
+
+
+    <!-- and it's easy to individually load additional languages -->
+
 </head>
 
 <body>
@@ -31,9 +35,20 @@ function calculate(a, b) {
 const result = calculate(5, 3);
 console.log(result); // 25
                 </code></pre>
+                <pre><code class="language-golang">
+// Пример функции
+func calculate(a, b) {
+    return a * b + 10;
+}
+
+// Вызов функции
+const result = calculate(5, 3);
+fmt.Println(result); // 25
+                </code></pre>
             </article>
         </div>
     </div>
+    <script>hljs.highlightAll();</script>
 </body>
 
 </html>
