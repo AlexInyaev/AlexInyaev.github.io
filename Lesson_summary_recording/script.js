@@ -47,7 +47,7 @@ function loadNavigation() {
                 <ul class="listNav">
                     <li><a href="${basePath}index.html">Главная</a></li>
                     <li><a href="${basePath}chapters/section1/chapter1.html">Введение</a></li>
-                    <li><a href="${basePath}chapters/section1/chapter2.html">Установка</a></li>
+                    <li><a href="${basePath}chapters/section1/pattern.html">Шаблон</a></li>
                 </ul>
             </div>
 

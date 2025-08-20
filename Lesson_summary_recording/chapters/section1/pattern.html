@@ -7,33 +7,38 @@
     <title>Введение</title>
     <link rel="stylesheet" href="../../styles.css">
     <script src="../../script.js" defer></script>
+    <link rel="stylesheet" href="../../libs/highlight/styles/tomorrow-night-bright.css" />
+    <script src="../../libs/highlight/highlight.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="nav-container" id="navContainer">
             <!-- Навигация будет загружена через JS -->
-
-            <!-- Навигация будет загружена через JS -->
         </div>
         <div class="content" id="content">
-            <h1>Введение</h1>
+            <!-- Место для верстки страницы между этими тегами -->
+            <h1>pattern</h1>
             <article>
                 <p>Это Chapter2:</p>
 
-                <pre><code class="language-javascript">
+                <pre><code class="language-go">
 // Пример функции
-function calculate(a, b) {
+func calculate(a, b int) int{
     return a * b + 10;
 }
 
 // Вызов функции
 const result = calculate(5, 3);
-console.log(result); // 25
+fmt.Println(result); // 25
                 </code></pre>
             </article>
+            <!-- Место для верстки страницы между этими тегами -->
         </div>
     </div>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 </body>
 
 </html>
