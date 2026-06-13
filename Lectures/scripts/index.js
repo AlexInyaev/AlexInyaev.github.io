@@ -35,67 +35,123 @@ function checkElement(element, elementName) {
 }
 
 // ============================================================================
-// ████████  ШАГ 5: ОБРАБОТЧИКИ ГЛАВНОГО МЕНЮ (ДОБАВЛЯТЬ НОВЫЕ РАЗДЕЛЫ СЮДА) ████████
+// ████████  МОБИЛЬНОЕ МЕНЮ (БУРГЕР) ████████
 // ============================================================================
-// ДЛЯ ДОБАВЛЕНИЯ НОВОГО РАЗДЕЛА: скопируйте блок:
-//   document.querySelector("#MyNew").addEventListener("click", (event) => {
-//     if (!checkElement(MyNewMenu, 'MyNewMenu')) return;
-//     parametersDirectory = makeMenu(event, MyNewMenu, "myNewLess", "MyNew");
-//     if (parametersDirectory) addEvents();
-//   });
-// И замените:
-//   #MyNew      → на id пункта меню (из ШАГА 2)
-//   MyNewMenu   → на переменную из ШАГА 4
-//   "myNewLess" → на класс уроков (из ШАГА 3)
-//   "MyNew"     → на название папки в disciplines/
+
+// Создаём оверлей для мобильного меню
+let menuOverlay = document.querySelector('.menu-overlay');
+if (!menuOverlay) {
+  menuOverlay = document.createElement('div');
+  menuOverlay.className = 'menu-overlay';
+  document.body.appendChild(menuOverlay);
+}
+
+// Функция открытия меню на мобильных
+function openMobileMenu() {
+  if (window.innerWidth <= 768) {
+    topNavigation.classList.add('open');
+    menuOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Функция закрытия меню на мобильных
+function closeMobileMenu() {
+  if (window.innerWidth <= 768) {
+    topNavigation.classList.remove('open');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+// Обработчик для кнопки-бургера
+if (showMenuButton) {
+  showMenuButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (topNavigation.classList.contains('open')) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  });
+}
+
+// Закрытие меню при клике на оверлей
+if (menuOverlay) {
+  menuOverlay.addEventListener('click', closeMobileMenu);
+}
+
+// Закрытие меню при ресайзе окна (если стало > 768px)
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && topNavigation.classList.contains('open')) {
+    closeMobileMenu();
+  }
+  if (window.innerWidth > 768 && hideButton && hideButton.style.display !== 'none') {
+    // Если десктоп, показываем меню
+    if (topNavigation.classList.contains('hideElement')) {
+      topNavigation.classList.remove('hideElement');
+    }
+  }
+});
+
+// ============================================================================
+// ████████  ШАГ 5: ОБРАБОТЧИКИ ГЛАВНОГО МЕНЮ (ДОБАВЛЯТЬ НОВЫЕ РАЗДЕЛЫ СЮДА) ████████
 // ============================================================================
 
 document.querySelector("#Rus").addEventListener("click", (event) => {
   if (!checkElement(russianMenu, 'russianMenu')) return;
   parametersDirectory = makeMenu(event, russianMenu, "rusLess", "Russian");
   if (parametersDirectory) addEvents();
+  closeMobileMenu(); // Закрываем меню после выбора раздела
 });
 
 document.querySelector("#Eng").addEventListener("click", (event) => {
   if (!checkElement(englandMenu, 'englandMenu')) return;
   parametersDirectory = makeMenu(event, englandMenu, "engLess", "England");
   if (parametersDirectory) addEvents();
+  closeMobileMenu();
 });
 
 document.querySelector("#PHP").addEventListener("click", (event) => {
   if (!checkElement(phpMenu, 'phpMenu')) return;
   parametersDirectory = makeMenu(event, phpMenu, "phpLess", "PHP");
   if (parametersDirectory) addEvents();
+  closeMobileMenu();
 });
 
 document.querySelector("#Golang").addEventListener("click", (event) => {
   if (!checkElement(GolangMenu, 'GolangMenu')) return;
   parametersDirectory = makeMenu(event, GolangMenu, "GolangLess", "Golang");
   if (parametersDirectory) addEvents();
+  closeMobileMenu();
 });
 
 document.querySelector("#DockerId").addEventListener("click", (event) => {
   if (!checkElement(DockerMenu, 'DockerMenu')) return;
   parametersDirectory = makeMenu(event, DockerMenu, "DockerLess", "DockerFolder");
   if (parametersDirectory) addEvents();
+  closeMobileMenu();
 });
 
 document.querySelector("#GitCourseId").addEventListener("click", (event) => {
   if (!checkElement(GitCourseMenu, 'GitCourseMenu')) return;
   parametersDirectory = makeMenu(event, GitCourseMenu, "GitCourseLess", "GitCourse");
   if (parametersDirectory) addEvents();
+  closeMobileMenu();
 });
 
 document.querySelector("#ServerApp").addEventListener("click", (event) => {
   if (!checkElement(ServerAppMenu, 'ServerAppMenu')) return;
   parametersDirectory = makeMenu(event, ServerAppMenu, "serverAppLess", "ServerApp");
   if (parametersDirectory) addEvents();
+  closeMobileMenu();
 });
 
 document.querySelector("#TemplateId").addEventListener("click", (event) => {
   if (!checkElement(templateMenu, 'templateMenu')) return;
   parametersDirectory = makeMenu(event, templateMenu, "templateLess", "TemplateFolder");
   if (parametersDirectory) addEvents();
+  closeMobileMenu();
 });
 
 // ⬇️ НОВЫЕ РАЗДЕЛЫ ДОБАВЛЯТЬ СЮДА ⬇️
@@ -103,6 +159,7 @@ document.querySelector("#TemplateId").addEventListener("click", (event) => {
 //   if (!checkElement(MyNewMenu, 'MyNewMenu')) return;
 //   parametersDirectory = makeMenu(event, MyNewMenu, "myNewLess", "MyNew");
 //   if (parametersDirectory) addEvents();
+//   closeMobileMenu();
 // });
 // ⬆️ НОВЫЕ РАЗДЕЛЫ ДОБАВЛЯТЬ СЮДА ⬆️
 
@@ -211,7 +268,10 @@ function makeMenu(event, blockMenu, classDirectory, nameDirectory) {
 
 const startMenuButton = document.querySelector("#startMenu");
 if (startMenuButton) {
-  startMenuButton.addEventListener("click", () => returnToStartMenu());
+  startMenuButton.addEventListener("click", () => {
+    returnToStartMenu();
+    closeMobileMenu();
+  });
 } else {
   logError(ERROR_TYPES.DOM_NOT_FOUND, 'Кнопка startMenu не найдена');
 }
@@ -287,6 +347,7 @@ function addEvents() {
     newItem.addEventListener("click", (e) => {
       const filePath = `disciplines/${parametersDirectory.nameDirectory}/pages/${newItem.id}.html`;
       drawMainePage(e, filePath);
+      closeMobileMenu(); // Закрываем меню после выбора урока
     });
   });
 }
@@ -343,11 +404,8 @@ if (!hideButton) {
   hideButton.addEventListener("click", hideMenu);
 }
 
-if (!showMenuButton) {
-  logError(ERROR_TYPES.DOM_NOT_FOUND, 'showMenuButton не найден');
-} else {
-  showMenuButton.addEventListener("click", showMenu);
-}
+// Обработчик для кнопки показа меню (десктопный вариант)
+// showMenuButton уже используется для бургера, поэтому для десктопа используем другую логику
 
 if (!topNavigation) {
   logError(ERROR_TYPES.DOM_NOT_FOUND, 'topNavigation не найден');
@@ -358,17 +416,22 @@ function hideMenu() {
     logError(ERROR_TYPES.DOM_NOT_FOUND, 'Элементы для скрытия меню не найдены');
     return;
   }
-  topNavigation.classList.add("hideElement");
-  showMenuButton.classList.remove("hideElement");
+  // На десктопе просто скрываем меню
+  if (window.innerWidth > 768) {
+    topNavigation.classList.add("hideElement");
+    showMenuButton.classList.remove("hideElement");
+  } else {
+    // На мобильных закрываем
+    closeMobileMenu();
+  }
 }
 
-function showMenu() {
-  if (!topNavigation || !showMenuButton) {
-    logError(ERROR_TYPES.DOM_NOT_FOUND, 'Элементы для показа меню не найдены');
-    return;
+// Функция для показа меню на десктопе (используется другой кнопкой, если нужно)
+function showDesktopMenu() {
+  if (window.innerWidth > 768) {
+    topNavigation.classList.remove("hideElement");
+    if (showMenuButton) showMenuButton.classList.add("hideElement");
   }
-  topNavigation.classList.remove("hideElement");
-  showMenuButton.classList.add("hideElement");
 }
 
 // ============================================================================
@@ -393,9 +456,15 @@ if (!changeFrame) {
 
     function moveAt(pageX) {
       if (window.innerWidth > wrapper.offsetWidth + 17) {
-        topNavigation.style.width = `${pageX - (window.innerWidth - wrapper.offsetWidth) / 2 + 6}px`;
+        let newWidth = pageX - (window.innerWidth - wrapper.offsetWidth) / 2 + 6;
+        if (newWidth >= 180 && newWidth <= 500) {
+          topNavigation.style.width = `${newWidth}px`;
+        }
       } else {
-        topNavigation.style.width = `${pageX}px`;
+        let newWidth = pageX;
+        if (newWidth >= 180 && newWidth <= 500) {
+          topNavigation.style.width = `${newWidth}px`;
+        }
       }
     }
 
@@ -413,3 +482,13 @@ if (!changeFrame) {
     };
   };
 }
+
+// Инициализация: проверяем размер окна и настраиваем меню
+function initMobileMenu() {
+  if (window.innerWidth <= 768) {
+    topNavigation.classList.remove('hideElement');
+    if (showMenuButton) showMenuButton.classList.remove('hideElement');
+  }
+}
+
+initMobileMenu();

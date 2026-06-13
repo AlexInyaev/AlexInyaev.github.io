@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <title>Лекции</title>
   <meta name="color-scheme" content="light dark" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <link rel="icon" type="image/jpg" href="../serviceFolder/img/stack-of-books.png" />
   <link rel="stylesheet" href="libs/pico-main/css/pico.min.css" />
   <link rel="stylesheet" href="styles/style.css" />
@@ -12,94 +13,89 @@
 
 <body>
   <div class="wrapper" id="wrapper">
-    <button class="showMenu hideElement"></button>
+    <button class="showMenu hideElement" aria-label="Открыть меню"></button>
     <!-- side bar -->
     <div class="topNavigation">
       <div class="topNavigationNavMenu">
-        <button class="topNavigationNavMenuButtons hideButton"></button>
-        <button class="topNavigationNavMenuButtons downButton"></button>
-        <button class="topNavigationNavMenuButtons nextButton"></button>
+        <button class="topNavigationNavMenuButtons hideButton" aria-label="Скрыть меню"></button>
+        <button class="topNavigationNavMenuButtons downButton" aria-label="Дополнительно"></button>
+        <button class="topNavigationNavMenuButtons nextButton" aria-label="Далее"></button>
       </div>
       <div id="infoBlock">
         <ol>
-          <li id="startMenu" class="hoverEffect">StartMenu</li>
+          <li id="startMenu" class="hoverEffect">🏠 StartMenu</li>
         </ol>
       </div>
 
       <!-- ██████████████████████████████████████████████████████████████████████ -->
       <!-- ████████  ШАГ 2: ПУНКТЫ МЕНЮ ВТОРОГО УРОВНЯ (ГЛАВНОЕ МЕНЮ) ████████ -->
       <!-- ██████████████████████████████████████████████████████████████████████ -->
-      <!-- ДЛЯ ДОБАВЛЕНИЯ НОВОГО РАЗДЕЛА: скопируйте строку и замените:
-             id="MyNew" → на ваш уникальный идентификатор
-             text "MyNew" → на название вашего раздела -->
       <ol id="mainMenu">
-        <li id="Eng" class="hoverEffect">English</li>
-        <li id="Rus" class="hoverEffect">Russia</li>
-        <li id="PHP" class="hoverEffect">PHP</li>
-        <li id="Golang" class="hoverEffect">Golang</li>
-        <li id="DockerId" class="hoverEffect">Docker</li>
-        <li id="GitCourseId" class="hoverEffect">GitCourse</li>
-        <li id="ServerApp" class="hoverEffect">ServerApp</li>
-        <li id="TemplateId" class="hoverEffect">Template</li>
+        <li id="Eng" class="hoverEffect">📖 English</li>
+        <li id="Rus" class="hoverEffect">🇷🇺 Russia</li>
+        <li id="PHP" class="hoverEffect">🐘 PHP</li>
+        <li id="Golang" class="hoverEffect">🔵 Golang</li>
+        <li id="DockerId" class="hoverEffect">🐳 Docker</li>
+        <li id="GitCourseId" class="hoverEffect">📚 GitCourse</li>
+        <li id="ServerApp" class="hoverEffect">🖥️ ServerApp</li>
+        <li id="TemplateId" class="hoverEffect">📝 Template</li>
         <!-- ⬇️ НОВЫЕ РАЗДЕЛЫ ДОБАВЛЯТЬ СЮДА ⬇️ -->
-
         <!-- ⬆️ НОВЫЕ РАЗДЕЛЫ ДОБАВЛЯТЬ СЮДА ⬆️ -->
       </ol>
 
       <!-- ██████████████████████████████████████████████████████████████████████ -->
       <!-- ████████  ШАГ 3: ПУНКТЫ МЕНЮ ТРЕТЬЕГО УРОВНЯ (УРОКИ) ████████ -->
       <!-- ██████████████████████████████████████████████████████████████████████ -->
-      <!-- ДЛЯ ДОБАВЛЕНИЯ НОВОГО РАЗДЕЛА: скопируйте один из блоков ol ниже 
-             и замените все вхождения НАЗВАНИЕ_РАЗДЕЛА на своё -->
 
       <!-- English -->
       <ol id="EnglandMenu">
-        <li id="engLess1" class="engLess hoverPointer">Les Eng</li>
-        <li id="engLess2" class="engLess hoverPointer">Lesson2</li>
-        <li id="engLess3" class="engLess hoverPointer">lesson3</li>
-        <li id="engLess4" class="engLess hoverPointer">lesson4</li>
-        <li id="engLess5" class="engLess hoverPointer">lesson5</li>
+        <li id="engLess1" class="engLess hoverPointer">📘 Les Eng</li>
+        <li id="engLess2" class="engLess hoverPointer">📗 Lesson2</li>
+        <li id="engLess3" class="engLess hoverPointer">📙 lesson3</li>
+        <li id="engLess4" class="engLess hoverPointer">📕 lesson4</li>
+        <li id="engLess5" class="engLess hoverPointer">📕 lesson5</li>
+
       </ol>
 
       <!-- Russian -->
       <ol id="RussianMenu">
-        <li id="rusLess1" class="rusLess hoverPointer">Lesson1 Rus</li>
-        <li id="rusLess2" class="rusLess hoverPointer">Lesson2</li>
-        <li id="rusLess3" class="rusLess hoverPointer">lesson3</li>
-        <li id="rusLess4" class="rusLess hoverPointer">lesson4</li>
+        <li id="rusLess1" class="rusLess hoverPointer">📘 Lesson1 Rus</li>
+        <li id="rusLess2" class="rusLess hoverPointer">📗 Lesson2</li>
+        <li id="rusLess3" class="rusLess hoverPointer">📙 lesson3</li>
+        <li id="rusLess4" class="rusLess hoverPointer">📕 lesson4</li>
       </ol>
 
       <!-- PHP -->
       <ol id="phpMenu">
-        <li id="phpLess1" class="phpLess hoverPointer">Lesson1 PHP</li>
-        <li id="phpLess2" class="phpLess hoverPointer">Lesson2</li>
+        <li id="phpLess1" class="phpLess hoverPointer">📘 Lesson1 PHP</li>
+        <li id="phpLess2" class="phpLess hoverPointer">📗 Lesson2</li>
       </ol>
 
       <!-- Golang -->
       <ol id="GolangMenu">
-        <li id="GolangLess1" class="GolangLess hoverPointer">Полезные ресурсы для изучения Go</li>
-        <li id="GolangLess2" class="GolangLess hoverPointer">Start Go</li>
-        <li id="GolangLess3" class="GolangLess hoverPointer">Site made Go</li>
+        <li id="GolangLess1" class="GolangLess hoverPointer">📘 Полезные ресурсы для изучения Go</li>
+        <li id="GolangLess2" class="GolangLess hoverPointer">📗 Start Go</li>
+        <li id="GolangLess3" class="GolangLess hoverPointer">📙 Site made Go</li>
       </ol>
 
       <!-- Docker -->
       <ol id="DockerMenu">
-        <li id="DockerLess1" class="DockerLess hoverPointer">Команды Docker</li>
-        <li id="DockerLess2" class="DockerLess hoverPointer">Dockerfile</li>
-        <li id="DockerLess3" class="DockerLess hoverPointer">Docker compose</li>
-        <li id="DockerLess4" class="DockerLess hoverPointer">Загрузка своего образа в docker hub</li>
+        <li id="DockerLess1" class="DockerLess hoverPointer">📘 Команды Docker</li>
+        <li id="DockerLess2" class="DockerLess hoverPointer">📗 Dockerfile</li>
+        <li id="DockerLess3" class="DockerLess hoverPointer">📙 Docker compose</li>
+        <li id="DockerLess4" class="DockerLess hoverPointer">📕 Загрузка своего образа в docker hub</li>
       </ol>
 
       <!-- GitCourse -->
       <ol id="GitCourseMenu">
-        <li id="GitCourseLess1" class="GitCourseLess hoverPointer">Lesson1 GitCourse</li>
-        <li id="GitCourseLess2" class="GitCourseLess hoverPointer">GitCourse Продвинутая работа</li>
+        <li id="GitCourseLess1" class="GitCourseLess hoverPointer">📘 Lesson1 GitCourse</li>
+        <li id="GitCourseLess2" class="GitCourseLess hoverPointer">📗 GitCourse Продвинутая работа</li>
       </ol>
 
       <!-- ServerApp -->
       <ol id="ServerAppMenu">
-        <li id="serverAppLess1" class="serverAppLess hoverPointer">Lesson1 ServerApp</li>
-        <li id="serverAppLess2" class="serverAppLess hoverPointer">Lesson2 ServerApp</li>
+        <li id="serverAppLess1" class="serverAppLess hoverPointer">📘 Lesson1 ServerApp</li>
+        <li id="serverAppLess2" class="serverAppLess hoverPointer">📗 Lesson2 ServerApp</li>
       </ol>
 
       <!-- Template (ШАБЛОН ДЛЯ КОПИРОВАНИЯ) -->
