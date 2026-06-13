@@ -2,16 +2,12 @@
 
 * {
   box-sizing: border-box;
-  /* margin: 0; */
-  /* padding: 0; */
 }
 
 body {
   background-color: #2a2929;
   margin: 0;
   color: #b0abbf;
-  /* color:#8F8B9C; */
-
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -25,8 +21,6 @@ body {
   background-color: #13171f;
   height: 100vh;
   position: relative;
-  /* background-color: #2a2929; */
-  /* padding-top: 25px; */
 }
 
 .showMenu {
@@ -36,7 +30,6 @@ body {
   height: 20px;
   width: 20px;
   background-image: url(../icons/next.png);
-  /* transform: rotate(deg); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -90,20 +83,17 @@ body {
 }
 
 .hoverEffect {
-  /* color: blue; */
   text-decoration: underline;
 }
 
 .hoverEffect:hover {
   cursor: pointer;
-  /* font-size: 20px; */
   color: aqua;
 }
 
 .hoverPointer:hover {
   cursor: pointer;
   color: aqua;
-  /* font-size: 20px; */
 }
 
 #infoBlock {
@@ -128,51 +118,36 @@ body {
   padding-top: 25px;
   padding-left: 15px;
   max-width: 807px;
-  /* margin: auto; */
 }
 
 .parametersContentWindow {
   width: 1280px;
-  /* width: 70vw; */
   height: 97%;
   margin: 1%;
 }
 
-#mainMenu {
-  /* display: none; */
-}
+/* ============================================================================ */
+/* ████████  ШАГ 7: МЕНЮ ТРЕТЬЕГО УРОВНЯ (СКРЫТЫ ПО УМОЛЧАНИЮ) ████████ */
+/* ============================================================================ */
+/* ДЛЯ ДОБАВЛЕНИЯ НОВОГО РАЗДЕЛА: добавьте строку #MyNewMenu { display: none; } */
+/* ============================================================================ */
 
-#EnglandMenu {
-  display: none;
-}
-
-#RussianMenu {
-  display: none;
-}
-
-#phpMenu {
-  display: none;
-}
-
-#GolangMenu {
-  display: none;
-}
-
-#DockerMenu {
-  display: none;
-}
-
-#GitCourseMenu {
-  display: none;
-}
-
-#ServerAppMenu {
-  display: none;
-}
-
+#EnglandMenu,
+#RussianMenu,
+#phpMenu,
+#GolangMenu,
+#DockerMenu,
+#GitCourseMenu,
+#ServerAppMenu,
 #TemplateMenu {
   display: none;
 }
+
+/* ⬇️ НОВЫЕ РАЗДЕЛЫ ДОБАВЛЯТЬ СЮДА ⬇️ */
+/* #MyNewMenu {
+    display: none;
+} */
+/* ⬆️ НОВЫЕ РАЗДЕЛЫ ДОБАВЛЯТЬ СЮДА ⬆️ */
 
 .colorGreen {
   color: green;
@@ -181,23 +156,3 @@ body {
 .bigText {
   font-size: xx-large;
 }
-
-
-/* @media screen and (max-width: 1100px){
-	.topNavigation {
-    width: 50%;
-   font-size: 40px;
-   padding-left: 15px;
-  }
-	.topNavigationNavMenu {
-    height: 50px;
-  }
-	.hideButton {
-    width: 45px;
-    height: 45px;
-  }
-  .showMenu {
-    width: 45px;
-    height: 45px;
-  }
-} */
