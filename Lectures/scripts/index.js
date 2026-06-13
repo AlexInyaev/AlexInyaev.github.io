@@ -412,21 +412,18 @@ if (!topNavigation) {
 }
 
 function hideMenu() {
-  if (!topNavigation || !showMenuButton) {
-    logError(ERROR_TYPES.DOM_NOT_FOUND, 'Элементы для скрытия меню не найдены');
+  if (!topNavigation) {
+    logError(ERROR_TYPES.DOM_NOT_FOUND, 'topNavigation не найден');
     return;
   }
   // На десктопе просто скрываем меню
   if (window.innerWidth > 768) {
     topNavigation.classList.add("hideElement");
-    showMenuButton.classList.remove("hideElement");
-  } else {
-    // На мобильных закрываем
-    closeMobileMenu();
+    if (showMenuButton) showMenuButton.classList.remove("hideElement");
   }
 }
 
-// Функция для показа меню на десктопе (используется другой кнопкой, если нужно)
+// Функция для показа меню на десктопе (если нужна)
 function showDesktopMenu() {
   if (window.innerWidth > 768) {
     topNavigation.classList.remove("hideElement");
@@ -435,13 +432,18 @@ function showDesktopMenu() {
 }
 
 // ============================================================================
-// ████████  ИЗМЕНЕНИЕ РАЗМЕРА ОКНА (НЕ ТРЕБУЕТ ИЗМЕНЕНИЙ) ████████
+// ИЗМЕНЕНИЕ РАЗМЕРА ОКНА (РЕСАЙЗЕР)
 // ============================================================================
 
 if (!changeFrame) {
   logError(ERROR_TYPES.DOM_NOT_FOUND, 'changeFrame не найден');
 } else {
+  let isResizing = false;  // Флаг, что ресайз активен
+
   changeFrame.onmousedown = function (event) {
+    event.preventDefault();  // Предотвращаем выделение текста
+    isResizing = true;
+
     if (!event || !event.pageX) {
       logError(ERROR_TYPES.INVALID_PARAMS, 'Не удалось получить координаты мыши');
       return;
@@ -452,43 +454,74 @@ if (!changeFrame) {
       return;
     }
 
-    moveAt(event.pageX);
+    // Сохраняем начальную ширину
+    const startWidth = topNavigation.offsetWidth;
+    const startX = event.pageX;
 
-    function moveAt(pageX) {
-      if (window.innerWidth > wrapper.offsetWidth + 17) {
-        let newWidth = pageX - (window.innerWidth - wrapper.offsetWidth) / 2 + 6;
-        if (newWidth >= 180 && newWidth <= 500) {
-          topNavigation.style.width = `${newWidth}px`;
-        }
-      } else {
-        let newWidth = pageX;
-        if (newWidth >= 180 && newWidth <= 500) {
-          topNavigation.style.width = `${newWidth}px`;
-        }
+    function onMouseMove(moveEvent) {
+      if (!isResizing) return;  // Если ресайз не активен - ничего не делаем
+
+      if (moveEvent && moveEvent.pageX) {
+        const deltaX = moveEvent.pageX - startX;
+        let newWidth = startWidth + deltaX;
+
+        // Ограничиваем минимальную и максимальную ширину
+        newWidth = Math.max(180, Math.min(500, newWidth));
+        topNavigation.style.width = `${newWidth}px`;
+        topNavigation.style.minWidth = `${newWidth}px`;
       }
     }
 
-    function onMouseMove(event) {
-      if (event && event.pageX) {
-        moveAt(event.pageX);
-      }
-    }
-
-    document.addEventListener("mousemove", onMouseMove);
-
-    changeFrame.onmouseup = function () {
+    function onMouseUp() {
+      isResizing = false;
       document.removeEventListener("mousemove", onMouseMove);
-      changeFrame.onmouseup = null;
-    };
+      document.removeEventListener("mouseup", onMouseUp);
+      // Убираем курсор при завершении
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    }
+
+    // Добавляем обработчики
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
+
+    // Меняем курсор во время ресайза
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+  };
+
+  // Отключаем стандартное поведение браузера при перетаскивании
+  changeFrame.ondragstart = function () {
+    return false;
   };
 }
 
-// Инициализация: проверяем размер окна и настраиваем меню
+// ============================================================================
+// ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ
+// ============================================================================
+
 function initMobileMenu() {
+  if (!topNavigation || !showMenuButton) return;
+
   if (window.innerWidth <= 768) {
-    topNavigation.classList.remove('hideElement');
-    if (showMenuButton) showMenuButton.classList.remove('hideElement');
+    // Мобильный режим
+    showMenuButton.classList.remove('hideElement');  // Показываем бургер
+    topNavigation.classList.remove('hideElement');   // Меню видимо но скрыто за экраном
+    topNavigation.classList.remove('open');          // Закрыто по умолчанию
+  } else {
+    // Десктопный режим
+    showMenuButton.classList.add('hideElement');     // Скрываем бургер
+    topNavigation.classList.remove('hideElement');   // Показываем меню
+    topNavigation.classList.remove('open');          // Убираем класс open если был
+    // Восстанавливаем ширину меню если нужно
+    if (topNavigation.style.width) {
+      topNavigation.style.width = '';
+    }
   }
 }
 
-initMobileMenu();
+// Запускаем при загрузке
+document.addEventListener('DOMContentLoaded', initMobileMenu);
+
+// Запускаем при изменении размера окна
+window.addEventListener('resize', initMobileMenu);
