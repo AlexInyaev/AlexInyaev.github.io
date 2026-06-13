@@ -1,41 +1,39 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-    <!-- <link
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+  <!-- <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.jade.min.css"
     /> -->
-    <!-- <link rel="stylesheet" href="../../../libs/pico-main/css/pico.min.css" /> -->
-    <link rel="stylesheet" href="../../../libs/pico-main/css/pico.css">
-    <link
-      rel="stylesheet"
-      href="../../../libs/highlight/styles/tomorrow-night-bright.css"
-    />
-  <link rel="stylesheet" href="../../../styles/styleForPages.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1>Начало изучения Golang</h1>
-      <a href="#" name="menu"></a>
-      <h4>Menu</h4>
-      <ul>
-        <li><a href="#install">Установка Go настройка VS code</a></li>
-        <li><a href="#firstProgram">Первая программа</a></li>
-        <li><a href="#variables">Переменные</a></li>
-        <li><a href="#dataType">Типы данных</a></li>
-        <li><a href="#arrays">Массивы</a></li>
-        <li><a href="#ifElseSwitch">if-else-switch</a></li>
-        <li><a href="#cycles">Циклы</a></li>
-        <li><a href="#study-plan">study-plan</a></li>
-        <li><a href="#types">Основные типы в Go</a></li>
-        <li><a href="#convert-types">Конвертация типов данных в Go</a></li>
-        <li><a href="#flow-and-files">Потоки и файлы</a></li>
-        <li><a href="#link-to-database">Подключение к базе данных</a></li>
-        <li>
-          <a href="#menu" name="install">menu</a>
-        </li>
+  <link rel="stylesheet" href="../../../libs/pico-main/css/pico.css">
+  <link rel="stylesheet" href="../../../libs/highlight/styles/tomorrow-night-bright.css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Начало изучения Golang</h1>
+    <a href="#" name="menu"></a>
+    <h4>Menu</h4>
+    <ul>
+      <li><a href="#install">Установка Go настройка VS code</a></li>
+      <li><a href="#firstProgram">Первая программа</a></li>
+      <li><a href="#variables">Переменные</a></li>
+      <li><a href="#dataType">Типы данных</a></li>
+      <li><a href="#arrays">Массивы</a></li>
+      <li><a href="#ifElseSwitch">if-else-switch</a></li>
+      <li><a href="#cycles">Циклы</a></li>
+      <li><a href="#study-plan">study-plan</a></li>
+      <li><a href="#types">Основные типы в Go</a></li>
+      <li><a href="#convert-types">Конвертация типов данных в Go</a></li>
+      <li><a href="#flow-and-files">Потоки и файлы</a></li>
+      <li><a href="#link-to-database">Подключение к базе данных</a></li>
+      <li>
+        <a href="#menu" name="install">menu</a>
+      </li>
       <h4>Установка Golang</h4>
       <ol>
         <li>Заходим на https://go.dev/</li>
@@ -62,10 +60,13 @@
       <a href="#menu" name="firstProgram">menu</a>
 
       <h4>Первая программа</h4>
-      <p>Программа на языке Go хранится в одном или нескольких файлах. Каждый файл с программным кодом должен принадлежать какому-нибудь пакету.
-          Вначале каждого файла должно быть объявление пакета, к которому этот файл принадлежит. Пакет объявляется с помощью ключевого слова package.</p>
-         <p>Мы можем  использовать в файле   функционал из других пакетов. Для этого используемые пакеты надо импортировать с помощью ключевого слова import.
-           Импортируемые пакеты должны идти после объявления пакета для текущего файла</p>
+      <p>Программа на языке Go хранится в одном или нескольких файлах. Каждый файл с программным кодом должен
+        принадлежать какому-нибудь пакету.
+        Вначале каждого файла должно быть объявление пакета, к которому этот файл принадлежит. Пакет объявляется с
+        помощью ключевого слова package.</p>
+      <p>Мы можем использовать в файле функционал из других пакетов. Для этого используемые пакеты надо импортировать с
+        помощью ключевого слова import.
+        Импортируемые пакеты должны идти после объявления пакета для текущего файла</p>
       <ol>
         <li>Указываем пакет <code>package main</code></li>
         <li>
@@ -92,11 +93,11 @@
   комментарий*/
         </code></pre>
 
-        <a href="#menu" name="variables">menu</a>
+      <a href="#menu" name="variables">menu</a>
 
-        <h4>Переменные</h4>
-        <P> Go - регистрозависимый язык</P>
-        <pre>
+      <h4>Переменные</h4>
+      <P> Go - регистрозависимый язык</P>
+      <pre>
           <code>
   var newVar int                   //объявление переменной
   var a, b, c string               //Можно одновременно объявить сразу несколько переменных через запятую
@@ -110,34 +111,41 @@
           </code>
         </pre>
 
-        <a href="#menu" name="dataType">menu</a>
+      <a href="#menu" name="dataType">menu</a>
 
       <h4>Типы данных</h4>
       <h5>числа</h5>
       <ul>
-        <li><ul>
-          <li>int8: -128 до 127</li>
-          <li>int16: -32768 до 32767</li>
-          <li>int32: -2147483648 до 2147483647</li>
-          <li>int64: –9 223 372 036 854 775 808 до 9 223 372 036 854 775 807</li>
-          <li>int: -может быть или  int32, или int64  зависит от платформы</li>
-        </ul></li>
-        <li><ul>
-          <li>uint8: 0 до 255</li>
-          <li>uint16: 0 до 65535</li>
-          <li>uint32: от 0 до 4294967295</li>
-          <li>uint64: от 0 до 18 446 744 073 709 551 615</li>
-          <li>uint: -может быть или  uint32, или uint64  зависит от платформы</li>
-        </ul></li>
-       <li><ul> 
-              <li>byte: как uint8</li>
-             <li>rune: как int32</li>
-        </ul>
-       </li>
-        <li><ul>
-          <li>float32:- 1.4*10-45 до 3.4*1038</li>
-          <li>float32:- 4.9*10-324 до 1.8*10308</li>
-        </ul></li>
+        <li>
+          <ul>
+            <li>int8: -128 до 127</li>
+            <li>int16: -32768 до 32767</li>
+            <li>int32: -2147483648 до 2147483647</li>
+            <li>int64: –9 223 372 036 854 775 808 до 9 223 372 036 854 775 807</li>
+            <li>int: -может быть или int32, или int64 зависит от платформы</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>uint8: 0 до 255</li>
+            <li>uint16: 0 до 65535</li>
+            <li>uint32: от 0 до 4294967295</li>
+            <li>uint64: от 0 до 18 446 744 073 709 551 615</li>
+            <li>uint: -может быть или uint32, или uint64 зависит от платформы</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>byte: как uint8</li>
+            <li>rune: как int32</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>float32:- 1.4*10-45 до 3.4*1038</li>
+            <li>float32:- 4.9*10-324 до 1.8*10308</li>
+          </ul>
+        </li>
       </ul>
       <h5>Комплексные числа</h5>
       <ul>
@@ -153,13 +161,14 @@
       <ul>
         <li>Строки - заключаются в двойные кавычки и могут иметь специальные символы форматирования \n \r \\ \"</li>
       </ul>
-      <p>Если мы объявили переемную и тип но не присвоили значение то значение определится автоматически будет 0 false ""</p>
-      <p>Если при инициализации присвоить значение без типа то тип определится автоматически  </p>
+      <p>Если мы объявили переемную и тип но не присвоили значение то значение определится автоматически будет 0 false
+        ""</p>
+      <p>Если при инициализации присвоить значение без типа то тип определится автоматически </p>
 
       <a href="#menu" name="arrays">menu</a>
 
-        <h4>Массивы</h4>
-        <pre><code>
+      <h4>Массивы</h4>
+      <pre><code>
   package main
 
   import "fmt"
@@ -183,10 +192,10 @@
   }
           
         </code></pre>
-        <a href="#menu" name="ifElseSwitch">menu</a>
+      <a href="#menu" name="ifElseSwitch">menu</a>
 
-        <h4>if-else-switch</h4>
-        <pre><code>
+      <h4>if-else-switch</h4>
+      <pre><code>
           package main
 
 import "fmt"
@@ -215,9 +224,9 @@ func main() {
 
         </code></pre>
 
-        <a href="#menu" name="cycles">menu</a>
-        <h4>Циклы</h4>
-        <pre><code>
+      <a href="#menu" name="cycles">menu</a>
+      <h4>Циклы</h4>
+      <pre><code>
           package main
 
 import "fmt"
@@ -279,13 +288,15 @@ func main() {
           complex64 complex128 // Комплексные числа
       </code>
     </pre>
-        <a href="#menu" name="convert-types">menu</a>
-       
-        <h4>Конвертация типов данных в Go</h4>
-        <h5>Преобразование чисел</h5>
-        <p>Чтобы преобразовать int d float Достаточно обернуть переменную конструкцией float64() или float32().</p>
-        <p>В примерах можно обойтись и без явного приведения к float. Если вы используете числа с плавающей точкой, то все остальные типы автоматически приводятся к float. <code>a := 5.0 * 2 </code> Но с переменными так работать не будет</p>
-        <pre>
+      <a href="#menu" name="convert-types">menu</a>
+
+      <h4>Конвертация типов данных в Go</h4>
+      <h5>Преобразование чисел</h5>
+      <p>Чтобы преобразовать int d float Достаточно обернуть переменную конструкцией float64() или float32().</p>
+      <p>В примерах можно обойтись и без явного приведения к float. Если вы используете числа с плавающей точкой, то все
+        остальные типы автоматически приводятся к float. <code>a := 5.0 * 2 </code> Но с переменными так работать не
+        будет</p>
+      <pre>
           <code>
             func main() {
               var x int64 = 57
@@ -294,8 +305,8 @@ func main() {
             }
           </code>
         </pre>
-        <h6>Из float в int </h6>
-        <pre>
+      <h6>Из float в int </h6>
+      <pre>
           <code>
             func main() {
               var f float64 = 409.8
@@ -304,15 +315,16 @@ func main() {
             }
           </code>
         </pre>
-        <h5>Преобразование строк</h5>
-        <p>В Golang число в строку можно преобразовать с помощью метода strconv.Itoa. Он входит в состав пакета strconv стандартной библиотеки языка. <br> синтаксис <code>a := strconv.Itoa(12)</code></p>
-        <p>Float к строке <code>test := fmt.Sprint(421.034)</code></p>
+      <h5>Преобразование строк</h5>
+      <p>В Golang число в строку можно преобразовать с помощью метода strconv.Itoa. Он входит в состав пакета strconv
+        стандартной библиотеки языка. <br> синтаксис <code>a := strconv.Itoa(12)</code></p>
+      <p>Float к строке <code>test := fmt.Sprint(421.034)</code></p>
 
-        <h5>Строки в число</h5>
-        <p> Если строка имеет числовой вид то ее можно преобразовать в число</p>
-        <p>Строку в int <code>strconv.Atoi</code></p>
-        <p>Строку в Float <code>strconv.ParseFloat</code></p>
-        <pre>
+      <h5>Строки в число</h5>
+      <p> Если строка имеет числовой вид то ее можно преобразовать в число</p>
+      <p>Строку в int <code>strconv.Atoi</code></p>
+      <p>Строку в Float <code>strconv.ParseFloat</code></p>
+      <pre>
           <code>
             func main() {
               lines_yesterday := "50"
@@ -330,8 +342,8 @@ func main() {
             }
           </code>
         </pre>
-        <h5>Строки можно также преобразовывать в срезы байтов и обратно, используя конструкции []byte() и string(). </h5>
-        <pre>
+      <h5>Строки можно также преобразовывать в срезы байтов и обратно, используя конструкции []byte() и string(). </h5>
+      <pre>
           <code>
             func main() {
               a := "timeweb"
@@ -343,11 +355,11 @@ func main() {
             }
           </code>
         </pre>
-        <a href="#menu" name="flow-and-files">menu</a>
-        
-        <h2>Потоки и файлы</h2>
-        <h4>Чтение и запись</h4>
-        <pre>
+      <a href="#menu" name="flow-and-files">menu</a>
+
+      <h2>Потоки и файлы</h2>
+      <h4>Чтение и запись</h4>
+      <pre>
           <code>
                           Интерфейсы 
                           Чтение
@@ -362,9 +374,10 @@ func main() {
           }                
           </code>
         </pre>
-        <h4>Создание и открытие файлов</h4>
-        <p>С помощью функции os.Create() можно создать файл по определенному пути. Путь к файлу передается в качестве параметра. Если подобный файл уже существует, то он перезаписывается:</p>
-        <pre>
+      <h4>Создание и открытие файлов</h4>
+      <p>С помощью функции os.Create() можно создать файл по определенному пути. Путь к файлу передается в качестве
+        параметра. Если подобный файл уже существует, то он перезаписывается:</p>
+      <pre>
           <code>
             file, err := os.Create("hello.txt")
             Функция возвращает объект os.File для работы с файлом и информацию об ошибке, которая может возникнуть при создании файла.
@@ -394,20 +407,24 @@ func main() {
             А метод Name(), определенный для типа os.File, позволяет получить имя файла.
           </code>
         </pre>
-        <a href="#menu" name="link-to-database">menu</a>
-        <h2>Подключение и работа с базой данных</h2>
-        <h4>Установка mySql драйвера</h4>
-        <ol>
-          <li>Скачиваем mySql драйвер - для этого переходим на страницу драйвера https://github.com/go-sql-driver/mysql</li>
-          <li> Ищем пункт installation там берем команду и выполняем ее в терминале для скачивания (На данный момент команда такая: go get -u github.com/go-sql-driver/mysql)</li>
-          <li> Чуть ниже ищем пункт Usage там из примера копируем названия пакетов для импорта На данный момент названия такие: <code>"database/sql"</code>;<code>_ "github.com/go-sql-driver/mysql"</code></li>
-        </ol>
-        
-    </div>
+      <a href="#menu" name="link-to-database">menu</a>
+      <h2>Подключение и работа с базой данных</h2>
+      <h4>Установка mySql драйвера</h4>
+      <ol>
+        <li>Скачиваем mySql драйвер - для этого переходим на страницу драйвера https://github.com/go-sql-driver/mysql
+        </li>
+        <li> Ищем пункт installation там берем команду и выполняем ее в терминале для скачивания (На данный момент
+          команда такая: go get -u github.com/go-sql-driver/mysql)</li>
+        <li> Чуть ниже ищем пункт Usage там из примера копируем названия пакетов для импорта На данный момент названия
+          такие: <code>"database/sql"</code>;<code>_ "github.com/go-sql-driver/mysql"</code></li>
+      </ol>
 
-    <script src="../../../libs/highlight/highlight.pack.js"></script>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
-  </body>
+  </div>
+
+  <script src="../../../libs/highlight/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</body>
+
 </html>
