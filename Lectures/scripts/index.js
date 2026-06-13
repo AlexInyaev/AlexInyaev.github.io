@@ -46,34 +46,40 @@ document.querySelector("#TemplateId").addEventListener("click", () => {
 
 // обработчик второго уровня - отрисовывает выбранный элемент второго уровня
 function makeMenu(event, blockMenu, classDirectory, nameDirectory) {
+  // nameDirectory - название папки в которой лежит проект
+
   let elementForTopMenu = document.createElement("li");
   elementForTopMenu.classList.add("markerSecondLevel");
   elementForTopMenu.innerText = event.srcElement.innerText;
   infoBlock.firstElementChild.appendChild(elementForTopMenu);
   elementsStartMenu.style.display = "none";
   blockMenu.style.display = "block";
-  objectContent.setAttribute(
-    "data",
-    `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`,
-  );
-  // блок отработки ошибок
-  if (classDirectory === "templateLess") {
-    console.log(
-      "Дефолтный параметр classDirectory заменить на класс который прописан во всех пунктах меню li. Сейчас там это значение: " +
-      classDirectory,
-    );
-  } else if (nameDirectory === "TemplateFolder") {
-    console.log(
-      "Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: " +
-      nameDirectory,
-    );
-  } else if (nameDirectory === "TemplateFolder") {
-    console.log(
-      "Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: " +
-      nameDirectory,
-    );
+
+  // ============ Установка пути с try-catch ============
+  try {
+    const filePath = `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`;
+    objectContent.setAttribute("data", filePath);
+
+    // Обработчики событий загрузки - только ошибки
+    objectContent.onerror = () => {
+      console.error("❌ ОШИБКА 404: Файл не найден:", filePath);
+      console.error("❌ Скорее всего при добавление раздела был не правильно назван файл ...Markup.html или папка внимательно сверить путь и название файлов и папок", filePath);
+
+    };
+  } catch (error) {
+    console.error("❌ КРИТИЧЕСКАЯ ОШИБКА при установке пути:", error);
+    console.error("Параметры:", { classDirectory, nameDirectory });
   }
-  console.log("classDirectory:", classDirectory, "nameDirectory:", nameDirectory)
+  // =====================================================
+
+  // блок отработки ошибок - предупреждения о дефолтных значениях
+  if (classDirectory === "templateLess") {
+    console.warn("⚠️ ВНИМАНИЕ! Используется дефолтный classDirectory: 'templateLess' нужно заменить на свой");
+  }
+  if (nameDirectory === "TemplateFolder") {
+    console.warn("⚠️ ВНИМАНИЕ! Используется дефолтный nameDirectory: 'TemplateFolder' нужно заменить на свой");
+  }
+
   return { classDirectory: classDirectory, nameDirectory: nameDirectory };
 }
 
