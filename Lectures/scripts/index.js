@@ -30,6 +30,10 @@ document.querySelector("#GitCourseId").addEventListener("click", () => {
   parametersDirectory = makeMenu(event, GitCourseMenu, "GitCourseLess", "GitCourse");
   addEvents();
 });
+document.querySelector("#ServerApp").addEventListener("click", () => {
+  parametersDirectory = makeMenu(event, ServerAppMenu, "ServerAppLess", "ServerApp");
+  addEvents();
+});
 document.querySelector("#TemplateId").addEventListener("click", () => {
   parametersDirectory = makeMenu(
     event,
@@ -42,40 +46,34 @@ document.querySelector("#TemplateId").addEventListener("click", () => {
 
 // обработчик второго уровня - отрисовывает выбранный элемент второго уровня
 function makeMenu(event, blockMenu, classDirectory, nameDirectory) {
-  // nameDirectory - название папки в которой лежит проект
-
   let elementForTopMenu = document.createElement("li");
   elementForTopMenu.classList.add("markerSecondLevel");
   elementForTopMenu.innerText = event.srcElement.innerText;
-  console.log(event.srcElement.innerText);
   infoBlock.firstElementChild.appendChild(elementForTopMenu);
   elementsStartMenu.style.display = "none";
-  console.log(blockMenu);
   blockMenu.style.display = "block";
-
   objectContent.setAttribute(
     "data",
     `disciplines/${nameDirectory}/pages/${classDirectory}Markup.html`,
   );
-  // console.log(classDirectory, nameDirectory)
   // блок отработки ошибок
   if (classDirectory === "templateLess") {
     console.log(
       "Дефолтный параметр classDirectory заменить на класс который прописан во всех пунктах меню li. Сейчас там это значение: " +
-        classDirectory,
+      classDirectory,
     );
   } else if (nameDirectory === "TemplateFolder") {
     console.log(
       "Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: " +
-        nameDirectory,
+      nameDirectory,
     );
   } else if (nameDirectory === "TemplateFolder") {
     console.log(
       "Дефолтный параметр nameDirectory заменить на название папки с проектом. Сейчас там это значение: " +
-        nameDirectory,
+      nameDirectory,
     );
   }
-
+  console.log("classDirectory:", classDirectory, "nameDirectory:", nameDirectory)
   return { classDirectory: classDirectory, nameDirectory: nameDirectory };
 }
 
@@ -97,8 +95,10 @@ function returnToStartMenu() {
   DockerMenu.style.display = "none";
   GitCourseMenu.style.display = "none";
   templateMenu.style.display = "none";
+  ServerAppMenu.style.display = "none";
   objectContent.setAttribute("data", "startPage.html");
 }
+
 
 // third level menu навешиваем события
 function addEvents() {

@@ -12,6 +12,7 @@ const phpMenu = document.querySelector("#phpMenu");
 const GolangMenu = document.querySelector("#GolangMenu");
 const DockerMenu = document.querySelector("#DockerMenu");
 const GitCourseMenu = document.querySelector("#GitCourseMenu");
+const ServerAppMenu = document.querySelector("#ServerAppMenu");
 const templateMenu = document.querySelector("#TemplateMenu");
 //* ****** */
 const objectContent = document.querySelector("#objectContent");

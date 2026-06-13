@@ -1,115 +1,120 @@
 <!doctype html>
 <html lang="ru" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Лекции</title>
-    <!-- <link rel="shortcut icon" href="img/animals.svg" type="image/x-icon" /> -->
-    <meta name="color-scheme" content="light dark" />
-    <!-- <link
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Лекции</title>
+  <!-- <link rel="shortcut icon" href="img/animals.svg" type="image/x-icon" /> -->
+  <meta name="color-scheme" content="light dark" />
+  <!-- <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     /> -->
-    <link rel="icon" type="image/jpg" href="../serviceFolder/img/stack-of-books.pngdocker stop $(docker ps -a -q)" />
-    <link rel="stylesheet" href="libs/pico-main/css/pico.min.css" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <!--  -->
-  </head>
-  <body>
-    <div class="wrapper" id="wrapper">
-      <button class="showMenu hideElement"></button>
-      <!-- side bar -->
-      <div class="topNavigation">
-        <div class="topNavigationNavMenu">
-          <button class="topNavigationNavMenuButtons hideButton"></button>
-          <button class="topNavigationNavMenuButtons downButton"></button>
-          <button class="topNavigationNavMenuButtons nextButton"></button>
-        </div>
-        <div id="infoBlock">
-          <ol>
-            <li id="startMenu" class="hoverEffect">StartMenu</li>
-          </ol>
-        </div>
-        <!-- Пункты меню второго уровня -->
-        <ol id="mainMenu">
-          <li id="Eng" class="hoverEffect">English</li>
-          <li id="Rus" class="hoverEffect">Russia</li>
-          <li id="PHP" class="hoverEffect">PHP</li>
-          <li id="Golang" class="hoverEffect">Golang</li>
-          <li id="DockerId" class="hoverEffect">Docker</li>
-          <li id="GitCourseId" class="hoverEffect">GitCourse</li>
-          <li id="TemplateId" class="hoverEffect">Template</li>
-        </ol>
-        <!-- Пункты меню второго уровня окончание -->
-        <!-- Пункты меню третьего уровня ********************************************************-->
-        <!-- Английский язык -->
-        <ol id="EnglandMenu">
-          <!-- Id должен совпадать с названием файла (иначе программа не найдет файл)-->
-          <li id="engLess1" class="engLess hoverPointer">Les Eng</li>
-          <li id="engLess2" class="engLess hoverPointer">Lesson2</li>
-          <li id="engLess3" class="engLess hoverPointer">lesson3</li>
-          <li id="engLess4" class="engLess hoverPointer">lesson4</li>
-          <li id="engLess5" class="engLess hoverPointer">lesson5</li>
-        </ol>
-        <!-- Русский язык -->
-        <ol id="RussianMenu">
-          <!-- Id должен совпадать с названием файла (иначе программа не найдет файл) -->
-          <li id="rusLess1" class="rusLess hoverPointer">Lesson1 Rus</li>
-          <li id="rusLess2" class="rusLess hoverPointer">Lesson2</li>
-          <li id="rusLess3" class="rusLess hoverPointer">lesson3</li>
-          <li id="rusLess4" class="rusLess hoverPointer">lesson4</li>
-        </ol>
-        <!-- PHP -->
-        <ol id="phpMenu">
-          <li id="phpLess1" class="phpLess hoverPointer">Lesson1 PHP</li>
-          <li id="phpLess2" class="phpLess hoverPointer">Lesson2</li>
-        </ol>
-        <!-- Golang -->
-        <ol id="GolangMenu">
-          <li id="GolangLess1" class="GolangLess hoverPointer">
-            Полезные ресурсы для изучения Go
-          </li>
-          <li id="GolangLess2" class="GolangLess hoverPointer">Start Go</li>
-          <li id="GolangLess3" class="GolangLess hoverPointer">Site made Go</li>
-        </ol>
-         <!-- Docker -->
-        <ol id="DockerMenu">
-          <li id="DockerLess1" class="DockerLess hoverPointer">Команды Docker</li>
-          <li id="DockerLess2" class="DockerLess hoverPointer">Dockerfile</li>
-          <li id="DockerLess3" class="DockerLess hoverPointer">Docker compose</li>
-          <li id="DockerLess4" class="DockerLess hoverPointer">Загрузка своего образа в docker hub</li>
-        </ol>
-        <!-- GitCourse -->
-        <ol id="GitCourseMenu">
-          <li id="GitCourseLess1" class="GitCourseLess hoverPointer">
-            Lesson1 GitCourse
-          </li>
-          <li id="GitCourseLess2" class="GitCourseLess hoverPointer">GitCourse Продвинутая работа</li>
-        </ol>
-        <!-- TemplateMenu -->
-        <ol id="TemplateMenu">
-          <!-- здесь берем атрибут ol для переменной blockMenu в функцию makeMenu -->
-          <!-- Id элементов li должны совпадать с названиями файлов в папке TemplateFolder/pages 
-             на этом строится логика отрисовки страниц -->
-          <li id="templateLess1" class="templateLess hoverPointer">
-            Lesson1 Template
-          </li>
-          <!-- class="templLess" используется в функции makeMenu -->
-          <li id="templateLess2" class="templateLess hoverPointer">Lesson2</li>
-        </ol>
-        <!-- Пункты меню третьего окончание **********************************************************-->
+  <link rel="icon" type="image/jpg" href="../serviceFolder/img/stack-of-books.png" />
+  <link rel="stylesheet" href="libs/pico-main/css/pico.min.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <!--  -->
+</head>
+
+<body>
+  <div class="wrapper" id="wrapper">
+    <button class="showMenu hideElement"></button>
+    <!-- side bar -->
+    <div class="topNavigation">
+      <div class="topNavigationNavMenu">
+        <button class="topNavigationNavMenuButtons hideButton"></button>
+        <button class="topNavigationNavMenuButtons downButton"></button>
+        <button class="topNavigationNavMenuButtons nextButton"></button>
       </div>
-      <!-- side bar finish -->
-      <div id="changeFrame"></div>
-      <!-- <div id="content" class="content"> -->
-        <object
-          id="objectContent"
-          type="text/html"
-          data="startPage.html"
-          class="parametersContentWindow"
-        ></object>
-      <!-- </div> -->
+      <div id="infoBlock">
+        <ol>
+          <li id="startMenu" class="hoverEffect">StartMenu</li>
+        </ol>
+      </div>
+      <!-- Пункты меню второго уровня -->
+      <ol id="mainMenu">
+        <li id="Eng" class="hoverEffect">English</li>
+        <li id="Rus" class="hoverEffect">Russia</li>
+        <li id="PHP" class="hoverEffect">PHP</li>
+        <li id="Golang" class="hoverEffect">Golang</li>
+        <li id="DockerId" class="hoverEffect">Docker</li>
+        <li id="GitCourseId" class="hoverEffect">GitCourse</li>
+        <li id="TemplateId" class="hoverEffect">Template</li>
+        <li id="ServerApp" class="hoverEffect">ServerApp</li>
+      </ol>
+      <!-- Пункты меню второго уровня окончание -->
+      <!-- Пункты меню третьего уровня ********************************************************-->
+      <!-- Английский язык -->
+      <ol id="EnglandMenu">
+        <!-- Id должен совпадать с названием файла (иначе программа не найдет файл)-->
+        <li id="engLess1" class="engLess hoverPointer">Les Eng</li>
+        <li id="engLess2" class="engLess hoverPointer">Lesson2</li>
+        <li id="engLess3" class="engLess hoverPointer">lesson3</li>
+        <li id="engLess4" class="engLess hoverPointer">lesson4</li>
+        <li id="engLess5" class="engLess hoverPointer">lesson5</li>
+      </ol>
+      <!-- Русский язык -->
+      <ol id="RussianMenu">
+        <!-- Id должен совпадать с названием файла (иначе программа не найдет файл) -->
+        <li id="rusLess1" class="rusLess hoverPointer">Lesson1 Rus</li>
+        <li id="rusLess2" class="rusLess hoverPointer">Lesson2</li>
+        <li id="rusLess3" class="rusLess hoverPointer">lesson3</li>
+        <li id="rusLess4" class="rusLess hoverPointer">lesson4</li>
+      </ol>
+      <!-- PHP -->
+      <ol id="phpMenu">
+        <li id="phpLess1" class="phpLess hoverPointer">Lesson1 PHP</li>
+        <li id="phpLess2" class="phpLess hoverPointer">Lesson2</li>
+      </ol>
+      <!-- Golang -->
+      <ol id="GolangMenu">
+        <li id="GolangLess1" class="GolangLess hoverPointer">
+          Полезные ресурсы для изучения Go
+        </li>
+        <li id="GolangLess2" class="GolangLess hoverPointer">Start Go</li>
+        <li id="GolangLess3" class="GolangLess hoverPointer">Site made Go</li>
+      </ol>
+      <!-- Docker -->
+      <ol id="DockerMenu">
+        <li id="DockerLess1" class="DockerLess hoverPointer">Команды Docker</li>
+        <li id="DockerLess2" class="DockerLess hoverPointer">Dockerfile</li>
+        <li id="DockerLess3" class="DockerLess hoverPointer">Docker compose</li>
+        <li id="DockerLess4" class="DockerLess hoverPointer">Загрузка своего образа в docker hub</li>
+      </ol>
+      <!-- GitCourse -->
+      <ol id="GitCourseMenu">
+        <li id="GitCourseLess1" class="GitCourseLess hoverPointer">
+          Lesson1 GitCourse
+        </li>
+        <li id="GitCourseLess2" class="GitCourseLess hoverPointer">GitCourse Продвинутая работа</li>
+      </ol>
+      <!-- Server App -->
+      <ol id="ServerAppMenu">
+        <li id="serverAppLess1" class="ServerAppLess hoverPointer">Lesson1</li>
+        <li id="serverAppLess2" class="ServerAppLess hoverPointer">Lesson2</li>
+      </ol>
+
+      <!-- TemplateMenu -->
+      <ol id="TemplateMenu">
+        <!-- здесь берем атрибут ol для переменной blockMenu в функцию makeMenu -->
+        <!-- Id элементов li должны совпадать с названиями файлов в папке TemplateFolder/pages 
+             на этом строится логика отрисовки страниц -->
+        <li id="templateLess1" class="templateLess hoverPointer">
+          Lesson1 Template
+        </li>
+        <!-- class="templLess" используется в функции makeMenu -->
+        <li id="templateLess2" class="templateLess hoverPointer">Lesson2</li>
+      </ol>
+      <!-- Пункты меню третьего окончание **********************************************************-->
     </div>
-    <script src="scripts/variables.js"></script>
-    <script src="scripts/index.js"></script>
-  </body>
+    <!-- side bar finish -->
+    <div id="changeFrame"></div>
+    <!-- <div id="content" class="content"> -->
+    <object id="objectContent" type="text/html" data="startPage.html" class="parametersContentWindow"></object>
+    <!-- </div> -->
+  </div>
+  <script src="scripts/variables.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
 </html>
